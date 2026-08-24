@@ -2,112 +2,91 @@
 
 ## Phase
 
-**Phase 5B — Canonical Data and Review Harness Reconciliation**
+**Phase 6 — Production Application Engineering**
 
 **Status:** Review ready
 
-**Prepared:** 2026-08-25 (Asia/Kolkata)
+**Prepared:** 2026-08-25
 
 ## Review objective
 
-Approve, revise or reject the targeted reconciliation of the Phase 5B review harness with canonical catalog truth. Canonical catalog/content outputs and the reworked visual package are provisionally approved and were not changed by this correction. This packet does not authorize application engineering.
+Approve, revise or reject the Phase 6 production application takeover, verification and targeted defect correction. This packet does not authorize public deployment; Phase 7 QA and deployment remain a separate, later authorization.
 
 ## Authority and boundary
 
-- Phase 5A was externally approved at commits `b5a6b2644f43dbb45cb14e7303510e87987f2f04` and `a0e0810240ad3e04bc713c4d0bd7ea0a85584a1e`; D-029 records the verdict.
-- Phase 5B was expressly authorized to produce structured content, assets and an isolated review harness only.
-- External review provisionally approved the canonical catalog/content package at commit `8122ed348358b8aefb0bc7b624391064a4f47f29`.
-- External review of commit `4fe3cbf15ada23b82802b0507fe3f737add4b83d` provisionally approved the reworked visuals but found the review harness contained a stale parallel catalog. The harness evidence was rejected until reconciled; canonical records were not rejected.
-- Canonical JSON plus the approved fictional-brand registry are the sole content authority. Browser data is a deterministic derivative and cannot be maintained independently.
-- All products, prices, availability, recipes, product labels and imagery are fictional portfolio/demo fixtures.
-- Pantryform, Measureloom and every subordinate product label remain prototype-only pending professional legal and commercial clearance.
-- Production application, database, authentication, payment, inventory, deployment and real checkout remain out of scope.
+- Phase 5B canonical catalog/content and the 225-file visual package were provisionally approved at commit `8122ed3` and remain unchanged by this phase.
+- Phase 5B's canonical-data/review-harness reconciliation was recorded for external review at commit `9e2f9a4`.
+- This takeover began at the authorized checkpoint `main` @ `c29e5fc4c95071766993b833456a4e0e88e9299d` ("Checkpoint Phase 6 production application engineering") and is a continuation, not a rebuild: no architecture, approved screens, canonical data, or brand/motion direction were replaced.
+- All products, prices, availability, recipes, product labels and imagery remain fictional portfolio/demo fixtures. Pantryform, Measureloom and all subordinate labels remain prototype-only pending legal/commercial clearance.
+- Database, authentication, real payment, live inventory, real email sending, third-party analytics and public deployment remain out of scope for Phase 6.
 
 ## Delivered scope
 
-| Item | Final count |
+| Item | Count |
 |---|---:|
 | Parent products | 24 |
 | Sellable SKUs | 38 |
 | Product content records | 24 |
 | Original demo recipes | 6 |
-| Method-complete recipe ingredient lines | 45 |
+| Recipe ingredient lines | 45 |
 | Explicit product mappings | 27 |
-| Explicit unmapped pantry lines | 18 |
-| Fictional product labels | 8 |
-| Product parent visual families | 24 |
-| Atomic variant-owned media records | 38 |
-| Differentiated recipe families | 6 |
-| Differentiated department families | 7 |
-| Manifest logical masters | 75 |
-| Asset derivatives | 150 |
-| Manifest-tracked files | 225 |
-
-Department distribution is exactly Ingredients 6; Chocolate 4; Colours & Flavours 4; Fillings & Fondant 3; Decorating 3; Bakeware & Tools 2; Packaging 2.
+| Application routes | 20 route files / 54 production build pages |
+| Unit tests | 12 (3 files), all passing |
+| E2E critical-journey tests | 10 (5 journeys × desktop/mobile), all passing |
 
 ## Primary evidence
 
-- Brief/readout: `production_artifacts/05_catalog_production/Phase_5B_Brief.md`, `Phase_5B_Readout.md`
-- Catalog: `Product_Master_Data.json`, `SKU_Variant_Data.json`, `Product_Content_Records.json`
-- Recipes: `Recipe_Master_Data.json`, `Recipe_Product_Mapping.json`
-- Rules/screening: `Catalog_Content_Strategy.md`, `Fictional_Brand_Registry.md`, `Demo_Pricing_and_Availability.md`
-- QA/provenance: `Catalog_Validation_Report.md`, `Asset_Production_QA_Report.md`, `Asset_Production_Readout.md`, `Editorial_Generation_Prompts.md`
-- Manifest: `production_artifacts/05_catalog_production/Catalog_Asset_Manifest.json`
-- Contact sheets: `production_artifacts/05_catalog_production/previews/`
-- Placement review: `design_review/phase_5b/`
-- Browser-bundle builder and truth validator: `design_review/phase_5b/build-canonical-data.js`, `design_review/phase_5b/validate.js`
+- Verification report: `production_artifacts/09_qa/Phase_6_Verification_Report.md`
+- Screenshot evidence: `production_artifacts/09_qa/screenshots/` (18 files)
+- Technical architecture: `production_artifacts/06_engineering/Technical_Architecture.md`
+- Route/feature inventory: `production_artifacts/06_engineering/Route_and_Feature_Inventory.md`
+- Canonical data/validation: `production_artifacts/06_engineering/Data_Generation_and_Validation.md`
+- Canonical sources: `production_artifacts/05_catalog_production/` (unchanged)
 
 ## Acceptance evidence
 
-- [x] Exactly 24 unique parents and the mandated department distribution.
-- [x] Thirty-eight purposeful SKUs with parent-owned axes and SKU-owned commerce/media state.
-- [x] Critical facts use only approved tri-states; prohibited claims are absent.
-- [x] Six original recipes include scalable quantities, steps, tools, pantry/optional behavior and disclosures.
-- [x] Mappings preserve the exhaustive smallest-sufficient-pack algorithm and deterministic tie-break order.
-- [x] Eighteen unmapped pantry requirements remain visible, start as suggested-owned and are never silently omitted or sale-mapped.
-- [x] Product-label screening is preliminary and dated; no availability or legal-clearance claim is made.
-- [x] Every parent is identifiable through product form/object geometry, not only adjacent title or colour.
-- [x] Every packaged consumable has editable, deterministic label text with fictional brand, product, form, exact quantity, SKU and portfolio-demo disclosure; fake regulatory/certification data is absent.
-- [x] All 38 sellable SKUs have atomic primary/thumbnail media tied to the exact parent, variant, SKU, quantity and alt text.
-- [x] Six recipe families truthfully differentiate cocoa cake, cupcakes, cookies, strawberry layer cake, fondant cocoa cake and orange loaf in responsive hero/listing crops.
-- [x] Seven department families use materially distinct ingredient, chocolate, drop/powder, filling/fold, decorating, bakeware and packaging subjects.
-- [x] All 75 masters and 150 derivatives pass relationships, dimensions, SHA-256 integrity and orphan/stale-file checks.
-- [x] Generated editorial sources are text-free, prompt-recorded and provenance-linked; all visible packaging typography is manually composed.
-- [x] Product, variant, editorial, label-closeup and grayscale contact sheets were manually inspected at original resolution.
-- [x] The 12-view harness covers homepage/editorial, all departments/assets, PLP/search, PDP, all product records, variants, recipes, mappings, failure and stress states.
-- [x] Thirteen deterministic placement screenshots cover every required evidence surface and were manually opened after the final asset rebuild.
-- [x] Clean-server browser validation covered all 12 views at 1440/768/390/320 (48 checks), loaded 150/150 derivatives, and found zero failed/broken requests, incomplete images, console/runtime errors or horizontal overflow; all nine refreshed truth screenshots were manually inspected.
-- [x] The former parallel `data.js` catalog was removed; the browser bundle is generated from canonical product, SKU, content, recipe, mapping and manifest files plus the approved fictional-brand lookup.
-- [x] Exact harness-truth checks cover 24 parents, 38 SKUs, all displayed titles/brands/prices/axes/media, six recipes and all 45 ingredient lines with deterministic smallest-sufficient-pack calculations.
-- [x] Repository validation rejects stale `PF-*` SKUs, stale cocoa prices, unsupported `Stoneground`/`Double-Action` descriptors and unauthorized Measureloom assignments.
-- [x] Refreshed PLP, products-table, PDP, multi-variant, recipe-to-cart, search/filter and 320 px evidence visibly uses canonical Fieldnote relationships, exact SKUs, INR fixtures and pack selections.
-- [x] Phase 5A evidence is unchanged and no application engineering began.
+- [x] Duplicate ignored asset directory (`public/catalog-assets/`, 150 files) confirmed byte-identical to the canonical tracked `public/assets/catalog/` and confirmed unreferenced by any source, script, build step, or manifest before removal.
+- [x] All 20 route files verified functioning; production build emits 54/54 static/SSG pages with no build errors.
+- [x] Canonical validation passes: 24/24 parents, 38/38 SKUs, 24/24 content records, 6/6 recipes, 45/45 ingredient lines, 27/27 mappings, 225/225 manifest files.
+- [x] Unknown critical facts render exactly "Information not provided" (verified live on PDP).
+- [x] Golden-path journeys verified: home → department → product → variant → cart; shop filter/sort/clear; search incl. no-results; PDP variant switching (SKU/price/media/availability); wishlist add/remove/persistence; cart add/update/remove/subtotal/persistence/stale-SKU recovery; recipe detail → recipe-to-cart review → pack override → atomic add; cart → simulated checkout → confirmation; empty-cart checkout prevention; `simulated_purchase_complete` event; 404 and utility routes; hard refresh of every deep-linked route.
+- [x] Six defects found during verification were fixed and re-verified (Next.js dev-origin allowlist blocking all client JS in the E2E harness; cart/wishlist/checkout false-empty flash on hard reload; checkout-submit empty-cart flash before confirmation; mobile-drawer focus restoration/trap; two color-contrast violations on dark accent panels). Full root-cause analysis and fix descriptions in the verification report.
+- [x] Automated gates all pass: canonical validation, format check, lint (0 errors/warnings), strict type check, 12/12 unit tests, 10/10 E2E tests, production build.
+- [x] Responsive review at all 5 required viewports (1440×900, 1024×768, 768×1024, 390×844, 360×800): 0px horizontal overflow, 0 console errors, 0 failed requests on every route checked.
+- [x] Accessibility: automated (custom contrast scanner, touch-target scan, alt-text coverage, `eslint-plugin-jsx-a11y`) and manual (skip link, landmarks, keyboard-only checkout completion, keyboard-only recipe-to-cart completion, dialog focus containment/restoration, Escape behavior, live-region announcements, reduced-motion) checks recorded separately, not conflated.
+- [x] Editorial creative direction (The Measured Pantry / Measured Transformation) preserved and visually confirmed across all captured evidence; no generic-template flattening introduced.
+- [x] No secrets, `.env` files, real payment/PII collection, or third-party analytics transmission found.
+- [x] `robots.txt` / `sitemap.xml` present, truthful, and reference only the placeholder demo domain.
 
 ## Reproduction commands
 
 ```sh
-node production_artifacts/05_catalog_production/tools/validate_catalog_data.js
-node production_artifacts/05_catalog_production/tools/validate_catalog_assets.js
-node design_review/phase_5b/build-canonical-data.js
-node design_review/phase_5b/validate.js
+npm ci
+npm run validate:canonical
+npm run format:check
+npm run lint
+npm run typecheck
+npm test
+npm run test:e2e
+npm run build
 ```
 
-Serve from repository root with `python3 -m http.server 4175 --bind 127.0.0.1`; open `http://127.0.0.1:4175/design_review/phase_5b/`.
+Local dev/review server: `npm run dev` → `http://localhost:3000`.
 
 ## Known limitations and risks
 
-- Five subordinate product labels have collision cautions; none is commercially cleared.
-- Recipes are original demo content and have not been culinary-tested.
-- Prices and availability must remain explicitly simulated; unknown critical facts must remain visible.
-- Asset geometry is illustrative and rights stay inside the recorded portfolio/demo boundary.
-- Generated browser data must always be rebuilt from canonical records; direct maintenance would recreate the blocking drift recorded in R-043.
+- `/shop/[department]/[category]` has no canonical subcategories defined yet; the route does not error but is not reachable through normal navigation.
+- Automated accessibility coverage uses a custom in-page contrast/touch-target scanner plus `eslint-plugin-jsx-a11y`, not a dedicated tool such as axe-core; treat as a solid first pass, not a conformance certification.
+- Structured data (JSON-LD) is not implemented; no truthfulness risk since none exists.
+- Recipes remain original demo content, not culinary-tested. Prices/availability remain explicitly simulated. Product-label collision screening remains preliminary and dated.
+- Public deployment was intentionally not performed in Phase 6.
 
 ## Decision requested
 
-1. Confirm the provisionally approved canonical catalog/content and 225-file visual package remain unchanged.
-2. Approve, revise or reject the canonical-data and review-harness reconciliation and its fail-closed drift controls.
-3. Separately authorize or withhold Phase 6 application engineering.
+1. Approve, revise or reject the Phase 6 application engineering takeover and the six defect fixes described in the verification report.
+2. Confirm the underlying Phase 5B canonical catalog/content and visual package remain correctly unchanged.
+3. Separately authorize or withhold Phase 7 QA and deployment planning.
 
 ## Gate
 
-Stop after Phase 5B. Do not begin application engineering, database, authentication, payment, live inventory, deployment or real checkout without explicit external authorization.
+Do not deploy publicly, and do not begin Phase 7 QA/deployment work, without explicit external authorization following this review.

@@ -4,8 +4,19 @@ import { catalog } from "@/lib/domain/catalog";
 import { ProductGrid } from "./product-grid";
 import { useCommerce } from "./commerce-provider";
 export function WishlistView() {
-  const { wishlist } = useCommerce();
+  const { wishlist, ready } = useCommerce();
   const products = catalog.filter((p) => wishlist.includes(p.id));
+  if (!ready)
+    return (
+      <section
+        className="page-shell"
+        aria-busy="true"
+        aria-label="Loading Pantryform"
+      >
+        <p className="eyebrow">Measuring the pantry…</p>
+        <div className="loading-rule" />
+      </section>
+    );
   return products.length ? (
     <ProductGrid products={products} />
   ) : (

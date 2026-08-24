@@ -10,7 +10,18 @@ import {
 } from "@/lib/domain/catalog";
 import { useCommerce } from "./commerce-provider";
 export function CartView() {
-  const { cart, setQuantity, removeLine } = useCommerce();
+  const { cart, ready, setQuantity, removeLine } = useCommerce();
+  if (!ready)
+    return (
+      <section
+        className="page-shell"
+        aria-busy="true"
+        aria-label="Loading Pantryform"
+      >
+        <p className="eyebrow">Measuring the pantry…</p>
+        <div className="loading-rule" />
+      </section>
+    );
   if (!cart.lines.length)
     return (
       <div className="empty-state">

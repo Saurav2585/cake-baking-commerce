@@ -1,7 +1,7 @@
 # Technical Architecture
 
 **Phase:** 6 — Production Application Engineering  
-**Status:** Selected architecture; implementation evidence pending  
+**Status:** Implemented and independently verified; see `production_artifacts/09_qa/Phase_6_Verification_Report.md`  
 **Authority:** D-002 through D-006, D-011 through D-013, D-015 through D-017, approved Phase 2B contracts, Phase 3 UX, Phase 4A visual system, Phase 4B motion system and canonical Phase 5B records
 
 ## Architecture decision

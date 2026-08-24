@@ -8,10 +8,22 @@ import { emitAnalytics } from "@/lib/domain/analytics";
 import { useCommerce } from "./commerce-provider";
 export function CheckoutForm() {
   const router = useRouter();
-  const { cart, completeSimulation } = useCommerce();
+  const { cart, ready, completeSimulation } = useCommerce();
   const [profile, setProfile] = useState("");
   const [ack, setAck] = useState(false);
   const [errors, setErrors] = useState<string[]>([]);
+  const [submitted, setSubmitted] = useState(false);
+  if (!ready || submitted)
+    return (
+      <section
+        className="page-shell"
+        aria-busy="true"
+        aria-label="Loading Pantryform"
+      >
+        <p className="eyebrow">Measuring the pantry…</p>
+        <div className="loading-rule" />
+      </section>
+    );
   if (!cart.lines.length)
     return (
       <div className="empty-state">
@@ -35,6 +47,7 @@ export function CheckoutForm() {
       valuePaise: cartSubtotalPaise(cart),
       mode: "demo",
     });
+    setSubmitted(true);
     const ref = completeSimulation();
     router.push(`/order-confirmation/${ref}`);
   };

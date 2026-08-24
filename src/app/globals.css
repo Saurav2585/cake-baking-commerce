@@ -763,6 +763,9 @@ h3 {
   grid-template-columns: 0.7fr 1.3fr;
   gap: 4rem;
 }
+.facts-section .eyebrow {
+  color: var(--canvas);
+}
 .facts-section dl {
   display: grid;
   grid-template-columns: 12rem 1fr;
@@ -1020,6 +1023,9 @@ h3 {
   color: white;
   padding: 2rem;
   border-top: 8px solid var(--coral);
+}
+.cart-summary .eyebrow {
+  color: var(--canvas);
 }
 .cart-summary h2 {
   font-size: 3rem;

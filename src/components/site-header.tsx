@@ -17,15 +17,38 @@ const departments = [
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const closeRef = useRef<HTMLButtonElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const drawerRef = useRef<HTMLElement>(null);
   const { cart, wishlist } = useCommerce();
   useEffect(() => {
     if (!open) return;
     closeRef.current?.focus();
     const handler = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") {
+        setOpen(false);
+        return;
+      }
+      if (event.key !== "Tab" || !drawerRef.current) return;
+      const focusable = drawerRef.current.querySelectorAll<HTMLElement>(
+        "a[href], button:not([disabled])",
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     };
     document.addEventListener("keydown", handler);
-    return () => document.removeEventListener("keydown", handler);
+    const trigger = triggerRef.current;
+    return () => {
+      document.removeEventListener("keydown", handler);
+      trigger?.focus();
+    };
   }, [open]);
   return (
     <>
@@ -62,6 +85,7 @@ export function SiteHeader() {
             Cart <span>{cart.lines.reduce((n, l) => n + l.quantity, 0)}</span>
           </Link>
           <button
+            ref={triggerRef}
             className="menu-button"
             onClick={() => setOpen(true)}
             aria-expanded={open}
@@ -78,6 +102,7 @@ export function SiteHeader() {
           }}
         >
           <aside
+            ref={drawerRef}
             className="nav-drawer"
             role="dialog"
             aria-modal="true"

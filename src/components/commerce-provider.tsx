@@ -20,6 +20,7 @@ type CommerceContextValue = {
   cart: CartState;
   wishlist: string[];
   announcement: string;
+  ready: boolean;
   addLine: (line: CartLine) => void;
   setQuantity: (sku: string, quantity: number) => void;
   removeLine: (sku: string) => void;
@@ -47,11 +48,15 @@ export function CommerceProvider({
     queueMicrotask(() => {
       if (!active) return;
       dispatch({ type: "clear" });
-      const restored = parsePersistedCart(
-        localStorage.getItem(CART_KEY),
-        new Set(validSkus),
-      );
-      for (const line of restored.lines) dispatch({ type: "add", line });
+      try {
+        const restored = parsePersistedCart(
+          localStorage.getItem(CART_KEY),
+          new Set(validSkus),
+        );
+        for (const line of restored.lines) dispatch({ type: "add", line });
+      } catch {
+        dispatch({ type: "clear" });
+      }
       try {
         const saved = JSON.parse(localStorage.getItem(WISHLIST_KEY) ?? "[]");
         setWishlist(
@@ -144,6 +149,7 @@ export function CommerceProvider({
       cart,
       wishlist,
       announcement,
+      ready,
       addLine,
       setQuantity,
       removeLine,
@@ -155,6 +161,7 @@ export function CommerceProvider({
       cart,
       wishlist,
       announcement,
+      ready,
       addLine,
       setQuantity,
       removeLine,
