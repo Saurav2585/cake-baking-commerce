@@ -10,6 +10,7 @@ node_modules/
 .next/
 out/
 coverage/
+*.tsbuildinfo
 
 # Debug and temporary test artifacts
 *.log
@@ -22,6 +23,7 @@ blob-report/
 .nyc_output/
 tmp/
 temp/
+/public/catalog-assets/
 
 # Local/editor files
 .DS_Store

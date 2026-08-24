@@ -1,0 +1,5 @@
+.next
+node_modules
+production_artifacts
+design_review
+public/catalog-assets
