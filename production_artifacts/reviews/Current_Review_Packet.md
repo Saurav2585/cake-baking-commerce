@@ -2,9 +2,62 @@
 
 ## Phase
 
+**Phase 7 — Release QA and Vercel Production Deployment**
+
+**Status:** Production live
+
+**Prepared:** 2026-08-25
+
+## Review objective
+
+Confirm the bounded Phase 7 release audit and Vercel production deployment. This packet supersedes the Phase 6 section below only for phase/status purposes; the Phase 6 record is preserved unmodified further down as the authority for what was built and verified.
+
+## Phase 7 summary
+
+- Phase 6 was externally approved at commit `6f9b140cc2269bd93e9605237380d0c791e9f729`; Phase 7 began at that same commit and made no source changes — release QA found no defects requiring a fix.
+- Release-critical gates re-run clean: canonical validation, lint, strict type check, 12/12 unit tests, local production build (54/54 pages), and an identical Vercel remote build.
+- Deployed to Vercel project `cake-baking-commerce`, connected to this GitHub repository. Vercel auto-assigned the project's first deployment to production (no separate promotion step existed to perform).
+- **Production URL:** `https://cake-baking-commerce.vercel.app`
+- All golden-path journeys (variant switching, cart/wishlist persistence across a hard reload, recipe-to-cart, simulated checkout → confirmation, mobile navigation, keyboard-only checkout completion, reduced motion, 404, deep-link refresh) verified directly against the live production URL — all pass.
+- Live checks: 0 console errors, 0 real failed requests (one benign, investigated `net::ERR_ABORTED` prefetch-cancellation pattern noted and explained), 0 broken images, 0px horizontal overflow across 24 viewport×route combinations (1440×900 / 390×844 / 360×800 × 8 routes).
+- Full detail: `production_artifacts/10_release/Phase_7_Release_Report.md`. Live-deployment screenshots: `production_artifacts/10_release/screenshots/` (16 files).
+
+## Phase 7 acceptance evidence
+
+- [x] Pre-deployment checkpoint verified clean (branch `main`, working tree clean, origin matches expected repo) before deploying.
+- [x] Release-critical gates pass: `npm ci`, `validate:canonical`, `lint`, `typecheck`, `test` (12/12), `build` (54/54 pages).
+- [x] Vercel project linked/created without secrets, without connecting a database/auth/analytics/payment service, and without adding environment variables the app doesn't need.
+- [x] Live production golden-path journeys verified end-to-end, including a full keyboard-only checkout completion and a `prefers-reduced-motion: reduce` check, directly against `https://cake-baking-commerce.vercel.app`.
+- [x] Live console/network/overflow review: 0 console errors, 0 real failed requests, 0 broken images, 0px overflow at all 3 required live viewports.
+- [x] Live visual gate captured and reviewed at 1440×900, 390×844 and 360×800 across 9 representative pages; editorial direction and mobile art direction confirmed intact.
+- [x] `robots.txt` (200, truthful) and simulated-commerce disclosure confirmed present on the live site.
+- [x] Deployed commit confirmed identical to the approved Phase 6 commit (`6f9b140`); no code changes were made or required during release QA.
+- [x] No `.vercel` auth data, secrets, or temporary debug artifacts committed; `.gitignore` updated to cover Vercel CLI local files.
+
+## Phase 7 known limitations
+
+- `robots.txt` / `sitemap.xml` still reference the placeholder `pantryform.example` domain rather than the live Vercel URL.
+- The committed Playwright E2E suite has no configurable remote base URL and was not run directly against the live deployment; equivalent journeys were verified manually/via ad hoc scripts against the live URL instead (see release report for the full mapping).
+- No custom domain was configured (none was authorized); no paid Vercel services were enabled.
+
+## Phase 7 decision requested
+
+1. Confirm the live production deployment at `https://cake-baking-commerce.vercel.app` as portfolio-review-ready.
+2. Note for the record: this remains a simulated-commerce demo; no real payments, accounts, inventory, or personal data exist anywhere in the live site.
+
+## Phase 7 gate
+
+No further Vercel promotion, custom domain, paid service, or scope expansion should occur without a new explicit authorization.
+
+---
+
+# Phase 6 record (preserved, approved)
+
+## Phase
+
 **Phase 6 — Production Application Engineering**
 
-**Status:** Review ready
+**Status:** Approved (externally, prior to Phase 7)
 
 **Prepared:** 2026-08-25
 
@@ -79,14 +132,4 @@ Local dev/review server: `npm run dev` → `http://localhost:3000`.
 - Automated accessibility coverage uses a custom in-page contrast/touch-target scanner plus `eslint-plugin-jsx-a11y`, not a dedicated tool such as axe-core; treat as a solid first pass, not a conformance certification.
 - Structured data (JSON-LD) is not implemented; no truthfulness risk since none exists.
 - Recipes remain original demo content, not culinary-tested. Prices/availability remain explicitly simulated. Product-label collision screening remains preliminary and dated.
-- Public deployment was intentionally not performed in Phase 6.
-
-## Decision requested
-
-1. Approve, revise or reject the Phase 6 application engineering takeover and the six defect fixes described in the verification report.
-2. Confirm the underlying Phase 5B canonical catalog/content and visual package remain correctly unchanged.
-3. Separately authorize or withhold Phase 7 QA and deployment planning.
-
-## Gate
-
-Do not deploy publicly, and do not begin Phase 7 QA/deployment work, without explicit external authorization following this review.
+- Public deployment was intentionally not performed in Phase 6 (performed under separate authorization in Phase 7 above).
