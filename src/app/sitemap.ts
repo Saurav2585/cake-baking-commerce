@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { catalog, recipes } from "@/lib/domain/catalog";
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://pantryform.example";
+  const base = "https://cake-baking-commerce.vercel.app";
   return [
     "",
     "/shop",

@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pantryform.example"),
+  metadataBase: new URL("https://cake-baking-commerce.vercel.app"),
   title: {
     default: "Pantryform — Baking Ingredients & Supplies",
     template: "%s · Pantryform",
