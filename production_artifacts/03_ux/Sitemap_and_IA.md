@@ -1,6 +1,6 @@
 # Sitemap and Information Architecture
 
-**Phase:** 2B — architecture only; no wireframes  
+**Phase:** 2B — architecture only; no wireframes
 **Brand:** Pantryform — prototype direction only; formal legal clearance pending
 
 ## IA principles

@@ -1,6 +1,6 @@
 # UX Architecture Readout
 
-**Phase:** 2B — Catalog, Commerce and IA Architecture  
+**Phase:** 2B — Catalog, Commerce and IA Architecture
 **Status:** Review ready
 
 ## Outcome
