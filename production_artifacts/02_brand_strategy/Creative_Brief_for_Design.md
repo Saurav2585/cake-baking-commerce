@@ -18,7 +18,7 @@ Everything for the bake, made easier to choose.
 
 ## Recommended strategic inputs
 
-- Name: **Whisklane**, provisional and subject to approval/validation.
+- Name: **Pantryform**, prototype direction only and subject to external approval plus formal legal clearance.
 - Territory: **Measured Joy**, provisional and subject to approval.
 - Personality: capable, encouraging, considered, sensory, straightforward.
 - Visual idea: measured abundance.
@@ -53,4 +53,3 @@ Originality; name/position fit; department extensibility; product-brand hierarch
 1. Human approval of a name and territory.
 2. Independent name validation before production adoption.
 3. Phase 2B architecture and later design authorization.
-

@@ -2,7 +2,7 @@
 
 ## Phase
 
-**Phase 2A — Retail Brand Strategy**
+**Phase 2A — Naming Rework**
 
 **Status:** Review ready
 
@@ -10,79 +10,78 @@
 
 ## Review objective
 
-Approve or revise an original retailer-level brand direction for the curated multi-brand baking-supplies demo. This packet does not authorize Phase 2B, visual design, catalog production or implementation.
+Review only the collision-screened naming rework. The approved non-naming Phase 2A strategy was preserved. This packet does not authorize Phase 2B, visual design, catalog production or implementation.
 
-## Upstream approval recorded
+## External verdict recorded
 
-- Phase 1 was externally approved at `510afb0b5274821704c534bd44a514e5c7409497`.
-- P-005, P-006 and P-007 are promoted to D-015, D-016 and D-017.
-- Phase 2 is split into 2A and 2B under D-018; only 2A was authorized.
+- Approved without rework: market opportunity, positioning/value proposition, personality/principles, verbal identity, visual-world principles and retailer-led architecture.
+- Approved territories: Measured Joy as lead; Working Pantry as functional counterweight; Ingredient Theatre as supporting image-language reference.
+- Approved creative brief except its former rejected-name reference.
+- Rejected shortlist: Whisklane, Crumbloom, Batterfolk, Ovenora and Pantryrise. No close variants were advanced.
+- No retailer name is confirmed.
 
-## Artifacts for review
+## Updated artifacts
 
-- `production_artifacts/02_brand_strategy/Market_Opportunity.md`
-- `production_artifacts/02_brand_strategy/Positioning_and_Value_Proposition.md`
-- `production_artifacts/02_brand_strategy/Brand_Personality_and_Principles.md`
 - `production_artifacts/02_brand_strategy/Naming_Exploration.md`
-- `production_artifacts/02_brand_strategy/Verbal_Identity.md`
-- `production_artifacts/02_brand_strategy/Visual_World_Principles.md`
-- `production_artifacts/02_brand_strategy/Brand_Architecture.md`
-- `production_artifacts/02_brand_strategy/Campaign_Territories.md`
 - `production_artifacts/02_brand_strategy/Creative_Brief_for_Design.md`
 - `production_artifacts/02_brand_strategy/Brand_Strategy_Readout.md`
-- `production_artifacts/00_project/Backlog.md`
 - `production_artifacts/00_project/Status.md`
+- `production_artifacts/reviews/Current_Review_Packet.md`
 - `docs/Decision_Log.md`
 - `docs/Risk_Register.md`
 
-## Recommendation
+## Naming outcome
 
-- **Name:** Whisklane (provisional)
-- **Shortlist:** Whisklane, Crumbloom, Batterfolk, Ovenora, Pantryrise
-- **Positioning:** everything for the bake, made easier to choose.
-- **Lead territory:** Measured Joy
-- **Architecture:** retailer-led; fictional product brands remain secondary.
+- **Prototype recommendation:** Pantryform
+- **Screened shortlist:** Pantryform, The Making Shelf, Method Pantry, Supply & Stir, ReadyMeasure
+- **Required label:** Prototype direction only—formal legal clearance pending.
 
-No trademark, company-name, domain, handle or linguistic availability is claimed. Independent validation is mandatory before production adoption, and the name is not confirmed in the Decision Log.
+## Screening evidence
+
+- 32 fresh retailer-name candidates were checked live on 2026-08-24.
+- Every candidate received exact quoted-name, bakery, baking, food, kitchen, India and `.com` checks.
+- Every candidate is classified CLEAR ENOUGH FOR PROTOTYPE, CAUTION, REJECT — COLLISION, REJECT — GENERIC or REJECT — CONFUSING.
+- The naming artifact records S-01–S-17, including direct evidence for observed brand, product and domain collisions.
+- Search silence is not treated as availability; unverified `.com` states are explicitly named.
+- Surviving candidates are scored across all ten required criteria, including preliminary collision risk.
 
 ## PM acceptance evidence
 
-- [x] Strategy traces to approved audience, retailer model and Phase 1 evidence.
-- [x] Retailer identity and later product-brand roles are clearly separated.
-- [x] Required credible, warm, approachable, contemporary and premium-accessible feel is expressed without unsupported claims.
-- [x] Naming exploration includes 24 candidates scored across all nine required criteria.
-- [x] Five candidates are shortlisted and one is recommended with risks.
-- [x] India-English voice and integrity-safe content rules are defined.
-- [x] Visual principles remain strategic; no logo, UI or production design was created.
-- [x] Three distinct campaign territories include narrative, expression, fit and risk.
-- [x] Creative brief supplies bounded downstream direction.
-- [x] No competitor identity/content/UI, invented heritage, certification, expertise, review, testimonial, food claim or visual asset was created.
-- [x] Phase 2B was not started.
+- [x] At least 30 fresh candidates generated; 32 supplied.
+- [x] Candidates are framed for a curated supplies retailer, not a bakery, café, marketplace or appliance maker.
+- [x] All seven minimum web checks are documented for every candidate.
+- [x] All candidates have a screening classification and evidence note.
+- [x] Surviving candidates are scored across ten required criteria.
+- [x] Five candidates are shortlisted with rationale and remaining risk.
+- [x] One recommendation uses the mandatory prototype/legal-clearance label.
+- [x] Original rejected names are absent from recommendations; no close variants are advanced.
+- [x] Revised direction fits the approved positioning, Measured Joy territory and retailer-led architecture.
+- [x] No availability or legal-clearance claim is made.
+- [x] No non-naming strategy was redone and no Phase 2B work began.
 
-## Decisions requested
+## Decision requested
 
-1. Approve or revise the shortlist and authorize one candidate for independent clearance; recommendation: **Whisklane**.
-2. Approve or revise **Measured Joy** as the lead territory.
-3. Approve or revise the positioning, personality, verbal principles and retailer-led architecture.
+Approve or revise the screened shortlist and authorize one candidate for formal professional clearance. Recommendation: **Pantryform** as prototype direction only.
 
-## Known limitations and assumptions
+## Remaining risks
 
-- No primary audience research or name testing was performed.
-- Naming scores are strategic judgments, not legal or availability evidence.
-- Clear guidance as a trust signal and the “precision plus pleasure” balance remain hypotheses to test.
-- No visual identity has tested the proposed strategy for recognition, accessibility or responsive behaviour.
+- Preliminary search cannot rule out unindexed, local, social, phonetic or legal conflicts.
+- Pantryform’s exact `.com` ownership was not verified; Packform creates an adjacent packaging-name similarity requiring professional review.
+- ReadyMeasure’s exact `.com` is registered/for sale and therefore carries higher collision/cost risk.
+- Pronunciation, comprehension and retailer-category recognition need audience testing.
 
 ## Validation summary
 
-- Ten required Phase 2A artifacts: present and non-empty.
-- Naming longlist: 24 candidates; nine scoring criteria; five-name shortlist; one recommendation.
-- Campaign territories: three distinct routes with required strategic detail.
-- Decision, backlog, risk, status and review records: synchronized.
-- Prohibited-claim, secret, environment, debug and temporary-file scans: passed on 2026-08-24.
-- Phase 2A contains no application code, visual assets or Phase 2B architecture.
+- Required targeted files: updated and non-empty.
+- Candidate count: 32; shortlist count: 5.
+- Mandatory searches and classifications: present for every candidate.
+- Original rejected shortlist: exclusion explicitly recorded; no close variants advanced.
+- Decision, risk, status and review records: synchronized.
+- Markdown, secret, environment, debug and temporary-file checks: passed on 2026-08-24.
+- Phase 2B/application-code/catalog/visual-design changes: none.
 
 Commit/push verification is performed after this packet is finalized. The immutable commit hash is supplied in the handoff rather than written into the commit it identifies.
 
 ## Gate
 
-Phase 2B remains blocked. A retailer name becomes final only after human approval and independent validation are recorded.
+Phase 2B remains blocked. No retailer name becomes final until human approval and formal professional clearance are recorded.
