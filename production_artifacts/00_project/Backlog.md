@@ -9,8 +9,8 @@
 | 2A — Retail brand strategy | Brand Strategy, PM | Approved Phase 1 | Market opportunity, positioning, personality, naming, voice, visual-world principles, brand architecture, campaign territories, creative brief and readout | Original strategy traces to research; screened prototype name and clearance boundary explicit; no design begun | Approved at commit `504321e`; Pantryform is prototype-only |
 | 2B — Catalog/commerce/IA architecture | Catalog/Commerce, UX | Approved Phase 2A direction and explicit authorization | Taxonomy detail, product/variant/recipe schemas, discovery and commerce boundaries, sitemap/flows/states, SEO, analytics and frontend contracts | D-015–D-017 encoded; deterministic rules and accessibility/failure states complete; future interfaces explicit; no downstream design/code | Approved at commit `475b603` |
 | 3 — UX definition | UX/Product Design, Catalog/Commerce | Approved Phase 2B | UX principles; discovery, homepage, PLP/search, PDP, recipe, commerce, responsive, accessibility, content and component specs; 19 low-fidelity blueprints; traceability and readout | Critical journeys and edge states specified across required viewports; accessibility attached to interactions; all architecture contracts preserved; no visual design/code | Approved at commit `1b0c5fa` |
-| 4A — Visual direction & review prototype | UI Design, Visual Assets, UX, PM | Approved Phase 3 | Visual direction, semantic tokens, colour/type/grid/imagery/component/screen specs, stress tests, motion opportunity map, traceability, static review prototype and screenshots | Original coherent direction; contrast and responsive evidence; prototype reviewable; Phase 3 behavior preserved; no production app/motion/catalog | Approve Phase 4A before Phase 4B or production work |
-| 4B — Motion specification | Motion, UI Design, UX | Approved Phase 4A and explicit authorization | Production-ready motion language/timelines/budgets and reduced/no-motion behavior | Motion is optional, performant and cannot alter content/state understanding | Separate authorization required |
+| 4A — Visual direction & review prototype | UI Design, Visual Assets, UX, PM | Approved Phase 3 | Visual direction, semantic tokens, colour/type/grid/imagery/component/screen specs, stress tests, motion opportunity map, traceability, static review prototype and screenshots | Original coherent direction; contrast and responsive evidence; prototype reviewable; Phase 3 behavior preserved; no production app/motion/catalog | Approved at commit `ab52b1b` |
+| 4B — Motion & asset blueprint | Motion, Visual Assets, Catalog, UI, UX | Approved Phase 4A | Motion language/tokens/choreography/maps/contracts/budgets; asset/packaging/matrix/manifest/pilot blueprint; isolated motion prototype/evidence | Motion optional, interruptible, performant and baking-specific; asset provenance/packaging truthful; no Phase 5 execution or production app | Approve Phase 4B before any pilot or engineering |
 | 5 — Catalog & asset production | Catalog/Commerce, Visual Assets | Phases 2B–4 | 24–30 product records, recipe data, original copy, generated assets, Asset Manifest | Coverage/data validation passes; pricing evidence/assumptions recorded; every asset traceable; prohibited claims absent | Approve representative catalog/content set |
 | 6 — Engineering | Frontend Engineering, Motion | Phases 3–5 | Next.js implementation, tests, technical notes | Functional scope implemented; type/lint/build and critical automated tests pass; reduced motion and responsive states work | Gate only if a material approved-design deviation is needed |
 | 7 — QA & remediation | QA, Engineering | Phase 6 | Test evidence, accessibility report, defect log, fixes | No release-blocking defects; critical journeys pass; documented WCAG assessment complete | Accept material residual risks only |
@@ -65,6 +65,21 @@
 - [x] Five baking-specific signature moments are documented and visibly demonstrated in the prototype.
 - [x] The homepage replaces generic hero/rail repetition with an asymmetric ingredient→measure→method→make editorial journey.
 - [x] Generic-template test passes with recognisable measurement, pantry, pack and recipe-transformation structure after removing name/colour/product imagery.
+
+## Phase 4B acceptance checklist
+
+- [x] Phase 4A external approval and Phase 4B-only authorization are recorded.
+- [x] All sixteen required motion/asset artifacts exist and are non-empty.
+- [x] Five approved signatures include complete trigger/sequence/timing/interruption/mobile/reduced/no-JS/performance choreography.
+- [x] Every required page and component has a bounded motion pattern and static equivalent; transaction pages are calmer.
+- [x] Native scroll, restoration, deep-link, sticky, resize/orientation, virtual-keyboard and battery safeguards are explicit; no scroll hijack/library mandate.
+- [x] Measurable frame/main-thread/CLS/LCP/GPU/concurrency/mobile budgets are defined.
+- [x] All required asset families, seven-department packaging framework, eight representative matrix cases and full manifest provenance fields are covered.
+- [x] Phase 5 pilot is limited to six representative outputs and remains unexecuted/gated.
+- [x] Separate motion prototype demonstrates all eleven requested moments, direct reduced mode, interruption and latest-state-wins behavior.
+- [x] Nineteen deterministic captures document before/mid/final, desktop/mobile, reduced and component/state evidence.
+- [x] Browser validation passes required widths, 320px/200%, reduced/off, rapid actions, focus interruption, resize/orientation, console and final overflow checks.
+- [x] Generic-motion test passes; no Phase 4A evidence, approved behavior, unsupported claim, production asset or application code was changed.
 
 ## Phase 0 acceptance checklist
 

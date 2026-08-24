@@ -53,6 +53,6 @@ Approve **The Measured Pantry** as Pantryform’s high-fidelity visual direction
 - Rendered production contrast, forced-colours behavior, font loading, touch targets and assistive-technology output require implementation QA.
 - Pantryform remains a prototype name pending professional clearance.
 
-## Approval question
+## External verdict and gate outcome
 
-Approve or revise The Measured Pantry direction, semantic token system, screen specifications and isolated review prototype as binding Phase 4A output. No Phase 4B, catalog production or application engineering is authorized by this handoff.
+Phase 4A was externally approved at commit `ab52b1bc600fbfda2793a1587a513dbd3329ca9e` and is binding under D-027. Phase 4B motion and asset-blueprint work was separately authorized; this update records that verdict without changing the approved Phase 4A design evidence.

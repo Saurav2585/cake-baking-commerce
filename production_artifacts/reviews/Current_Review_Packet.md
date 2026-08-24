@@ -2,83 +2,88 @@
 
 ## Phase
 
-**Phase 4A — Visual Direction, Design System and Review Prototype**
+**Phase 4B — Motion System and Asset Production Blueprint**
 
 **Status:** Review ready
 **Prepared:** 2026-08-24 (Asia/Kolkata)
 
 ## Review objective
 
-Approve or revise The Measured Pantry visual direction, implementation-ready semantic system, high-fidelity specifications and isolated static review prototype. No production ecommerce application, production motion, catalog generation or live commerce is included.
+Approve or revise Pantryform’s Measured Transformation motion system, asset-production/packaging/manifest blueprint and proposed bounded Phase 5 pilot. No production app, full catalog, generated production asset, real commerce or Phase 5 execution is included.
 
-## Upstream approval recorded
+## Upstream approval
 
-- Phase 3 was externally approved at `1b0c5fa60a0b50290cad6bf5bb3ec5de3ee55d01` and is binding under D-025.
-- Phase 3 draft metadata is reconciled to approved/binding without substantive content changes.
+- Phase 4A “The Measured Pantry,” five signatures and isolated prototype were externally approved at `ab52b1bc600fbfda2793a1587a513dbd3329ca9e` under D-027.
+- The approved Phase 4A evidence is unchanged; Phase 4B lives in separate artifact and prototype directories.
+- Phase 3 interaction meaning and Phase 2B commerce/catalog rules remain binding.
 - Pantryform with “Baking Ingredients & Supplies” remains portfolio/demo-only under D-022.
-- Measured Joy leads; Working Pantry supports functional clarity; Ingredient Theatre remains a controlled supporting layer.
 
-## Design artifacts
+## Required artifacts
 
-- `production_artifacts/04_visual_system/Phase_4A_Brief.md`
-- `production_artifacts/04_visual_system/Visual_Direction.md`
-- `production_artifacts/04_visual_system/Design_Tokens.md`
-- `production_artifacts/04_visual_system/Colour_System.md`
-- `production_artifacts/04_visual_system/Typography_System.md`
-- `production_artifacts/04_visual_system/Grid_and_Responsive_Visual_System.md`
-- `production_artifacts/04_visual_system/Iconography_and_Illustration_Direction.md`
-- `production_artifacts/04_visual_system/Product_and_Ingredient_Imagery_Direction.md`
-- `production_artifacts/04_visual_system/Component_Visual_Specification.md`
-- `production_artifacts/04_visual_system/High_Fidelity_Screen_Specifications.md`
-- `production_artifacts/04_visual_system/Content_Fit_and_Stress_Test.md`
-- `production_artifacts/04_visual_system/Motion_Opportunity_Map.md`
-- `production_artifacts/04_visual_system/Visual_Traceability_Matrix.md`
-- `production_artifacts/04_visual_system/Phase_4A_Design_Readout.md`
+- `production_artifacts/04_motion_assets/Phase_4B_Brief.md`
+- `production_artifacts/04_motion_assets/Motion_Principles.md`
+- `production_artifacts/04_motion_assets/Motion_Tokens.md`
+- `production_artifacts/04_motion_assets/Signature_Motion_Choreography.md`
+- `production_artifacts/04_motion_assets/Page_Level_Motion_Map.md`
+- `production_artifacts/04_motion_assets/Component_Motion_Specification.md`
+- `production_artifacts/04_motion_assets/Scroll_and_Viewport_Behaviour.md`
+- `production_artifacts/04_motion_assets/Reduced_Motion_and_No_Animation_Contract.md`
+- `production_artifacts/04_motion_assets/Motion_Performance_Budget.md`
+- `production_artifacts/04_motion_assets/Asset_Production_Strategy.md`
+- `production_artifacts/04_motion_assets/Packaging_and_Label_System.md`
+- `production_artifacts/04_motion_assets/Product_Asset_Matrix.md`
+- `production_artifacts/04_motion_assets/Asset_Manifest_Schema.md`
+- `production_artifacts/04_motion_assets/Asset_Pilot_Brief.md`
+- `production_artifacts/04_motion_assets/Motion_and_Asset_Traceability_Matrix.md`
+- `production_artifacts/04_motion_assets/Phase_4B_Readout.md`
 
 ## Review evidence
 
-- Static prototype: `design_review/phase_4a/`
-- Run command: `python3 -m http.server 4173 --directory design_review/phase_4a`
-- Screenshot pack: `production_artifacts/04_visual_system/previews/`
-- Screenshot manifest: `production_artifacts/04_visual_system/previews/README.md`
+- Motion prototype: `design_review/phase_4b/`
+- Run: `python3 -m http.server 4173 --directory design_review`
+- Open: `http://127.0.0.1:4173/phase_4b/?view=home`
+- Evidence: `production_artifacts/04_motion_assets/previews/`
+- Evidence manifest: `production_artifacts/04_motion_assets/previews/README.md`
 
-## Recommended direction
+## System summary
 
-The Measured Pantry uses aubergine structure, warm canvas, restrained coral/turmeric accents, editorial Fraunces moments and functional Inter typography. Friendly tactile forms carry Measured Joy; explicit grids, labels, quantities and state surfaces carry Working Pantry. Ingredient Theatre may enrich controlled ingredient details but cannot obscure pack/variant facts.
-
-The corrected action coral is `#C54731`. The candidate `#C84832` remains decorative-only because it measured 4.49:1 against canvas and missed normal-text AA; the corrected pairing measures 4.61:1, and white button text measures 4.86:1.
-
-The creative-direction addendum is implemented through five visible Pantryform signatures: measured ingredient opening, irregular department atlas, controlled Ingredient Theatre product study, recipe-to-supplies transformation rail and PDP pack study. These create an ingredient→measurement→method→make journey while utility screens retain Working Pantry precision.
+- Motion expresses raw ingredient → precise measure → method → joyful make, with five signature-specific choreographies rather than generic section fades.
+- Full motion is optional and locally interruptible; reduced/off/no-JS modes preserve final composition, facts, focus, status and tasks.
+- Editorial discovery uses measured sequences; PLP/search/PDP utilities use local feedback; cart/checkout/errors remain calm.
+- Native scroll remains authoritative; no hijacking, continuous loops, autoplay audio or mandatory GSAP/Lenis dependency exists.
+- Performance budgets set frame/main-thread/style-layout/CLS/LCP/asset/GPU/concurrency/mobile thresholds and removal triggers.
+- Asset strategy separates manual, generated, CSS/SVG, licensed and factual-input ownership across every required family.
+- Packaging uses one scalable retailer/product-brand label framework across seven departments without invented certifications or compliance claims.
+- Manifest validation fails closed on provenance, relationship, rights, factual claim, crop, alt, dimensions, optimization, checksum/version and replacement history.
 
 ## Acceptance evidence
 
-- [x] Fourteen required design artifacts exist and are non-empty.
-- [x] Required colour, typography, spacing, sizing, radius, border, shadow, elevation, opacity, icon, focus, container, breakpoint and motion-duration token categories are defined.
-- [x] Every required component includes the relevant default, hover, focus, active/selected, disabled, loading and error treatment.
-- [x] All required high-fidelity screens and important states have intentional desktop/mobile specifications.
-- [x] Content-fit evidence covers long names/labels/filters, pack sizes, large INR, unavailable/unknown/zero/stale/partial states, 320px, 200% and no-animation.
-- [x] Static prototype provides obvious review navigation, visible demo disclosure and representative screen/state compositions.
-- [x] Eleven deterministic screenshots cover homepage, PLP, PDP, recipe-to-cart, checkout on desktop/mobile plus the component/state sheet.
-- [x] Browser inspection covered 14 prototype screens at all eight required widths (112 combinations) with zero final horizontal-overflow failures.
-- [x] All 14 screens passed deterministic 320px/200% text plus no-animation validation.
-- [x] Browser logs contained no warnings or errors; visible focus uses a 3px blue outline.
-- [x] No unsupported claims, real-commerce implication, generated production imagery, production motion or application engineering was introduced.
-- [x] Five signature moments document concept, Pantryform specificity, desktop/mobile composition, accessibility, no-animation equivalent and task protection.
-- [x] The refreshed homepage, PDP and recipe-to-cart screenshots demonstrate the art direction rather than only describing it.
-- [x] Generic-template test passes: baking measurement, pantry, pack and recipe-transformation cues remain recognisable without name, colour or product imagery.
+- [x] Sixteen required artifacts exist and are non-empty.
+- [x] Five approved signatures include every required choreography field and generic-motion evidence.
+- [x] All required pages/components have static/reduced equivalents and interruption/focus/status ownership.
+- [x] Asset plan covers fourteen named families; packaging covers all seven merchandise departments; matrix covers eight representative content types.
+- [x] Manifest schema contains every required provenance/lifecycle field and typed fail-closed rules.
+- [x] Proposed Phase 5 pilot is limited to one composition, one three-variant packaging family, one department visual, one recipe image, one PDP set and one PLP thumbnail set.
+- [x] Separate prototype demonstrates the eleven requested motion moments and directly reviewable reduced mode.
+- [x] Nineteen deterministic PNGs include opening and recipe before/mid/final, desktop/mobile, reduced, atlas/theatre, PDP, drawers, add/error and confirmation evidence.
+- [x] Browser tests passed 112 route/width combinations plus 56 narrow regressions with no final overflow.
+- [x] All 14 screens passed 320px + 200% text + reduced mode with zero active animations/transitions or overflow.
+- [x] Rapid Add/pack interaction resolves to latest state; drawer interruption returns focus; orientation change preserves content.
+- [x] Browser logs contained no warnings/errors; LCP text remains visible before decorative motion begins.
+- [x] No approved Phase 4A substantive evidence or Phase 3 behavior changed; only the Phase 4A readout gate metadata records approval. No unsupported claim, full pilot, production asset or production application was created.
 
-## Assumptions and open risks
+## Assumptions and risks
 
-- Primary-user usability testing remains outstanding.
-- Exact Fraunces/Inter files, licences, glyph coverage, loading and subsetting require production validation.
-- Prototype pack placeholders are layout evidence only; future production assets require Asset Manifest provenance.
-- R-029–R-031 track font implementation, Ingredient Theatre truthfulness and prototype/production boundary risks.
+- Runtime budgets and assistive-technology behavior require production traces/QA.
+- Exact asset methods/licences and factual catalog inputs wait for pilot authorization.
+- The six-output pilot is a proposal, not approval to generate.
+- R-033–R-035 track generic/queued motion, provenance and packaging-truth risks.
 - Pantryform remains prototype-only pending professional clearance.
 
 ## Decision requested
 
-Approve or revise The Measured Pantry direction and Phase 4A package as binding downstream input.
+Approve or revise Phase 4B and, separately, authorize or withhold the bounded Phase 5 asset pilot.
 
 ## Gate
 
-Phase 4B, production catalog/assets and application engineering remain blocked until explicit external approval and authorization. No such work has started.
+Phase 5 asset generation/catalog production and application engineering remain blocked until explicit external authorization. No downstream work has started.
