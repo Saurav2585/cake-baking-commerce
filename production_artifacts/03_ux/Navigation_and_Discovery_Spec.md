@@ -1,7 +1,7 @@
 # Navigation and Discovery Specification
 
 **Phase:** 3 — UX Definition
-**Status:** Specialist draft for integration
+**Status:** Approved and binding at Phase 3 commit `1b0c5fa60a0b50290cad6bf5bb3ec5de3ee55d01`
 
 ## Global wayfinding
 

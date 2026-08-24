@@ -2,7 +2,7 @@
 
 **Phase:** 3 — UX and Product Design
 **Owner:** UI/Product Design
-**Status:** Review-ready specialist input
+**Status:** Approved and binding at Phase 3 commit `1b0c5fa60a0b50290cad6bf5bb3ec5de3ee55d01`
 **Dependencies:** D-003, D-012, D-015, D-017; approved Phase 2B product, commerce, state and frontend contracts
 
 ## Purpose and non-negotiable outcomes

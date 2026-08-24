@@ -2,81 +2,78 @@
 
 ## Phase
 
-**Phase 3 — UX Definition and Low-Fidelity Wireframes**
+**Phase 4A — Visual Direction, Design System and Review Prototype**
 
 **Status:** Review ready
 **Prepared:** 2026-08-24 (Asia/Kolkata)
 
 ## Review objective
 
-Approve or revise Pantryform’s responsive UX behavior and structural blueprints before Phase 4. This package contains no final visual identity, colour or typography system, high-fidelity UI, generated imagery, motion implementation, production catalog or application code.
+Approve or revise The Measured Pantry visual direction, implementation-ready semantic system, high-fidelity specifications and isolated static review prototype. No production ecommerce application, production motion, catalog generation or live commerce is included.
 
 ## Upstream approval recorded
 
-- Phase 2B was externally approved at `475b603157b27b735357e132720796f0e6077db1` and is binding under D-024.
-- Pantryform with descriptor “Baking Ingredients & Supplies” remains portfolio/demo-only under D-022.
-- The approved audience, Measured Joy territory, retailer architecture, eight departments, deterministic recipe mapping, factual tri-states and simulation boundaries are preserved.
+- Phase 3 was externally approved at `1b0c5fa60a0b50290cad6bf5bb3ec5de3ee55d01` and is binding under D-025.
+- Phase 3 draft metadata is reconciled to approved/binding without substantive content changes.
+- Pantryform with “Baking Ingredients & Supplies” remains portfolio/demo-only under D-022.
+- Measured Joy leads; Working Pantry supports functional clarity; Ingredient Theatre remains a controlled supporting layer.
 
-## Artifacts for review
+## Design artifacts
 
-- `production_artifacts/03_ux/UX_Principles.md`
-- `production_artifacts/03_ux/Navigation_and_Discovery_Spec.md`
-- `production_artifacts/03_ux/Homepage_Content_Hierarchy.md`
-- `production_artifacts/03_ux/PLP_and_Search_UX_Spec.md`
-- `production_artifacts/03_ux/PDP_UX_Spec.md`
-- `production_artifacts/03_ux/Recipe_and_Recipe_to_Cart_UX_Spec.md`
-- `production_artifacts/03_ux/Wishlist_Cart_Checkout_UX_Spec.md`
-- `production_artifacts/03_ux/Responsive_Behaviour.md`
-- `production_artifacts/03_ux/Accessibility_Interaction_Requirements.md`
-- `production_artifacts/03_ux/Content_and_Microcopy_Requirements.md`
-- `production_artifacts/03_ux/Component_and_State_Requirements.md`
-- `production_artifacts/03_ux/Low_Fidelity_Wireframes.md`
-- `production_artifacts/03_ux/Wireframe_Traceability_Matrix.md`
-- `production_artifacts/03_ux/UX_Definition_Readout.md`
+- `production_artifacts/04_visual_system/Phase_4A_Brief.md`
+- `production_artifacts/04_visual_system/Visual_Direction.md`
+- `production_artifacts/04_visual_system/Design_Tokens.md`
+- `production_artifacts/04_visual_system/Colour_System.md`
+- `production_artifacts/04_visual_system/Typography_System.md`
+- `production_artifacts/04_visual_system/Grid_and_Responsive_Visual_System.md`
+- `production_artifacts/04_visual_system/Iconography_and_Illustration_Direction.md`
+- `production_artifacts/04_visual_system/Product_and_Ingredient_Imagery_Direction.md`
+- `production_artifacts/04_visual_system/Component_Visual_Specification.md`
+- `production_artifacts/04_visual_system/High_Fidelity_Screen_Specifications.md`
+- `production_artifacts/04_visual_system/Content_Fit_and_Stress_Test.md`
+- `production_artifacts/04_visual_system/Motion_Opportunity_Map.md`
+- `production_artifacts/04_visual_system/Visual_Traceability_Matrix.md`
+- `production_artifacts/04_visual_system/Phase_4A_Design_Readout.md`
 
-Governance updates are in the Backlog, Status, Decision Log and Risk Register.
+## Review evidence
 
-## System summary
+- Static prototype: `design_review/phase_4a/`
+- Run command: `python3 -m http.server 4173 --directory design_review/phase_4a`
+- Screenshot pack: `production_artifacts/04_visual_system/previews/`
+- Screenshot manifest: `production_artifacts/04_visual_system/previews/README.md`
 
-- Discovery combines the eight-department IA, search, task-led making paths and contextual recipe/product bridges without marketplace behavior.
-- PLP/search makes result count, applied filters, sort, direct-add/select-options behavior, unit price, unavailable states and URL recovery explicit.
-- PDP groups identity and variant-owned purchase facts, preserves critical unknowns, and progressively discloses supporting information.
-- Recipe-to-cart provides an explicit, reversible review with quantities, chosen SKU/pack, purchased quantity, leftover, price, pantry/optional/substitution controls, override/reset and post-add summary.
-- Wishlist, mini cart, cart and checkout define stale/unavailable recovery, focus/status ownership and explicit simulation language.
-- Nineteen low-fidelity blueprints cover all requested desktop/mobile routes, drawers and important states.
-- Responsive and accessibility contracts are attached to components and flows, including the required viewport set, 320px reflow, 200% zoom and reduced-motion/no-animation behavior.
+## Recommended direction
+
+The Measured Pantry uses aubergine structure, warm canvas, restrained coral/turmeric accents, editorial Fraunces moments and functional Inter typography. Friendly tactile forms carry Measured Joy; explicit grids, labels, quantities and state surfaces carry Working Pantry. Ingredient Theatre may enrich controlled ingredient details but cannot obscure pack/variant facts.
+
+The corrected action coral is `#C54731`. The candidate `#C84832` remains decorative-only because it measured 4.49:1 against canvas and missed normal-text AA; the corrected pairing measures 4.61:1, and white button text measures 4.86:1.
 
 ## Acceptance evidence
 
-- [x] All fourteen required deliverables exist and are non-empty.
-- [x] Every critical route has a structural blueprint with the complete required annotation set.
-- [x] Desktop and mobile differ intentionally for navigation, filtering, purchase controls, drawers and dense commerce information.
-- [x] Product selection and recipe-to-cart are understandable without visual polish or animation.
-- [x] PLP/PDP hierarchy and direct-add/select-options behavior are explicit.
-- [x] Empty, loading, error, unavailable, stale and partial states are included.
-- [x] Accessibility behavior is embedded in interactions and mapped through the traceability matrix.
-- [x] “Information not provided” and demo checkout disclosures retain their approved meaning.
-- [x] No unsupported review, popularity, certification, trust, food or health language appears.
-- [x] No prohibited Phase 4+, catalog-production or engineering work was started.
+- [x] Fourteen required design artifacts exist and are non-empty.
+- [x] Required colour, typography, spacing, sizing, radius, border, shadow, elevation, opacity, icon, focus, container, breakpoint and motion-duration token categories are defined.
+- [x] Every required component includes the relevant default, hover, focus, active/selected, disabled, loading and error treatment.
+- [x] All required high-fidelity screens and important states have intentional desktop/mobile specifications.
+- [x] Content-fit evidence covers long names/labels/filters, pack sizes, large INR, unavailable/unknown/zero/stale/partial states, 320px, 200% and no-animation.
+- [x] Static prototype provides obvious review navigation, visible demo disclosure and representative screen/state compositions.
+- [x] Eleven deterministic screenshots cover homepage, PLP, PDP, recipe-to-cart, checkout on desktop/mobile plus the component/state sheet.
+- [x] Browser inspection covered 14 prototype screens at all eight required widths (112 combinations) with zero final horizontal-overflow failures.
+- [x] All 14 screens passed deterministic 320px/200% text plus no-animation validation.
+- [x] Browser logs contained no warnings or errors; visible focus uses a 3px blue outline.
+- [x] No unsupported claims, real-commerce implication, generated production imagery, production motion or application engineering was introduced.
 
 ## Assumptions and open risks
 
-- Primary usability research is still needed to validate audience hypotheses and comprehension.
-- Breakpoint values and visual density may be refined downstream without weakening specified behavior.
-- Pantryform remains prototype-only pending professional commercial clearance.
-- R-026 through R-028 track small-viewport overlays, downstream traceability drift and microcopy boundary risks.
-
-## Validation summary
-
-- Required artifact, screen and annotation checks: passed on 2026-08-24.
-- Cross-artifact decision, route, variant, recipe, simulation and accessibility reconciliation: complete.
-- Markdown, secret/environment/debug/temp, prohibited-scope and whitespace scans: passed on 2026-08-24.
-- Commit/push verification is supplied in the immutable handoff after commit.
+- Primary-user usability testing remains outstanding.
+- Exact Fraunces/Inter files, licences, glyph coverage, loading and subsetting require production validation.
+- Prototype pack placeholders are layout evidence only; future production assets require Asset Manifest provenance.
+- R-029–R-031 track font implementation, Ingredient Theatre truthfulness and prototype/production boundary risks.
+- Pantryform remains prototype-only pending professional clearance.
 
 ## Decision requested
 
-Approve or revise the Phase 3 UX definition and low-fidelity wireframes as binding input for a separately authorized Phase 4.
+Approve or revise The Measured Pantry direction and Phase 4A package as binding downstream input.
 
 ## Gate
 
-Phase 4 Visual and Motion System remains blocked until explicit external approval and authorization. No Phase 4 work has started.
+Phase 4B, production catalog/assets and application engineering remain blocked until explicit external approval and authorization. No such work has started.

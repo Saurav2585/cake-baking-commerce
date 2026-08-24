@@ -1,7 +1,7 @@
 # PLP and Search UX Specification
 
 **Phase:** 3 — UX Definition
-**Status:** Specialist draft for integration
+**Status:** Approved and binding at Phase 3 commit `1b0c5fa60a0b50290cad6bf5bb3ec5de3ee55d01`
 **Architecture authority:** `05_catalog_commerce/Search_Filter_Sort_Spec.md`
 
 ## Scope

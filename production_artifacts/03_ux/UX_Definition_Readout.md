@@ -46,6 +46,6 @@ Nineteen Markdown structural blueprints cover every required route and overlay: 
 - Final customer-facing copy requires content review; the included copy is directional and safety-critical where marked.
 - Pantryform still requires formal professional clearance before any commercial use.
 
-## Gate recommendation
+## External verdict and gate outcome
 
-Approve the Phase 3 UX definition and low-fidelity wireframes as the binding input to a separately authorized Phase 4. Phase 4 has not started and must remain gated pending external approval.
+Phase 3 was externally approved at commit `1b0c5fa60a0b50290cad6bf5bb3ec5de3ee55d01` and is binding for Phase 4A under D-025. Phase 4A was separately authorized; this update records that verdict without changing the approved Phase 3 UX content.

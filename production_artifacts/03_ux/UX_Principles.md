@@ -2,7 +2,7 @@
 
 **Phase:** 3 — UX Definition
 **Owner:** UI/Product Design
-**Status:** Specialist draft for integration
+**Status:** Approved and binding at Phase 3 commit `1b0c5fa60a0b50290cad6bf5bb3ec5de3ee55d01`
 **Prototype identity:** Pantryform — portfolio/demo direction only; formal legal clearance pending
 
 ## Purpose

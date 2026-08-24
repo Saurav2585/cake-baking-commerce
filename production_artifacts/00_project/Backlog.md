@@ -8,8 +8,9 @@
 | 1 — UX and competitor research | UX Research, Catalog/Commerce | Phase 0 | Competitor/category evidence, audience hypotheses, jobs/journeys, terminology, catalog patterns, opportunity and constraint synthesis | Evidence is dated/cited; facts separated from inference; reference content not copied; research questions answered | Approved at commit `510afb0` |
 | 2A — Retail brand strategy | Brand Strategy, PM | Approved Phase 1 | Market opportunity, positioning, personality, naming, voice, visual-world principles, brand architecture, campaign territories, creative brief and readout | Original strategy traces to research; screened prototype name and clearance boundary explicit; no design begun | Approved at commit `504321e`; Pantryform is prototype-only |
 | 2B — Catalog/commerce/IA architecture | Catalog/Commerce, UX | Approved Phase 2A direction and explicit authorization | Taxonomy detail, product/variant/recipe schemas, discovery and commerce boundaries, sitemap/flows/states, SEO, analytics and frontend contracts | D-015–D-017 encoded; deterministic rules and accessibility/failure states complete; future interfaces explicit; no downstream design/code | Approved at commit `475b603` |
-| 3 — UX definition | UX/Product Design, Catalog/Commerce | Approved Phase 2B | UX principles; discovery, homepage, PLP/search, PDP, recipe, commerce, responsive, accessibility, content and component specs; 19 low-fidelity blueprints; traceability and readout | Critical journeys and edge states specified across required viewports; accessibility attached to interactions; all architecture contracts preserved; no visual design/code | Approve UX definition and low-fidelity wireframes before Phase 4 |
-| 4 — Visual & motion system | UI Design, Visual Assets, Motion | Phase 3 | Original visual system, responsive screens, asset plan, motion specs, reduced-motion behavior | Design is original, consistent, accessible in intent, feasible, and covers critical states | Approve visual direction and hero/asset direction |
+| 3 — UX definition | UX/Product Design, Catalog/Commerce | Approved Phase 2B | UX principles; discovery, homepage, PLP/search, PDP, recipe, commerce, responsive, accessibility, content and component specs; 19 low-fidelity blueprints; traceability and readout | Critical journeys and edge states specified across required viewports; accessibility attached to interactions; all architecture contracts preserved; no visual design/code | Approved at commit `1b0c5fa` |
+| 4A — Visual direction & review prototype | UI Design, Visual Assets, UX, PM | Approved Phase 3 | Visual direction, semantic tokens, colour/type/grid/imagery/component/screen specs, stress tests, motion opportunity map, traceability, static review prototype and screenshots | Original coherent direction; contrast and responsive evidence; prototype reviewable; Phase 3 behavior preserved; no production app/motion/catalog | Approve Phase 4A before Phase 4B or production work |
+| 4B — Motion specification | Motion, UI Design, UX | Approved Phase 4A and explicit authorization | Production-ready motion language/timelines/budgets and reduced/no-motion behavior | Motion is optional, performant and cannot alter content/state understanding | Separate authorization required |
 | 5 — Catalog & asset production | Catalog/Commerce, Visual Assets | Phases 2B–4 | 24–30 product records, recipe data, original copy, generated assets, Asset Manifest | Coverage/data validation passes; pricing evidence/assumptions recorded; every asset traceable; prohibited claims absent | Approve representative catalog/content set |
 | 6 — Engineering | Frontend Engineering, Motion | Phases 3–5 | Next.js implementation, tests, technical notes | Functional scope implemented; type/lint/build and critical automated tests pass; reduced motion and responsive states work | Gate only if a material approved-design deviation is needed |
 | 7 — QA & remediation | QA, Engineering | Phase 6 | Test evidence, accessibility report, defect log, fixes | No release-blocking defects; critical journeys pass; documented WCAG assessment complete | Accept material residual risks only |
@@ -48,6 +49,19 @@
 - [x] Accessibility is embedded into component/flow requirements and traceability, not isolated in an appendix.
 - [x] Empty, loading, error, unavailable, stale and partial states are defined.
 - [x] No final visual identity, generated assets, production catalog, motion implementation or application code was started.
+
+## Phase 4A acceptance checklist
+
+- [x] Phase 3 external approval and Phase 4A authorization are recorded.
+- [x] All fourteen required visual-system artifacts exist and are non-empty.
+- [x] One reconciled palette/token system includes verified contrast evidence and a documented rejected colour pairing.
+- [x] Typography, grid and responsive behavior cover the mandated viewport/content stress set.
+- [x] Every required component/state and high-fidelity desktop/mobile screen is specified.
+- [x] Static prototype is isolated, noindex, dependency-free, navigable and visibly labelled as non-production/demo.
+- [x] Eleven deterministic screenshot review files and a viewport manifest exist.
+- [x] Browser checks cover 112 route/viewport combinations with no horizontal overflow after correction; no blocking console errors were found.
+- [x] 320px + deterministic 200% text and no-animation modes pass all representative screens.
+- [x] No approved Phase 3 behavior, unsupported claim, real-commerce implication or prohibited Phase 4B+/production work was introduced.
 
 ## Phase 0 acceptance checklist
 
