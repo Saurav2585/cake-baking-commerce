@@ -19,4 +19,4 @@ Example for the current bundled runtime:
 NODE_PATH=/Users/codeclouds-saurav/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules /Users/codeclouds-saurav/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node production_artifacts/05_catalog_production/tools/build_catalog_assets.js
 ```
 
-Run validation immediately after a rebuild. The builder deletes only files beginning `asset_pf5b_` within this phase's `masters`, `exports` and `previews` directories before regenerating them.
+Run validation immediately after a rebuild. The builder deletes only files beginning `asset_pf5b_` directly within this phase's `masters`, `exports` and `previews` directories before regenerating them. It deliberately preserves `masters/generated/`, which contains the 13 approved text-free editorial PNG sources used for deterministic recipe and department crops.

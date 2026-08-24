@@ -1,8 +1,8 @@
 # Project Status
 
-**Current state:** Phase 5B review ready; paused before application engineering
+**Current state:** Phase 5B targeted visual asset rework review ready; paused before application engineering
 **Last updated:** 2026-08-25 (Asia/Kolkata)
-**Overall:** Phase 5A externally approved; Phase 5B demo catalog, recipes and scaled asset package complete and awaiting external review
+**Overall:** Phase 5B data provisionally approved; targeted scaled-visual rework complete and awaiting external review
 
 **Review packet:** `production_artifacts/reviews/Current_Review_Packet.md`
 
@@ -41,8 +41,11 @@
 - Phase 5A targeted rework corrected a corrupt desktop homepage JPEG and a stale mobile asset reference. The review prototype now uses semantic art direction, the 390/320 browser selects the approved 819×1024 crop, and refreshed homepage evidence was manually inspected.
 - External review approved Phase 5A at commits `b5a6b26` and `a0e0810`, including Measurefield, Measureloom, the factual-lock method, manifest structure and corrected placement evidence; Phase 5B alone was authorized.
 - Phase 5B locks 24 parent products in the required 6/4/4/3/3/2/2 department distribution, 38 purposeful SKUs, 24 content records and six original demo recipes with 45 method-complete ingredient lines, 27 explicit sale mappings and 18 visible unmapped pantry lines.
-- A fail-closed catalog asset manifest covers 43 logical masters and 86 derivatives (129 files): all product primaries/thumbnails, six variant-owned families, six recipe families and seven department families.
-- The isolated `design_review/phase_5b/` harness covers nine review views and passes 1440/768/390/320 responsive checks, 320 px/200% text, image-disabled/failure behavior, console checks and horizontal-overflow checks.
+- External review provisionally approved all Phase 5B catalog, content, recipe, mapping, truth, pricing and validator outputs at commit `8122ed3`; the generic scaled visual package alone required targeted rework, and Phase 6 remained blocked.
+- Targeted rework replaces the placeholder system with 24 identifiable parent assets, manually composed fictional labels and 38/38 atomic SKU media records, including exact parent/variant/SKU/quantity/alt relationships.
+- Thirteen prompt-recorded generated masters create seven materially differentiated department families and six truthful recipe families; no generated typography is used.
+- The fail-closed manifest now covers 75 logical masters and 150 derivatives (225 files), with no stale/orphan asset and complete checksums/provenance.
+- The expanded `design_review/phase_5b/` harness covers 12 review views and 13 manually inspected placement screenshots, including homepage/editorial, departments, PLP/PDP desktop/mobile, variants, recipes, mapping, failure, grayscale, 320 px and 200% text.
 
 ## Not started by design
 
@@ -50,8 +53,8 @@
 
 ## Phase 5B approval request
 
-1. Approve, revise or reject the 24-parent/38-SKU demo fixture, six-recipe library, deterministic mappings and scaled asset package.
-2. Separately authorize or withhold application engineering; Phase 5B review readiness does not start it.
+1. Approve, revise or reject the targeted 75-record/225-file visual asset rework; the data package is already provisionally approved.
+2. Separately authorize or withhold application engineering; visual review readiness does not start it.
 
 ## Resolved constraints
 

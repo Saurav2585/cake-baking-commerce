@@ -21,7 +21,11 @@ const expected=[
 ];
 const unmanifested=expected.filter(p=>!manifestPaths.has(p));
 const absentExports=expected.filter(p=>!fs.existsSync(path.join(catalog,p)));
-const required=['contact','departments','plp','products','variants','recipes','mappings','states','stress'];
+const required=['home','contact','assets','departments','plp','products','variants','recipes','pdp','mappings','states','stress'];
 const absent=required.filter(v=>!app.includes(`${v}:`));
 if(products!==24||recipes!==6||absent.length||unmanifested.length||absentExports.length)throw new Error(`Coverage failed: products=${products}, recipes=${recipes}, absent views=${absent.join(',')}, unmanifested=${unmanifested.join(',')}, absent exports=${absentExports.join(',')}`);
-console.log(JSON.stringify({status:'PASS',products,recipes,views:required.length,manifestBackedPlacements:expected.length,unmanifested:0,absentExports:0},null,2));
+const allDerivativePaths=manifest.records.flatMap(r=>(r.derivatives||[]).map(d=>d.path));
+const missingDerivatives=allDerivativePaths.filter(p=>!fs.existsSync(path.join(catalog,p)));
+const hasManifestGallery=app.includes("if(view==='assets')fetch");
+if(!hasManifestGallery||missingDerivatives.length)throw new Error(`Manifest-gallery coverage failed: dynamic=${hasManifestGallery}, missing derivatives=${missingDerivatives.join(',')}`);
+console.log(JSON.stringify({status:'PASS',products,recipes,views:required.length,manifestBackedPlacements:expected.length,manifestDerivatives:allDerivativePaths.length,missingDerivatives:0,unmanifested:0,absentExports:0},null,2));

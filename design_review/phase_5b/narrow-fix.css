@@ -8,7 +8,68 @@
 .asset.failed .asset-fallback { display: grid; position: absolute; inset: 0; height: auto; place-items: center; background: repeating-linear-gradient(135deg,#e5ded0,#e5ded0 10px,#eee8dc 10px,#eee8dc 20px); font: 700 .75rem system-ui; }
 .images-off .asset img { display: none; }
 .images-off .asset .asset-fallback { display: none; }
+.home-hero { display:grid; grid-template-columns:.78fr 1.22fr; min-height:41rem; align-items:stretch; border-bottom:1px solid var(--line); }
+.home-copy { padding:7rem 3rem 5rem 0; align-self:center; }
+.home-copy h1 { font-size:clamp(4rem,7.4vw,7.8rem); line-height:.82; letter-spacing:-.06em; margin:.5rem 0 2rem; }
+.home-copy > p:not(.kicker) { max-width:32rem; font-size:1.1rem; }
+.home-art { height:auto; margin:0; min-height:41rem; }
+.home-art img { object-fit:cover; }
+.hero-actions { display:flex; gap:1rem; align-items:center; }
+.hero-actions a,.editorial-bridge a,.pdp-method a { font:700 .82rem system-ui; color:var(--ink); text-underline-offset:.3rem; }
+.hero-actions a:first-child { background:var(--ink); color:white; padding:.9rem 1rem; text-decoration:none; }
+.ingredient-ribbon { display:grid; grid-template-columns:repeat(4,1fr); padding:1.1rem 0 5rem; font:800 .68rem system-ui; text-transform:uppercase; letter-spacing:.08em; }
+.ingredient-ribbon span { padding:.8rem; border-left:1px solid var(--line); }
+.home-departments { display:grid; grid-template-columns:1.3fr .7fr .7fr 1.3fr; gap:1px; background:var(--line); border:1px solid var(--line); }
+.home-departments article { background:var(--white); padding:1rem; }
+.home-departments .asset { height:22rem; }
+.home-departments .dept-1,.home-departments .dept-2 { margin-top:4rem; }
+.editorial-bridge { margin:7rem 0 0; display:grid; grid-template-columns:1.25fr .75fr; gap:4rem; align-items:center; }
+.editorial-bridge .asset { height:34rem; margin:0; }
+.editorial-bridge h2 { font-size:clamp(2.5rem,4.5vw,5.5rem); letter-spacing:-.045em; }
+.manifest-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+.manifest-grid article { background:var(--white); padding:.75rem; min-width:0; }
+.manifest-grid .asset { height:12rem; }
+.manifest-grid strong,.manifest-grid small { display:block; font-family:system-ui; overflow-wrap:anywhere; }
+.manifest-grid strong { font-size:.75rem; }
+.grayscale .manifest-grid img { filter:grayscale(1); }
+.pdp { display:grid; grid-template-columns:1.25fr .75fr; gap:5vw; padding:5rem 0; }
+.pdp-gallery { min-width:0; }
+.pdp-primary { height:42rem; background:#e5dac7; }
+.pdp-thumbs { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+.pdp-thumbs .asset { height:9rem; margin:0; }
+.pdp-thumbs > span { font:700 .72rem system-ui; margin-top:-.65rem; }
+.pdp-buy { position:sticky; top:1rem; align-self:start; }
+.pdp-buy h1 { font-size:clamp(3rem,5vw,5.8rem); line-height:.88; letter-spacing:-.055em; }
+.pdp-price { font-size:2rem; }
+.pdp-price small { display:inline; font-size:.7rem; }
+.add-wide { width:100%; margin-bottom:1rem; }
+.pdp-method { display:grid; grid-template-columns:.4fr 1fr auto; align-items:center; gap:2rem; background:var(--cocoa); color:#fff; padding:3rem; }
+.pdp-method > span { font-size:clamp(4rem,8vw,8rem); line-height:1; }
+.pdp-method a { color:#fff; }
+@media (max-width:900px) {
+  .home-hero { grid-template-columns:1fr; }
+  .home-copy { padding:5rem 0 3rem; }
+  .home-art { min-height:32rem; }
+  .home-departments { grid-template-columns:repeat(2,1fr); }
+  .home-departments .dept-1,.home-departments .dept-2 { margin-top:0; }
+  .manifest-grid { grid-template-columns:repeat(3,1fr); }
+  .pdp { grid-template-columns:1fr; }
+  .pdp-buy { position:static; }
+}
 @media (max-width: 520px) {
   header { flex-wrap: wrap; gap: 1rem; }
   .text-200 header .nav-toggle { width: 100%; }
+  .home-copy h1 { font-size:3.7rem; }
+  .home-art { min-height:24rem; }
+  .hero-actions { align-items:stretch; flex-direction:column; }
+  .ingredient-ribbon { grid-template-columns:repeat(2,1fr); padding-bottom:3rem; }
+  .home-departments,.manifest-grid { grid-template-columns:1fr; }
+  .home-departments .asset { height:18rem; }
+  .editorial-bridge { grid-template-columns:1fr; gap:1.5rem; margin-top:4rem; }
+  .editorial-bridge .asset { height:24rem; }
+  .pdp { padding:3rem 0; }
+  .pdp-primary { height:26rem; }
+  .pdp-thumbs .asset { height:6rem; }
+  .pdp-method { grid-template-columns:1fr; padding:2rem; }
+  .pdp-method > span { font-size:4.5rem; }
 }
