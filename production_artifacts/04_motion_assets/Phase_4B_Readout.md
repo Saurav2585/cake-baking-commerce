@@ -47,6 +47,6 @@ Authorize only the bounded pilot after Phase 4B approval: one homepage ingredien
 - Font/image loading, real content dimensions, assistive-technology announcements and low-powered devices need implementation QA.
 - Pantryform remains prototype-only pending formal commercial clearance.
 
-## Approval question
+## External verdict and gate outcome
 
-Approve or revise the Phase 4B motion system, asset blueprint, packaging system, manifest contract, proposed Phase 5 pilot and isolated review evidence. Phase 5 production and application engineering remain blocked.
+Phase 4B “Measured Transformation” was externally approved at commit `1de6c8aac8be54e4298cf333fe6a5db4d5f724cb` and is binding under D-028. Only the bounded Phase 5A pilot defined in `Asset_Pilot_Brief.md` was authorized; bulk visual generation and application engineering remain blocked.

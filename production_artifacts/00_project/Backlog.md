@@ -81,6 +81,20 @@
 - [x] Browser validation passes required widths, 320px/200%, reduced/off, rapid actions, focus interruption, resize/orientation, console and final overflow checks.
 - [x] Generic-motion test passes; no Phase 4A evidence, approved behavior, unsupported claim, production asset or application code was changed.
 
+## Phase 5A acceptance checklist
+
+- [x] Phase 4B external approval and bounded Phase 5A-only authorization are recorded.
+- [x] One schema-consistent dry-ingredient parent proposal has 250 g, 500 g and 1 kg SKU records; critical unknown facts remain “Information not provided.”
+- [x] Three creative directions and one autonomous recommendation are documented.
+- [x] Measureloom is an original subordinate prototype identity with preliminary collision/trade-dress notes and no marketplace-seller implication.
+- [x] Editable label/front/side/back masters contain only fact-locked manual SVG text and explicit prototype disclosure.
+- [x] Three packs remain one family while weight, scale and measure-bar count differentiate without colour alone.
+- [x] Homepage, Ingredients department, recipe, PDP, PLP and failure assets have desktop/mobile/native-or-smaller exports.
+- [x] Every master, export and review image is fail-closed in `Pilot_Asset_Manifest.json` with SHA-256 integrity and required provenance/lifecycle fields.
+- [x] Isolated placement review demonstrates all authorized routes without modifying Phase 4A/4B evidence.
+- [x] Browser QA passes 1440/768/390/320, 320px/200% text, variant ownership, image-disabled/failure and final overflow checks.
+- [x] No bulk catalog/assets, production application, database, auth, payment or deployment work started.
+
 ## Phase 0 acceptance checklist
 
 - [x] Repository and numbered artifact structure created.

@@ -1,8 +1,8 @@
 # Project Status
 
-**Current state:** Phase 4B review ready; paused before Phase 5
-**Last updated:** 2026-08-24 (Asia/Kolkata)
-**Overall:** Phase 4A externally approved; Phase 4B motion system and asset-production blueprint complete and awaiting external review
+**Current state:** Phase 5A review ready; paused before bulk assets and application engineering
+**Last updated:** 2026-08-25 (Asia/Kolkata)
+**Overall:** Phase 4B externally approved; bounded Phase 5A visual asset and packaging pilot complete and awaiting external review
 
 **Review packet:** `production_artifacts/reviews/Current_Review_Packet.md`
 
@@ -35,14 +35,18 @@
 - External reviewer approved Phase 4A at commit `ab52b1bc600fbfda2793a1587a513dbd3329ca9e` and authorized Phase 4B only.
 - Sixteen Phase 4B motion/asset artifacts, the separate motion review prototype and nineteen-file deterministic evidence pack were completed.
 - Browser validation covered the motion prototype across all required widths, 320px/200% reduced mode, rapid/repeated actions, drawer interruption/focus, orientation/resize and console/overflow checks.
+- External reviewer approved Phase 4B “Measured Transformation” at commit `1de6c8aac8be54e4298cf333fe6a5db4d5f724cb` and authorized only the bounded Phase 5A pilot.
+- Phase 5A produced one cocoa-powder parent family with three proposed weights/SKUs, original editorial imagery, editable Measureloom packaging, PDP/PLP/recipe assets, a 52-file fail-closed manifest and an isolated placement prototype.
+- Browser QA covers seven placements at 1440/768/390/320, 320px/200% text, image-disabled/failure states and atomic 1 kg variant media; final checks have no horizontal overflow.
 
 ## Not started by design
 
-- Primary user research, Phase 5 asset pilot/full catalog and production visual generation, production motion/application engineering, QA, and release.
+- Primary user research, bulk catalog/asset production, production motion/application engineering, database, authentication, real commerce, deployment, full QA and release.
 
-## Phase 4B approval request
+## Phase 5A approval request
 
-1. Approve or revise the Measured Transformation motion system, production-asset/packaging/manifest blueprint and proposed bounded Phase 5 pilot.
+1. Approve, revise or reject Measurefield, the Measureloom prototype pack family and the factual/provenance method.
+2. Separately authorize or withhold any seed-data or bulk-asset phase; pilot approval alone must not start it.
 
 ## Resolved constraints
 
@@ -50,4 +54,4 @@
 
 ## Next action after approval
 
-Record the Phase 4B verdict. Phase 5 asset generation/catalog production and application engineering are not authorized by this handoff and must not begin without explicit authorization. Pantryform remains prototype-only; formal commercial clearance is pending.
+Record the Phase 5A verdict. Bulk asset generation, catalog production and application engineering are not authorized by this handoff and must not begin without explicit authorization. Pantryform and Measureloom remain prototype-only; formal commercial clearance is pending.

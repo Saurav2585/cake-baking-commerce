@@ -2,88 +2,86 @@
 
 ## Phase
 
-**Phase 4B — Motion System and Asset Production Blueprint**
-
+**Phase 5A — Bounded Visual Asset and Packaging Pilot**
 **Status:** Review ready
-**Prepared:** 2026-08-24 (Asia/Kolkata)
+**Prepared:** 2026-08-25 (Asia/Kolkata)
 
 ## Review objective
 
-Approve or revise Pantryform’s Measured Transformation motion system, asset-production/packaging/manifest blueprint and proposed bounded Phase 5 pilot. No production app, full catalog, generated production asset, real commerce or Phase 5 execution is included.
+Approve, revise or reject the Measurefield visual pilot, Measureloom subordinate prototype brand, three-weight cocoa-powder packaging family, provenance method and recommendation about later scale. This packet does not request automatic bulk generation or application engineering.
 
-## Upstream approval
+## Upstream authority and boundaries
 
-- Phase 4A “The Measured Pantry,” five signatures and isolated prototype were externally approved at `ab52b1bc600fbfda2793a1587a513dbd3329ca9e` under D-027.
-- The approved Phase 4A evidence is unchanged; Phase 4B lives in separate artifact and prototype directories.
-- Phase 3 interaction meaning and Phase 2B commerce/catalog rules remain binding.
-- Pantryform with “Baking Ingredients & Supplies” remains portfolio/demo-only under D-022.
+- Phase 4B “Measured Transformation” was externally approved at `1de6c8aac8be54e4298cf333fe6a5db4d5f724cb` under D-028.
+- Authorization covers only `production_artifacts/04_motion_assets/Asset_Pilot_Brief.md`.
+- No approved concrete product supported three weight variants, so the explicitly authorized bounded-data fallback produced `prod_demo_baking_cocoa` with 250 g, 500 g and 1 kg proposed SKUs.
+- Ingredients, Allergens and Storage remain “Information not provided”; price and availability are not asserted.
+- Pantryform and Measureloom are prototype-only. Commercial packaging, legal clearance, bulk catalog/assets, production app, database, auth, payment and deployment remain out of scope.
 
-## Required artifacts
+## Required deliverables
 
-- `production_artifacts/04_motion_assets/Phase_4B_Brief.md`
-- `production_artifacts/04_motion_assets/Motion_Principles.md`
-- `production_artifacts/04_motion_assets/Motion_Tokens.md`
-- `production_artifacts/04_motion_assets/Signature_Motion_Choreography.md`
-- `production_artifacts/04_motion_assets/Page_Level_Motion_Map.md`
-- `production_artifacts/04_motion_assets/Component_Motion_Specification.md`
-- `production_artifacts/04_motion_assets/Scroll_and_Viewport_Behaviour.md`
-- `production_artifacts/04_motion_assets/Reduced_Motion_and_No_Animation_Contract.md`
-- `production_artifacts/04_motion_assets/Motion_Performance_Budget.md`
-- `production_artifacts/04_motion_assets/Asset_Production_Strategy.md`
-- `production_artifacts/04_motion_assets/Packaging_and_Label_System.md`
-- `production_artifacts/04_motion_assets/Product_Asset_Matrix.md`
-- `production_artifacts/04_motion_assets/Asset_Manifest_Schema.md`
-- `production_artifacts/04_motion_assets/Asset_Pilot_Brief.md`
-- `production_artifacts/04_motion_assets/Motion_and_Asset_Traceability_Matrix.md`
-- `production_artifacts/04_motion_assets/Phase_4B_Readout.md`
+1. `Phase_5A_Brief.md`
+2. `Pilot_Fact_Lock.md`
+3. `Creative_Concepts.md`
+4. `Fictional_Product_Brand_System.md`
+5. `Packaging_Label_Master.md`
+6. `Three_SKU_Packaging_Family.md`
+7. `Homepage_Ingredient_Composition.md`
+8. `Department_Visual.md`
+9. `Recipe_Image_Set.md`
+10. `PDP_Media_Set.md`
+11. `PLP_Thumbnail_Set.md`
+12. `Pilot_Asset_Manifest.json`
+13. `Candidate_and_Rejection_Log.md`
+14. `Asset_Pilot_QA_Report.md`
+15. `Phase_5A_Readout.md`
+
+Editable masters, web exports, review evidence and deterministic build/validation tools are included under `production_artifacts/05_asset_pilot/`.
+
+## Selected direction
+
+- Concept: **Measurefield** — physical measure fields, cocoa texture, working tools and graduated pack scale.
+- Fictional product brand: **Measureloom** — subordinate “A Pantryform pilot brand” lockup; formal legal/domain/handle/trade-dress clearance pending.
+- Product: **Baking cocoa powder**, form Powder; SKUs `ML-BCP-250`, `ML-BCP-500`, `ML-BCP-1000`.
+- Recipe proposal: **Cocoa Celebration Cake**, illustrative relationship only; no guaranteed result.
 
 ## Review evidence
 
-- Motion prototype: `design_review/phase_4b/`
-- Run: `python3 -m http.server 4173 --directory design_review`
-- Open: `http://127.0.0.1:4173/phase_4b/?view=home`
-- Evidence: `production_artifacts/04_motion_assets/previews/`
-- Evidence manifest: `production_artifacts/04_motion_assets/previews/README.md`
-
-## System summary
-
-- Motion expresses raw ingredient → precise measure → method → joyful make, with five signature-specific choreographies rather than generic section fades.
-- Full motion is optional and locally interruptible; reduced/off/no-JS modes preserve final composition, facts, focus, status and tasks.
-- Editorial discovery uses measured sequences; PLP/search/PDP utilities use local feedback; cart/checkout/errors remain calm.
-- Native scroll remains authoritative; no hijacking, continuous loops, autoplay audio or mandatory GSAP/Lenis dependency exists.
-- Performance budgets set frame/main-thread/style-layout/CLS/LCP/asset/GPU/concurrency/mobile thresholds and removal triggers.
-- Asset strategy separates manual, generated, CSS/SVG, licensed and factual-input ownership across every required family.
-- Packaging uses one scalable retailer/product-brand label framework across seven departments without invented certifications or compliance claims.
-- Manifest validation fails closed on provenance, relationship, rights, factual claim, crop, alt, dimensions, optimization, checksum/version and replacement history.
+- Placement prototype: `design_review/phase_5a/`
+- Serve from repository root: `python3 -m http.server 4173 --directory .`
+- Open: `http://127.0.0.1:4173/design_review/phase_5a/?view=home`
+- Asset previews: `production_artifacts/05_asset_pilot/previews/`
+- Preview index: `production_artifacts/05_asset_pilot/previews/README.md`
+- Manifest: `production_artifacts/05_asset_pilot/Pilot_Asset_Manifest.json`
 
 ## Acceptance evidence
 
-- [x] Sixteen required artifacts exist and are non-empty.
-- [x] Five approved signatures include every required choreography field and generic-motion evidence.
-- [x] All required pages/components have static/reduced equivalents and interruption/focus/status ownership.
-- [x] Asset plan covers fourteen named families; packaging covers all seven merchandise departments; matrix covers eight representative content types.
-- [x] Manifest schema contains every required provenance/lifecycle field and typed fail-closed rules.
-- [x] Proposed Phase 5 pilot is limited to one composition, one three-variant packaging family, one department visual, one recipe image, one PDP set and one PLP thumbnail set.
-- [x] Separate prototype demonstrates the eleven requested motion moments and directly reviewable reduced mode.
-- [x] Nineteen deterministic PNGs include opening and recipe before/mid/final, desktop/mobile, reduced, atlas/theatre, PDP, drawers, add/error and confirmation evidence.
-- [x] Browser tests passed 112 route/width combinations plus 56 narrow regressions with no final overflow.
-- [x] All 14 screens passed 320px + 200% text + reduced mode with zero active animations/transitions or overflow.
-- [x] Rapid Add/pack interaction resolves to latest state; drawer interruption returns focus; orientation change preserves content.
-- [x] Browser logs contained no warnings/errors; LCP text remains visible before decorative motion begins.
-- [x] No approved Phase 4A substantive evidence or Phase 3 behavior changed; only the Phase 4A readout gate metadata records approval. No unsupported claim, full pilot, production asset or production application was created.
+- [x] Three distinct concepts; Measurefield selected with strengths, weaknesses and trade-dress risks.
+- [x] Fact Lock covers every visible parent/SKU/recipe fact, explicit unknown and prohibited implication.
+- [x] Three original text-free image foundations were generated; all packaging text was rebuilt manually in editable SVG.
+- [x] Label master includes front, side, structural back, safe/quiet zones, brand/product/form/weight/SKU, unknown states and prototype disclosure; prohibited statutory data is absent.
+- [x] Three packs are one coherent family with honest ordinal scale, exact weight text and non-colour bar-count coding.
+- [x] Homepage 3:2/4:5, department 3:2/1:1, recipe 3:2/4:3/process, PDP, PLP and fallback sets are present and native-size or smaller.
+- [x] Selected and grayscale contact sheets plus fourteen browser captures demonstrate desktop/mobile, 320 px, 200% text, thumbnails, image failure and image-disabled behavior.
+- [x] Browser matrix passes 28 route/width placements; all final images load, headings exist and horizontal overflow is zero.
+- [x] PDP selection atomically resolves the 1 kg image, alt, pressed state and `ML-BCP-1000` status.
+- [x] Manifest validator passes every tracked visual file, required field, generated lineage, licence, alt decision, approval and SHA-256 checksum.
+- [x] No secret, credential, temporary generation file, browser profile, bulk catalog/asset or production implementation is included.
 
-## Assumptions and risks
+## Known limitations and risks
 
-- Runtime budgets and assistive-technology behavior require production traces/QA.
-- Exact asset methods/licences and factual catalog inputs wait for pilot authorization.
-- The six-output pilot is a proposal, not approval to generate.
-- R-033–R-035 track generic/queued motion, provenance and packaging-truth risks.
-- Pantryform remains prototype-only pending professional clearance.
+- Product/recipe records and pouch geometry are bounded proposals, not production facts.
+- Measureloom screening is preliminary; domain and legal availability are not claimed.
+- Image-generation rights state is prototype review only; commercial clearance is unassessed.
+- Recipe imagery is editorial and not culinary validation or a result promise.
+- R-036–R-038 block production reuse until data, identity/trade dress and rights/geometry are cleared.
 
 ## Decision requested
 
-Approve or revise Phase 4B and, separately, authorize or withhold the bounded Phase 5 asset pilot.
+1. Approve, revise or reject Measurefield and Measureloom for this bounded pilot.
+2. Approve, revise or reject the manifest, QA and factual-lock method as a later production baseline.
+3. Separately authorize or withhold a future factual seed-data/bulk-asset phase.
 
 ## Gate
 
-Phase 5 asset generation/catalog production and application engineering remain blocked until explicit external authorization. No downstream work has started.
+Stop after Phase 5A. No bulk visual generation, production application engineering, database, authentication, payment, deployment or full-department production may begin without a new explicit authorization.
