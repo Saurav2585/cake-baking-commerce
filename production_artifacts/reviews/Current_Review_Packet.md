@@ -2,7 +2,7 @@
 
 ## Phase
 
-**Phase 1 — UX and Competitor Research**
+**Phase 2A — Retail Brand Strategy**
 
 **Status:** Review ready
 
@@ -10,69 +10,79 @@
 
 ## Review objective
 
-Confirm that Phase 1 evidence and original synthesis provide sufficient, integrity-safe inputs for a later Phase 2 strategy/architecture package. This packet does not authorize Phase 2.
+Approve or revise an original retailer-level brand direction for the curated multi-brand baking-supplies demo. This packet does not authorize Phase 2B, visual design, catalog production or implementation.
+
+## Upstream approval recorded
+
+- Phase 1 was externally approved at `510afb0b5274821704c534bd44a514e5c7409497`.
+- P-005, P-006 and P-007 are promoted to D-015, D-016 and D-017.
+- Phase 2 is split into 2A and 2B under D-018; only 2A was authorized.
 
 ## Artifacts for review
 
-- `production_artifacts/01_research/Research_Plan.md`
-- `production_artifacts/01_research/Evidence_Log.md`
-- `production_artifacts/01_research/Competitor_Pattern_Matrix.md`
-- `production_artifacts/01_research/Audience_and_Jobs_Hypotheses.md`
-- `production_artifacts/01_research/Catalog_Terminology_and_Attributes.md`
-- `production_artifacts/01_research/Research_Synthesis.md`
-- `production_artifacts/01_research/Research_Readout.md`
+- `production_artifacts/02_brand_strategy/Market_Opportunity.md`
+- `production_artifacts/02_brand_strategy/Positioning_and_Value_Proposition.md`
+- `production_artifacts/02_brand_strategy/Brand_Personality_and_Principles.md`
+- `production_artifacts/02_brand_strategy/Naming_Exploration.md`
+- `production_artifacts/02_brand_strategy/Verbal_Identity.md`
+- `production_artifacts/02_brand_strategy/Visual_World_Principles.md`
+- `production_artifacts/02_brand_strategy/Brand_Architecture.md`
+- `production_artifacts/02_brand_strategy/Campaign_Territories.md`
+- `production_artifacts/02_brand_strategy/Creative_Brief_for_Design.md`
+- `production_artifacts/02_brand_strategy/Brand_Strategy_Readout.md`
+- `production_artifacts/00_project/Backlog.md`
 - `production_artifacts/00_project/Status.md`
 - `docs/Decision_Log.md`
 - `docs/Risk_Register.md`
 
-## Scope and evidence summary
+## Recommendation
 
-- Both BakIndia and Bakerykart were reviewed on 2026-08-24 with the same framework.
-- Live desktop and 390×844 mobile home states were inspected for both sites; representative PLP/PDP and recipe pages were inspected where applicable.
-- Evidence Log contains 30 classified, dated entries with URLs and confidence.
-- All v1 families are represented in the taxonomy and attribute analysis.
-- No accounts, cart mutations, checkout, transactions, bulk scraping or screenshot retention occurred.
-- Competitor branding, prose, imagery, layout, reviews, certifications, claims and promises were not reused.
+- **Name:** Whisklane (provisional)
+- **Shortlist:** Whisklane, Crumbloom, Batterfolk, Ovenora, Pantryrise
+- **Positioning:** everything for the bake, made easier to choose.
+- **Lead territory:** Measured Joy
+- **Architecture:** retailer-led; fictional product brands remain secondary.
+
+No trademark, company-name, domain, handle or linguistic availability is claimed. Independent validation is mandatory before production adoption, and the name is not confirmed in the Decision Log.
 
 ## PM acceptance evidence
 
-- [x] Both reference sites use the same comparison framework.
-- [x] Important claims trace to evidence IDs.
-- [x] Audience needs remain hypotheses unless externally supported.
-- [x] Taxonomy recommendations are original and usable.
-- [x] Mobile, accessibility and purchase-confidence requirements are explicit.
-- [x] Recipe-to-cart implications and pack-size conflicts are documented.
-- [x] Unsupported claims and copied material are absent.
-- [x] Phase 2 decisions are bounded options with consequences.
-- [x] No Phase 2 work, design, production catalog or application code was created.
+- [x] Strategy traces to approved audience, retailer model and Phase 1 evidence.
+- [x] Retailer identity and later product-brand roles are clearly separated.
+- [x] Required credible, warm, approachable, contemporary and premium-accessible feel is expressed without unsupported claims.
+- [x] Naming exploration includes 24 candidates scored across all nine required criteria.
+- [x] Five candidates are shortlisted and one is recommended with risks.
+- [x] India-English voice and integrity-safe content rules are defined.
+- [x] Visual principles remain strategic; no logo, UI or production design was created.
+- [x] Three distinct campaign territories include narrative, expression, fit and risk.
+- [x] Creative brief supplies bounded downstream direction.
+- [x] No competitor identity/content/UI, invented heritage, certification, expertise, review, testimonial, food claim or visual asset was created.
+- [x] Phase 2B was not started.
 
 ## Decisions requested
 
-1. **P-005:** approve the eight-department taxonomy.
-2. **P-006:** approve smallest-sufficient-pack as the default recipe mapping with visible required/purchased/leftover amounts and override.
-3. **P-007:** approve explicit “Information not provided” states for missing critical ingredient/allergen/storage data.
+1. Approve or revise the shortlist and authorize one candidate for independent clearance; recommendation: **Whisklane**.
+2. Approve or revise **Measured Joy** as the lead territory.
+3. Approve or revise the positioning, personality, verbal principles and retailer-led architecture.
 
-See `Research_Synthesis.md` for alternatives and consequences.
+## Known limitations and assumptions
 
-## Known limitations
-
-- No primary user research or analytics were available.
-- Search/filter/cart/checkout interactions and persistence were not exercised.
-- Formal keyboard, screen-reader, contrast and zoom audits remain later-stage verification work.
-- Competitor evidence is volatile and should be rechecked if materially relied upon after 90 days.
+- No primary audience research or name testing was performed.
+- Naming scores are strategic judgments, not legal or availability evidence.
+- Clear guidance as a trust signal and the “precision plus pleasure” balance remain hypotheses to test.
+- No visual identity has tested the proposed strategy for recognition, accessibility or responsive behaviour.
 
 ## Validation summary
 
-- Required Phase 1 artifacts: present and non-empty.
-- Evidence classes, both primary reference domains and mobile observations: present.
-- Evidence entries: 30.
-- Decision, risk, status and review records: synchronized.
-- Forbidden secrets/environment/debug/temporary-artifact scans: passed.
-- Markdown whitespace and patch integrity check: passed.
-- Phase 1 artifact and safety validation: passed on 2026-08-24.
+- Ten required Phase 2A artifacts: present and non-empty.
+- Naming longlist: 24 candidates; nine scoring criteria; five-name shortlist; one recommendation.
+- Campaign territories: three distinct routes with required strategic detail.
+- Decision, backlog, risk, status and review records: synchronized.
+- Prohibited-claim, secret, environment, debug and temporary-file scans: passed on 2026-08-24.
+- Phase 2A contains no application code, visual assets or Phase 2B architecture.
 
 Commit/push verification is performed after this packet is finalized. The immutable commit hash is supplied in the handoff rather than written into the commit it identifies.
 
 ## Gate
 
-Phase 2 remains blocked until the external reviewer records approval or required rework for P-005 through P-007.
+Phase 2B remains blocked. A retailer name becomes final only after human approval and independent validation are recorded.
