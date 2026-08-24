@@ -4,7 +4,7 @@
 
 **Scope:** Phase 5B deterministic catalog visual assets only
 
-**Result:** PASS FOR PHASE REVIEW
+**Result:** PASS FOR TARGETED PHASE REVIEW
 
 ## Automated validation
 
@@ -51,7 +51,11 @@ The validator fails closed for unsupported schema, coverage mismatch, duplicate 
 
 ## Placement review validation
 
-`design_review/phase_5b/validate.js` resolves all 150 manifest-backed derivatives across the expanded 12-view review harness with zero missing or unmanifested paths. Thirteen deterministic screenshots cover homepage/editorial discovery, departments, PLP/PDP desktop and mobile, multi-variant selection, recipes, recipe mapping, grayscale, failure and 320 px/200% text. Every final screenshot was manually reopened after the editorial rebuild. Clean-server browser inspection found zero failed requests, incomplete images, runtime/console errors or horizontal overflow.
+The prior review claim at commit `4fe3cbf15ada23b82802b0507fe3f737add4b83d` was incomplete: asset-path validation passed, but the harness rendered a stale parallel catalog and therefore did not prove catalog-truth readiness. The accepted visual files were not regenerated during this correction.
+
+The reconciled `design_review/phase_5b/` consumes a deterministic browser bundle derived from canonical catalog, content, recipe, mapping, manifest and approved fictional-brand sources. Harness truth validation joins the displayed media to the exact canonical product and selected SKU rather than accepting a valid image path against alternate product data. Refreshed placement evidence covers PLP, full products table, PDP, multi-variant selection, recipe mapping, search/filter and 320 px stress states. Clean-server validation and manual screenshot inspection are required together; an automated capture completing is not sufficient evidence.
+
+Final clean-server browser validation covered all 12 harness views at 1440, 768, 390 and 320 CSS px (48 checks). The final matrix reported zero broken images, runtime/console errors and horizontal overflow. All nine canonical-truth `v3` screenshots listed in the preview README were manually opened and inspected after capture.
 
 ## Accuracy note
 

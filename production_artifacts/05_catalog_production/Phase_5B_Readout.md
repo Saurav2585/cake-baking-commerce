@@ -33,6 +33,12 @@ Eight fictional product labels create secondary multi-brand metadata beneath Pan
 
 The catalog manifest relates every product and recipe ID to an approved review asset. Product masters use their registered fictional product label plus an explicit Pantryform demo lockup. Assets remain non-authoritative: product and SKU files own all visible facts and commerce state. See `Asset_Production_Readout.md` and `Asset_Production_QA_Report.md` for production and inspection evidence.
 
+## Canonical review-data boundary
+
+External review of commit `4fe3cbf15ada23b82802b0507fe3f737add4b83d` found that the isolated Phase 5B harness had drifted into a second, hardcoded catalog. Its alternate titles, brands, SKUs, prices, facts and recipe selections contradicted otherwise-valid canonical records, so the earlier implementation-readiness claim was withdrawn.
+
+The targeted correction does not modify the approved canonical JSON or provisionally approved visuals. It removes the parallel catalog and generates browser data from the canonical product, SKU, content, recipe, mapping and manifest sources plus the approved fictional-brand lookup. Exact truth validation covers every parent, SKU, recipe line, displayed fact, selected pack and media relationship. A source mismatch now fails validation; the harness cannot be updated by independently typing commerce facts.
+
 ## Acceptance summary
 
 - Exact parent and department counts: pass.
@@ -41,6 +47,7 @@ The catalog manifest relates every product and recipe ID to an approved review a
 - Product/recipe asset relationship coverage: pass.
 - Fact and prohibited-claim review: pass.
 - JSON parse, reference, uniqueness, quantity, price and axis checks: pass.
+- Canonical-to-harness exact joins and stale-value prohibitions: pass.
 - Phase boundary: pass; no engineering or Phase 6 work started.
 
 ## Remaining risks

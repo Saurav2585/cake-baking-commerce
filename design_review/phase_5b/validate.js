@@ -1,31 +1,54 @@
 #!/usr/bin/env node
-const fs=require('fs'),path=require('path'),base=__dirname;
-const files=['index.html','styles.css','narrow-fix.css','data.js','app.js','README.md'];
-const missing=files.filter(f=>!fs.existsSync(path.join(base,f)));
-if(missing.length)throw new Error(`Missing harness files: ${missing.join(', ')}`);
-const data=fs.readFileSync(path.join(base,'data.js'),'utf8'),vm=require('vm');
-const context={globalThis:{}};vm.runInNewContext(data,context);
-const products=context.globalThis.PF5B.products.length;
-const recipes=context.globalThis.PF5B.recipes.length;
-const app=fs.readFileSync(path.join(base,'app.js'),'utf8');
-const catalog=path.resolve(base,'../../production_artifacts/05_catalog_production');
-const manifest=JSON.parse(fs.readFileSync(path.join(catalog,'Catalog_Asset_Manifest.json'),'utf8'));
-const manifestPaths=new Set(manifest.records.flatMap(r=>(r.derivatives||[]).map(d=>d.path)));
-const expected=[
-  ...context.globalThis.PF5B.products.map(p=>`exports/asset_pf5b_prod_${p.assetSlug}_thumbnail_480_v1.webp`),
-  ...context.globalThis.PF5B.recipes.map(r=>`exports/asset_pf5b_recipe_${r.assetSlug}_listing_800x600_v1.webp`),
-  ...['ingredients','chocolate','colours-flavours','fillings-fondant','decorating','bakeware-tools','packaging'].flatMap(d=>[`exports/asset_pf5b_department_${d}_v1_square_800.webp`,`exports/asset_pf5b_department_${d}_v1_wide_1536x1024.webp`]),
-  ...['bcp-250g','bcp-500g','bcp-1kg'].map(v=>`exports/asset_pf5b_variant_${v}_v1_primary_1200.webp`)
-  ,'exports/asset_pf5b_recipe_demo-cocoa-celebration-cake_hero_1536x1024_v1.webp'
-  ,'exports/asset_pf5b_prod_window-cake-box_primary_1200_v1.webp'
-];
-const unmanifested=expected.filter(p=>!manifestPaths.has(p));
-const absentExports=expected.filter(p=>!fs.existsSync(path.join(catalog,p)));
-const required=['home','contact','assets','departments','plp','products','variants','recipes','pdp','mappings','states','stress'];
-const absent=required.filter(v=>!app.includes(`${v}:`));
-if(products!==24||recipes!==6||absent.length||unmanifested.length||absentExports.length)throw new Error(`Coverage failed: products=${products}, recipes=${recipes}, absent views=${absent.join(',')}, unmanifested=${unmanifested.join(',')}, absent exports=${absentExports.join(',')}`);
-const allDerivativePaths=manifest.records.flatMap(r=>(r.derivatives||[]).map(d=>d.path));
-const missingDerivatives=allDerivativePaths.filter(p=>!fs.existsSync(path.join(catalog,p)));
-const hasManifestGallery=app.includes("if(view==='assets')fetch");
-if(!hasManifestGallery||missingDerivatives.length)throw new Error(`Manifest-gallery coverage failed: dynamic=${hasManifestGallery}, missing derivatives=${missingDerivatives.join(',')}`);
-console.log(JSON.stringify({status:'PASS',products,recipes,views:required.length,manifestBackedPlacements:expected.length,manifestDerivatives:allDerivativePaths.length,missingDerivatives:0,unmanifested:0,absentExports:0},null,2));
+/** Fail closed when the review harness diverges from canonical Phase 5B data. */
+const fs=require('fs'),path=require('path'),vm=require('vm'),crypto=require('crypto'),child=require('child_process');
+const base=__dirname,catalog=path.resolve(base,'../../production_artifacts/05_catalog_production'),errors=[];
+const assert=(ok,msg)=>{if(!ok)errors.push(msg)},readText=f=>fs.readFileSync(path.join(catalog,f),'utf8'),read=f=>JSON.parse(readText(f)),equal=(a,b,msg)=>assert(JSON.stringify(a)===JSON.stringify(b),`${msg} mismatch`);
+const names=['Product_Master_Data.json','SKU_Variant_Data.json','Product_Content_Records.json','Recipe_Master_Data.json','Recipe_Product_Mapping.json','Catalog_Asset_Manifest.json','Fictional_Brand_Registry.md'];
+const products=read(names[0]).products,variants=read(names[1]).variants,content=read(names[2]).records,recipes=read(names[3]).recipes,mappingData=read(names[4]),manifest=read(names[5]);
+const brandLabels=Object.fromEntries([...readText(names[6]).matchAll(/\| `([^`]+)` \| ([^|]+) \|/g)].map(m=>[m[1],m[2].trim()]));
+for(const f of ['index.html','styles.css','narrow-fix.css','app.js','README.md','build-canonical-data.js'])assert(fs.existsSync(path.join(base,f)),`missing harness file ${f}`);
+try{child.execFileSync(process.execPath,[path.join(base,'build-canonical-data.js')],{stdio:'pipe'})}catch(e){errors.push(`canonical bundle build failed: ${e.stderr?.toString().trim()||e.message}`)}
+const bundle=path.join(base,'canonical-data.js');assert(fs.existsSync(bundle),'missing generated canonical-data.js');
+const context={globalThis:{}};if(fs.existsSync(bundle))vm.runInNewContext(fs.readFileSync(bundle,'utf8'),context);const data=context.globalThis.PF5B||{};
+for(const name of names){assert(data.source?.inputs?.includes(name),`source list missing ${name}`);assert(data.source?.sha256?.[name]===crypto.createHash('sha256').update(readText(name)).digest('hex'),`source checksum mismatch: ${name}`)}
+equal(data.source?.tieBreakOrder,mappingData.tie_break_order,'tie-break order');assert(data.source?.selectionRule===mappingData.selection_rule,'selection rule mismatch');
+
+const manifestPaths=new Map(manifest.records.flatMap(r=>(r.derivatives||[]).map(d=>[d.path,{r,d}]))),browserPath=v=>String(v||'').replace(/^\.\.\/\.\.\/production_artifacts\/05_catalog_production\//,'');
+function media(value,key,id,purpose,label){const hit=manifestPaths.get(browserPath(value)),prefix=key.replace(/_ids$/,'');assert(hit,`${label} media absent from manifest`);if(hit){assert([purpose,`${prefix}_${purpose}`].includes(hit.d.purpose),`${label} media purpose mismatch`);assert(hit.r.relationships?.[key]?.includes(id),`${label} media relationship mismatch`)}}
+const pById=new Map(products.map(x=>[x.id,x])),vById=new Map(variants.map(x=>[x.id,x])),cById=new Map(content.map(x=>[x.product_id,x]));
+assert(data.products?.length===24,`expected 24 products, found ${data.products?.length}`);assert(data.products?.flatMap(p=>p.variants||[]).length===38,'expected 38 variants');
+for(const shown of data.products||[]){const p=pById.get(shown.canonicalId);assert(p,`${shown.canonicalId||shown.id} is not canonical`);if(!p)continue;
+  assert(shown.id===p.id&&shown.canonicalId===p.id&&shown.slug===p.slug&&shown.title===p.title,`${p.id} identity mismatch`);assert(shown.brandId===p.brand_id&&shown.brand===brandLabels[p.brand_id],`${p.id} brand mismatch`);assert(shown.departmentId===p.department_id&&shown.categoryId===p.category_id,`${p.id} taxonomy mismatch`);equal(shown.variantAxes,p.variant_axes,`${p.id} variant axes`);
+  const c=cById.get(p.id);equal(shown.content,c,`${p.id} content`);media(shown.primary,'product_ids',p.id,'primary',p.id);media(shown.thumbnail,'product_ids',p.id,'thumbnail',p.id);
+  const expected=variants.filter(v=>v.parent_product_id===p.id);assert(shown.variants?.length===expected.length,`${p.id} variant count mismatch`);
+  for(const item of shown.variants||[]){const v=vById.get(item.id);assert(v&&v.parent_product_id===p.id,`${item.id} parent join mismatch`);if(!v)continue;assert(item.sku===v.sku,`${v.id} SKU mismatch`);assert(item.priceMinor===v.price_inr_minor,`${v.id} price mismatch`);assert(item.availability===v.availability,`${v.id} availability mismatch`);equal(item.axisValues,v.axis_values,`${v.id} axis values`);equal(item.quantity,v.normalized_sell_quantity,`${v.id} quantity`);media(item.primary,'variant_ids',v.id,'primary',v.id);media(item.thumbnail,'variant_ids',v.id,'thumbnail',v.id)}
+}
+assert(new Set((data.products||[]).map(p=>p.canonicalId)).size===24,'24 exact parent joins not demonstrated');assert(new Set((data.products||[]).flatMap(p=>p.variants||[]).map(v=>v.id)).size===38,'38 exact SKU joins not demonstrated');
+
+const rById=new Map(recipes.map(r=>[r.id,r]));assert(data.recipes?.length===6,`expected 6 recipes, found ${data.recipes?.length}`);
+for(const shown of data.recipes||[]){const r=rById.get(shown.canonicalId);assert(r,`${shown.canonicalId||shown.id} is not canonical`);if(!r)continue;assert(shown.id===r.slug&&shown.title===r.title,`${r.id} identity mismatch`);assert(shown.categoryId===r.recipe_category,`${r.id} category mismatch`);equal(shown.yield,r.yield,`${r.id} yield`);equal(shown.ingredients,r.ingredients,`${r.id} ingredients`);media(shown.listing,'recipe_ids',r.id,'listing',r.id);media(shown.hero,'recipe_ids',r.id,'hero',r.id)}
+const lines=recipes.flatMap(r=>r.ingredients.map(i=>({...i,recipeId:r.id})));assert(lines.length===45,`expected 45 ingredient lines, found ${lines.length}`);
+
+// Exhaustive multisets, bounded by the repeated-smallest-pack solution; exact approved tie-breaks.
+const rank=(a,b)=>a.purchased-b.purchased||a.leftover-b.leftover||a.packCount-b.packCount||a.distinct-b.distinct||a.price-b.price||a.ids.localeCompare(b.ids);
+function solve(productId,required,fixtureVariants=variants){const eligible=fixtureVariants.filter(v=>v.parent_product_id===productId&&v.normalized_sell_quantity?.kind===required.kind&&v.normalized_sell_quantity?.canonical_unit===required.canonical_unit&&!['unavailable','discontinued'].includes(v.availability)).sort((a,b)=>a.id.localeCompare(b.id));if(!eligible.length)return null;
+  const max=Math.ceil(required.value/Math.min(...eligible.map(v=>v.normalized_sell_quantity.canonical_value))),plans=[];
+  function walk(i,counts,packs){if(i===eligible.length){if(!packs)return;const purchased=counts.reduce((n,c,j)=>n+c*eligible[j].normalized_sell_quantity.canonical_value,0);if(purchased<required.value)return;const selectedPacks=counts.flatMap((count,j)=>Array.from({length:count},()=>({variantId:eligible[j].id,sku:eligible[j].sku,pack:eligible[j].normalized_sell_quantity.display_label,quantity:eligible[j].normalized_sell_quantity,priceMinor:eligible[j].price_inr_minor})));plans.push({selectedPacks,purchased,leftover:purchased-required.value,packCount:packs,distinct:new Set(selectedPacks.map(x=>x.variantId)).size,price:selectedPacks.reduce((n,x)=>n+x.priceMinor,0),ids:selectedPacks.map(x=>x.variantId).sort().join('|')});return}for(let c=0;c<=max-packs;c++)walk(i+1,[...counts,c],packs+c)}walk(0,[],0);return plans.sort(rank)[0]||null}
+const synthetic=(id,q,price)=>({id,parent_product_id:'synthetic',sku:id,availability:'available',price_inr_minor:price,normalized_sell_quantity:{kind:'mass',canonical_value:q,canonical_unit:'g',display_label:`${q} g`}});
+const repeatedPackProof=solve('synthetic',{kind:'mass',value:600,canonical_unit:'g'},[synthetic('test_small',300,100),synthetic('test_large',1000,1)]);
+assert(repeatedPackProof?.ids==='test_small|test_small'&&repeatedPackProof.purchased===600,'exhaustive solver failed repeated-pack proof; a single-pack shortcut could pass');
+const mapByLine=new Map(mappingData.mappings.map(x=>[x.recipe_ingredient_id,x])),unmapped=new Map(mappingData.unmapped_ingredients.map(x=>[x.recipe_ingredient_id,x]));
+const shownLines=(data.recipeMappings||[]).flatMap(g=>(g.items||[]).map(x=>({...x,recipeId:g.recipeId})));assert(shownLines.length===45,`expected 45 displayed mapping states, found ${shownLines.length}`);
+for(const line of lines){const shown=shownLines.find(x=>x.ingredientId===line.id);assert(shown,`${line.id} missing from mapping states`);if(!shown)continue;assert(shown.recipeId===line.recipeId&&shown.name===line.display_name,`${line.id} recipe/name mismatch`);equal(shown.required,line.base_quantity,`${line.id} required quantity`);assert(shown.optional===line.optional&&shown.pantryDefault===line.pantry_default&&shown.mappingStatus===line.mapping_status,`${line.id} state mismatch`);
+  const map=mapByLine.get(line.id);if(!map){assert(unmapped.has(line.id),`${line.id} missing unmapped reason`);assert(shown.productId==null&&!shown.selectedPacks?.length&&shown.autoAddEligible===false,`${line.id} unmapped commerce state mismatch`);continue}
+  assert(shown.productId===map.product_id,`${line.id} product mapping mismatch`);const plan=solve(map.product_id,line.base_quantity);assert(plan,`${line.id} has no eligible pack plan`);if(!plan)continue;
+  equal(shown.selectedPacks,plan.selectedPacks,`${line.id} selected packs`);equal(shown.purchasedCanonicalQuantity,{value:plan.purchased,unit:line.base_quantity.canonical_unit},`${line.id} purchased quantity`);equal(shown.leftoverCanonicalQuantity,{value:plan.leftover,unit:line.base_quantity.canonical_unit},`${line.id} leftover quantity`);assert(shown.totalPriceMinor===plan.price,`${line.id} price mismatch`);assert(shown.autoAddEligible===(!line.optional&&line.pantry_default==='assume_needed'),`${line.id} auto-add eligibility mismatch`)
+}
+
+const app=fs.readFileSync(path.join(base,'app.js'),'utf8'),generated=fs.existsSync(bundle)?fs.readFileSync(bundle,'utf8'):'';
+for(const view of ['home','contact','assets','departments','plp','products','variants','recipes','pdp','mappings','states','stress'])assert(app.includes(`${view}:`),`missing ${view} view`);
+for(const token of ['PF-FLR','PF-SUG','PF-BPW','₹175','₹315','₹575','Stoneground','Double-Action','Fine powder','Pantryfold'])assert(!app.includes(token)&&!generated.includes(token),`unsupported stale display token: ${token}`);
+assert(!/\bPF-[A-Z0-9-]+\b/.test(app),'stale hardcoded PF-* SKU remains in app');
+assert(!/₹\s?[\d,]+(?:\.\d{1,2})?/.test(app),'hardcoded INR value remains in app; prices must resolve from canonical bundle');
+equal((data.products||[]).filter(p=>p.brand==='Measureloom').map(p=>p.canonicalId),products.filter(p=>p.brand_id==='brand_measureloom').map(p=>p.id),'Measureloom assignments');
+const summary={status:errors.length?'FAIL':'PASS',parentJoins:products.length,skuJoins:variants.length,recipes:recipes.length,ingredientLines:lines.length,mappings:mappingData.mappings.length,unmapped:mappingData.unmapped_ingredients.length,exhaustivePackPlansChecked:mappingData.mappings.length,sourceChecksums:names.length,errors};console.log(JSON.stringify(summary,null,2));if(errors.length)process.exitCode=1;

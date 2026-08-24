@@ -55,6 +55,7 @@
   .manifest-grid { grid-template-columns:repeat(3,1fr); }
   .pdp { grid-template-columns:1fr; }
   .pdp-buy { position:static; }
+  .text-200 .stress-grid { grid-template-columns:1fr; }
 }
 @media (max-width: 520px) {
   header { flex-wrap: wrap; gap: 1rem; }

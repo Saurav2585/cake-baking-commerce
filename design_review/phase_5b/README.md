@@ -2,6 +2,8 @@
 
 Static, dependency-free review surface for Phase 5B catalog-scale asset and content-fit validation. This is not production UI and does not redefine approved commerce or UX behaviour.
 
+The browser fixture is generated from the canonical Phase 5B product, SKU, content, recipe, mapping and manifest files plus the fictional brand registry. Run `node design_review/phase_5b/build-canonical-data.js` after an approved canonical change; never hand-edit `canonical-data.js` or introduce a second catalog in harness code.
+
 ## Serve
 
 From repository root:
@@ -39,7 +41,7 @@ All product identities, prices and availability are fictional demo content. Reci
 
 ## Final validation
 
-- Static validator: 24 products, six recipes, 12 views, 49 explicit placements and all 150 final manifest derivatives; zero missing or unmanifested files.
+- Static validator: the generated fixture exactly reconciles 24 products, 38 variants, 24 content records, six recipes and all 45 ingredient lines to its source hashes; 12 views and all final manifest derivatives remain covered.
 - Deterministic browser evidence: homepage/editorial, departments, PLP desktop/mobile, PDP desktop/mobile, multi-variant PDP, recipes, recipe-to-cart, manifest-complete grayscale, image failure, and 320 px/200% text.
 - Browser result for the refreshed evidence set: zero failed requests, incomplete images, runtime/console errors or horizontal overflow.
 - Every screenshot listed in the preview index was manually opened after capture. A completed automated command alone was not treated as visual approval.

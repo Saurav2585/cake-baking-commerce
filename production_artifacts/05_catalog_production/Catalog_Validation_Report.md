@@ -2,7 +2,7 @@
 
 **Date:** 25 August 2026
 
-**Result:** PASS FOR PHASE REVIEW
+**Result:** PASS FOR TARGETED PHASE REVIEW
 
 ## Automated data checks
 
@@ -35,6 +35,19 @@ Both validators use system Node and have zero package dependencies.
 
 The data validation returned zero errors.
 
+## Review-harness truth reconciliation
+
+External review found that commit `4fe3cbf15ada23b82802b0507fe3f737add4b83d` validated canonical files correctly but then presented an independently hardcoded browser catalog. That stale layer changed titles, brands, SKUs, prices, product descriptors and recipe pack choices. The earlier statement that the review harness proved implementation readiness was therefore inaccurate.
+
+The canonical JSON files remain unchanged and authoritative. Browser-compatible data is now generated deterministically from the five canonical JSON records, `Catalog_Asset_Manifest.json`, and the approved fictional-brand registry/lookup. The harness has no manually maintained alternate product catalog. Its truth validator fails closed on:
+
+- exact joins for 24 parents and 38 SKUs, including IDs, slugs, titles, brands, taxonomy, axes, packs, prices, availability and selected media;
+- all six recipes and 45 ingredient lines, including required quantities, pantry/optional/unmapped states and exhaustive smallest-sufficient-pack results;
+- unsupported aliases or descriptors, stale `PF-*` SKUs and stale cocoa prices;
+- `Stoneground`, `Double-Action`, unauthorized Measureloom assignments and any known fact not present in canonical content.
+
+This source-derived bundle plus exact comparison is the prevention control for future harness drift; manually editing browser catalog values is prohibited.
+
 ## Manual editorial review
 
 - Product titles are pack-neutral; pack values, dimensions, prices and availability remain SKU-owned.
@@ -54,6 +67,6 @@ Asset file integrity, derivatives, dimensions, checksums and manual image inspec
 - Formal product-brand legal, MCA, domain and handle clearance remains outstanding; five registry entries are classified Caution.
 - Fictional product facts are intentionally sparse. Engineering must render critical unknowns rather than hide them.
 - The 18 unmapped egg, milk, oil, butter and buttercream requirements keep each method complete while exercising the required unresolved-line state. Every line is marked `suggest_owned`; it remains visible and requires an explicit include/owned/omit choice rather than implying a sale mapping.
-- Production implementation must compile the normalized bundle, materialize its declared defaults and fail closed on unresolved joins.
+- Production implementation must compile canonical records or an integrity-checked derivative, materialize declared defaults and fail closed on unresolved or mismatched joins. Review/demo fixtures must follow the same rule.
 
 No Phase 6 code or application implementation was started.

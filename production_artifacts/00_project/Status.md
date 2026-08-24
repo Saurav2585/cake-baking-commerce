@@ -1,8 +1,8 @@
 # Project Status
 
-**Current state:** Phase 5B targeted visual asset rework review ready; paused before application engineering
+**Current state:** Phase 5B canonical data and review-harness reconciliation review ready; paused before application engineering
 **Last updated:** 2026-08-25 (Asia/Kolkata)
-**Overall:** Phase 5B data provisionally approved; targeted scaled-visual rework complete and awaiting external review
+**Overall:** Phase 5B canonical catalog and visuals are provisionally approved; targeted harness truth reconciliation complete and awaiting external review
 
 **Review packet:** `production_artifacts/reviews/Current_Review_Packet.md`
 
@@ -46,6 +46,9 @@
 - Thirteen prompt-recorded generated masters create seven materially differentiated department families and six truthful recipe families; no generated typography is used.
 - The fail-closed manifest now covers 75 logical masters and 150 derivatives (225 files), with no stale/orphan asset and complete checksums/provenance.
 - The expanded `design_review/phase_5b/` harness covers 12 review views and 13 manually inspected placement screenshots, including homepage/editorial, departments, PLP/PDP desktop/mobile, variants, recipes, mapping, failure, grayscale, 320 px and 200% text.
+- External review of commit `4fe3cbf` provisionally approved the visual package but identified that the review harness carried a stale, independently maintained catalog whose titles, brands, SKUs, prices, facts and recipe selections contradicted canonical Phase 5B records.
+- The correction preserves the approved canonical JSON and visuals, removes the parallel catalog, and makes browser data a deterministic derivative of the canonical product, SKU, content, recipe, mapping, manifest and approved fictional-brand sources.
+- Exact truth validation now protects all 24 parents, 38 SKUs, six recipes and 45 ingredient lines, including displayed brands, titles, variants, prices, media and smallest-sufficient-pack results; source drift fails the review build rather than silently producing alternate fixtures.
 
 ## Not started by design
 
@@ -53,8 +56,8 @@
 
 ## Phase 5B approval request
 
-1. Approve, revise or reject the targeted 75-record/225-file visual asset rework; the data package is already provisionally approved.
-2. Separately authorize or withhold application engineering; visual review readiness does not start it.
+1. Approve, revise or reject the canonical-data and review-harness reconciliation; the canonical data and visual package remain provisionally approved and unchanged.
+2. Separately authorize or withhold application engineering; reconciled review readiness does not start it.
 
 ## Resolved constraints
 
