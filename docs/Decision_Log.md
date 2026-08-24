@@ -25,6 +25,8 @@ Confirmed decisions are authoritative. Proposals and assumptions do not become d
 | D-019 | 2026-08-24 | Confirmed | Phase 1 UX and Competitor Research is externally approved with no rework at commit `510afb0b5274821704c534bd44a514e5c7409497`. | External review verdict | Phase 1 is closed and its approved inputs are binding downstream. |
 | D-020 | 2026-08-24 | Confirmed | Approve the non-naming Phase 2A strategy, including Measured Joy as lead territory, Working Pantry as functional counterweight, Ingredient Theatre as supporting image language, and the retailer-led architecture. | External Phase 2A review at commit `b9d6f0c` | These strategic inputs need no rework; design remains gated. |
 | D-021 | 2026-08-24 | Confirmed | Reject the original shortlist—Whisklane, Crumbloom, Batterfolk, Ovenora and Pantryrise—because preliminary screening found material collision risk; do not advance close variants. | External Phase 2A review | Naming alone requires targeted rework; no retailer name is confirmed. |
+| D-022 | 2026-08-24 | Confirmed prototype | Use Pantryform with descriptor “Baking Ingredients & Supplies” for portfolio/demo architecture, UX and design artifacts. It is not legally cleared, trademarked or commercially available. | External Phase 2A approval at commit `504321e` | Downstream artifacts may use Pantryform only with the prototype/legal-clearance boundary intact. |
+| D-023 | 2026-08-24 | Confirmed | Phase 2A strategy and naming rework are externally approved; authorize Phase 2B Catalog, Commerce and IA Architecture only. | External review verdict | Architecture may proceed; wireframes, visual UI, generated assets, motion implementation and code remain blocked. |
 | P-001 | 2026-08-24 | Superseded by D-010 | Prioritize home bakers/hobbyists, with micro-bakeries secondary. | Approved | No longer an open proposal. |
 | P-002 | 2026-08-24 | Superseded by D-011 | Ship v1 UI in English only while keeping content structures localization-ready. | Approved | No longer an open proposal. |
 | P-003 | 2026-08-24 | Superseded by D-012 | Present the demo as a curated multi-brand retailer rather than a single-brand shop or marketplace. | Approved | No longer an open proposal. |
@@ -32,10 +34,10 @@ Confirmed decisions are authoritative. Proposals and assumptions do not become d
 | P-005 | 2026-08-24 | Superseded by D-015 | Use eight customer-facing departments with brands secondary. | Approved | No longer an open proposal. |
 | P-006 | 2026-08-24 | Superseded by D-016 | Default recipe mapping to the smallest sufficient pack with full quantity visibility and override. | Approved | No longer an open proposal. |
 | P-007 | 2026-08-24 | Superseded by D-017 | Show “Information not provided” for missing critical ingredient, allergen and storage fields. | Approved | No longer an open proposal. |
-| P-008 | 2026-08-24 | Phase 2A naming approval requested | Advance Pantryform as prototype direction from the screened shortlist: Pantryform, The Making Shelf, Method Pantry, Supply & Stir and ReadyMeasure. | Targeted naming rework; S-01–S-17 | Formal professional legal/company/domain/handle/linguistic clearance remains mandatory; no name is confirmed. |
+| P-008 | 2026-08-24 | Superseded by D-022 | Advance Pantryform as prototype direction from the screened shortlist. | Approved for portfolio/demo use only | Formal professional legal/company/domain/handle/linguistic clearance remains mandatory for commercial use. |
 
 ## Assumptions register
 
 See the clearly labeled assumptions in the Project Charter and Phase 1 hypotheses. Assumptions must be validated, rejected, or promoted here through a dated decision. D-010 through D-013 replace the corresponding initial assumptions.
 
-The Pantryform recommendation and revised shortlist are proposals only. No retailer name is confirmed; formal professional clearance remains mandatory.
+Pantryform is confirmed only as a portfolio/demo prototype direction under D-022. Formal professional clearance remains mandatory before any commercial use.

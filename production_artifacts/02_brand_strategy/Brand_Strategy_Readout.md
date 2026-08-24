@@ -1,7 +1,7 @@
 # Brand Strategy Readout
 
 **Phase:** 2A — Retail Brand Strategy  
-**Status:** Naming rework review ready
+**Status:** Externally approved for portfolio/demo use
 **Date:** 2026-08-24
 
 ## Outcome
@@ -17,7 +17,7 @@ The external reviewer approved the non-naming Phase 2A strategy and requested ta
 - **Recommended campaign/creative territory:** Measured Joy.
 - **Architecture:** retailer-led; fictional product brands are secondary metadata/ranges, not sellers or peer storefronts.
 
-Measured Joy and the non-naming strategy are externally approved. No retailer name is confirmed. The revised name and shortlist are prototype proposals only; no trademark, MCA company-name, domain or handle availability is claimed. Independent professional validation is mandatory before production adoption.
+Measured Joy and the non-naming strategy are externally approved. Pantryform is confirmed only for portfolio/demo prototype use with descriptor “Baking Ingredients & Supplies”; no trademark, MCA company-name, domain, handle or commercial availability is claimed. Independent professional validation remains mandatory before commercial adoption.
 
 ## Traceability
 
@@ -42,10 +42,11 @@ Measured Joy and the non-naming strategy are externally approved. No retailer na
 - [x] Unsupported heritage, credentials, claims, reviews, certifications and copied competitor material are absent.
 - [x] No UI, production catalog, generated assets or application code was created.
 
-## Human approval requested
+## Approval record
 
-1. Approve or revise the screened shortlist and authorize one candidate for formal professional clearance; prototype recommendation: **Pantryform**.
+- External reviewer approved Pantryform as the working prototype retailer name at commit `504321e`.
+- Phase 2B Catalog, Commerce and IA Architecture was authorized.
 
 ## Gate
 
-Phase 2B is not authorized and must not begin. Pantryform is a prototype direction only—formal legal clearance pending. A name does not become final until human approval and external validation are recorded.
+Phase 2A is closed. Pantryform remains prototype direction only—formal legal clearance pending. Phase 3 and visual design remain separately gated.

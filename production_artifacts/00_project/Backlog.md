@@ -6,8 +6,8 @@
 |---|---|---|---|---|---|
 | 0 — Foundation | PM | Brief | Charter, repository/artifact map, role boundaries, backlog, status, decisions, risks, release checklist, UX research task package | All requested artifacts exist; confirmed decisions and assumptions are separate; no design/code started | Approve only open material Phase 0 decisions |
 | 1 — UX and competitor research | UX Research, Catalog/Commerce | Phase 0 | Competitor/category evidence, audience hypotheses, jobs/journeys, terminology, catalog patterns, opportunity and constraint synthesis | Evidence is dated/cited; facts separated from inference; reference content not copied; research questions answered | Approved at commit `510afb0` |
-| 2A — Retail brand strategy | Brand Strategy, PM | Approved Phase 1 | Market opportunity, positioning, personality, naming, voice, visual-world principles, brand architecture, campaign territories, creative brief and readout | Original strategy traces to research; 20+ names scored; shortlist/recommendation and mandatory clearance boundary explicit; no design begun | Approve positioning, retailer-name candidate for clearance, and lead territory |
-| 2B — Catalog/commerce/IA architecture | Catalog/Commerce, UX | Approved Phase 2A direction and explicit authorization | Taxonomy detail, product/variant schema, commerce boundaries, sitemap, recipe mapping and journey requirements | Catalog covers v1; approved D-015–D-017 encoded; future integrations have explicit interfaces | Approve architecture, taxonomy detail and commerce boundary |
+| 2A — Retail brand strategy | Brand Strategy, PM | Approved Phase 1 | Market opportunity, positioning, personality, naming, voice, visual-world principles, brand architecture, campaign territories, creative brief and readout | Original strategy traces to research; screened prototype name and clearance boundary explicit; no design begun | Approved at commit `504321e`; Pantryform is prototype-only |
+| 2B — Catalog/commerce/IA architecture | Catalog/Commerce, UX | Approved Phase 2A direction and explicit authorization | Taxonomy detail, product/variant/recipe schemas, discovery and commerce boundaries, sitemap/flows/states, SEO, analytics and frontend contracts | D-015–D-017 encoded; deterministic rules and accessibility/failure states complete; future interfaces explicit; no downstream design/code | Approve Phase 2B architecture before Phase 3 |
 | 3 — UX definition | UX/Product Design, Catalog/Commerce | Phase 2B | User flows, IA, wireframes, states, content model, recipe-to-cart rules | Critical journeys and edge states specified across breakpoints; accessibility needs annotated | Approve UX flows and wireframes |
 | 4 — Visual & motion system | UI Design, Visual Assets, Motion | Phase 3 | Original visual system, responsive screens, asset plan, motion specs, reduced-motion behavior | Design is original, consistent, accessible in intent, feasible, and covers critical states | Approve visual direction and hero/asset direction |
 | 5 — Catalog & asset production | Catalog/Commerce, Visual Assets | Phases 2B–4 | 24–30 product records, recipe data, original copy, generated assets, Asset Manifest | Coverage/data validation passes; pricing evidence/assumptions recorded; every asset traceable; prohibited claims absent | Approve representative catalog/content set |
@@ -58,3 +58,15 @@
 - [x] Three distinct campaign territories and a bounded creative brief are documented.
 - [x] Assumptions remain distinct from approved decisions.
 - [x] No UI design, catalog architecture, generated assets or application code was started.
+
+## Phase 2B acceptance checklist
+
+- [x] Twelve catalog/commerce artifacts and four UX-architecture artifacts are present.
+- [x] Eight departments and all required product families are covered at bounded depth.
+- [x] Parent/variant ownership, typed axes, normalization and tri-state facts are deterministic.
+- [x] Recipe-to-cart pack selection, overrides, substitutions, staleness and merges are testable.
+- [x] Search/filter/sort, URL/SEO, analytics and all critical states are specified.
+- [x] Demo commerce cannot imply a real payment, order, delivery or tax calculation.
+- [x] Provider seams are replaceable without selecting or implementing vendors.
+- [x] Keyboard, focus, status, labels, target-size, reflow and reduced-motion requirements are architectural.
+- [x] No wireframes, visual UI, generated assets, motion implementation or code were created.

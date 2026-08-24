@@ -18,8 +18,8 @@ Everything for the bake, made easier to choose.
 
 ## Recommended strategic inputs
 
-- Name: **Pantryform**, prototype direction only and subject to external approval plus formal legal clearance.
-- Territory: **Measured Joy**, provisional and subject to approval.
+- Name: **Pantryform**, approved for portfolio/demo prototype use only; formal legal clearance remains pending.
+- Territory: **Measured Joy**, externally approved.
 - Personality: capable, encouraging, considered, sensory, straightforward.
 - Visual idea: measured abundance.
 
