@@ -1,8 +1,8 @@
 # Project Status
 
-**Current state:** Phase 5A review ready; paused before bulk assets and application engineering
+**Current state:** Phase 5B review ready; paused before application engineering
 **Last updated:** 2026-08-25 (Asia/Kolkata)
-**Overall:** Phase 4B externally approved; bounded Phase 5A visual asset and packaging pilot complete and awaiting external review
+**Overall:** Phase 5A externally approved; Phase 5B demo catalog, recipes and scaled asset package complete and awaiting external review
 
 **Review packet:** `production_artifacts/reviews/Current_Review_Packet.md`
 
@@ -39,15 +39,19 @@
 - Phase 5A produced one cocoa-powder parent family with three proposed weights/SKUs, original editorial imagery, editable Measureloom packaging, PDP/PLP/recipe assets, a 53-file fail-closed manifest and an isolated placement prototype.
 - Browser QA covers seven placements at 1440/768/390/320, 320px/200% text, image-disabled/failure states and atomic 1 kg variant media; final checks have no horizontal overflow.
 - Phase 5A targeted rework corrected a corrupt desktop homepage JPEG and a stale mobile asset reference. The review prototype now uses semantic art direction, the 390/320 browser selects the approved 819×1024 crop, and refreshed homepage evidence was manually inspected.
+- External review approved Phase 5A at commits `b5a6b26` and `a0e0810`, including Measurefield, Measureloom, the factual-lock method, manifest structure and corrected placement evidence; Phase 5B alone was authorized.
+- Phase 5B locks 24 parent products in the required 6/4/4/3/3/2/2 department distribution, 38 purposeful SKUs, 24 content records and six original demo recipes with 45 method-complete ingredient lines, 27 explicit sale mappings and 18 visible unmapped pantry lines.
+- A fail-closed catalog asset manifest covers 43 logical masters and 86 derivatives (129 files): all product primaries/thumbnails, six variant-owned families, six recipe families and seven department families.
+- The isolated `design_review/phase_5b/` harness covers nine review views and passes 1440/768/390/320 responsive checks, 320 px/200% text, image-disabled/failure behavior, console checks and horizontal-overflow checks.
 
 ## Not started by design
 
-- Primary user research, bulk catalog/asset production, production motion/application engineering, database, authentication, real commerce, deployment, full QA and release.
+- Primary user research, production motion/application engineering, database, authentication, real commerce, deployment, full QA and release.
 
-## Phase 5A approval request
+## Phase 5B approval request
 
-1. Approve, revise or reject Measurefield, the Measureloom prototype pack family and the factual/provenance method.
-2. Separately authorize or withhold any seed-data or bulk-asset phase; pilot approval alone must not start it.
+1. Approve, revise or reject the 24-parent/38-SKU demo fixture, six-recipe library, deterministic mappings and scaled asset package.
+2. Separately authorize or withhold application engineering; Phase 5B review readiness does not start it.
 
 ## Resolved constraints
 
@@ -55,4 +59,4 @@
 
 ## Next action after approval
 
-Record the Phase 5A verdict. Bulk asset generation, catalog production and application engineering are not authorized by this handoff and must not begin without explicit authorization. Pantryform and Measureloom remain prototype-only; formal commercial clearance is pending.
+Record the Phase 5B verdict. Application engineering is not authorized by this handoff and must not begin without explicit authorization. Pantryform, Measureloom and all subordinate product labels remain prototype-only; formal commercial clearance is pending.

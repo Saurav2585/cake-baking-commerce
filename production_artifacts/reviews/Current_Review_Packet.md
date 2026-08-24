@@ -2,93 +2,93 @@
 
 ## Phase
 
-**Phase 5A — Bounded Visual Asset and Packaging Pilot**
-**Status:** Targeted rework complete; review ready
+**Phase 5B — Demo Catalog, Recipe Content and Scaled Asset Production**
+
+**Status:** Review ready
+
 **Prepared:** 2026-08-25 (Asia/Kolkata)
 
 ## Review objective
 
-Approve, revise or reject the Measurefield visual pilot, Measureloom subordinate prototype brand, three-weight cocoa-powder packaging family, provenance method and recommendation about later scale. This packet does not request automatic bulk generation or application engineering.
+Approve, revise or reject the implementation-ready fictional demo catalog, recipe library, deterministic recipe-to-supplies mappings and scaled visual asset package. This packet does not authorize application engineering.
 
-## Targeted rework resolution
+## Authority and boundary
 
-- The prior `placement_home_desktop_1440x1000_v1.jpg` was materially defective. DOM geometry and asset decoding were correct, but rapid viewport reuse plus the direct JPEG capture path produced a partially rendered/black file. The replacement was captured losslessly from a fresh 1440×1000 tab, manually inspected, deterministically JPEG-encoded and manually inspected again.
-- The stale CSS reference to `asset_pf5a_home_cocoa_mobile_1200x1500_v1.webp` was removed. The hero now uses semantic `<picture>/<source>` art direction with the approved `asset_pf5a_home_cocoa_mobile_819x1024_v1.webp`.
-- Browser `currentSrc` proves desktop at 1440/768 and the 819×1024 mobile crop at 390/320. All seven routes × four widths decode images, collect no page errors and have zero horizontal overflow. Clean-server logs contain no failed image requests after favicon suppression.
-- 320 px/200% text, image-disabled and failure routes were rechecked. The refreshed desktop, 390 and 320 homepage captures were visually inspected before handoff.
+- Phase 5A was externally approved at commits `b5a6b2644f43dbb45cb14e7303510e87987f2f04` and `a0e0810240ad3e04bc713c4d0bd7ea0a85584a1e`; D-029 records the verdict.
+- Phase 5B was expressly authorized to produce structured content, assets and an isolated review harness only.
+- All products, prices, availability, recipes, product labels and imagery are fictional portfolio/demo fixtures.
+- Pantryform, Measureloom and every subordinate product label remain prototype-only pending professional legal and commercial clearance.
+- Production application, database, authentication, payment, inventory, deployment and real checkout remain out of scope.
 
-## Upstream authority and boundaries
+## Delivered scope
 
-- Phase 4B “Measured Transformation” was externally approved at `1de6c8aac8be54e4298cf333fe6a5db4d5f724cb` under D-028.
-- Authorization covers only `production_artifacts/04_motion_assets/Asset_Pilot_Brief.md`.
-- No approved concrete product supported three weight variants, so the explicitly authorized bounded-data fallback produced `prod_demo_baking_cocoa` with 250 g, 500 g and 1 kg proposed SKUs.
-- Ingredients, Allergens and Storage remain “Information not provided”; price and availability are not asserted.
-- Pantryform and Measureloom are prototype-only. Commercial packaging, legal clearance, bulk catalog/assets, production app, database, auth, payment and deployment remain out of scope.
+| Item | Final count |
+|---|---:|
+| Parent products | 24 |
+| Sellable SKUs | 38 |
+| Product content records | 24 |
+| Original demo recipes | 6 |
+| Method-complete recipe ingredient lines | 45 |
+| Explicit product mappings | 27 |
+| Explicit unmapped pantry lines | 18 |
+| Fictional product labels | 8 |
+| Manifest logical masters | 43 |
+| Asset derivatives | 86 |
+| Manifest-tracked files | 129 |
 
-## Required deliverables
+Department distribution is exactly Ingredients 6; Chocolate 4; Colours & Flavours 4; Fillings & Fondant 3; Decorating 3; Bakeware & Tools 2; Packaging 2.
 
-1. `Phase_5A_Brief.md`
-2. `Pilot_Fact_Lock.md`
-3. `Creative_Concepts.md`
-4. `Fictional_Product_Brand_System.md`
-5. `Packaging_Label_Master.md`
-6. `Three_SKU_Packaging_Family.md`
-7. `Homepage_Ingredient_Composition.md`
-8. `Department_Visual.md`
-9. `Recipe_Image_Set.md`
-10. `PDP_Media_Set.md`
-11. `PLP_Thumbnail_Set.md`
-12. `Pilot_Asset_Manifest.json`
-13. `Candidate_and_Rejection_Log.md`
-14. `Asset_Pilot_QA_Report.md`
-15. `Phase_5A_Readout.md`
+## Primary evidence
 
-Editable masters, web exports, review evidence and deterministic build/validation tools are included under `production_artifacts/05_asset_pilot/`.
-
-## Selected direction
-
-- Concept: **Measurefield** — physical measure fields, cocoa texture, working tools and graduated pack scale.
-- Fictional product brand: **Measureloom** — subordinate “A Pantryform pilot brand” lockup; formal legal/domain/handle/trade-dress clearance pending.
-- Product: **Baking cocoa powder**, form Powder; SKUs `ML-BCP-250`, `ML-BCP-500`, `ML-BCP-1000`.
-- Recipe proposal: **Cocoa Celebration Cake**, illustrative relationship only; no guaranteed result.
-
-## Review evidence
-
-- Placement prototype: `design_review/phase_5a/`
-- Serve from repository root: `python3 -m http.server 4173 --directory .`
-- Open: `http://127.0.0.1:4173/design_review/phase_5a/?view=home`
-- Asset previews: `production_artifacts/05_asset_pilot/previews/`
-- Preview index: `production_artifacts/05_asset_pilot/previews/README.md`
-- Manifest: `production_artifacts/05_asset_pilot/Pilot_Asset_Manifest.json`
+- Brief/readout: `production_artifacts/05_catalog_production/Phase_5B_Brief.md`, `Phase_5B_Readout.md`
+- Catalog: `Product_Master_Data.json`, `SKU_Variant_Data.json`, `Product_Content_Records.json`
+- Recipes: `Recipe_Master_Data.json`, `Recipe_Product_Mapping.json`
+- Rules/screening: `Catalog_Content_Strategy.md`, `Fictional_Brand_Registry.md`, `Demo_Pricing_and_Availability.md`
+- QA: `Catalog_Validation_Report.md`, `Asset_Production_QA_Report.md`, `Asset_Production_Readout.md`
+- Manifest: `production_artifacts/05_catalog_production/Catalog_Asset_Manifest.json`
+- Contact sheets: `production_artifacts/05_catalog_production/previews/`
+- Placement review: `design_review/phase_5b/`
 
 ## Acceptance evidence
 
-- [x] Three distinct concepts; Measurefield selected with strengths, weaknesses and trade-dress risks.
-- [x] Fact Lock covers every visible parent/SKU/recipe fact, explicit unknown and prohibited implication.
-- [x] Three original text-free image foundations were generated; all packaging text was rebuilt manually in editable SVG.
-- [x] Label master includes front, side, structural back, safe/quiet zones, brand/product/form/weight/SKU, unknown states and prototype disclosure; prohibited statutory data is absent.
-- [x] Three packs are one coherent family with honest ordinal scale, exact weight text and non-colour bar-count coding.
-- [x] Homepage 3:2/4:5, department 3:2/1:1, recipe 3:2/4:3/process, PDP, PLP and fallback sets are present and native-size or smaller.
-- [x] Selected and grayscale contact sheets plus fifteen browser captures demonstrate desktop/mobile, 320 px, 200% text, thumbnails, image failure and image-disabled behavior.
-- [x] Browser matrix passes 28 route/width placements; all final images load, headings exist and horizontal overflow is zero.
-- [x] PDP selection atomically resolves the 1 kg image, alt, pressed state and `ML-BCP-1000` status.
-- [x] Manifest validator passes every tracked visual file, required field, generated lineage, licence, alt decision, approval and SHA-256 checksum.
-- [x] No secret, credential, temporary generation file, browser profile, bulk catalog/asset or production implementation is included.
+- [x] Exactly 24 unique parents and the mandated department distribution.
+- [x] Thirty-eight purposeful SKUs with parent-owned axes and SKU-owned commerce/media state.
+- [x] Critical facts use only approved tri-states; prohibited claims are absent.
+- [x] Six original recipes include scalable quantities, steps, tools, pantry/optional behavior and disclosures.
+- [x] Mappings preserve the exhaustive smallest-sufficient-pack algorithm and deterministic tie-break order.
+- [x] Eighteen unmapped pantry requirements remain visible, start as suggested-owned and are never silently omitted or sale-mapped.
+- [x] Product-label screening is preliminary and dated; no availability or legal-clearance claim is made.
+- [x] Asset coverage includes every product, six variant-owned families, every recipe and all seven departments.
+- [x] All 43 masters and 86 derivatives pass relationships, dimensions and SHA-256 integrity; no orphan remains.
+- [x] Labels are manually composed, Measureloom is limited to cocoa and fake regulatory/certification data is absent.
+- [x] Contact sheets were manually inspected; a clipped department-label defect was corrected.
+- [x] The nine-view harness covers catalog, departments, PLP/search, product records, variants, recipes, mappings, failure and stress states.
+- [x] A 40-case browser matrix covers all nine views at 1440/768/390/320 plus 390/320 200% text and image-disabled stress; it found zero broken requests, incomplete images, console/runtime errors or horizontal overflow.
+- [x] Phase 5A evidence is unchanged and no application engineering began.
+
+## Reproduction commands
+
+```sh
+node production_artifacts/05_catalog_production/tools/validate_catalog_data.js
+node production_artifacts/05_catalog_production/tools/validate_catalog_assets.js
+node design_review/phase_5b/validate.js
+```
+
+Serve from repository root with `python3 -m http.server 4175 --bind 127.0.0.1`; open `http://127.0.0.1:4175/design_review/phase_5b/`.
 
 ## Known limitations and risks
 
-- Product/recipe records and pouch geometry are bounded proposals, not production facts.
-- Measureloom screening is preliminary; domain and legal availability are not claimed.
-- Image-generation rights state is prototype review only; commercial clearance is unassessed.
-- Recipe imagery is editorial and not culinary validation or a result promise.
-- R-036–R-038 block production reuse until data, identity/trade dress and rights/geometry are cleared.
+- Five subordinate product labels have collision cautions; none is commercially cleared.
+- Recipes are original demo content and have not been culinary-tested.
+- Prices and availability must remain explicitly simulated; unknown critical facts must remain visible.
+- Asset geometry is illustrative and rights stay inside the recorded portfolio/demo boundary.
 
 ## Decision requested
 
-1. Approve, revise or reject Measurefield and Measureloom for this bounded pilot.
-2. Approve, revise or reject the manifest, QA and factual-lock method as a later production baseline.
-3. Separately authorize or withhold a future factual seed-data/bulk-asset phase.
+1. Approve, revise or reject the 24-parent/38-SKU fixture, six-recipe library and mappings.
+2. Approve, revise or reject the 129-file asset package and manifest method.
+3. Separately authorize or withhold Phase 6 application engineering.
 
 ## Gate
 
-Stop after Phase 5A. No bulk visual generation, production application engineering, database, authentication, payment, deployment or full-department production may begin without a new explicit authorization.
+Stop after Phase 5B. Do not begin application engineering, database, authentication, payment, live inventory, deployment or real checkout without explicit external authorization.

@@ -11,7 +11,7 @@
 | 3 — UX definition | UX/Product Design, Catalog/Commerce | Approved Phase 2B | UX principles; discovery, homepage, PLP/search, PDP, recipe, commerce, responsive, accessibility, content and component specs; 19 low-fidelity blueprints; traceability and readout | Critical journeys and edge states specified across required viewports; accessibility attached to interactions; all architecture contracts preserved; no visual design/code | Approved at commit `1b0c5fa` |
 | 4A — Visual direction & review prototype | UI Design, Visual Assets, UX, PM | Approved Phase 3 | Visual direction, semantic tokens, colour/type/grid/imagery/component/screen specs, stress tests, motion opportunity map, traceability, static review prototype and screenshots | Original coherent direction; contrast and responsive evidence; prototype reviewable; Phase 3 behavior preserved; no production app/motion/catalog | Approved at commit `ab52b1b` |
 | 4B — Motion & asset blueprint | Motion, Visual Assets, Catalog, UI, UX | Approved Phase 4A | Motion language/tokens/choreography/maps/contracts/budgets; asset/packaging/matrix/manifest/pilot blueprint; isolated motion prototype/evidence | Motion optional, interruptible, performant and baking-specific; asset provenance/packaging truthful; no Phase 5 execution or production app | Approve Phase 4B before any pilot or engineering |
-| 5 — Catalog & asset production | Catalog/Commerce, Visual Assets | Phases 2B–4 | 24–30 product records, recipe data, original copy, generated assets, Asset Manifest | Coverage/data validation passes; pricing evidence/assumptions recorded; every asset traceable; prohibited claims absent | Approve representative catalog/content set |
+| 5 — Catalog & asset production | Catalog/Commerce, Visual Assets | Phases 2B–4 | 24–30 product records, recipe data, original copy, generated assets, Asset Manifest | Coverage/data validation passes; pricing evidence/assumptions recorded; every asset traceable; prohibited claims absent | Phase 5A approved; Phase 5B review ready |
 | 6 — Engineering | Frontend Engineering, Motion | Phases 3–5 | Next.js implementation, tests, technical notes | Functional scope implemented; type/lint/build and critical automated tests pass; reduced motion and responsive states work | Gate only if a material approved-design deviation is needed |
 | 7 — QA & remediation | QA, Engineering | Phase 6 | Test evidence, accessibility report, defect log, fixes | No release-blocking defects; critical journeys pass; documented WCAG assessment complete | Accept material residual risks only |
 | 8 — Release | Release, PM, QA | Phase 7 | Deployment evidence, release notes, rollback notes, final checklist | Release checklist complete; demo disclosures present; links and monitoring verified | Final release approval |
@@ -95,6 +95,22 @@
 - [x] Browser QA passes 1440/768/390/320, 320px/200% text, variant ownership, image-disabled/failure and final overflow checks.
 - [x] No bulk catalog/assets, production application, database, auth, payment or deployment work started.
 - [x] Targeted rework proves the complete 1440×1000 homepage capture and exact 819×1024 mobile `currentSrc` at 390/320; no failed image request or overflow remains.
+
+## Phase 5B acceptance checklist
+
+- [x] Phase 5A external approval and Phase 5B-only authorization are recorded.
+- [x] Exactly 24 parent records use the required 6/4/4/3/3/2/2 merchandise-department distribution.
+- [x] Thirty-eight sellable SKUs use purposeful typed pack, form, count or dimension variants.
+- [x] Twenty-four content records preserve the critical-fact tri-state and prohibited-claim rules.
+- [x] Six original demo recipes include complete visible requirements, explicit mappings and unresolved-state fixtures.
+- [x] Recipe mappings retain the approved exhaustive smallest-sufficient-pack algorithm and deterministic tie-breaks.
+- [x] Fictional INR price/availability fixtures and eight subordinate prototype labels are documented without live-offer or clearance implications.
+- [x] Asset coverage includes every parent, six visibly changed SKU families, every recipe and all seven merchandise departments.
+- [x] Forty-three masters and 86 derivatives pass relationship, dimension and SHA-256 validation.
+- [x] Manually composed labels contain no fake regulatory, certification, barcode, MRP, batch or manufacturer data.
+- [x] The isolated Phase 5B review harness covers nine required review views and responsive/failure/stress states.
+- [x] Validation passes 1440/768/390/320, 320 px/200% text, image-disabled/failure states, zero broken requests and zero horizontal overflow.
+- [x] No production application, database, authentication, payment, live inventory or deployment work started.
 
 ## Phase 0 acceptance checklist
 

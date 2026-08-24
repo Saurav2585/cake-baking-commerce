@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "canonical_files": {
+    "products": "../Product_Master_Data.json",
+    "variants": "../SKU_Variant_Data.json",
+    "content": "../Product_Content_Records.json",
+    "recipes": "../Recipe_Master_Data.json",
+    "recipe_product_mappings": "../Recipe_Product_Mapping.json",
+    "assets": "../Catalog_Asset_Manifest.json"
+  },
+  "expected_counts": {
+    "parent_products": 24,
+    "sellable_variants": 38,
+    "product_content_records": 24,
+    "recipes": 6,
+    "recipe_ingredient_lines": 45,
+    "explicit_product_mappings": 27,
+    "explicit_unmapped_lines": 18
+  },
+  "department_parent_distribution": {
+    "dept_ingredients": 6,
+    "dept_chocolate": 4,
+    "dept_colours_flavours": 4,
+    "dept_fillings_fondant": 3,
+    "dept_decorating": 3,
+    "dept_bakeware_tools": 2,
+    "dept_packaging": 2
+  }
+}
