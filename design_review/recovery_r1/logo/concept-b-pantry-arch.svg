@@ -1,0 +1,11 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-b desc-b">
+  <title id="title-b">Pantryform Pantry Arch</title>
+  <desc id="desc-b">A rounded pantry-cabinet arch silhouette divided into three shelves, with a small jar resting on the lowest shelf.</desc>
+  <path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="
+    M18,88 L18,42 A32,32 0 0 1 82,42 L82,88 Z
+    M24,58 L76,58 L76,50 L24,50 Z
+    M24,76 L76,76 L76,68 L24,68 Z
+  "/>
+  <rect x="40" y="72" width="16" height="12" rx="3" fill="var(--mark-jar, #fff8ed)"/>
+  <rect x="45" y="68" width="6" height="5" rx="1.5" fill="var(--mark-jar, #fff8ed)"/>
+</svg>

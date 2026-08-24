@@ -1,0 +1,20 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title-c desc-c">
+  <title id="title-c">Pantryform Maker's Label</title>
+  <desc id="desc-c">A hang-tag label silhouette with a punched hole and a diagonal measuring line running from a raw-ingredient dot to a finished tick mark.</desc>
+  <path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="
+    M28,14
+    L64,14
+    L86,36
+    L86,72
+    A14,14 0 0 1 72,86
+    L28,86
+    A14,14 0 0 1 14,72
+    L14,28
+    A14,14 0 0 1 28,14
+    Z
+    M68,30 m-7,0 a7,7 0 1,0 14,0 a7,7 0 1,0 -14,0
+  "/>
+  <path d="M27,68 L52,43" stroke="var(--mark-line, #fff8ed)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="27" cy="68" r="7" fill="var(--mark-line, #fff8ed)"/>
+  <path d="M44,43 L52,43 L52,51" stroke="var(--mark-line, #fff8ed)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

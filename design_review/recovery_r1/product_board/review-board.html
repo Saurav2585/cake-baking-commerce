@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Pantryform Product Visual Review Board — Recovery R1</title>
+<style>
+  :root{
+    --ink:#2b1b2b; --canvas:#fff8ed; --surface:#fff; --surface-subtle:#f2ece4;
+    --coral:#c54731; --coral-dark:#9b3027; --line:#767076; --muted:#5b5860; --success:#376348;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--canvas); color:var(--ink); font-family: Arial, Helvetica, sans-serif; line-height:1.5; }
+  header.page{ padding: 3rem 4vw 2rem; border-bottom:1px solid var(--line); }
+  header.page h1{ font-family: Georgia, "Times New Roman", serif; font-size: 2.4rem; margin:0 0 .5rem; }
+  header.page p{ max-width:70ch; color:var(--muted); margin:0 0 .5rem; }
+  header.page .disclosure{ font-size:.8rem; background:var(--surface-subtle); border-left:4px solid var(--coral); padding:.75rem 1rem; max-width:70ch; margin-top:1rem;}
+  main{ padding: 2.5rem 4vw 6rem; max-width:1400px; margin:0 auto; }
+  h2.section-title{ font-family:Georgia,serif; font-size:1.6rem; margin: 3rem 0 .5rem; }
+  p.section-note{ color:var(--muted); max-width:70ch; margin: 0 0 1.5rem; font-size:.92rem;}
+
+  .row-desktop{ display:grid; grid-template-columns: repeat(4, 1fr); gap:1.5rem; }
+  .row-tablet{ display:grid; grid-template-columns: repeat(2, 1fr); gap:1.5rem; max-width:640px; }
+  .row-mobile{ display:grid; grid-template-columns: repeat(1, 1fr); gap:1rem; max-width:340px; }
+  .row-mobile.two-col{ grid-template-columns: repeat(2,1fr); max-width:340px; }
+
+  .frame{ border:1px dashed var(--line); border-radius:10px; padding:1rem; margin-bottom:1rem; background:var(--surface); }
+  .frame .frame-label{ font-size:.68rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:.75rem; display:block; }
+
+  .card{
+    background:var(--surface); border:1px solid var(--line); border-radius:10px; overflow:hidden;
+    display:flex; flex-direction:column; position:relative;
+  }
+  .card .art{
+    aspect-ratio: 1/1; background: var(--surface-subtle); display:flex; align-items:center; justify-content:center;
+    position:relative; overflow:hidden;
+  }
+  .card .art img{ width:100%; height:100%; object-fit:contain; padding:10%; }
+  .card .badges{ position:absolute; top:8px; left:8px; display:flex; flex-direction:column; gap:4px; }
+  .badge{ font-size:.62rem; font-weight:800; letter-spacing:.03em; padding:.25rem .5rem; border-radius:4px; text-transform:uppercase; }
+  .badge.new{ background:var(--ink); color:var(--canvas); }
+  .badge.bestseller{ background:var(--coral); color:#fff; }
+  .badge.offer{ background:var(--success); color:#fff; }
+  .card .wishlist{
+    position:absolute; top:8px; right:8px; width:30px; height:30px; border-radius:50%;
+    background:rgba(255,255,255,.92); border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
+    font-size:.85rem; cursor:pointer;
+  }
+  .card .body{ padding:.85rem .9rem 1rem; display:flex; flex-direction:column; gap:.25rem; flex:1; }
+  .card .brand{ font-size:.62rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--coral-dark); }
+  .card .title{ font-family: Georgia, serif; font-size:1rem; margin:0; line-height:1.25; }
+  .card .pack{ font-size:.78rem; color:var(--muted); }
+  .card .price-row{ display:flex; align-items:baseline; gap:.5rem; margin-top:.25rem; }
+  .card .price{ font-weight:800; font-size:1.05rem; }
+  .card .price.strike{ text-decoration:line-through; color:var(--muted); font-weight:600; font-size:.85rem; }
+  .card .avail{ font-size:.7rem; color:var(--muted); text-transform:uppercase; letter-spacing:.03em; margin-top:.15rem; }
+  .card .cta-row{ margin-top:.6rem; display:flex; gap:.4rem; }
+  .card .cta{ flex:1; background:var(--ink); color:var(--canvas); border:none; border-radius:6px; padding:.5rem; font-size:.72rem; font-weight:800; text-transform:uppercase; letter-spacing:.03em; cursor:pointer; }
+  .card .variant-dot-row{ display:flex; gap:.3rem; margin-top:.4rem; }
+  .card .variant-dot{ width:14px; height:14px; border-radius:50%; border:1px solid var(--line); }
+
+  .provenance{ font-size:.68rem; color:var(--muted); padding:.5rem .9rem; border-top:1px dashed var(--surface-subtle); background:var(--surface-subtle); }
+
+  footer.page{ padding:3rem 4vw; border-top:1px solid var(--line); color:var(--muted); font-size:.85rem; }
+</style>
+</head>
+<body>
+
+<header class="page">
+  <h1>Pantryform product visual review board</h1>
+  <p>Recovery R1 — a representative 12-product sample of real, sourced packshots, staged in commerce-card layouts across desktop (4-up), tablet (2-up) and mobile (1–2 up) rows, demonstrating that product imagery now reads as retail inventory rather than fictional flat illustration.</p>
+  <div class="disclosure">
+    Brand names and product imagery shown belong to their respective owners. Pantryform is a fictional portfolio/demo project and is not affiliated with, sponsored by, or endorsed by any brand shown. Prices are clearly marked demo fixtures. This is not legal advice and does not constitute a guarantee of image usage rights — see the provenance register for source detail on every image.
+  </div>
+</header>
+
+<main>
+  <h2 class="section-title">Desktop — four-product row</h2>
+  <p class="section-note">Full 12-product set at desktop card width. Package variety: pouch/bag, slab, poly jar, gel bottle, extract bottle, fondant tub, spread jar, sprinkle pouch, tool box, decorating kit box, and window cake box.</p>
+  <div class="frame">
+    <span class="frame-label">Desktop viewport — 4 columns</span>
+    <div class="row-desktop" id="grid-desktop"></div>
+  </div>
+
+  <h2 class="section-title">Tablet — two-product row</h2>
+  <p class="section-note">Same cards reflow to a 2-column tablet treatment; card proportions and badge legibility hold at the narrower width.</p>
+  <div class="frame">
+    <span class="frame-label">Tablet viewport — 2 columns</span>
+    <div class="row-tablet" id="grid-tablet"></div>
+  </div>
+
+  <h2 class="section-title">Mobile — one/two-product treatment</h2>
+  <p class="section-note">A 2-up mobile grid and a 1-up mobile grid, matching how the existing product-card component already adapts down to 360–390px.</p>
+  <div class="frame">
+    <span class="frame-label">Mobile viewport — 2 columns</span>
+    <div class="row-mobile two-col" id="grid-mobile-2"></div>
+  </div>
+  <div class="frame">
+    <span class="frame-label">Mobile viewport — 1 column</span>
+    <div class="row-mobile" id="grid-mobile-1"></div>
+  </div>
+
+<script>
+const PRODUCTS = [
+  { img:"images/01-callebaut-811-callets.png", brand:"Callebaut", eyebrow:"Callebaut · Chocolates and cocoa", title:"811 Dark Chocolate Callets", pack:"1 kg pouch", price:950, badges:["bestseller"], variants:3, wishlist:true },
+  { img:"images/02-morde-dark-compound-slab.jpg", brand:"Morde", eyebrow:"Morde · Chocolates and cocoa", title:"Dark Compound Chocolate Slab", pack:"400 g slab", price:250, variants:2 },
+  { img:"images/03-weikfield-baking-powder.jpg", brand:"Weikfield", eyebrow:"Weikfield · Baking essentials", title:"Double Action Baking Powder", pack:"100 g poly jar", price:40 },
+  { img:"images/04-eagle-icing-sugar.jpg", brand:"Eagle", eyebrow:"Eagle · Baking essentials", title:"Icing Sugar", pack:"200 g pouch", price:55, badges:["new"] },
+  { img:"images/05-magic-colours-gel-red.jpg", brand:"Magic Colours", eyebrow:"Magic Colours · Colours &amp; flavours", title:"Spectral Gel Colour — Red", pack:"25 g bottle", price:180, variants:5, wishlist:true },
+  { img:"images/06-urban-platter-vanilla-extract.jpg", brand:"Urban Platter", eyebrow:"Urban Platter · Colours &amp; flavours", title:"Premium Vanilla Extract", pack:"100 ml bottle", price:280 },
+  { img:"images/07-bakersville-vizyon-fondant-white.jpg", brand:"Bakersville", eyebrow:"Bakersville · Fondant &amp; fillings", title:"Vizyon Sugar Paste — White", pack:"1 kg tub", price:450, variants:9 },
+  { img:"images/08-nutella-hazelnut-spread.jpg", brand:"Nutella", eyebrow:"Nutella (Ferrero) · Fondant &amp; fillings", title:"Hazelnut Spread with Cocoa", pack:"750 g jar", price:599, strike:699, badges:["offer"], wishlist:true },
+  { img:"images/09-jvg-chocolate-sprinkles.jpg", brand:"JVG", eyebrow:"JVG · Sprinkles &amp; decoration", title:"Chocolate Vermicelli Sprinkles", pack:"1 kg pouch", price:380 },
+  { img:"images/10-wilton-decorating-bags.jpg", brand:"Wilton", eyebrow:"Wilton · Tools &amp; bakeware", title:"16-Inch Disposable Decorating Bags", pack:"12-pack box", price:450 },
+  { img:"images/11-lukzer-cake-decorating-kit.jpg", brand:"Lukzer", eyebrow:"Lukzer · Tools &amp; bakeware", title:"Cake Decorating Kit with Turntable", pack:"46-pc boxed kit", price:650, badges:["bestseller"] },
+  { img:"images/12-eco-bags-cake-box.jpg", brand:"Eco Bags India", eyebrow:"Eco Bags India · Boards, boxes &amp; packaging", title:"Cake Box with Window", pack:"8×8×4 in box", price:28 },
+];
+
+function badgeHTML(b){
+  const label = { new:"New", bestseller:"Bestseller", offer:"% Off" }[b];
+  return `<span class="badge ${b}">${label}</span>`;
+}
+function cardHTML(p){
+  const dots = p.variants ? `<div class="variant-dot-row">${Array.from({length:Math.min(p.variants,6)}).map(()=>'<span class="variant-dot"></span>').join('')}</div>` : '';
+  const priceRow = p.strike
+    ? `<span class="price">₹${p.price}</span><span class="price strike">₹${p.strike}</span>`
+    : `<span class="price">₹${p.price}</span>`;
+  return `
+  <div class="card">
+    <div class="art">
+      ${p.badges ? `<div class="badges">${p.badges.map(badgeHTML).join('')}</div>` : ''}
+      ${p.wishlist ? `<div class="wishlist" aria-label="Save to wishlist">&#9825;</div>` : ''}
+      <img src="${p.img}" alt="${p.title} — ${p.brand}, ${p.pack}, real sourced product packshot (see provenance register), demo fixture" loading="lazy"/>
+    </div>
+    <div class="body">
+      <span class="brand">${p.eyebrow}</span>
+      <h3 class="title">${p.title}</h3>
+      <span class="pack">${p.pack}</span>
+      <div class="price-row">${priceRow}</div>
+      <span class="avail">Demo fixture · availability not real stock</span>
+      ${dots}
+      <div class="cta-row"><button class="cta" type="button">Add to demo cart</button></div>
+    </div>
+  </div>`;
+}
+document.getElementById('grid-desktop').innerHTML = PRODUCTS.map(cardHTML).join('');
+document.getElementById('grid-tablet').innerHTML = PRODUCTS.slice(0,4).map(cardHTML).join('');
+document.getElementById('grid-mobile-2').innerHTML = PRODUCTS.slice(0,4).map(cardHTML).join('');
+document.getElementById('grid-mobile-1').innerHTML = PRODUCTS.slice(0,2).map(cardHTML).join('');
+</script>
+</main>
+
+<footer class="page">
+  <p>Recovery R1 product review — isolated design-review artifact under <code>design_review/recovery_r1/product_board/</code>. No production PLP/PDP route has been changed. Full per-product provenance in <code>design_review/recovery_r1/catalog/Product_Provenance_Register.md</code>.</p>
+</footer>
+
+</body>
+</html>
