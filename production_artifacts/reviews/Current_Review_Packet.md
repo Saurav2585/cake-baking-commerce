@@ -48,6 +48,8 @@ The Measured Pantry uses aubergine structure, warm canvas, restrained coral/turm
 
 The corrected action coral is `#C54731`. The candidate `#C84832` remains decorative-only because it measured 4.49:1 against canvas and missed normal-text AA; the corrected pairing measures 4.61:1, and white button text measures 4.86:1.
 
+The creative-direction addendum is implemented through five visible Pantryform signatures: measured ingredient opening, irregular department atlas, controlled Ingredient Theatre product study, recipe-to-supplies transformation rail and PDP pack study. These create an ingredient→measurement→method→make journey while utility screens retain Working Pantry precision.
+
 ## Acceptance evidence
 
 - [x] Fourteen required design artifacts exist and are non-empty.
@@ -61,6 +63,9 @@ The corrected action coral is `#C54731`. The candidate `#C84832` remains decorat
 - [x] All 14 screens passed deterministic 320px/200% text plus no-animation validation.
 - [x] Browser logs contained no warnings or errors; visible focus uses a 3px blue outline.
 - [x] No unsupported claims, real-commerce implication, generated production imagery, production motion or application engineering was introduced.
+- [x] Five signature moments document concept, Pantryform specificity, desktop/mobile composition, accessibility, no-animation equivalent and task protection.
+- [x] The refreshed homepage, PDP and recipe-to-cart screenshots demonstrate the art direction rather than only describing it.
+- [x] Generic-template test passes: baking measurement, pantry, pack and recipe-transformation cues remain recognisable without name, colour or product imagery.
 
 ## Assumptions and open risks
 

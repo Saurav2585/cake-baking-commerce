@@ -2,6 +2,8 @@
 
 Viewport screenshots captured from the isolated static prototype on 2026-08-24. Filenames are deterministic and encode the viewport. These files are review evidence, not production imagery.
 
+The pack was refreshed after the creative-direction addendum. Homepage opening, PDP pack study and recipe-to-cart transformation captures visibly demonstrate three separate Pantryform signature moments on desktop/mobile; the homepage implementation also contains the department atlas and controlled Ingredient Theatre product stage below the opening viewport.
+
 | File | View | CSS viewport |
 |---|---|---|
 | `homepage-desktop-1440x1000.png` | Homepage | 1440 × 1000 |

@@ -13,6 +13,12 @@ Approve **The Measured Pantry** as Pantryform’s high-fidelity visual direction
 - Responsive structure uses 4, 8 and 12 columns with content-driven transformations tied to the approved eight-width test set.
 - Rounded, tactile geometry is reserved for friendly grouping and actions; data-heavy recipe/cart structures stay measured and rectilinear.
 - The static prototype uses CSS-only neutral pack placeholders rather than untracked/generated production imagery.
+- Five Pantryform-specific signature moments are demonstrated: measured ingredient opening, department atlas, Ingredient Theatre product study, recipe-to-supplies transformation and PDP pack study.
+- The homepage uses an asymmetric editorial sequence rather than a standard hero followed by repetitive rails; it moves visibly from raw ingredient through measure and method to a shoppable decision.
+
+## Generic-template test result
+
+**Pass after creative-direction refinement.** With name, colours and product images removed, the structure still exposes a quantity axis and measuring-spoon form, raw→measured→made sequence, numbered baking-pantry atlas, pack-size study, ingredient-to-product transition and required quantity→selected pack→leftover recipe story. These cues are specific to baking ingredients and supplies and are present in the prototype/screenshots, not only described here.
 
 ## Alternatives considered
 
@@ -37,6 +43,7 @@ Approve **The Measured Pantry** as Pantryform’s high-fidelity visual direction
 - Review navigation: `http://127.0.0.1:4173/`
 - Screenshot pack: `production_artifacts/04_visual_system/previews/`
 - Captures are deterministic viewport screenshots, not production representations or generated product assets.
+- Homepage, PDP and recipe-to-cart captures visibly demonstrate the signature moments and intentional mobile adaptations.
 
 ## Assumptions and remaining risks
 

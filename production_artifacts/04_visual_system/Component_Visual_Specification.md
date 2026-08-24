@@ -85,6 +85,14 @@ No department meaning relies on colour. Avoid generic pink/pastel coding, rainbo
 - Department tiles use material-led crops or graphic ingredient/tool arrangements, a clear destination label and optional factual category cue. Recipes uses editorial image language but remains visually equal in navigation.
 - Task tiles use concise verbs (“Colour and finish”, “Pack and present”) with small measured diagrams or material crops, never novelty cupcake icons.
 - States: default, hover/focus, image missing, partial content. Image absence preserves a purposeful colour/texture field and label.
+- Homepage discovery uses the **department atlas** variant: irregular 12-column spans, numbered 01–08, baking-material geometry and a Recipes bridge. DOM order remains the approved department order; mobile reflows rather than preserving spatial asymmetry. Standard tiles remain available for dense utility contexts, so the signature treatment does not infect every listing surface.
+
+### Signature narrative markers
+
+- Measurement axes, spoon silhouettes, numbered process rails and pack-study annotations use compact technical labels, 1–2 px rules and ingredient-derived forms. They may orient or create rhythm but never replace a heading, quantity, selected state or control.
+- The recipe transformation marker expresses recipe need → measured quantity → selected pack → explicit cart. It is a labelled preface to the mapping rows, not a progress widget and not a cart mutation.
+- Ingredient fields are decorative CSS/imagery layers with hidden individual shapes and one concise composition description when needed. No texture carries compatibility, quality or result claims.
+- At reduced motion every signature is already in its final composition. At 200% text, narrative grids become one column and annotations wrap or move in-flow.
 
 ### Product card
 

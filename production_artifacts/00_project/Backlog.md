@@ -62,6 +62,9 @@
 - [x] Browser checks cover 112 route/viewport combinations with no horizontal overflow after correction; no blocking console errors were found.
 - [x] 320px + deterministic 200% text and no-animation modes pass all representative screens.
 - [x] No approved Phase 3 behavior, unsupported claim, real-commerce implication or prohibited Phase 4B+/production work was introduced.
+- [x] Five baking-specific signature moments are documented and visibly demonstrated in the prototype.
+- [x] The homepage replaces generic hero/rail repetition with an asymmetric ingredient→measure→method→make editorial journey.
+- [x] Generic-template test passes with recognisable measurement, pantry, pack and recipe-transformation structure after removing name/colour/product imagery.
 
 ## Phase 0 acceptance checklist
 

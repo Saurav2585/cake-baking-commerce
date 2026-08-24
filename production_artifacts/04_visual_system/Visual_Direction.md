@@ -14,6 +14,63 @@ The visual system should make specialist baking retail feel ordered, tactile and
 
 The result is contemporary and premium-accessible: generous rather than sparse, warm rather than cute, exact rather than clinical.
 
+## Signature moments
+
+These moments are structural expressions of Pantryform, not detachable decoration. Each preserves the approved task order and has a complete no-animation state.
+
+### 1. The measured ingredient study — homepage opening
+
+- **Concept:** an oversized editorial headline sits beside a composed flour/cocoa/colour study, crossed by a labelled measuring-spoon form and a 0–100 g axis. The narrative is raw ingredient → precise measure → joyful make.
+- **Why Pantryform:** sensory baking material is joined to exact quantity language; the composition could not introduce apparel, electronics or a generic marketplace unchanged.
+- **Desktop:** asymmetrical two-part stage, extreme type scale and bottom-edge principle note; Shop and Recipe remain first-order controls.
+- **Mobile:** ingredient study precedes copy as a contained square; scale compresses and the note moves in-flow.
+- **Accessibility:** one concise image description covers the composition; decorative forms are hidden; heading/actions remain semantic with high-contrast focus.
+- **Reduced/no animation:** the full arrangement is present immediately; optional future drift/parallax disappears without hiding content.
+- **Task protection:** art stays bounded and never overlays the value proposition, descriptor, navigation or actions.
+
+### 2. The department atlas — ingredient discovery
+
+- **Concept:** eight departments form a numbered irregular 12-column atlas rather than a repeated card rail. Ingredient/tool-derived marks and short making verbs provide rhythm while names remain primary.
+- **Why Pantryform:** the sequence moves from raw materials through tools and packaging to Recipes, expressing a working baking pantry rather than arbitrary merchandise.
+- **Desktop:** deliberately unequal spans create controlled asymmetry and culminate in a full-width Recipes bridge.
+- **Mobile:** the atlas becomes a deliberate one/two-column editorial index; no item relies on hover, colour or position for identity.
+- **Accessibility:** every cell is a descriptive link; number/shape are redundant; focus follows DOM order 01–08.
+- **Reduced/no animation:** the mosaic is static; later hover texture carries no meaning and is removable.
+- **Task protection:** all eight approved departments stay named, ordered and equally reachable.
+
+### 3. Ingredient Theatre product study — inspiration into facts
+
+- **Concept:** a controlled cocoa field, a tilted but fully readable product card and editorial explanation transition from material fascination to exact pack decision.
+- **Why Pantryform:** ingredient percentage, texture, format, pack and unit price share one narrative instead of generic lifestyle imagery.
+- **Desktop:** three unequal columns—premise, purchasable card, macro ingredient field—create a magazine-like interruption.
+- **Mobile:** columns stack premise → product decision → texture; facts never overlay imagery.
+- **Accessibility:** texture is decorative; product identity, price, unit price, availability and action remain text, including on image failure.
+- **Reduced/no animation:** static crops/layout carry the idea; scroll reveal is unnecessary.
+- **Task protection:** the PDP action and complete facts remain the strongest interactive object.
+
+### 4. Recipe-to-supplies transformation
+
+- **Concept:** a four-stage rail—recipe need → measured quantity → selected pack → explicit cart—precedes the mapping. Homepage shorthand shows 240 g → 500 g pack → 260 g leftover.
+- **Why Pantryform:** smallest-sufficient-pack logic and leftover transparency become a story specific to baking quantities.
+- **Desktop:** horizontal rail aligns conceptually with mapping columns without replacing them.
+- **Mobile:** stages stack as a vertical measured path before labelled mapping cards.
+- **Accessibility:** the rail has a group label and readable stage text; connectors are decorative. Mapping, errors and CTA remain semantic.
+- **Reduced/no animation:** all stages appear at once; future progress fills are removed.
+- **Task protection:** it never mutates the cart or hides unmapped, optional, pantry-owned or unavailable rows.
+
+### 5. Variant-owned pack study — PDP
+
+- **Concept:** pack media sits on a measurement-grid backdrop with a “250 · 500 · 1000 g” study label, linking the object to its selector and variant-owned facts.
+- **Why Pantryform:** pack-size comparison and measured quantity become the visual subject, rather than generic pack photography.
+- **Desktop/mobile:** the stage scales before the purchase panel on mobile; annotations remain secondary to identity and selection.
+- **Accessibility:** marks are decorative; selected pack, price, unit price and demo availability remain atomic text updates.
+- **Reduced/no animation:** no carousel/morph is required; media may swap instantly.
+- **Task protection:** the stage never obscures selection, Add to demo cart or critical facts.
+
+## Generic-template test
+
+Remove the Pantryform name, palette and product images: the experience still retains a measuring spoon and quantity axis, raw→measured→made sequence, eight-part baking-pantry atlas, controlled ingredient macro study, pack-size measurement stage and recipe-required→pack→leftover transformation. These structural cues remain recognizably about baking ingredients, measurement and making. The system fails this test if later work replaces them with a standard hero, uniform promotional rails or interchangeable rounded cards.
+
 ## Visual principles
 
 ### 1. Warm structure

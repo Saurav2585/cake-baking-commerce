@@ -11,9 +11,9 @@ Reference widths for design/QA: 1440, 1280, 1024, 768, 430, 390, 360 and 320 CSS
 
 ## 1. Homepage
 
-**Desktop:** A contained editorial opening pairs a concise proposition/action group with one material-led making image; it must not consume the full first viewport. Follow with an eight-destination department grid, a horizontal task-led strip, four-product curated grid, recipe-to-supplies split feature, practical demo/selection cues and footer. Alternating dense and generous sections create measured abundance.
+**Desktop:** An art-directed measured-ingredient opening pairs an extreme-scale proposition with an abstract flour/cocoa/colour study, labelled spoon form and quantity axis. It is followed by a dark raw→measured→made sequence, an irregular numbered 12-column department atlas, a controlled three-part Ingredient Theatre/product study, and a recipe bridge that diagrams required quantity → selected pack → leftover. This is an editorial journey, not a standard hero plus repeated rails. Shop/Recipes actions and all eight departments retain the approved priority.
 
-**Mobile:** Proposition and Shop/Recipes actions precede media. Department tiles form a two-column grid (one column at 320 px if labels wrap poorly); task and product cards scroll only when equivalent “View all” links exist, otherwise stack. Recipe bridge is image → copy → action. No content is hidden behind carousels.
+**Mobile:** Ingredient study precedes the proposition as a bounded square; copy/actions follow. The making sequence becomes a vertical numbered rhythm. The atlas uses intentional two-column spans and becomes one column at narrow/zoomed widths. Ingredient Theatre stacks premise → factual product card → decorative texture. The recipe transformation becomes a vertical measured path. No content is hidden behind carousels or requires motion.
 
 **States:** opening-media failure uses texture field; empty curated/recipe modules collapse with section-specific fallback; partial modules isolate error; page-level error preserves navigation and department links.
 

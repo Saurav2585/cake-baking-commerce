@@ -33,4 +33,6 @@ No installation, build, account, payment, database, fulfilment or external servi
 
 The prototype supports keyboard navigation, visible focus, responsive reflow and `prefers-reduced-motion`. Interactions are illustrative and intentionally do not persist or transact.
 
+Creative review should specifically inspect the five baking-led signatures: measured ingredient opening, department atlas, Ingredient Theatre product study, recipe-to-supplies transformation and PDP pack study. They retain the Phase 3 information hierarchy and linearize intentionally on mobile.
+
 Append `&zoom=200` to a review URL for the deterministic 200% text stress mode, or `&motion=reduce` for the deterministic no-animation mode used in validation.

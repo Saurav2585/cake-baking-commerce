@@ -19,6 +19,7 @@ Translate approved brand, architecture and UX into one accessible, implementatio
 - Visual component/state and high-fidelity screen specifications.
 - Content-fit stress tests, future motion opportunities and traceability.
 - Static review prototype with representative high-fidelity desktop/mobile compositions and screenshot pack.
+- Portfolio-worthy baking-specific art direction with at least three documented signature moments and a visible ingredient→measure→method→make journey.
 
 ## Constraints
 
@@ -42,6 +43,7 @@ No production ecommerce application, Next.js implementation, production motion, 
 - Screenshot pack includes the eleven required deterministic desktop/mobile captures and manifest.
 - Browser validation finds no blocking console errors or horizontal overflow at the eight viewport widths; keyboard focus is visible; deterministic 200% text and no-animation modes preserve content and task completion.
 - No approved UX behavior changes and no prohibited downstream work or claims are introduced.
+- Removing name, palette and product imagery still leaves a recognisable baking/measurement/making structure; prototype evidence—not prose alone—must pass this generic-template test.
 
 ## Dependencies downstream
 

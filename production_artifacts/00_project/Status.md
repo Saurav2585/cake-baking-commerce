@@ -31,6 +31,7 @@
 - Phase 3 specialist metadata was reconciled to approved/binding without substantive changes.
 - All fourteen Phase 4A design artifacts, the isolated static review prototype and eleven-file screenshot review pack were completed.
 - Browser validation covered every representative screen across the required viewport set, plus 320px/200% text and no-animation modes; the final checks found no horizontal overflow or blocking console errors.
+- The Phase 4A creative-direction addendum was applied as targeted rework: five baking-specific signature moments and a passing generic-template test are now reflected in the prototype, specs and refreshed screenshot evidence without changing Phase 3 behavior.
 
 ## Not started by design
 

@@ -17,3 +17,7 @@
 | Product/ingredient imagery | D-006, D-007, D-013, D-020 | F4 | variant-owned media | Content requirements | factual alt/provenance; R-001, R-002, R-008 |
 | Motion opportunity map | D-005 | F6 | state transitions | reduced-motion requirements | no functional dependency; R-005 |
 | Static review prototype | D-004, D-005, D-013, D-022 | F1–F6 | all provider/simulation boundaries | all 19 blueprints | visible demo boundary; R-006, R-025–R-028 |
+| Measured ingredient opening | D-010, D-020 | F1, F4 | retailer/product distinction | Homepage hierarchy; wireframe 1 | bounded art/semantic copy; R-016–R-019 |
+| Numbered department atlas | D-012, D-015 | F1, F6 | eight-department taxonomy | Navigation; Homepage hierarchy | DOM order/non-colour links; R-003, R-013 |
+| Recipe transformation rail | D-016, D-017 | F5 | RTC rules and units | Recipe review spec; wireframe 10 | mapping unchanged; R-004, R-021, R-024 |
+| PDP pack-size study | D-013, D-017 | F2–F4 | variant-owned media/facts | PDP spec; wireframe 7 | decorative marks/atomic text facts; R-002, R-012 |
