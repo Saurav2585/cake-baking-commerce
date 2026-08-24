@@ -10,6 +10,8 @@ Final imagery lives in `exports/`; editable/manual and generated foundations in 
 
 The pilot passes factual, scale, family, crop, thumbnail, 320 px, 200% text, image-failure, grayscale, colour-vision resilience, alt, optimization, manifest/checksum, console and overflow checks. Limitations: product/recipe records are bounded proposals; pouch material/dimensions are illustrative; Measureloom is not legally cleared; generated photography is suitable for this portfolio prototype only; recipe imagery is not culinary validation; commercial packaging compliance is untested.
 
+Targeted rework corrected the stale mobile filename by replacing CSS content substitution with semantic `<picture>` source selection, and replaced the corrupt desktop homepage evidence using a fresh-tab lossless capture plus deterministic JPEG encoding. Final browser inspection proves desktop/mobile `currentSrc`, decoded dimensions, complete content and zero overflow; all three refreshed homepage captures were manually inspected.
+
 ## Scalability recommendation
 
 Proceed to a separately approved, factual-record-first batch only after professional name clearance and real SKU facts/geometry exist. Reuse the label zones, manifest validator, crop rules and placement harness; create department-specific matter rather than recolouring this cocoa system. Do not automatically authorize bulk production.

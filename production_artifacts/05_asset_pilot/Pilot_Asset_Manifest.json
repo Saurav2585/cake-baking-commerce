@@ -5511,10 +5511,10 @@
         "format": "jpeg",
         "colour_space": "sRGB",
         "alpha": false,
-        "bytes": 41663,
+        "bytes": 239791,
         "checksum": {
           "algorithm": "sha256",
-          "value": "a7b237067b7152c6bf50cb434ab5f303f5d835b35d5ac0da61b2884e5a9c89f4"
+          "value": "5271faf12239bb4e82bf8dc41d744a39c9c7665c56ff24342b33a72c26f95d17"
         }
       },
       "derivatives": [],
@@ -5575,7 +5575,146 @@
       },
       "checksum": {
         "algorithm": "sha256",
-        "value": "a7b237067b7152c6bf50cb434ab5f303f5d835b35d5ac0da61b2884e5a9c89f4"
+        "value": "5271faf12239bb4e82bf8dc41d744a39c9c7665c56ff24342b33a72c26f95d17"
+      },
+      "notes": "Phase 5A bounded pilot asset."
+    },
+    {
+      "manifest_schema_version": "1.0.0",
+      "asset_id": "asset_placement_home_mobile_320x844_v1",
+      "version": 1,
+      "status": "approved",
+      "title": "placement_home_mobile_320x844_v1.jpg",
+      "asset_family": "illustration",
+      "role": "hero",
+      "relationships": {
+        "department_ids": [
+          "dept_ingredients"
+        ],
+        "product_ids": [
+          "prod_demo_baking_cocoa"
+        ],
+        "recipe_ids": [
+          "recipe_demo_cocoa_celebration_cake"
+        ],
+        "variant_ids": [],
+        "skus": []
+      },
+      "source_method": "manual_design",
+      "creator": {
+        "type": "team",
+        "id_or_name": "Pantryform Visual Asset Generation"
+      },
+      "created_at": "2026-08-24T23:45:00+05:30",
+      "generation": {
+        "tool": "OpenAI built-in image generation",
+        "model_version": "service-managed",
+        "prompt": "Original overhead editorial baking-supplies hero: cocoa powder, measuring scoop, blank analog scale, parchment and restrained cocoa cake edge; warm studio light; left negative space; no packaging, text, brands or claims.",
+        "seed_or_settings": {
+          "seed": "not exposed"
+        },
+        "input_asset_ids": [],
+        "edit_description": "Text-free original foundation generation."
+      },
+      "source_references": [],
+      "licence": {
+        "name": "original_prototype_asset",
+        "source": "Created for Pantryform portfolio pilot",
+        "territory": "prototype review only",
+        "commercial_clearance": "not assessed"
+      },
+      "factual_claims_represented": [
+        {
+          "claim": "Product identity: Baking cocoa powder; form: powder; visible pack weight/SKU where applicable",
+          "source_record_id": "Pilot_Fact_Lock.md",
+          "review_status": "approved"
+        }
+      ],
+      "prohibited_claim_review": {
+        "reviewer": "PM/QA",
+        "date": "2026-08-25",
+        "result": "passed",
+        "notes": "No certification, dietary/health, origin, performance, popularity, scarcity, sustainability or guaranteed-result claim."
+      },
+      "trade_dress_review": {
+        "reviewer": "Brand/QA",
+        "date": "2026-08-25",
+        "result": "passed_for_prototype",
+        "notes": "No real package or competitor artwork used; formal legal review remains required."
+      },
+      "master": {
+        "path": "previews/placement_home_mobile_320x844_v1.jpg",
+        "width": 320,
+        "height": 844,
+        "aspect_ratio": "320:844",
+        "format": "jpeg",
+        "colour_space": "sRGB",
+        "alpha": false,
+        "bytes": 54443,
+        "checksum": {
+          "algorithm": "sha256",
+          "value": "c3cd6e42af9291fc996bbfdbd7515d26c700c2b28b278a53531615197efe9a5a"
+        }
+      },
+      "derivatives": [],
+      "alt_text": {
+        "owner": "UX/Accessibility",
+        "context": "hero",
+        "decision": "decorative",
+        "text": "",
+        "approval_status": "approved_for_review",
+        "approved_at": "2026-08-25"
+      },
+      "responsive_usage": [
+        {
+          "placement": "hero",
+          "container_range": "320–1440 CSS px",
+          "object_fit": "contain or cover as documented",
+          "safe_zone_notes": "Never crop away selected pack identity; HTML repeats facts."
+        }
+      ],
+      "optimisation_status": "passed_review_evidence",
+      "quality_reviews": [
+        {
+          "type": "factual",
+          "reviewer": "PM/QA",
+          "date": "2026-08-25",
+          "result": "passed",
+          "issues": []
+        },
+        {
+          "type": "visual_accessibility_originality_technical",
+          "reviewer": "PM/QA",
+          "date": "2026-08-25",
+          "result": "passed_for_review",
+          "issues": []
+        }
+      ],
+      "approval": {
+        "owner": "PM/orchestrator",
+        "decision": "approved_for_phase_5a_review",
+        "date": "2026-08-25",
+        "approved_placements": [
+          "isolated Phase 5A review prototype"
+        ],
+        "limitations": [
+          "Not approved for commercial packaging or production catalog."
+        ]
+      },
+      "known_limitations": [
+        "Prototype data/brand only; professional clearance pending."
+      ],
+      "replacement_history": {
+        "replaces_asset_id": null,
+        "replaces_version": null,
+        "replaced_by_asset_id": null,
+        "replaced_by_version": null,
+        "reason": null,
+        "date": null
+      },
+      "checksum": {
+        "algorithm": "sha256",
+        "value": "c3cd6e42af9291fc996bbfdbd7515d26c700c2b28b278a53531615197efe9a5a"
       },
       "notes": "Phase 5A bounded pilot asset."
     },
@@ -5650,10 +5789,10 @@
         "format": "jpeg",
         "colour_space": "sRGB",
         "alpha": false,
-        "bytes": 56017,
+        "bytes": 71121,
         "checksum": {
           "algorithm": "sha256",
-          "value": "e6766c3c9d3e24bc88d935dc3284c0b40bf0f1279f963b12a84599b8d50c5a3a"
+          "value": "c360032c3b23c0759571ce2e496e83c2e8986432cfdcb06100d40820fef6366e"
         }
       },
       "derivatives": [],
@@ -5714,7 +5853,7 @@
       },
       "checksum": {
         "algorithm": "sha256",
-        "value": "e6766c3c9d3e24bc88d935dc3284c0b40bf0f1279f963b12a84599b8d50c5a3a"
+        "value": "c360032c3b23c0759571ce2e496e83c2e8986432cfdcb06100d40820fef6366e"
       },
       "notes": "Phase 5A bounded pilot asset."
     },

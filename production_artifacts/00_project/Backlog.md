@@ -94,6 +94,7 @@
 - [x] Isolated placement review demonstrates all authorized routes without modifying Phase 4A/4B evidence.
 - [x] Browser QA passes 1440/768/390/320, 320px/200% text, variant ownership, image-disabled/failure and final overflow checks.
 - [x] No bulk catalog/assets, production application, database, auth, payment or deployment work started.
+- [x] Targeted rework proves the complete 1440×1000 homepage capture and exact 819×1024 mobile `currentSrc` at 390/320; no failed image request or overflow remains.
 
 ## Phase 0 acceptance checklist
 

@@ -3,12 +3,19 @@
 ## Phase
 
 **Phase 5A — Bounded Visual Asset and Packaging Pilot**
-**Status:** Review ready
+**Status:** Targeted rework complete; review ready
 **Prepared:** 2026-08-25 (Asia/Kolkata)
 
 ## Review objective
 
 Approve, revise or reject the Measurefield visual pilot, Measureloom subordinate prototype brand, three-weight cocoa-powder packaging family, provenance method and recommendation about later scale. This packet does not request automatic bulk generation or application engineering.
+
+## Targeted rework resolution
+
+- The prior `placement_home_desktop_1440x1000_v1.jpg` was materially defective. DOM geometry and asset decoding were correct, but rapid viewport reuse plus the direct JPEG capture path produced a partially rendered/black file. The replacement was captured losslessly from a fresh 1440×1000 tab, manually inspected, deterministically JPEG-encoded and manually inspected again.
+- The stale CSS reference to `asset_pf5a_home_cocoa_mobile_1200x1500_v1.webp` was removed. The hero now uses semantic `<picture>/<source>` art direction with the approved `asset_pf5a_home_cocoa_mobile_819x1024_v1.webp`.
+- Browser `currentSrc` proves desktop at 1440/768 and the 819×1024 mobile crop at 390/320. All seven routes × four widths decode images, collect no page errors and have zero horizontal overflow. Clean-server logs contain no failed image requests after favicon suppression.
+- 320 px/200% text, image-disabled and failure routes were rechecked. The refreshed desktop, 390 and 320 homepage captures were visually inspected before handoff.
 
 ## Upstream authority and boundaries
 
@@ -62,7 +69,7 @@ Editable masters, web exports, review evidence and deterministic build/validatio
 - [x] Label master includes front, side, structural back, safe/quiet zones, brand/product/form/weight/SKU, unknown states and prototype disclosure; prohibited statutory data is absent.
 - [x] Three packs are one coherent family with honest ordinal scale, exact weight text and non-colour bar-count coding.
 - [x] Homepage 3:2/4:5, department 3:2/1:1, recipe 3:2/4:3/process, PDP, PLP and fallback sets are present and native-size or smaller.
-- [x] Selected and grayscale contact sheets plus fourteen browser captures demonstrate desktop/mobile, 320 px, 200% text, thumbnails, image failure and image-disabled behavior.
+- [x] Selected and grayscale contact sheets plus fifteen browser captures demonstrate desktop/mobile, 320 px, 200% text, thumbnails, image failure and image-disabled behavior.
 - [x] Browser matrix passes 28 route/width placements; all final images load, headings exist and horizontal overflow is zero.
 - [x] PDP selection atomically resolves the 1 kg image, alt, pressed state and `ML-BCP-1000` status.
 - [x] Manifest validator passes every tracked visual file, required field, generated lineage, licence, alt decision, approval and SHA-256 checksum.

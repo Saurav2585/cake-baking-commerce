@@ -1,6 +1,6 @@
 # Asset Pilot QA Report
 
-**Result:** PASS — ready for external review
+**Result:** PASS after targeted placement/evidence rework — ready for external review
 **Date:** 2026-08-25 (Asia/Kolkata)
 **Scope:** isolated Phase 5A assets and placement prototype only
 
@@ -36,9 +36,15 @@
 - Manifest validation: `validate_manifest.js` passes every required field, file existence, unique ID/version, generated lineage, licence, alt decision, approval and SHA-256 checksum. All master/export/review images are manifested.
 - Repository scan excludes secrets, `.env`, provider credentials, browser profiles and temporary generation files.
 
+## Targeted rework correction
+
+The prior QA statement that every committed screenshot had been manually inspected was inaccurate. The original desktop homepage JPEG had a black capture region even though its automated DOM/image checks passed. Investigation isolated two causes: rapid reuse of one browser capture surface across viewport changes and corruption in the direct JPEG capture path. The corrected process uses a fresh 1440×1000 tab, waits for decoded imagery, verifies full body/hero/figure geometry, captures the complete `html` element losslessly as PNG, manually inspects it, and only then performs deterministic JPEG encoding. The final committed JPEG was manually re-inspected and contains the full disclosure, header/navigation, hero copy/actions and cocoa composition.
+
+The previous CSS also referenced a removed `1200x1500` mobile filename through `content:url`. This was corrected to semantic `<picture>/<source>` art direction. Browser `currentSrc` now resolves to the desktop 1536×1024 file at 1440/768 and the approved mobile 819×1024 file at 390/320. A clean-server 28-case matrix found all images decoded, no collected page errors and zero horizontal overflow; the server returned no failed image requests. Seven 320 px/200% text and seven image-disabled cases also pass with zero overflow.
+
 ## Evidence
 
-See `previews/README.md` for the selected contact sheets and fourteen deterministic browser placement captures. The generic-template test passes: measurement fields, graduated pack sizes, cocoa material studies and the recipe-to-pack transition remain baking-specific when brand and colour are disregarded.
+See `previews/README.md` for the selected contact sheets and fifteen deterministic browser placement captures. The generic-template test passes: measurement fields, graduated pack sizes, cocoa material studies and the recipe-to-pack transition remain baking-specific when brand and colour are disregarded.
 
 ## Limitations / release boundary
 

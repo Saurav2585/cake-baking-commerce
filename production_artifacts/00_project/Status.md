@@ -36,8 +36,9 @@
 - Sixteen Phase 4B motion/asset artifacts, the separate motion review prototype and nineteen-file deterministic evidence pack were completed.
 - Browser validation covered the motion prototype across all required widths, 320px/200% reduced mode, rapid/repeated actions, drawer interruption/focus, orientation/resize and console/overflow checks.
 - External reviewer approved Phase 4B “Measured Transformation” at commit `1de6c8aac8be54e4298cf333fe6a5db4d5f724cb` and authorized only the bounded Phase 5A pilot.
-- Phase 5A produced one cocoa-powder parent family with three proposed weights/SKUs, original editorial imagery, editable Measureloom packaging, PDP/PLP/recipe assets, a 52-file fail-closed manifest and an isolated placement prototype.
+- Phase 5A produced one cocoa-powder parent family with three proposed weights/SKUs, original editorial imagery, editable Measureloom packaging, PDP/PLP/recipe assets, a 53-file fail-closed manifest and an isolated placement prototype.
 - Browser QA covers seven placements at 1440/768/390/320, 320px/200% text, image-disabled/failure states and atomic 1 kg variant media; final checks have no horizontal overflow.
+- Phase 5A targeted rework corrected a corrupt desktop homepage JPEG and a stale mobile asset reference. The review prototype now uses semantic art direction, the 390/320 browser selects the approved 819×1024 crop, and refreshed homepage evidence was manually inspected.
 
 ## Not started by design
 
