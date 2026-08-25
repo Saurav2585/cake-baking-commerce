@@ -37,14 +37,16 @@ export default function Home() {
   const newArrivals = realProductsByBadge("new");
   const essentials = realProductsByBadge("essential");
   const toolsAndPackaging = realProductsByBadge("tool");
-  const chocolatePromoImage = realProductsById.get("rp_callebaut_811")!;
+  const chocolatePromoImage = realProductsById.get("prod_real_callebaut_811")!;
   const decoratingPromoImage = realProductsById.get(
-    "rp_lukzer_decorating_kit",
+    "prod_real_lukzer_decorating_kit",
   )!;
-  const heroLarge = realProductsById.get("rp_callebaut_811")!;
-  const heroA = realProductsById.get("rp_magic_colours_gel_red")!;
-  const heroB = realProductsById.get("rp_wilton_decorating_bags")!;
-  const heroSmall = realProductsById.get("rp_bakersville_vizyon_fondant")!;
+  const heroLarge = realProductsById.get("prod_real_callebaut_811")!;
+  const heroA = realProductsById.get("prod_real_magic_colours_gel")!;
+  const heroB = realProductsById.get("prod_real_wilton_decorating_bags")!;
+  const heroSmall = realProductsById.get(
+    "prod_real_bakersville_vizyon_fondant",
+  )!;
   const lowestPrice = Math.min(...realProducts.map((p) => p.priceInr));
 
   return (

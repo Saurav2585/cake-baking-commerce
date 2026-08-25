@@ -77,7 +77,7 @@ export function RealProductCard({
             quantity: 1,
             observedUnitPricePaise: pricePaise,
             productId: product.id,
-            variantId: `${product.id}_default`,
+            variantId: product.variantId,
             productTitle: product.title,
             variantLabel: product.packLabel,
             brandName: product.brand,

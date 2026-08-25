@@ -44,9 +44,9 @@ for (const record of manifest)
     if (!fs.existsSync(path.join(root, "public/assets/catalog", relative)))
       throw new Error(`Missing public asset: ${relative}`);
   }
-if (products.length !== 24 || variants.length !== 38)
+if (products.length !== 48 || variants.length !== 51)
   throw new Error(
-    `Expected 24 products/38 SKUs; found ${products.length}/${variants.length}`,
+    `Expected 48 products/51 SKUs; found ${products.length}/${variants.length}`,
   );
 console.log(
   `Production adapter validation passed: ${products.length} products, ${variants.length} SKUs, ${mappings.length} recipe mappings, ${manifest.length} asset records.`,

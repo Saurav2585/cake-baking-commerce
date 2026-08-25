@@ -22,7 +22,7 @@ test("home to product to cart and simulated checkout", async ({ page }) => {
 
 test("search and filter stay URL addressable", async ({ page }) => {
   await page.goto("/search?q=cocoa");
-  await expect(page.locator(".product-card")).toHaveCount(1);
+  await expect(page.locator(".product-card")).toHaveCount(4);
   await expect(page).toHaveURL(/q=cocoa/);
 });
 

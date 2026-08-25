@@ -1,39 +1,1702 @@
 {
-  "schema_version":"1.0.0",
-  "locale":"en-IN",
-  "media_resolution":"For each product_id, resolve the approved primary whose Catalog Asset Manifest relationships.product_ids contains that ID; the explicit cocoa override preserves the Phase 5A pilot asset.",
-  "fact_rendering":{"information_not_provided":"Information not provided","not_applicable":"Not applicable"},
-  "records":[
-    {"product_id":"prod_plain_flour","short_description":"A dry flour format for measured baking recipes.","family_attributes":{"form":{"status":"known","value":"powder","source_id":"demo_authored","verified_on":"2026-08-25"}},"critical_facts":{"ingredients":{"status":"information_not_provided"},"allergens":{"status":"information_not_provided"},"storage":{"status":"information_not_provided"}}},
-    {"product_id":"prod_caster_sugar","short_description":"Fine-grained sugar presented in two measured pack choices.","family_attributes":{"form":{"status":"known","value":"granules","source_id":"demo_authored","verified_on":"2026-08-25"}},"critical_facts":{"ingredients":{"status":"information_not_provided"},"allergens":{"status":"information_not_provided"},"storage":{"status":"information_not_provided"}}},
-    {"product_id":"prod_icing_sugar","short_description":"Powdered sugar in a compact baking pack.","family_attributes":{"form":{"status":"known","value":"powder","source_id":"demo_authored","verified_on":"2026-08-25"}},"critical_facts":{"ingredients":{"status":"information_not_provided"},"allergens":{"status":"information_not_provided"},"storage":{"status":"information_not_provided"}}},
-    {"product_id":"prod_baking_powder","short_description":"A dry leavening format with small- and larger-pack choices.","family_attributes":{"form":{"status":"known","value":"powder","source_id":"demo_authored","verified_on":"2026-08-25"}},"critical_facts":{"ingredients":{"status":"information_not_provided"},"allergens":{"status":"information_not_provided"},"storage":{"status":"information_not_provided"}}},
-    {"product_id":"prod_almond_flakes","short_description":"Thin almond pieces for recipe and finishing use.","family_attributes":{"form":{"status":"known","value":"flakes","source_id":"demo_authored","verified_on":"2026-08-25"}},"critical_facts":{"ingredients":{"status":"information_not_provided"},"allergens":{"status":"information_not_provided"},"storage":{"status":"information_not_provided"}}},
-    {"product_id":"prod_seedless_raisins","short_description":"Dried fruit pieces in a measured pack.","family_attributes":{"form":{"status":"known","value":"whole dried fruit","source_id":"demo_authored","verified_on":"2026-08-25"}},"critical_facts":{"ingredients":{"status":"information_not_provided"},"allergens":{"status":"information_not_provided"},"storage":{"status":"information_not_provided"}}},
-
-    {"product_id":"prod_demo_baking_cocoa","short_description":"Baking cocoa powder available in three measured pack weights.","family_attributes":{"cocoa_type":{"status":"information_not_provided"},"form":{"status":"known","value":"powder","source_id":"pilot_fact_lock","verified_on":"2026-08-25"},"cocoa_percentage":{"status":"information_not_provided"},"fat_percentage":{"status":"information_not_provided"}},"critical_facts":{"ingredients":{"status":"information_not_provided"},"allergens":{"status":"information_not_provided"},"storage":{"status":"information_not_provided"}},"media":{"primary_asset_id":"asset_pf5a_pack_500g_front_1200_v1","fallback_asset_id":"asset_pf5a_product_fallback_640_v1"}},
-    {"product_id":"prod_dark_compound","short_description":"Dark-style compound chocolate in two pack weights.","family_attributes":{"subtype":{"status":"known","value":"compound","source_id":"demo_authored","verified_on":"2026-08-25"},"chocolate_style":{"status":"known","value":"dark","source_id":"demo_authored","verified_on":"2026-08-25"},"form":{"status":"information_not_provided"},"cocoa_percentage":{"status":"information_not_provided"},"tempering_requirement":{"status":"information_not_provided"}},"critical_facts":{"ingredients":{"status":"information_not_provided"},"allergens":{"status":"information_not_provided"},"storage":{"status":"information_not_provided"}}},
-    {"product_id":"prod_white_compound","short_description":"White-style compound chocolate in two pack weights.","family_attributes":{"subtype":{"status":"known","value":"compound","source_id":"demo_authored","verified_on":"2026-08-25"},"chocolate_style":{"status":"known","value":"white","source_id":"demo_authored","verified_on":"2026-08-25"},"form":{"status":"information_not_provided"},"tempering_requirement":{"status":"information_not_provided"}},"critical_facts":{"ingredients":{"status":"information_not_provided"},"allergens":{"status":"information_not_provided"},"storage":{"status":"information_not_provided"}}},
-    {"product_id":"prod_dark_chips","short_description":"Dark chocolate-style chips in two measured packs.","family_attributes":{"form":{"status":"known","value":"chips","source_id":"demo_authored","verified_on":"2026-08-25"},"application":{"status":"information_not_provided"}},"critical_facts":{"ingredients":{"status":"information_not_provided"},"allergens":{"status":"information_not_provided"},"storage":{"status":"information_not_provided"}}},
-
-    {"product_id":"prod_crimson_gel_colour","short_description":"Crimson colour in a gel format and two pack sizes.","family_attributes":{"colour_name":{"status":"known","value":"crimson","source_id":"demo_authored","verified_on":"2026-08-25"},"form":{"status":"known","value":"gel","source_id":"demo_authored","verified_on":"2026-08-25"},"base_carrier":{"status":"information_not_provided"},"compatible_application":{"status":"information_not_provided"}},"critical_facts":{"ingredients":{"status":"information_not_provided"},"allergens":{"status":"information_not_provided"},"storage":{"status":"information_not_provided"}}},
-    {"product_id":"prod_blue_powder_colour","short_description":"Blue colour presented in a powder format.","family_attributes":{"colour_name":{"status":"known","value":"blue","source_id":"demo_authored","verified_on":"2026-08-25"},"form":{"status":"known","value":"powder","source_id":"demo_authored","verified_on":"2026-08-25"},"base_carrier":{"status":"information_not_provided"},"compatible_application":{"status":"information_not_provided"}},"critical_facts":{"ingredients":{"status":"information_not_provided"},"allergens":{"status":"information_not_provided"},"storage":{"status":"information_not_provided"}}},
-    {"product_id":"prod_vanilla_essence","short_description":"Vanilla-profile essence in two bottle sizes.","family_attributes":{"flavour_profile":{"status":"known","value":"vanilla","source_id":"demo_authored","verified_on":"2026-08-25"},"type":{"status":"known","value":"essence","source_id":"demo_authored","verified_on":"2026-08-25"},"carrier":{"status":"information_not_provided"},"use_rate":{"status":"information_not_provided"}},"critical_facts":{"ingredients":{"status":"information_not_provided"},"allergens":{"status":"information_not_provided"},"storage":{"status":"information_not_provided"}}},
-    {"product_id":"prod_orange_emulsion","short_description":"Orange-profile flavour in an emulsion format.","family_attributes":{"flavour_profile":{"status":"known","value":"orange","source_id":"demo_authored","verified_on":"2026-08-25"},"type":{"status":"known","value":"emulsion","source_id":"demo_authored","verified_on":"2026-08-25"},"carrier":{"status":"information_not_provided"},"use_rate":{"status":"information_not_provided"}},"critical_facts":{"ingredients":{"status":"information_not_provided"},"allergens":{"status":"information_not_provided"},"storage":{"status":"information_not_provided"}}},
-
-    {"product_id":"prod_strawberry_filling","short_description":"Strawberry-profile filling in two pack weights.","family_attributes":{"flavour":{"status":"known","value":"strawberry","source_id":"demo_authored","verified_on":"2026-08-25"},"texture":{"status":"information_not_provided"},"ready_to_use":{"status":"information_not_provided"},"after_opening_storage":{"status":"information_not_provided"}},"critical_facts":{"ingredients":{"status":"information_not_provided"},"allergens":{"status":"information_not_provided"},"storage":{"status":"information_not_provided"}}},
-    {"product_id":"prod_white_rolled_fondant","short_description":"White fondant presented in a rolled-fondant format.","family_attributes":{"type":{"status":"known","value":"rolled fondant","source_id":"demo_authored","verified_on":"2026-08-25"},"form":{"status":"information_not_provided"},"working_guidance":{"status":"information_not_provided"}},"critical_facts":{"ingredients":{"status":"information_not_provided"},"allergens":{"status":"information_not_provided"},"storage":{"status":"information_not_provided"}}},
-    {"product_id":"prod_neutral_glaze","short_description":"A neutral-profile glaze in a measured pack.","family_attributes":{"flavour":{"status":"known","value":"neutral","source_id":"demo_authored","verified_on":"2026-08-25"},"texture":{"status":"information_not_provided"},"ready_to_use":{"status":"information_not_provided"}},"critical_facts":{"ingredients":{"status":"information_not_provided"},"allergens":{"status":"information_not_provided"},"storage":{"status":"information_not_provided"}}},
-
-    {"product_id":"prod_confetti_sprinkles","short_description":"Mixed-colour sprinkles in two measured pack sizes.","family_attributes":{"type":{"status":"known","value":"sprinkles","source_id":"demo_authored","verified_on":"2026-08-25"},"form":{"status":"information_not_provided"},"working_guidance":{"status":"information_not_provided"}},"critical_facts":{"ingredients":{"status":"information_not_provided"},"allergens":{"status":"information_not_provided"},"storage":{"status":"information_not_provided"}}},
-    {"product_id":"prod_disposable_piping_bags","short_description":"A pack of piping bags for portioning and decorating tasks.","family_attributes":{"material":{"status":"information_not_provided"},"intended_task":{"status":"known","value":"piping","source_id":"demo_authored","verified_on":"2026-08-25"},"care":{"status":"not_applicable"}},"critical_facts":{"ingredients":{"status":"not_applicable"},"allergens":{"status":"not_applicable"},"storage":{"status":"not_applicable"},"food_contact_compatibility":{"status":"information_not_provided"}}},
-    {"product_id":"prod_celebration_topper","short_description":"A non-edible presentation topper for a finished-cake display.","family_attributes":{"material":{"status":"information_not_provided"},"intended_presentation_role":{"status":"known","value":"cake topper","source_id":"demo_authored","verified_on":"2026-08-25"},"non_edible":{"status":"known","value":true,"source_id":"demo_authored","verified_on":"2026-08-25"}},"critical_facts":{"ingredients":{"status":"not_applicable"},"allergens":{"status":"not_applicable"},"storage":{"status":"not_applicable"},"food_contact_compatibility":{"status":"information_not_provided"}}},
-
-    {"product_id":"prod_round_cake_pan","short_description":"A round pan offered in two internal diameters.","family_attributes":{"internal_dimensions":{"status":"known","value":"See selected variant","source_id":"demo_authored","verified_on":"2026-08-25"},"material":{"status":"information_not_provided"},"finish":{"status":"information_not_provided"},"shape":{"status":"known","value":"round","source_id":"demo_authored","verified_on":"2026-08-25"},"care":{"status":"information_not_provided"},"temperature_tolerance":{"status":"information_not_provided"}},"critical_facts":{"ingredients":{"status":"not_applicable"},"allergens":{"status":"not_applicable"},"storage":{"status":"not_applicable"}}},
-    {"product_id":"prod_silicone_spatula","short_description":"A 28 cm spatula for mixing and scraping tasks.","family_attributes":{"material":{"status":"known","value":"silicone","source_id":"demo_authored","verified_on":"2026-08-25"},"dimensions":{"status":"known","value":"28 cm long","source_id":"demo_authored","verified_on":"2026-08-25"},"intended_task":{"status":"known","value":"mixing and scraping","source_id":"demo_authored","verified_on":"2026-08-25"},"care":{"status":"information_not_provided"},"heat_use":{"status":"information_not_provided"}},"critical_facts":{"ingredients":{"status":"not_applicable"},"allergens":{"status":"not_applicable"},"storage":{"status":"not_applicable"}}},
-
-    {"product_id":"prod_window_cake_box","short_description":"A square window box supplied as a pack of five.","family_attributes":{"internal_dimensions":{"status":"known","value":"10 × 10 × 5 in","source_id":"demo_authored","verified_on":"2026-08-25"},"material":{"status":"information_not_provided"},"pack_count":{"status":"known","value":5,"source_id":"demo_authored","verified_on":"2026-08-25"},"window":{"status":"known","value":true,"source_id":"demo_authored","verified_on":"2026-08-25"},"assembly_form":{"status":"information_not_provided"},"food_contact_compatibility":{"status":"information_not_provided"}},"critical_facts":{"ingredients":{"status":"not_applicable"},"allergens":{"status":"not_applicable"},"storage":{"status":"not_applicable"}}},
-    {"product_id":"prod_square_cake_board","short_description":"Square presentation boards supplied as a pack of five.","family_attributes":{"dimensions":{"status":"known","value":"10 × 10 in","source_id":"demo_authored","verified_on":"2026-08-25"},"material":{"status":"information_not_provided"},"pack_count":{"status":"known","value":5,"source_id":"demo_authored","verified_on":"2026-08-25"},"food_contact_compatibility":{"status":"information_not_provided"}},"critical_facts":{"ingredients":{"status":"not_applicable"},"allergens":{"status":"not_applicable"},"storage":{"status":"not_applicable"}}}
+  "schema_version": "1.0.0",
+  "locale": "en-IN",
+  "media_resolution": "For each product_id, resolve the approved primary whose Catalog Asset Manifest relationships.product_ids contains that ID.",
+  "fact_rendering": {
+    "information_not_provided": "Information not provided",
+    "not_applicable": "Not applicable"
+  },
+  "records": [
+    {
+      "product_id": "prod_real_callebaut_811",
+      "short_description": "Callebaut 811 is a Belgian dark couverture chocolate sold in India in callet (disc) form, produced by Callebaut and commonly used by professional and home bakers for melting, molding and glazing.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Dark couverture chocolate callets",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Callebaut",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.callebaut.com/en/products/callebaut/darkchocolaterecipe811/811-2B-U73",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_morde_dark_slab",
+      "short_description": "Morde Dark Compound is a cocoa-solids-and-sugar-based compound chocolate slab manufactured by Morde, an Indian bakery-ingredients company, positioned as a lower-cost alternative to couverture chocolate.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Dark compound chocolate slab",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Morde",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.amazon.in/Morde-Dark-Compound-Slab-400/dp/B01IET7SUS",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_van_houten_cocoa",
+      "short_description": "Van Houten Cocoa Powder, a Dutch-processed cocoa brand now owned by Barry Callebaut, is sold in India in medium-brown grade for baking and beverage use.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Alkalised (Dutch-processed) cocoa powder",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Van Houten",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.hyperpure.com/in/vanhouten-by-barry-callebaut-cocoa-powder-1-kg",
+        "source_type": "authorized_distributor",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_amul_dark_compound_bar",
+      "short_description": "Amul's Dark Compound Chocolate Bar (DCO-18) is a cooking/baking compound chocolate produced by Amul and sold in a 500g bar format for melting and coating.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Dark compound chocolate bar",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Amul",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://prithvienterprises.co.in/products/amul-compound-dark-chocolate-bar-dco-18-500-g",
+        "source_type": "authorized_distributor",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_morde_compound_chips",
+      "short_description": "Morde Dark Compound Chocolate Chips are small-format compound chocolate pieces made by Morde for baking, garnishing and folding into batters.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Compound chocolate chips",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Morde",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.bigbasket.com/pd/40119334/morde-chips-dark-compound-horeca-500-g/",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_weikfield_cocoa",
+      "short_description": "Weikfield Cocoa Powder is an unsweetened cocoa powder made by Weikfield Foods Pvt. Ltd., widely distributed across Indian grocery and quick-commerce platforms.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Unsweetened cocoa powder",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Weikfield",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.amazon.in/Weikfield-Cocoa-Powder-150g/dp/B075T65RM8",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_hersheys_cocoa",
+      "short_description": "Hershey's Cocoa Powder is a natural, unsweetened cocoa powder sold in India through Hershey's own India storefront and major online grocery retailers.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Natural unsweetened cocoa powder",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Hershey's",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.hersheyland.in/products/hersheys-cocoa-natural-unsweetened-225-g.html",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_pillsbury_maida",
+      "short_description": "Pillsbury Maida is a refined all-purpose wheat flour sold under the Pillsbury brand through Indian quick-commerce retail.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Refined wheat flour (maida)",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Pillsbury",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "partially_verified",
+        "source_url": "https://blinkit.com/prn/pillsbury-maida/prid/598840",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_weikfield_baking_powder",
+      "short_description": "Weikfield Double Action Baking Powder is a sodium-bicarbonate-based leavening agent manufactured by Weikfield Foods Pvt. Ltd. and sold in a reusable poly jar.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Baking powder",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Weikfield",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.amazon.in/Weikfield-Baking-Powder-100g/dp/B004KFHIBK",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_weikfield_corn_flour",
+      "short_description": "Weikfield Corn Flour is a corn-starch product, one of Weikfield's original two products since the company's 1956 founding in Pune, used for thickening and baking.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Corn starch (corn flour)",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Weikfield",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.flipkart.com/weikfield-cornflour-500gm/p/itmc1a7f0894ca32",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_urban_platter_baking_soda",
+      "short_description": "Urban Platter Baking Soda is a triple-refined, food-grade sodium bicarbonate sold by Urban Platter through its own site and major Indian marketplaces.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Food-grade sodium bicarbonate",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Urban Platter",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://urbanplatter.com/products/urban-platter-baking-soda-food-grade-sodium-bicarbonate-perfect-for-baking-cooking-cleaning-triple-refined",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_eagle_icing_sugar",
+      "short_description": "Eagle Icing Sugar is a finely ground powdered sugar sold under the Eagle brand of Indian branded foods through BigBasket and other grocery retailers.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Icing / confectioner's sugar",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Eagle",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.bigbasket.com/pd/40009312/eagle-icing-sugar-200-g-pouch/",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_weikfield_custard_powder",
+      "short_description": "Weikfield Vanilla Custard Powder is an egg-free, vanilla-flavoured custard mix manufactured by Weikfield Foods Pvt. Ltd. for fillings, trifles and desserts.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Custard powder",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Weikfield",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.amazon.in/Weikfield-ET-09-Custard-Powder-Vanilla/dp/B00LK2L19Q",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_ccds_baking_powder",
+      "short_description": "CCDS Baking Powder is sold as a house/store-branded product through CCDS's own online shop, one of India's larger cake-decorating and baking-supply store chains.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Baking powder",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "CCDS",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.ccdsshop.com/baking-powder",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_magic_colours_gel",
+      "short_description": "Magic Colours Spectral Gel Colours are concentrated, highly pigmented gel food colours manufactured in India under license by Motek Sugarcrafts.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Concentrated gel food colour",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Magic Colours",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://magiccolours.co.in/collections/spectral-gel-colours",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_magic_colours_genie_tube",
+      "short_description": "The Spectral Genie Gel is a tube-format version of Magic Colours' gel food colour line, an alternative dispensing format to the brand's bottled gels.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Gel food colour (tube format)",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Magic Colours",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://magiccolours.co.in/products/spectral-genie-gel-tube-colours",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_colourmist_gel_paste",
+      "short_description": "Colourmist Soft Gel Paste is a concentrated, highly pigmented food-colour line manufactured by Bakersville India Pvt. Ltd. and sold across major Indian marketplaces.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Gel paste food colour set",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Colourmist",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.amazon.in/Colourmist-Vibrant-Assorted-Colours-Violet/dp/B09NM6Y3DP",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_puramate_liquid_colour",
+      "short_description": "Puramate Liquid Food Colour is part of Puramate's essence-and-colours product line, sold through the brand's own site and Indian quick-commerce platforms.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Liquid food colour",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Puramate",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://puramate.in/product-category/essence-and-colors/liquid-food-colors/",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_puramate_essence_set",
+      "short_description": "Puramate Culinary Essence Assorted is a 10-flavour set of liquid flavour essences sold by Puramate, an Indian FMCG brand founded in 2019.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Flavour essence",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Puramate",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.amazon.in/Puramate-Pineapple-Butterscotch-Strawberry-Chocolate/dp/B08PPKD7BV",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_urban_platter_vanilla",
+      "short_description": "Urban Platter Premium Vanilla Extract is an alcohol-free vanilla extract marketed as made with real Indian vanilla, sold via the brand's own site and Indian marketplaces.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Vanilla extract (alcohol-free)",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Urban Platter",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://urbanplatter.com/products/urban-platter-premium-vanilla-extract-100ml-made-with-real-indian-vanilla-perfect-for-baking-alcohol-free",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_wilton_gel_icing_color",
+      "short_description": "Wilton Gel Food Coloring is a concentrated gel-based icing colour line from the US bakeware and decorating brand Wilton.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Concentrated gel icing colour",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Wilton",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.flipkart.com/wilton-gel-food-coloring-icing-color-pink/p/itm771768d71ed62",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_bakersville_vizyon_fondant",
+      "short_description": "Vizyon Sugar Paste is a ready-to-use fondant/sugar paste line supplied by Bakersville India Pvt. Ltd. for covering cakes and modelling decorations.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Ready-to-use rolled fondant",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Bakersville",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.indiamart.com/bakersvilleindiapvtltd-indore/sugar-paste.html",
+        "source_type": "authorized_distributor",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_tropolite_whip_topping",
+      "short_description": "Tropolite Premium Whip Topping Cream is a non-dairy whipping cream produced by Tropilite Foods for cake and pastry icing/decoration.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Non-dairy whipping cream",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Tropolite",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://tropolite.com/bakery/whipping-creams/supreme-whip-topping",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_richs_whip_topping",
+      "short_description": "Rich's Chocolate Whip Topping is a chocolate-flavoured non-dairy whipped topping sold through Rich's India's own online store.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Flavoured whip topping cream",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Rich's",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.richs.in/product/richs-chocolate-whip-topping/",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_richs_truffle_base",
+      "short_description": "Rich's Truffle Base is a ready-to-use chocolate ganache-style base product for fillings, glazes and truffle-style desserts.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Chocolate ganache / truffle base",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Rich's",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.richs.in/product/richs-truffle-base/",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_funcakes_fondant",
+      "short_description": "FunCakes Rolled Fondant is a European ready-to-roll fondant brand distributed to cake-decorating retailers internationally, including sellers that ship to India.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Rolled fondant",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "FunCakes",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "partially_verified",
+        "source_url": "https://www.sweetnfairy.com/en/funcakes/874-rolled-fondant-funcakes-250g-8720143514432.html",
+        "source_type": "authorized_distributor",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_nutella_spread",
+      "short_description": "Nutella Hazelnut Spread with Cocoa is Ferrero's globally distributed hazelnut-cocoa spread, sold in India through major online grocery platforms.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Chocolate-hazelnut spread / filling",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Nutella (Ferrero)",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.amazon.in/Nutella-Hazelnut-Spread-Cocoa-750g/dp/B008TMIO2M",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_amul_fresh_cream",
+      "short_description": "Amul Fresh Cream is a 25%-milk-fat dairy cream sold in tetra packs by Amul, commonly used for whipping and cake fillings.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Dairy cream for whipping/filling",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Amul",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.bigbasket.com/pd/40102603/amul-fresh-cream-25-milk-fat-low-fat-250-ml/",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_wilton_edible_sprinkles",
+      "short_description": "Wilton Edible Baking Sprinkles is a cake and cupcake decoration sprinkle mix from Wilton, listed for sale to Indian customers.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Mixed sprinkles",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Wilton",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.flipkart.com/wilton-edible-baking-sprinkles/p/itmehv7mzr2gaz4w",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_wilton_rainbow_nonpareils",
+      "short_description": "Wilton Rainbow Nonpareils are small round sprinkles sold by Wilton for topping cupcakes, cookies and cakes.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Nonpareil sprinkles",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Wilton",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "partially_verified",
+        "source_url": "https://wilton.com/rainbow-nonpareils-7-8oz/191008777/",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_bakersville_wow_confetti",
+      "short_description": "Wow Confetti is Bakersville's edible confetti/deco sprinkle range, sold through the brand's own storefronts for cake, cupcake and dessert decoration.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Confetti / deco sprinkles",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Bakersville",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.bakersvilleshop.com/collections/wow-confetti-deco-sprinkles",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_bakersville_glint_pearl_spray",
+      "short_description": "Glint Pearl Spray is an edible spray product from Bakersville's Glint range, marketed for giving cakes and desserts a pearlescent finish.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Edible pearl-finish spray",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Bakersville",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://bakersville.in/product-category/metaglo/pearl-spray/",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_jvg_chocolate_sprinkles",
+      "short_description": "JVG Chocolate Sprinkles are chocolate-flavoured decoration sprinkles manufactured by JVG Traders Private Limited for cake and ice-cream decoration.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Chocolate vermicelli sprinkles",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "JVG",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.jvgtraders.com/decoration-sprinkles.html",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_jvg_rainbow_sprinkles",
+      "short_description": "JVG Rainbow Sprinkles are multi-coloured decoration sprinkles manufactured by JVG Traders Private Limited for cake and ice-cream decoration.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Rainbow sprinkles",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "JVG",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.indiamart.com/jvg-traders-ltd/decoration-sprinkles.html",
+        "source_type": "authorized_distributor",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_pme_sugar_pearls",
+      "short_description": "PME Edible Sugar Pearls are small sugar-ball decorations, part of PME's Sugarcraft range, made in Germany for PME and sold internationally.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Sugar pearl cake decorations",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "PME",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "partially_verified",
+        "source_url": "https://www.amazon.com/PME-Edible-Silver-Topping-Decoration/dp/B01HMHNEPG",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_wilton_decorating_bags",
+      "short_description": "Wilton 16-Inch Disposable Decorating Bags are single-use piping bags sold by Wilton and listed for direct purchase on Amazon.in.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Disposable piping bags",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Wilton",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.amazon.in/Wilton-Disposable-16-Inch-Decorating-Bags/dp/B00175TFJ4",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_wilton_pan_set",
+      "short_description": "Wilton's Aluminum Bakeware Round Tiered Cake Pan Set is a four-piece anodized-aluminum pan set designed for even heat distribution.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Cake pans",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Wilton",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "partially_verified",
+        "source_url": "https://www.amazon.com/Wilton-Performance-Aluminum-Round-Medium/dp/B0000VZ2QG",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_borosil_baking_dish",
+      "short_description": "Borosil's Round Baking & Serving Dish is a borosilicate-glass bakeware item marketed by Borosil as oven-, microwave- and dishwasher-safe.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Borosilicate glass bakeware",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Borosil",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://myborosil.com/collections/baking-dishes",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_wonderchef_cake_mould",
+      "short_description": "Wonderchef's Cake Moulds line is a non-stick bakeware range sold directly through Wonderchef's own India ecommerce site.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Non-stick bakeware cake mould",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Wonderchef",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.wonderchef.com/collections/bakeware/cake-moulds",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_pme_supatube",
+      "short_description": "The PME Supatube is a seamless stainless-steel decorating tip made in England for PME, used for fine writing and string work on cakes.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Seamless stainless-steel piping/writing tip",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "PME",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "partially_verified",
+        "source_url": "https://www.amazon.com/PME-Seamless-Stainless-SupaTube-Decorating/dp/B00EW4G98C",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_ateco_tip_set",
+      "short_description": "The Ateco 783 is a 55-piece piping tip set containing writing, star, leaf, rose, grass, basketweave and flower tips in a hinged storage box.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Cake decorating tip set",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Ateco",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "partially_verified",
+        "source_url": "https://www.amazon.com/Ateco-Decorating-Stainless-Standard-Coupler/dp/B0000DE12F",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_lukzer_decorating_kit",
+      "short_description": "The Lukzer listing photographs a bundled cake decorating kit including a 360-degree turntable and a tool set, sold directly on Amazon.in.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Cake decorating turntable and tool kit",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Lukzer",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.amazon.in/Lukzer-Turntable-Table-Baking-Tools/dp/B07G5C95TB",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_pme_cake_drum_board",
+      "short_description": "PME Cake Drum Board is a rigid, silver-finish round drum board from PME's Sugarcraft range, replacing an R1-proposed listing whose brand could not be confirmed.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Silver cake drum board",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "PME",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "partially_verified",
+        "source_url": "https://www.amazon.com/s?k=PME+cake+drum+board",
+        "source_type": "marketplace",
+        "replacement_note": "Replaces the R1-proposed \"Round Silver Cake Boards (18-Inch, Pack of 6)\" listing, whose manufacturer/brand attribution could not be confirmed from available sources. PME's brand identity is already independently verified elsewhere in this catalog (PME Supatube, PME Edible Sugar Pearls)."
+      }
+    },
+    {
+      "product_id": "prod_real_cake_craft_shop_board",
+      "short_description": "This silver round cake board is sold directly by Cake Craft Shop, an Indian cake-decorating tools and supplies retailer, as a base for presenting finished cakes.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Silver round cake board",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Cake Craft Shop",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.cakecraftshop.in/shop/packaging/cake-boards/silver-round-cake-board/",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_bakers_mart_window_box",
+      "short_description": "This tall corrugated cake box with a display window is sold by The Baker's Mart, an Erode-based Indian bakery-supplies retailer, for packaging taller cakes.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Corrugated cake box with window",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "The Baker's Mart",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://www.thebakersmart.in/product/30089102/Tall-Cake-Box----Corrugated---Window-Box",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_eco_bags_cake_box",
+      "short_description": "This brown cake box with a display window is sold directly by Eco Bags India for packaging bakery items up to about 1kg, with customization available.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Window cake box",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Eco Bags India",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "verified",
+        "source_url": "https://ecobags.in/brown-cake-box-with-window-1-kg-8x8x4-in/",
+        "source_type": "manufacturer",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_famous_packaging_box",
+      "short_description": "Famous Packaging, a Mumbai-based packaging wholesaler, lists a curved-window bakery box under its Window Bakery Boxes product line.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Curved window bakery/cake box",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Famous Packaging",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "partially_verified",
+        "source_url": "https://www.indiamart.com/famous-packaging/window-bakery-boxes.html",
+        "source_type": "authorized_distributor",
+        "replacement_note": null
+      }
+    },
+    {
+      "product_id": "prod_real_pirsq_cake_box",
+      "short_description": "Pirsq is a supplier platform for paper cake and bakery boxes across India, offering cake boxes with window and logo-printing options for bakeries and cafes.",
+      "family_attributes": {
+        "subcategory": {
+          "status": "known",
+          "value": "Custom-printed cake packaging box",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        },
+        "brand": {
+          "status": "known",
+          "value": "Pirsq",
+          "source_id": "r1_provenance_register",
+          "verified_on": "2026-08-25"
+        }
+      },
+      "critical_facts": {
+        "ingredients": {
+          "status": "information_not_provided"
+        },
+        "allergens": {
+          "status": "information_not_provided"
+        },
+        "storage": {
+          "status": "information_not_provided"
+        }
+      },
+      "provenance": {
+        "confidence_status": "partially_verified",
+        "source_url": "https://www.pirsq.com/cake-box/",
+        "source_type": "marketplace",
+        "replacement_note": null
+      }
+    }
   ],
-  "record_defaults":{"status":"published","provenance":{"status":"fictional_demo","observed_or_authored_on":"2026-08-25"},"seo_policy":"Use factual title plus Pantryform; canonical slug comes from product master; no additional claims.","media":{"primary_asset_id":"asset_pf5a_product_fallback_640_v1","alt_text_intent":"State the factual product identity and visible form only."}}
+  "record_defaults": {
+    "status": "published",
+    "provenance": {
+      "status": "real_product_demo",
+      "observed_or_authored_on": "2026-08-25"
+    },
+    "seo_policy": "Use factual title plus Pantryform; canonical slug comes from product master; no additional claims.",
+    "media": {
+      "alt_text_intent": "State the factual product identity and visible form only."
+    }
+  }
 }

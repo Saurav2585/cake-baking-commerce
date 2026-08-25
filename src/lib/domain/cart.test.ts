@@ -15,7 +15,7 @@ const line = (sku = "SKU-1", quantity = 1): CartLine => ({
   variantId: `variant-${sku}`,
   productTitle: "Product",
   variantLabel: "500 g",
-  brandName: "Fieldnote",
+  brandName: "Test Brand",
   sources: [{ kind: "manual" }],
 });
 

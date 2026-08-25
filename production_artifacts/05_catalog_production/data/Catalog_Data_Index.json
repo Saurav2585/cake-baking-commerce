@@ -9,21 +9,21 @@
     "assets": "../Catalog_Asset_Manifest.json"
   },
   "expected_counts": {
-    "parent_products": 24,
-    "sellable_variants": 38,
-    "product_content_records": 24,
+    "parent_products": 48,
+    "sellable_variants": 51,
+    "product_content_records": 48,
     "recipes": 6,
     "recipe_ingredient_lines": 45,
-    "explicit_product_mappings": 27,
-    "explicit_unmapped_lines": 18
+    "explicit_product_mappings": 18,
+    "explicit_unmapped_lines": 27
   },
   "department_parent_distribution": {
-    "dept_ingredients": 6,
-    "dept_chocolate": 4,
-    "dept_colours_flavours": 4,
-    "dept_fillings_fondant": 3,
-    "dept_decorating": 3,
-    "dept_bakeware_tools": 2,
-    "dept_packaging": 2
+    "dept_ingredients": 7,
+    "dept_chocolate": 7,
+    "dept_colours_flavours": 7,
+    "dept_fillings_fondant": 7,
+    "dept_decorating": 7,
+    "dept_bakeware_tools": 7,
+    "dept_packaging": 6
   }
 }

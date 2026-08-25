@@ -5,7 +5,7 @@ import { ShopExplorer } from "@/components/shop-explorer";
 export const metadata: Metadata = {
   title: "Shop all baking supplies",
   description:
-    "Browse the full fictional Pantryform baking ingredients and supplies catalog.",
+    "Browse the full Pantryform baking ingredients and supplies catalog.",
 };
 export default async function ShopPage({
   searchParams,
@@ -17,7 +17,7 @@ export default async function ShopPage({
     <div className="page-shell">
       <header className="page-hero">
         <div>
-          <p className="eyebrow">24 parent products · 38 exact SKUs</p>
+          <p className="eyebrow">48 parent products · 51 exact SKUs</p>
           <h1>The working pantry.</h1>
         </div>
         <p>

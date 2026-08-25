@@ -8,7 +8,6 @@ import {
   resolveMedia,
   variantsBySku,
 } from "@/lib/domain/catalog";
-import { realProductsById } from "@/data/real-products";
 import { useCommerce } from "./commerce-provider";
 export function CartView() {
   const { cart, ready, setQuantity, removeLine } = useCommerce();
@@ -37,40 +36,6 @@ export function CartView() {
     <div className="cart-layout">
       <div className="cart-lines">
         {cart.lines.map((line) => {
-          const realProduct = realProductsById.get(line.productId);
-          if (realProduct) {
-            return (
-              <article key={line.sku}>
-                <Image
-                  src={realProduct.image.src}
-                  alt=""
-                  width={140}
-                  height={140}
-                />
-                <div>
-                  <p className="eyebrow">{line.brandName}</p>
-                  <h2>{line.productTitle}</h2>
-                  <p>{line.variantLabel} · demo fixture</p>
-                </div>
-                <label>
-                  Quantity{" "}
-                  <input
-                    type="number"
-                    min="1"
-                    max="99"
-                    value={line.quantity}
-                    onChange={(e) =>
-                      setQuantity(line.sku, Number(e.target.value))
-                    }
-                  />
-                </label>
-                <strong>
-                  {formatINR(line.observedUnitPricePaise * line.quantity)}
-                </strong>
-                <button onClick={() => removeLine(line.sku)}>Remove</button>
-              </article>
-            );
-          }
           const product = catalog.find((p) => p.id === line.productId);
           const variant = variantsBySku.get(line.sku);
           if (!product || !variant) return null;

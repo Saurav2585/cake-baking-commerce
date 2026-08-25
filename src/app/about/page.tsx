@@ -17,9 +17,10 @@ export default function Page() {
       </p>
       <h2>What this demo is</h2>
       <p>
-        Every product, brand, price and availability state is fictional. The
-        experience demonstrates ecommerce interaction and art direction; it is
-        not an operating retailer.
+        Products and brands shown are real, verified baking-supply items with
+        sourced provenance; every price and availability state is a fictional
+        demo fixture. The experience demonstrates ecommerce interaction and art
+        direction; it is not an operating retailer.
       </p>
     </InformationPage>
   );

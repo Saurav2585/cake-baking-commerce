@@ -89,9 +89,7 @@ export function ProductDetail({ product }: { product: CatalogProduct }) {
           </div>
         </div>
         <div className="buy-panel">
-          <p className="eyebrow">
-            {product.brandName} · fictional product label
-          </p>
+          <p className="eyebrow">{product.brandName} · demo listing</p>
           <h1>{product.title}</h1>
           <p className="pdp-description">{content.short_description}</p>
           <p className="pdp-price">
@@ -128,7 +126,7 @@ export function ProductDetail({ product }: { product: CatalogProduct }) {
             ))}
           </fieldset>
           <p className={`availability ${variant.availability}`} role="status">
-            {variant.availability.replaceAll("_", " ")} · fictional demo state
+            {variant.availability.replaceAll("_", " ")} · demo fixture
           </p>
           <label className="quantity-control">
             Quantity{" "}

@@ -12,14 +12,36 @@ import type {
 } from "./types";
 
 export const BRAND_NAMES: Readonly<Record<string, string>> = Object.freeze({
-  brand_measureloom: "Measureloom",
-  brand_fieldnote: "Fieldnote",
-  brand_nibform: "Nibform",
-  brand_tintfold: "Tintfold",
-  brand_fillmark: "Fillmark",
-  brand_detailbench: "Detailbench",
-  brand_formstead: "Formstead",
-  brand_packplane: "Packplane",
+  brand_callebaut: "Callebaut",
+  brand_morde: "Morde",
+  brand_van_houten: "Van Houten",
+  brand_amul: "Amul",
+  brand_weikfield: "Weikfield",
+  brand_hersheys: "Hershey's",
+  brand_pillsbury: "Pillsbury",
+  brand_urban_platter: "Urban Platter",
+  brand_eagle: "Eagle",
+  brand_ccds: "CCDS",
+  brand_magic_colours: "Magic Colours",
+  brand_colourmist: "Colourmist",
+  brand_puramate: "Puramate",
+  brand_wilton: "Wilton",
+  brand_bakersville: "Bakersville",
+  brand_tropolite: "Tropolite",
+  brand_richs: "Rich's",
+  brand_funcakes: "FunCakes",
+  brand_nutella: "Nutella (Ferrero)",
+  brand_jvg: "JVG",
+  brand_pme: "PME",
+  brand_borosil: "Borosil",
+  brand_wonderchef: "Wonderchef",
+  brand_ateco: "Ateco",
+  brand_lukzer: "Lukzer",
+  brand_cake_craft_shop: "Cake Craft Shop",
+  brand_bakers_mart: "The Baker's Mart",
+  brand_eco_bags_india: "Eco Bags India",
+  brand_famous_packaging: "Famous Packaging",
+  brand_pirsq: "Pirsq",
 });
 
 type AssetRecord = (typeof manifestJson.records)[number];
@@ -105,8 +127,7 @@ export const catalog = products.map<CatalogProduct>((product) => {
   if (!content || !productVariants.length)
     throw new Error(`Broken canonical product join: ${product.id}`);
   const brandName = BRAND_NAMES[product.brand_id];
-  if (!brandName)
-    throw new Error(`Unknown fictional brand: ${product.brand_id}`);
+  if (!brandName) throw new Error(`Unknown brand: ${product.brand_id}`);
   return {
     ...product,
     brandName,

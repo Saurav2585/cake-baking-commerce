@@ -1,53 +1,844 @@
 {
-  "schema_version":"1.0.0",
-  "currency":"INR",
-  "price_unit":"paise",
-  "fixture_disclosure":"Fictional demo pricing and availability; not a live offer or inventory signal.",
-  "variants":[
-    {"id":"var_flour_500g","parent_product_id":"prod_plain_flour","sku":"FN-FLR-500","axis_values":{"pack_quantity":"500 g"},"normalized_sell_quantity":{"kind":"mass","value":500,"unit":"g","canonical_value":500,"canonical_unit":"g","display_label":"500 g"},"price_inr_minor":4900,"availability":"available"},
-    {"id":"var_flour_1kg","parent_product_id":"prod_plain_flour","sku":"FN-FLR-1000","axis_values":{"pack_quantity":"1 kg"},"normalized_sell_quantity":{"kind":"mass","value":1,"unit":"kg","canonical_value":1000,"canonical_unit":"g","display_label":"1 kg"},"price_inr_minor":8900,"availability":"available"},
-    {"id":"var_caster_500g","parent_product_id":"prod_caster_sugar","sku":"FN-CAS-500","axis_values":{"pack_quantity":"500 g"},"normalized_sell_quantity":{"kind":"mass","value":500,"unit":"g","canonical_value":500,"canonical_unit":"g","display_label":"500 g"},"price_inr_minor":5900,"availability":"available"},
-    {"id":"var_caster_1kg","parent_product_id":"prod_caster_sugar","sku":"FN-CAS-1000","axis_values":{"pack_quantity":"1 kg"},"normalized_sell_quantity":{"kind":"mass","value":1,"unit":"kg","canonical_value":1000,"canonical_unit":"g","display_label":"1 kg"},"price_inr_minor":10900,"availability":"low_demo_stock"},
-    {"id":"var_icing_500g","parent_product_id":"prod_icing_sugar","sku":"FN-ICS-500","axis_values":{},"normalized_sell_quantity":{"kind":"mass","value":500,"unit":"g","canonical_value":500,"canonical_unit":"g","display_label":"500 g"},"price_inr_minor":6900,"availability":"available"},
-    {"id":"var_bpow_100g","parent_product_id":"prod_baking_powder","sku":"FN-BPW-100","axis_values":{"pack_quantity":"100 g"},"normalized_sell_quantity":{"kind":"mass","value":100,"unit":"g","canonical_value":100,"canonical_unit":"g","display_label":"100 g"},"price_inr_minor":5500,"availability":"available"},
-    {"id":"var_bpow_500g","parent_product_id":"prod_baking_powder","sku":"FN-BPW-500","axis_values":{"pack_quantity":"500 g"},"normalized_sell_quantity":{"kind":"mass","value":500,"unit":"g","canonical_value":500,"canonical_unit":"g","display_label":"500 g"},"price_inr_minor":18900,"availability":"available"},
-    {"id":"var_almond_200g","parent_product_id":"prod_almond_flakes","sku":"FN-ALM-200","axis_values":{},"normalized_sell_quantity":{"kind":"mass","value":200,"unit":"g","canonical_value":200,"canonical_unit":"g","display_label":"200 g"},"price_inr_minor":24900,"availability":"low_demo_stock"},
-    {"id":"var_raisin_250g","parent_product_id":"prod_seedless_raisins","sku":"FN-RAI-250","axis_values":{},"normalized_sell_quantity":{"kind":"mass","value":250,"unit":"g","canonical_value":250,"canonical_unit":"g","display_label":"250 g"},"price_inr_minor":11900,"availability":"available"},
-
-    {"id":"var_bcp_250g","parent_product_id":"prod_demo_baking_cocoa","sku":"ML-BCP-250","axis_values":{"pack_quantity":"250 g"},"normalized_sell_quantity":{"kind":"mass","value":250,"unit":"g","canonical_value":250,"canonical_unit":"g","display_label":"250 g"},"price_inr_minor":18900,"availability":"available"},
-    {"id":"var_bcp_500g","parent_product_id":"prod_demo_baking_cocoa","sku":"ML-BCP-500","axis_values":{"pack_quantity":"500 g"},"normalized_sell_quantity":{"kind":"mass","value":500,"unit":"g","canonical_value":500,"canonical_unit":"g","display_label":"500 g"},"price_inr_minor":34900,"availability":"available"},
-    {"id":"var_bcp_1kg","parent_product_id":"prod_demo_baking_cocoa","sku":"ML-BCP-1000","axis_values":{"pack_quantity":"1 kg"},"normalized_sell_quantity":{"kind":"mass","value":1,"unit":"kg","canonical_value":1000,"canonical_unit":"g","display_label":"1 kg"},"price_inr_minor":62900,"availability":"low_demo_stock"},
-    {"id":"var_dark_comp_500g","parent_product_id":"prod_dark_compound","sku":"NF-DCP-500","axis_values":{"pack_quantity":"500 g"},"normalized_sell_quantity":{"kind":"mass","value":500,"unit":"g","canonical_value":500,"canonical_unit":"g","display_label":"500 g"},"price_inr_minor":23900,"availability":"available"},
-    {"id":"var_dark_comp_1kg","parent_product_id":"prod_dark_compound","sku":"NF-DCP-1000","axis_values":{"pack_quantity":"1 kg"},"normalized_sell_quantity":{"kind":"mass","value":1,"unit":"kg","canonical_value":1000,"canonical_unit":"g","display_label":"1 kg"},"price_inr_minor":43900,"availability":"available"},
-    {"id":"var_white_comp_500g","parent_product_id":"prod_white_compound","sku":"NF-WCP-500","axis_values":{"pack_quantity":"500 g"},"normalized_sell_quantity":{"kind":"mass","value":500,"unit":"g","canonical_value":500,"canonical_unit":"g","display_label":"500 g"},"price_inr_minor":24900,"availability":"available"},
-    {"id":"var_white_comp_1kg","parent_product_id":"prod_white_compound","sku":"NF-WCP-1000","axis_values":{"pack_quantity":"1 kg"},"normalized_sell_quantity":{"kind":"mass","value":1,"unit":"kg","canonical_value":1000,"canonical_unit":"g","display_label":"1 kg"},"price_inr_minor":45900,"availability":"unavailable"},
-    {"id":"var_chips_250g","parent_product_id":"prod_dark_chips","sku":"NF-CHP-250","axis_values":{"pack_quantity":"250 g"},"normalized_sell_quantity":{"kind":"mass","value":250,"unit":"g","canonical_value":250,"canonical_unit":"g","display_label":"250 g"},"price_inr_minor":16900,"availability":"available"},
-    {"id":"var_chips_500g","parent_product_id":"prod_dark_chips","sku":"NF-CHP-500","axis_values":{"pack_quantity":"500 g"},"normalized_sell_quantity":{"kind":"mass","value":500,"unit":"g","canonical_value":500,"canonical_unit":"g","display_label":"500 g"},"price_inr_minor":30900,"availability":"available"},
-
-    {"id":"var_crimson_20g","parent_product_id":"prod_crimson_gel_colour","sku":"TF-CRG-020","axis_values":{"pack_quantity":"20 g"},"normalized_sell_quantity":{"kind":"mass","value":20,"unit":"g","canonical_value":20,"canonical_unit":"g","display_label":"20 g"},"price_inr_minor":9900,"availability":"available"},
-    {"id":"var_crimson_50g","parent_product_id":"prod_crimson_gel_colour","sku":"TF-CRG-050","axis_values":{"pack_quantity":"50 g"},"normalized_sell_quantity":{"kind":"mass","value":50,"unit":"g","canonical_value":50,"canonical_unit":"g","display_label":"50 g"},"price_inr_minor":19900,"availability":"available"},
-    {"id":"var_blue_25g","parent_product_id":"prod_blue_powder_colour","sku":"TF-BPC-025","axis_values":{},"normalized_sell_quantity":{"kind":"mass","value":25,"unit":"g","canonical_value":25,"canonical_unit":"g","display_label":"25 g"},"price_inr_minor":11900,"availability":"available"},
-    {"id":"var_vanilla_30ml","parent_product_id":"prod_vanilla_essence","sku":"TF-VNE-030","axis_values":{"pack_quantity":"30 ml"},"normalized_sell_quantity":{"kind":"volume","value":30,"unit":"ml","canonical_value":30,"canonical_unit":"ml","display_label":"30 ml"},"price_inr_minor":7900,"availability":"available"},
-    {"id":"var_vanilla_100ml","parent_product_id":"prod_vanilla_essence","sku":"TF-VNE-100","axis_values":{"pack_quantity":"100 ml"},"normalized_sell_quantity":{"kind":"volume","value":100,"unit":"ml","canonical_value":100,"canonical_unit":"ml","display_label":"100 ml"},"price_inr_minor":17900,"availability":"available"},
-    {"id":"var_orange_100ml","parent_product_id":"prod_orange_emulsion","sku":"TF-ORE-100","axis_values":{},"normalized_sell_quantity":{"kind":"volume","value":100,"unit":"ml","canonical_value":100,"canonical_unit":"ml","display_label":"100 ml"},"price_inr_minor":19900,"availability":"low_demo_stock"},
-
-    {"id":"var_strawberry_500g","parent_product_id":"prod_strawberry_filling","sku":"FM-STF-500","axis_values":{"pack_quantity":"500 g"},"normalized_sell_quantity":{"kind":"mass","value":500,"unit":"g","canonical_value":500,"canonical_unit":"g","display_label":"500 g"},"price_inr_minor":22900,"availability":"available"},
-    {"id":"var_strawberry_1kg","parent_product_id":"prod_strawberry_filling","sku":"FM-STF-1000","axis_values":{"pack_quantity":"1 kg"},"normalized_sell_quantity":{"kind":"mass","value":1,"unit":"kg","canonical_value":1000,"canonical_unit":"g","display_label":"1 kg"},"price_inr_minor":41900,"availability":"available"},
-    {"id":"var_fondant_500g","parent_product_id":"prod_white_rolled_fondant","sku":"FM-WRF-500","axis_values":{"pack_quantity":"500 g"},"normalized_sell_quantity":{"kind":"mass","value":500,"unit":"g","canonical_value":500,"canonical_unit":"g","display_label":"500 g"},"price_inr_minor":24900,"availability":"available"},
-    {"id":"var_fondant_1kg","parent_product_id":"prod_white_rolled_fondant","sku":"FM-WRF-1000","axis_values":{"pack_quantity":"1 kg"},"normalized_sell_quantity":{"kind":"mass","value":1,"unit":"kg","canonical_value":1000,"canonical_unit":"g","display_label":"1 kg"},"price_inr_minor":45900,"availability":"available"},
-    {"id":"var_glaze_500g","parent_product_id":"prod_neutral_glaze","sku":"FM-NTG-500","axis_values":{},"normalized_sell_quantity":{"kind":"mass","value":500,"unit":"g","canonical_value":500,"canonical_unit":"g","display_label":"500 g"},"price_inr_minor":19900,"availability":"available"},
-
-    {"id":"var_sprinkles_100g","parent_product_id":"prod_confetti_sprinkles","sku":"DB-CFS-100","axis_values":{"pack_quantity":"100 g"},"normalized_sell_quantity":{"kind":"mass","value":100,"unit":"g","canonical_value":100,"canonical_unit":"g","display_label":"100 g"},"price_inr_minor":12900,"availability":"available"},
-    {"id":"var_sprinkles_250g","parent_product_id":"prod_confetti_sprinkles","sku":"DB-CFS-250","axis_values":{"pack_quantity":"250 g"},"normalized_sell_quantity":{"kind":"mass","value":250,"unit":"g","canonical_value":250,"canonical_unit":"g","display_label":"250 g"},"price_inr_minor":26900,"availability":"available"},
-    {"id":"var_bags_20","parent_product_id":"prod_disposable_piping_bags","sku":"DB-PBG-020","axis_values":{},"normalized_sell_quantity":{"kind":"count","value":20,"unit":"count","canonical_value":20,"canonical_unit":"count","display_label":"Pack of 20"},"price_inr_minor":14900,"availability":"available"},
-    {"id":"var_topper_1","parent_product_id":"prod_celebration_topper","sku":"DB-CTP-001","axis_values":{},"normalized_sell_quantity":{"kind":"count","value":1,"unit":"count","canonical_value":1,"canonical_unit":"count","display_label":"1 piece"},"price_inr_minor":17900,"availability":"low_demo_stock"},
-
-    {"id":"var_pan_6in","parent_product_id":"prod_round_cake_pan","sku":"FS-RPN-060","axis_values":{"dimensions":{"shape":"round","diameter":"6 inch","depth":"2 inch"}},"normalized_sell_quantity":{"kind":"dimensions","display_label":"6 in diameter × 2 in deep","canonical_dimensions_mm":{"diameter":152.4,"depth":50.8}},"price_inr_minor":34900,"availability":"available"},
-    {"id":"var_pan_8in","parent_product_id":"prod_round_cake_pan","sku":"FS-RPN-080","axis_values":{"dimensions":{"shape":"round","diameter":"8 inch","depth":"2 inch"}},"normalized_sell_quantity":{"kind":"dimensions","display_label":"8 in diameter × 2 in deep","canonical_dimensions_mm":{"diameter":203.2,"depth":50.8}},"price_inr_minor":42900,"availability":"available"},
-    {"id":"var_spatula_28cm","parent_product_id":"prod_silicone_spatula","sku":"FS-SPT-280","axis_values":{},"normalized_sell_quantity":{"kind":"length","value":28,"unit":"cm","canonical_value":280,"canonical_unit":"mm","display_label":"28 cm"},"price_inr_minor":24900,"availability":"available"},
-
-    {"id":"var_box_10in_5","parent_product_id":"prod_window_cake_box","sku":"PP-WBX-1005","axis_values":{"dimensions":{"shape":"square","length":"10 inch","width":"10 inch","height":"5 inch"},"pack_count":5},"normalized_sell_quantity":{"kind":"count","value":5,"unit":"count","canonical_value":5,"canonical_unit":"count","display_label":"10 × 10 × 5 in · Pack of 5"},"price_inr_minor":29900,"availability":"available"},
-    {"id":"var_board_10in_5","parent_product_id":"prod_square_cake_board","sku":"PP-SCB-1005","axis_values":{"dimensions":{"shape":"square","length":"10 inch","width":"10 inch"},"pack_count":5},"normalized_sell_quantity":{"kind":"count","value":5,"unit":"count","canonical_value":5,"canonical_unit":"count","display_label":"10 × 10 in · Pack of 5"},"price_inr_minor":23900,"availability":"available"}
+  "schema_version": "1.0.0",
+  "currency": "INR",
+  "price_unit": "paise",
+  "fixture_disclosure": "Real, verified products with fictional demo pricing and availability; not a live offer or inventory signal.",
+  "variants": [
+    {
+      "id": "var_callebaut_811_0",
+      "parent_product_id": "prod_real_callebaut_811",
+      "sku": "CLB-811-1000",
+      "axis_values": {
+        "pack_quantity": "1 kg"
+      },
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 1,
+        "unit": "kg",
+        "canonical_value": 1000,
+        "canonical_unit": "g",
+        "display_label": "1 kg"
+      },
+      "price_inr_minor": 220000,
+      "availability": "available"
+    },
+    {
+      "id": "var_callebaut_811_1",
+      "parent_product_id": "prod_real_callebaut_811",
+      "sku": "CLB-811-0400",
+      "axis_values": {
+        "pack_quantity": "400 g"
+      },
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 400,
+        "unit": "g",
+        "canonical_value": 400,
+        "canonical_unit": "g",
+        "display_label": "400 g"
+      },
+      "price_inr_minor": 95000,
+      "availability": "available"
+    },
+    {
+      "id": "var_morde_dark_slab_0",
+      "parent_product_id": "prod_real_morde_dark_slab",
+      "sku": "MRD-DCS-0500",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 500,
+        "unit": "g",
+        "canonical_value": 500,
+        "canonical_unit": "g",
+        "display_label": "500 g"
+      },
+      "price_inr_minor": 25000,
+      "availability": "available"
+    },
+    {
+      "id": "var_van_houten_cocoa_0",
+      "parent_product_id": "prod_real_van_houten_cocoa",
+      "sku": "VNH-COC-1000",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 1,
+        "unit": "kg",
+        "canonical_value": 1000,
+        "canonical_unit": "g",
+        "display_label": "1 kg"
+      },
+      "price_inr_minor": 65000,
+      "availability": "available"
+    },
+    {
+      "id": "var_amul_dark_compound_bar_0",
+      "parent_product_id": "prod_real_amul_dark_compound_bar",
+      "sku": "AML-DCO-0500",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 500,
+        "unit": "g",
+        "canonical_value": 500,
+        "canonical_unit": "g",
+        "display_label": "500 g"
+      },
+      "price_inr_minor": 23000,
+      "availability": "available"
+    },
+    {
+      "id": "var_morde_compound_chips_0",
+      "parent_product_id": "prod_real_morde_compound_chips",
+      "sku": "MRD-CHP-0500",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 500,
+        "unit": "g",
+        "canonical_value": 500,
+        "canonical_unit": "g",
+        "display_label": "500 g"
+      },
+      "price_inr_minor": 22000,
+      "availability": "available"
+    },
+    {
+      "id": "var_weikfield_cocoa_0",
+      "parent_product_id": "prod_real_weikfield_cocoa",
+      "sku": "WKF-COC-0150",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 150,
+        "unit": "g",
+        "canonical_value": 150,
+        "canonical_unit": "g",
+        "display_label": "150 g"
+      },
+      "price_inr_minor": 11000,
+      "availability": "available"
+    },
+    {
+      "id": "var_hersheys_cocoa_0",
+      "parent_product_id": "prod_real_hersheys_cocoa",
+      "sku": "HRS-COC-0225",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 225,
+        "unit": "g",
+        "canonical_value": 225,
+        "canonical_unit": "g",
+        "display_label": "225 g"
+      },
+      "price_inr_minor": 39900,
+      "availability": "available"
+    },
+    {
+      "id": "var_pillsbury_maida_0",
+      "parent_product_id": "prod_real_pillsbury_maida",
+      "sku": "PLB-MDA-1000",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 1,
+        "unit": "kg",
+        "canonical_value": 1000,
+        "canonical_unit": "g",
+        "display_label": "1 kg"
+      },
+      "price_inr_minor": 6500,
+      "availability": "available"
+    },
+    {
+      "id": "var_weikfield_baking_powder_0",
+      "parent_product_id": "prod_real_weikfield_baking_powder",
+      "sku": "WKF-BPW-0100",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 100,
+        "unit": "g",
+        "canonical_value": 100,
+        "canonical_unit": "g",
+        "display_label": "100 g"
+      },
+      "price_inr_minor": 4000,
+      "availability": "available"
+    },
+    {
+      "id": "var_weikfield_corn_flour_0",
+      "parent_product_id": "prod_real_weikfield_corn_flour",
+      "sku": "WKF-CRF-0500",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 500,
+        "unit": "g",
+        "canonical_value": 500,
+        "canonical_unit": "g",
+        "display_label": "500 g"
+      },
+      "price_inr_minor": 9000,
+      "availability": "available"
+    },
+    {
+      "id": "var_urban_platter_baking_soda_0",
+      "parent_product_id": "prod_real_urban_platter_baking_soda",
+      "sku": "URP-SOD-0250",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 250,
+        "unit": "g",
+        "canonical_value": 250,
+        "canonical_unit": "g",
+        "display_label": "250 g"
+      },
+      "price_inr_minor": 12000,
+      "availability": "available"
+    },
+    {
+      "id": "var_eagle_icing_sugar_0",
+      "parent_product_id": "prod_real_eagle_icing_sugar",
+      "sku": "EGL-ICS-0200",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 200,
+        "unit": "g",
+        "canonical_value": 200,
+        "canonical_unit": "g",
+        "display_label": "200 g"
+      },
+      "price_inr_minor": 5500,
+      "availability": "available"
+    },
+    {
+      "id": "var_weikfield_custard_powder_0",
+      "parent_product_id": "prod_real_weikfield_custard_powder",
+      "sku": "WKF-CST-0100",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 100,
+        "unit": "g",
+        "canonical_value": 100,
+        "canonical_unit": "g",
+        "display_label": "100 g"
+      },
+      "price_inr_minor": 5000,
+      "availability": "available"
+    },
+    {
+      "id": "var_ccds_baking_powder_0",
+      "parent_product_id": "prod_real_ccds_baking_powder",
+      "sku": "CCD-BPW-0001",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 1,
+        "unit": "pack",
+        "canonical_value": 1,
+        "canonical_unit": "pack",
+        "display_label": "1 pack (size not stated)"
+      },
+      "price_inr_minor": 4500,
+      "availability": "available"
+    },
+    {
+      "id": "var_magic_colours_gel_0",
+      "parent_product_id": "prod_real_magic_colours_gel",
+      "sku": "MGC-GEL-0025",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 25,
+        "unit": "g",
+        "canonical_value": 25,
+        "canonical_unit": "g",
+        "display_label": "25 g"
+      },
+      "price_inr_minor": 18000,
+      "availability": "available"
+    },
+    {
+      "id": "var_magic_colours_genie_tube_0",
+      "parent_product_id": "prod_real_magic_colours_genie_tube",
+      "sku": "MGC-GNT-0025",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 25,
+        "unit": "g",
+        "canonical_value": 25,
+        "canonical_unit": "g",
+        "display_label": "25 g"
+      },
+      "price_inr_minor": 19000,
+      "availability": "available"
+    },
+    {
+      "id": "var_colourmist_gel_paste_0",
+      "parent_product_id": "prod_real_colourmist_gel_paste",
+      "sku": "CLM-GPS-0010",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 10,
+        "unit": "bottles",
+        "canonical_value": 10,
+        "canonical_unit": "bottles",
+        "display_label": "10 x 10 g set"
+      },
+      "price_inr_minor": 35000,
+      "availability": "available"
+    },
+    {
+      "id": "var_puramate_liquid_colour_0",
+      "parent_product_id": "prod_real_puramate_liquid_colour",
+      "sku": "PUR-LFC-0001",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 1,
+        "unit": "bottle",
+        "canonical_value": 1,
+        "canonical_unit": "bottle",
+        "display_label": "1 bottle (volume not stated)"
+      },
+      "price_inr_minor": 4000,
+      "availability": "available"
+    },
+    {
+      "id": "var_puramate_essence_set_0",
+      "parent_product_id": "prod_real_puramate_essence_set",
+      "sku": "PUR-ESS-0010",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 10,
+        "unit": "bottles",
+        "canonical_value": 10,
+        "canonical_unit": "bottles",
+        "display_label": "10 x 30 ml set"
+      },
+      "price_inr_minor": 32000,
+      "availability": "available"
+    },
+    {
+      "id": "var_urban_platter_vanilla_0",
+      "parent_product_id": "prod_real_urban_platter_vanilla",
+      "sku": "URP-VAN-0150",
+      "axis_values": {
+        "pack_quantity": "150 ml"
+      },
+      "normalized_sell_quantity": {
+        "kind": "volume",
+        "value": 150,
+        "unit": "ml",
+        "canonical_value": 150,
+        "canonical_unit": "ml",
+        "display_label": "150 ml"
+      },
+      "price_inr_minor": 40000,
+      "availability": "available"
+    },
+    {
+      "id": "var_urban_platter_vanilla_1",
+      "parent_product_id": "prod_real_urban_platter_vanilla",
+      "sku": "URP-VAN-0100",
+      "axis_values": {
+        "pack_quantity": "100 ml"
+      },
+      "normalized_sell_quantity": {
+        "kind": "volume",
+        "value": 100,
+        "unit": "ml",
+        "canonical_value": 100,
+        "canonical_unit": "ml",
+        "display_label": "100 ml"
+      },
+      "price_inr_minor": 28000,
+      "availability": "available"
+    },
+    {
+      "id": "var_wilton_gel_icing_color_0",
+      "parent_product_id": "prod_real_wilton_gel_icing_color",
+      "sku": "WLT-GIC-0001",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 1,
+        "unit": "jar",
+        "canonical_value": 1,
+        "canonical_unit": "jar",
+        "display_label": "1 jar (~1 oz)"
+      },
+      "price_inr_minor": 28000,
+      "availability": "available"
+    },
+    {
+      "id": "var_bakersville_vizyon_fondant_0",
+      "parent_product_id": "prod_real_bakersville_vizyon_fondant",
+      "sku": "BKV-VIZ-1000",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 1,
+        "unit": "kg",
+        "canonical_value": 1000,
+        "canonical_unit": "g",
+        "display_label": "1 kg"
+      },
+      "price_inr_minor": 45000,
+      "availability": "available"
+    },
+    {
+      "id": "var_tropolite_whip_topping_0",
+      "parent_product_id": "prod_real_tropolite_whip_topping",
+      "sku": "TRP-WHP-0500",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 500,
+        "unit": "g",
+        "canonical_value": 500,
+        "canonical_unit": "g",
+        "display_label": "500 g"
+      },
+      "price_inr_minor": 32000,
+      "availability": "available"
+    },
+    {
+      "id": "var_richs_whip_topping_0",
+      "parent_product_id": "prod_real_richs_whip_topping",
+      "sku": "RCH-WHP-1000",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 1,
+        "unit": "kg",
+        "canonical_value": 1000,
+        "canonical_unit": "g",
+        "display_label": "1 kg"
+      },
+      "price_inr_minor": 42000,
+      "availability": "available"
+    },
+    {
+      "id": "var_richs_truffle_base_0",
+      "parent_product_id": "prod_real_richs_truffle_base",
+      "sku": "RCH-TRB-0001",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 1,
+        "unit": "tub",
+        "canonical_value": 1,
+        "canonical_unit": "tub",
+        "display_label": "1 tub (size not stated)"
+      },
+      "price_inr_minor": 55000,
+      "availability": "available"
+    },
+    {
+      "id": "var_funcakes_fondant_0",
+      "parent_product_id": "prod_real_funcakes_fondant",
+      "sku": "FNC-FND-0250",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 250,
+        "unit": "g",
+        "canonical_value": 250,
+        "canonical_unit": "g",
+        "display_label": "250 g"
+      },
+      "price_inr_minor": 38000,
+      "availability": "available"
+    },
+    {
+      "id": "var_nutella_spread_0",
+      "parent_product_id": "prod_real_nutella_spread",
+      "sku": "NTL-SPR-0750",
+      "axis_values": {
+        "pack_quantity": "750 g"
+      },
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 750,
+        "unit": "g",
+        "canonical_value": 750,
+        "canonical_unit": "g",
+        "display_label": "750 g"
+      },
+      "price_inr_minor": 75000,
+      "availability": "available"
+    },
+    {
+      "id": "var_nutella_spread_1",
+      "parent_product_id": "prod_real_nutella_spread",
+      "sku": "NTL-SPR-0200",
+      "axis_values": {
+        "pack_quantity": "200 g"
+      },
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 200,
+        "unit": "g",
+        "canonical_value": 200,
+        "canonical_unit": "g",
+        "display_label": "200 g"
+      },
+      "price_inr_minor": 25000,
+      "availability": "available"
+    },
+    {
+      "id": "var_amul_fresh_cream_0",
+      "parent_product_id": "prod_real_amul_fresh_cream",
+      "sku": "AML-CRM-0250",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "volume",
+        "value": 250,
+        "unit": "ml",
+        "canonical_value": 250,
+        "canonical_unit": "ml",
+        "display_label": "250 ml"
+      },
+      "price_inr_minor": 6500,
+      "availability": "available"
+    },
+    {
+      "id": "var_wilton_edible_sprinkles_0",
+      "parent_product_id": "prod_real_wilton_edible_sprinkles",
+      "sku": "WLT-SPR-0001",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 1,
+        "unit": "jar",
+        "canonical_value": 1,
+        "canonical_unit": "jar",
+        "display_label": "1 jar (size not stated)"
+      },
+      "price_inr_minor": 32000,
+      "availability": "available"
+    },
+    {
+      "id": "var_wilton_rainbow_nonpareils_0",
+      "parent_product_id": "prod_real_wilton_rainbow_nonpareils",
+      "sku": "WLT-NPL-0001",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 7.8,
+        "unit": "oz",
+        "canonical_value": 221,
+        "canonical_unit": "g",
+        "display_label": "7.8 oz"
+      },
+      "price_inr_minor": 35000,
+      "availability": "available"
+    },
+    {
+      "id": "var_bakersville_wow_confetti_0",
+      "parent_product_id": "prod_real_bakersville_wow_confetti",
+      "sku": "BKV-WOW-0200",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 200,
+        "unit": "g",
+        "canonical_value": 200,
+        "canonical_unit": "g",
+        "display_label": "200 g"
+      },
+      "price_inr_minor": 15000,
+      "availability": "available"
+    },
+    {
+      "id": "var_bakersville_glint_pearl_spray_0",
+      "parent_product_id": "prod_real_bakersville_glint_pearl_spray",
+      "sku": "BKV-GLT-0001",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 1,
+        "unit": "can",
+        "canonical_value": 1,
+        "canonical_unit": "can",
+        "display_label": "1 can (size not stated)"
+      },
+      "price_inr_minor": 38000,
+      "availability": "available"
+    },
+    {
+      "id": "var_jvg_chocolate_sprinkles_0",
+      "parent_product_id": "prod_real_jvg_chocolate_sprinkles",
+      "sku": "JVG-CHS-1000",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 1,
+        "unit": "kg",
+        "canonical_value": 1000,
+        "canonical_unit": "g",
+        "display_label": "1 kg"
+      },
+      "price_inr_minor": 38000,
+      "availability": "available"
+    },
+    {
+      "id": "var_jvg_rainbow_sprinkles_0",
+      "parent_product_id": "prod_real_jvg_rainbow_sprinkles",
+      "sku": "JVG-RBS-1000",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "mass",
+        "value": 1,
+        "unit": "kg",
+        "canonical_value": 1000,
+        "canonical_unit": "g",
+        "display_label": "1 kg"
+      },
+      "price_inr_minor": 38000,
+      "availability": "available"
+    },
+    {
+      "id": "var_pme_sugar_pearls_0",
+      "parent_product_id": "prod_real_pme_sugar_pearls",
+      "sku": "PME-PRL-0001",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 1,
+        "unit": "tub",
+        "canonical_value": 1,
+        "canonical_unit": "tub",
+        "display_label": "1 tub (weight varies by colour/size)"
+      },
+      "price_inr_minor": 32000,
+      "availability": "available"
+    },
+    {
+      "id": "var_wilton_decorating_bags_0",
+      "parent_product_id": "prod_real_wilton_decorating_bags",
+      "sku": "WLT-BAG-0012",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 12,
+        "unit": "count",
+        "canonical_value": 12,
+        "canonical_unit": "count",
+        "display_label": "12-pack"
+      },
+      "price_inr_minor": 45000,
+      "availability": "available"
+    },
+    {
+      "id": "var_wilton_pan_set_0",
+      "parent_product_id": "prod_real_wilton_pan_set",
+      "sku": "WLT-PAN-0004",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 4,
+        "unit": "count",
+        "canonical_value": 4,
+        "canonical_unit": "count",
+        "display_label": "Set of 4 (6/8/10/12 in)"
+      },
+      "price_inr_minor": 320000,
+      "availability": "available"
+    },
+    {
+      "id": "var_borosil_baking_dish_0",
+      "parent_product_id": "prod_real_borosil_baking_dish",
+      "sku": "BRS-DSH-1200",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "volume",
+        "value": 1.2,
+        "unit": "L",
+        "canonical_value": 1200,
+        "canonical_unit": "ml",
+        "display_label": "1.2 L"
+      },
+      "price_inr_minor": 89900,
+      "availability": "available"
+    },
+    {
+      "id": "var_wonderchef_cake_mould_0",
+      "parent_product_id": "prod_real_wonderchef_cake_mould",
+      "sku": "WDC-MLD-0001",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 1,
+        "unit": "mould",
+        "canonical_value": 1,
+        "canonical_unit": "mould",
+        "display_label": "1 mould (size varies)"
+      },
+      "price_inr_minor": 65000,
+      "availability": "available"
+    },
+    {
+      "id": "var_pme_supatube_0",
+      "parent_product_id": "prod_real_pme_supatube",
+      "sku": "PME-SUP-0001",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 1,
+        "unit": "tip",
+        "canonical_value": 1,
+        "canonical_unit": "tip",
+        "display_label": "1 tip"
+      },
+      "price_inr_minor": 28000,
+      "availability": "available"
+    },
+    {
+      "id": "var_ateco_tip_set_0",
+      "parent_product_id": "prod_real_ateco_tip_set",
+      "sku": "ATC-TIP-0055",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 55,
+        "unit": "pieces",
+        "canonical_value": 55,
+        "canonical_unit": "pieces",
+        "display_label": "55-piece boxed set"
+      },
+      "price_inr_minor": 280000,
+      "availability": "available"
+    },
+    {
+      "id": "var_lukzer_decorating_kit_0",
+      "parent_product_id": "prod_real_lukzer_decorating_kit",
+      "sku": "LKZ-KIT-0046",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 46,
+        "unit": "pieces",
+        "canonical_value": 46,
+        "canonical_unit": "pieces",
+        "display_label": "46-piece kit (approx.)"
+      },
+      "price_inr_minor": 65000,
+      "availability": "available"
+    },
+    {
+      "id": "var_pme_cake_drum_board_0",
+      "parent_product_id": "prod_real_pme_cake_drum_board",
+      "sku": "PME-DRM-0012",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 1,
+        "unit": "board",
+        "canonical_value": 1,
+        "canonical_unit": "board",
+        "display_label": "1 board (12 in round)"
+      },
+      "price_inr_minor": 45000,
+      "availability": "available"
+    },
+    {
+      "id": "var_cake_craft_shop_board_0",
+      "parent_product_id": "prod_real_cake_craft_shop_board",
+      "sku": "CCS-BRD-0006",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 6,
+        "unit": "count",
+        "canonical_value": 6,
+        "canonical_unit": "count",
+        "display_label": "6-inch, pack of 6"
+      },
+      "price_inr_minor": 18000,
+      "availability": "available"
+    },
+    {
+      "id": "var_bakers_mart_window_box_0",
+      "parent_product_id": "prod_real_bakers_mart_window_box",
+      "sku": "TBM-BOX-0001",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 1,
+        "unit": "box",
+        "canonical_value": 1,
+        "canonical_unit": "box",
+        "display_label": "1 box (dimensions not stated)"
+      },
+      "price_inr_minor": 6000,
+      "availability": "available"
+    },
+    {
+      "id": "var_eco_bags_cake_box_0",
+      "parent_product_id": "prod_real_eco_bags_cake_box",
+      "sku": "EBI-BOX-0001",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 1,
+        "unit": "box",
+        "canonical_value": 1,
+        "canonical_unit": "box",
+        "display_label": "8×8×4 in · fits ~1 kg cake"
+      },
+      "price_inr_minor": 2800,
+      "availability": "available"
+    },
+    {
+      "id": "var_famous_packaging_box_0",
+      "parent_product_id": "prod_real_famous_packaging_box",
+      "sku": "FPK-BOX-0001",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 1,
+        "unit": "box",
+        "canonical_value": 1,
+        "canonical_unit": "box",
+        "display_label": "1 box (dimensions not itemized)"
+      },
+      "price_inr_minor": 3500,
+      "availability": "available"
+    },
+    {
+      "id": "var_pirsq_cake_box_0",
+      "parent_product_id": "prod_real_pirsq_cake_box",
+      "sku": "PSQ-BOX-0001",
+      "axis_values": {},
+      "normalized_sell_quantity": {
+        "kind": "count",
+        "value": 1,
+        "unit": "box",
+        "canonical_value": 1,
+        "canonical_unit": "box",
+        "display_label": "1 box (customizable size)"
+      },
+      "price_inr_minor": 4500,
+      "availability": "available"
+    }
   ],
-  "record_defaults":{"compare_at_inr_minor":"absent","provenance":{"status":"fictional_demo","observed_or_authored_on":"2026-08-25"},"status":"published"}
+  "record_defaults": {
+    "compare_at_inr_minor": "absent",
+    "provenance": {
+      "status": "real_product_demo",
+      "observed_or_authored_on": "2026-08-25"
+    },
+    "status": "published"
+  }
 }
