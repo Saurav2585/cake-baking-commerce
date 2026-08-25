@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { recipes } from "@/lib/domain/catalog";
 import { MotionEnhancer } from "@/components/motion-enhancer";
-import { RealProductCard } from "@/components/real-product-card";
 import { RealProductRail } from "@/components/real-product-rail";
 import {
   departmentDisplay,
   departmentTileImage,
+  realProducts,
   realProductsByBadge,
   realProductsById,
   type RealProductDepartment,
@@ -15,13 +15,6 @@ import {
 const shopDepartments = Object.keys(
   departmentDisplay,
 ) as RealProductDepartment[];
-
-const heroProductIds = [
-  "rp_callebaut_811",
-  "rp_magic_colours_gel_red",
-  "rp_bakersville_vizyon_fondant",
-  "rp_wilton_decorating_bags",
-];
 
 const popularBrands = [
   "Callebaut",
@@ -48,39 +41,80 @@ export default function Home() {
   const decoratingPromoImage = realProductsById.get(
     "rp_lukzer_decorating_kit",
   )!;
+  const heroLarge = realProductsById.get("rp_callebaut_811")!;
+  const heroA = realProductsById.get("rp_magic_colours_gel_red")!;
+  const heroB = realProductsById.get("rp_wilton_decorating_bags")!;
+  const heroSmall = realProductsById.get("rp_bakersville_vizyon_fondant")!;
+  const lowestPrice = Math.min(...realProducts.map((p) => p.priceInr));
 
   return (
     <MotionEnhancer>
       <section className="commerce-hero">
         <div className="hero-copy-panel">
-          <p className="eyebrow" data-measure-reveal>
-            Real brands · exact packs · demo baking marketplace
-          </p>
-          <h1 data-measure-reveal>
-            Stock the pantry with the brands bakers actually reach for.
-          </h1>
+          <span className="promo-label" data-measure-reveal>
+            Featured edit
+          </span>
+          <h1 data-measure-reveal>Real brands. Exact packs. Ready to bake.</h1>
           <p data-measure-reveal>
-            Chocolate, colour, fondant, tools and packaging from real,
-            recognisable baking-supply brands — every price, pack size and
-            availability state shown is a fictional demo fixture.
+            Chocolate, colour, fondant and tools from real, verified
+            baking-supply brands — demo prices, real packshots.
           </p>
           <div className="hero-actions" data-measure-reveal>
             <Link className="button primary" href="/shop">
               Shop baking essentials
             </Link>
             <Link className="text-link" href="/recipes">
-              Plan from a recipe
+              Explore recipes
             </Link>
           </div>
+          <ul className="hero-meta" data-measure-reveal>
+            <li>7 departments</li>
+            <li>12 real brands</li>
+            <li>Demo prices from ₹{lowestPrice}</li>
+          </ul>
         </div>
-        <div className="hero-product-stage" data-measure-reveal>
-          {heroProductIds.map((id, index) => (
-            <RealProductCard
-              key={id}
-              product={realProductsById.get(id)!}
-              priority={index === 0}
-            />
-          ))}
+        <div className="hero-collage" data-measure-reveal>
+          <div className="collage-frame collage-large">
+            <div className="collage-media">
+              <Image
+                src={heroLarge.image.src}
+                alt={heroLarge.image.alt}
+                fill
+                priority
+                sizes="(max-width: 640px) 80vw, 28vw"
+              />
+            </div>
+          </div>
+          <div className="collage-frame collage-a">
+            <div className="collage-media">
+              <Image
+                src={heroA.image.src}
+                alt={heroA.image.alt}
+                fill
+                sizes="(max-width: 640px) 0vw, 20vw"
+              />
+            </div>
+          </div>
+          <div className="collage-frame collage-b">
+            <div className="collage-media">
+              <Image
+                src={heroB.image.src}
+                alt={heroB.image.alt}
+                fill
+                sizes="(max-width: 640px) 0vw, 20vw"
+              />
+            </div>
+          </div>
+          <div className="collage-frame collage-small">
+            <div className="collage-media">
+              <Image
+                src={heroSmall.image.src}
+                alt={heroSmall.image.alt}
+                fill
+                sizes="(max-width: 640px) 36vw, 12vw"
+              />
+            </div>
+          </div>
         </div>
       </section>
       <section className="section-shell">

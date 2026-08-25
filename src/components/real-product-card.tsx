@@ -35,11 +35,22 @@ export function RealProductCard({
       {badge && <span className="rp-badge">{BADGE_LABEL[badge]}</span>}
       <button
         type="button"
-        className="wishlist-toggle rp-wishlist"
+        className={`rp-wishlist${saved ? " is-saved" : ""}`}
         aria-pressed={saved}
+        aria-label={
+          saved
+            ? `Remove ${product.title} from wishlist`
+            : `Save ${product.title} to wishlist`
+        }
+        title={saved ? "Saved to wishlist" : "Save to wishlist"}
         onClick={() => toggleWishlist(product.id, product.title)}
       >
-        {saved ? "Saved" : "Save"}
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16">
+          <path
+            fill="currentColor"
+            d="M12 20.6 3.6 12.2C1.5 10 1.5 6.7 3.6 4.6c2-2 5.3-2 7.3.1L12 5.8l1.1-1.1c2-2.1 5.3-2.1 7.3-.1 2.1 2.1 2.1 5.4 0 7.6L12 20.6Z"
+          />
+        </svg>
       </button>
       <div className="rp-image">
         <Image
@@ -56,7 +67,7 @@ export function RealProductCard({
         <span>{product.packLabel}</span>
         <strong>{formatINR(pricePaise)}</strong>
       </div>
-      <p className="availability available">In demo stock · demo fixture</p>
+      <p className="availability available">Available in demo</p>
       <button
         type="button"
         className="button primary rp-add"
