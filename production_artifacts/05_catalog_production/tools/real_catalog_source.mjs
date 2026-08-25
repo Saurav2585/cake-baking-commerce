@@ -757,7 +757,7 @@ export const PRODUCTS = [
     productType: "tool",
     variants: [{ sku: "BRS-DSH-1200", pack: { kind: "volume", value: 1.2, unit: "L", canonicalValue: 1200, canonicalUnit: "ml", label: "1.2 L" }, priceInr: 899, availability: "available" }],
     imageSlug: "borosil-baking-dish",
-    imageSourceUrl: "https://myborosil.com/collections/baking-dishes",
+    imageSourceUrl: "https://myborosil.com/products/colours-blue-round-cake-dish-1-2l",
     imageSourceType: "manufacturer",
     confidence: "verified",
     description: "Borosil's Round Baking & Serving Dish is a borosilicate-glass bakeware item marketed by Borosil as oven-, microwave- and dishwasher-safe.",

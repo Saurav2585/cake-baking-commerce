@@ -6,8 +6,8 @@
     "variant_owned_media_count": 0,
     "recipe_count": 6,
     "department_visual_count": 7,
-    "real_product_sourced_count": 43,
-    "real_product_missing_count": 5
+    "real_product_sourced_count": 47,
+    "real_product_missing_count": 1
   },
   "records": [
     {
@@ -3265,7 +3265,7 @@
       "manifest_schema_version": "1.0.0",
       "asset_id": "asset_real_ccds_baking_powder",
       "version": 1,
-      "status": "pending_sourcing",
+      "status": "approved",
       "title": "CCDS Baking Powder",
       "asset_family": "product_packshot",
       "role": "primary",
@@ -3282,8 +3282,8 @@
           "dept_ingredients"
         ]
       },
-      "source_method": "missing_image_placeholder",
-      "creator": "pantryform_internal_placeholder",
+      "source_method": "real_product_photograph",
+      "creator": "third_party_brand_or_retailer",
       "created_at": "2026-08-25T00:00:00.000Z",
       "provenance": {
         "confidence_status": "verified",
@@ -3291,16 +3291,16 @@
         "source_type": "manufacturer",
         "source_access_date": "2026-08-25",
         "replacement_note": null,
-        "usage_note": "No real photo has been sourced yet for this product. This is an honest placeholder graphic, not a fabricated or AI-recreated product image."
+        "usage_note": "Third-party brand/manufacturer imagery used for portfolio/demo purposes only; not owned by Pantryform. No watermark removal, trademark alteration, or misleading packaging edit was made."
       },
       "master": {
-        "path": "public/assets/catalog/real/_placeholder_primary.webp",
-        "format": "webp",
-        "width": 1200,
-        "height": 1200,
+        "path": "public/real-products-v2/ccds-baking-powder.jpg",
+        "format": "jpg",
+        "width": 982,
+        "height": 700,
         "checksum": {
           "algorithm": "sha256",
-          "value": "273f21a515f80ad5931bdffd385f35eaf809ce9c55fc1a2578dc1626dc97ca0b"
+          "value": "a5069a813030d61463164081f7aa925cd533ad13e1d3babd3e281e22905c6936"
         }
       },
       "derivatives": [
@@ -3312,7 +3312,7 @@
           "height": 1200,
           "checksum": {
             "algorithm": "sha256",
-            "value": "273f21a515f80ad5931bdffd385f35eaf809ce9c55fc1a2578dc1626dc97ca0b"
+            "value": "6e3495d6a13d2e1bb2b8b38ca508a0f3c78a455a6ca7945df0b6faf8ba1c9884"
           }
         },
         {
@@ -3323,12 +3323,12 @@
           "height": 480,
           "checksum": {
             "algorithm": "sha256",
-            "value": "fa3892f0c611de91a5f5cd2b943cfea7f2ecc99ae511a442ece79699cdd26b24"
+            "value": "6ea5743f90fb5aa2a49d5dcff1e63670cd6e49569d16da3d5b710cb065e9bff2"
           }
         }
       ],
       "alt_text": {
-        "text": "CCDS Baking Powder — product image not yet available."
+        "text": "CCDS Baking Powder, Baking powder."
       }
     },
     {
@@ -3966,7 +3966,7 @@
       "manifest_schema_version": "1.0.0",
       "asset_id": "asset_real_richs_chocolate_whip_topping",
       "version": 1,
-      "status": "pending_sourcing",
+      "status": "approved",
       "title": "Rich's Chocolate Whip Topping",
       "asset_family": "product_packshot",
       "role": "primary",
@@ -3983,8 +3983,8 @@
           "dept_fillings_fondant"
         ]
       },
-      "source_method": "missing_image_placeholder",
-      "creator": "pantryform_internal_placeholder",
+      "source_method": "real_product_photograph",
+      "creator": "third_party_brand_or_retailer",
       "created_at": "2026-08-25T00:00:00.000Z",
       "provenance": {
         "confidence_status": "verified",
@@ -3992,16 +3992,16 @@
         "source_type": "manufacturer",
         "source_access_date": "2026-08-25",
         "replacement_note": null,
-        "usage_note": "No real photo has been sourced yet for this product. This is an honest placeholder graphic, not a fabricated or AI-recreated product image."
+        "usage_note": "Third-party brand/manufacturer imagery used for portfolio/demo purposes only; not owned by Pantryform. No watermark removal, trademark alteration, or misleading packaging edit was made."
       },
       "master": {
-        "path": "public/assets/catalog/real/_placeholder_primary.webp",
-        "format": "webp",
-        "width": 1200,
-        "height": 1200,
+        "path": "public/real-products-v2/richs-chocolate-whip-topping.jpg",
+        "format": "jpg",
+        "width": 1000,
+        "height": 1000,
         "checksum": {
           "algorithm": "sha256",
-          "value": "273f21a515f80ad5931bdffd385f35eaf809ce9c55fc1a2578dc1626dc97ca0b"
+          "value": "0a261f9f214255bcc2ef85e54717278eb5fe3f4a6b86c7764631b45418216194"
         }
       },
       "derivatives": [
@@ -4013,7 +4013,7 @@
           "height": 1200,
           "checksum": {
             "algorithm": "sha256",
-            "value": "273f21a515f80ad5931bdffd385f35eaf809ce9c55fc1a2578dc1626dc97ca0b"
+            "value": "a9604d59917aa084718967477a98f28eb8eefc31718a2fc18ac7531a31173fd6"
           }
         },
         {
@@ -4024,19 +4024,19 @@
           "height": 480,
           "checksum": {
             "algorithm": "sha256",
-            "value": "fa3892f0c611de91a5f5cd2b943cfea7f2ecc99ae511a442ece79699cdd26b24"
+            "value": "4094b8b714f5c8fe5a49068a5d458037c14285ee9607b822dcb6250c9f67d2ad"
           }
         }
       ],
       "alt_text": {
-        "text": "Rich's Chocolate Whip Topping — product image not yet available."
+        "text": "Rich's Chocolate Whip Topping, Flavoured whip topping cream."
       }
     },
     {
       "manifest_schema_version": "1.0.0",
       "asset_id": "asset_real_richs_truffle_base",
       "version": 1,
-      "status": "pending_sourcing",
+      "status": "approved",
       "title": "Rich's Truffle Base",
       "asset_family": "product_packshot",
       "role": "primary",
@@ -4053,8 +4053,8 @@
           "dept_fillings_fondant"
         ]
       },
-      "source_method": "missing_image_placeholder",
-      "creator": "pantryform_internal_placeholder",
+      "source_method": "real_product_photograph",
+      "creator": "third_party_brand_or_retailer",
       "created_at": "2026-08-25T00:00:00.000Z",
       "provenance": {
         "confidence_status": "verified",
@@ -4062,16 +4062,16 @@
         "source_type": "manufacturer",
         "source_access_date": "2026-08-25",
         "replacement_note": null,
-        "usage_note": "No real photo has been sourced yet for this product. This is an honest placeholder graphic, not a fabricated or AI-recreated product image."
+        "usage_note": "Third-party brand/manufacturer imagery used for portfolio/demo purposes only; not owned by Pantryform. No watermark removal, trademark alteration, or misleading packaging edit was made."
       },
       "master": {
-        "path": "public/assets/catalog/real/_placeholder_primary.webp",
-        "format": "webp",
-        "width": 1200,
-        "height": 1200,
+        "path": "public/real-products-v2/richs-truffle-base.png",
+        "format": "png",
+        "width": 1000,
+        "height": 1000,
         "checksum": {
           "algorithm": "sha256",
-          "value": "273f21a515f80ad5931bdffd385f35eaf809ce9c55fc1a2578dc1626dc97ca0b"
+          "value": "a88a2541a610e86bc065f5797f01630b984c7067d12e3ecf9f1bcff853263deb"
         }
       },
       "derivatives": [
@@ -4083,7 +4083,7 @@
           "height": 1200,
           "checksum": {
             "algorithm": "sha256",
-            "value": "273f21a515f80ad5931bdffd385f35eaf809ce9c55fc1a2578dc1626dc97ca0b"
+            "value": "a5c2f2059faf06129bc6c96bc44e373a9c73a6275183dc306028024fd3453e7f"
           }
         },
         {
@@ -4094,12 +4094,12 @@
           "height": 480,
           "checksum": {
             "algorithm": "sha256",
-            "value": "fa3892f0c611de91a5f5cd2b943cfea7f2ecc99ae511a442ece79699cdd26b24"
+            "value": "330a29ea4d788b8909ff478ea530179c8b8d1ebeafea6910d839c922cc38321f"
           }
         }
       ],
       "alt_text": {
-        "text": "Rich's Truffle Base — product image not yet available."
+        "text": "Rich's Truffle Base, Chocolate ganache / truffle base."
       }
     },
     {
@@ -4969,7 +4969,7 @@
       "created_at": "2026-08-25T00:00:00.000Z",
       "provenance": {
         "confidence_status": "verified",
-        "source_url": "https://myborosil.com/collections/baking-dishes",
+        "source_url": "https://myborosil.com/products/colours-blue-round-cake-dish-1-2l",
         "source_type": "manufacturer",
         "source_access_date": "2026-08-25",
         "replacement_note": null,
@@ -4982,7 +4982,7 @@
         "height": 1000,
         "checksum": {
           "algorithm": "sha256",
-          "value": "36aa80e9750198034d77a5647369fd7f1d18ad5af809a31ce36eedfb2d809f7d"
+          "value": "29db0801c08f3d320b2b6242dbd262d667702c9a0d76c6087fab0524a20695d3"
         }
       },
       "derivatives": [
@@ -4994,7 +4994,7 @@
           "height": 1200,
           "checksum": {
             "algorithm": "sha256",
-            "value": "edf9e1e96647ca3bdd515e46e21893c9dd8666d688d73c39be4a6a7f650e2cd6"
+            "value": "6e918ae8c2fc5090ea1a6d7bcd2d257ebb8006835d0061b15da80573c414d7fa"
           }
         },
         {
@@ -5005,7 +5005,7 @@
           "height": 480,
           "checksum": {
             "algorithm": "sha256",
-            "value": "00e21d1164e92427812d7cd0a3a51f50c5773b5cc9dbbcc980580850ebf238ad"
+            "value": "1f7882ca8fa90e6de728b8923f45c6bb827fc73c7b8a43350c07b2a6bcfc2215"
           }
         }
       ],
@@ -5017,7 +5017,7 @@
       "manifest_schema_version": "1.0.0",
       "asset_id": "asset_real_wonderchef_non_stick_cake_mould",
       "version": 1,
-      "status": "pending_sourcing",
+      "status": "approved",
       "title": "Wonderchef Non-Stick Cake Mould",
       "asset_family": "product_packshot",
       "role": "primary",
@@ -5034,8 +5034,8 @@
           "dept_bakeware_tools"
         ]
       },
-      "source_method": "missing_image_placeholder",
-      "creator": "pantryform_internal_placeholder",
+      "source_method": "real_product_photograph",
+      "creator": "third_party_brand_or_retailer",
       "created_at": "2026-08-25T00:00:00.000Z",
       "provenance": {
         "confidence_status": "verified",
@@ -5043,16 +5043,16 @@
         "source_type": "manufacturer",
         "source_access_date": "2026-08-25",
         "replacement_note": null,
-        "usage_note": "No real photo has been sourced yet for this product. This is an honest placeholder graphic, not a fabricated or AI-recreated product image."
+        "usage_note": "Third-party brand/manufacturer imagery used for portfolio/demo purposes only; not owned by Pantryform. No watermark removal, trademark alteration, or misleading packaging edit was made."
       },
       "master": {
-        "path": "public/assets/catalog/real/_placeholder_primary.webp",
-        "format": "webp",
-        "width": 1200,
-        "height": 1200,
+        "path": "public/real-products-v2/wonderchef-cake-mould.jpg",
+        "format": "jpg",
+        "width": 1000,
+        "height": 1000,
         "checksum": {
           "algorithm": "sha256",
-          "value": "273f21a515f80ad5931bdffd385f35eaf809ce9c55fc1a2578dc1626dc97ca0b"
+          "value": "7124e37c3aa9b310196d70a57e94a463536d1f65a14004bde8251a67b42404b2"
         }
       },
       "derivatives": [
@@ -5064,7 +5064,7 @@
           "height": 1200,
           "checksum": {
             "algorithm": "sha256",
-            "value": "273f21a515f80ad5931bdffd385f35eaf809ce9c55fc1a2578dc1626dc97ca0b"
+            "value": "ecb01049045a71aee1a599b8a7753bb35c0582df9d7880ba85554a6ea45569a5"
           }
         },
         {
@@ -5075,12 +5075,12 @@
           "height": 480,
           "checksum": {
             "algorithm": "sha256",
-            "value": "fa3892f0c611de91a5f5cd2b943cfea7f2ecc99ae511a442ece79699cdd26b24"
+            "value": "c29f5db90c547a1c7bdfc164524200ca2e9d7451aed22d0dc38e1f3033625576"
           }
         }
       ],
       "alt_text": {
-        "text": "Wonderchef Non-Stick Cake Mould — product image not yet available."
+        "text": "Wonderchef Non-Stick Cake Mould, Non-stick bakeware cake mould."
       }
     },
     {

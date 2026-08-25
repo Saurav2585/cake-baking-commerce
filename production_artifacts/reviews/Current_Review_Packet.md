@@ -2,6 +2,56 @@
 
 ## Phase
 
+**Recovery R2B2A — Multi-Agent Asset, Commerce, UI and Motion Gate**
+
+**Status:** Planning/reconciliation complete; no application code shipped by this gate; not deployed; branch `recovery/real-commerce-visuals` only, never merged to `main`.
+
+**Prepared:** 2026-08-26
+
+### Review objective
+
+Record the truthful status of the ongoing catalog-recovery effort (branch `recovery/real-commerce-visuals`), which has fully diverged from the live production deployment described in the Phase 7/6 record preserved below. **The live production site at `https://cake-baking-commerce.vercel.app` is unaffected by any of this work** — it remains deployed from `main` at commit `6f9b140`, running the original 24-product fictional catalog. This packet does not supersede Phase 7's production-deployment facts; it adds a parallel, currently-undeployed recovery track.
+
+### Recovery track summary (R1 through R2B2A)
+
+- **R1 (commit `1d1f7aa`):** established the real commerce identity/product foundation — approved Pantryform logo, initial real-photography staging for 12 products, R1 provenance register.
+- **R2A (commit `83e2778`) and R2A rework (commit `4697a1a`):** rebuilt the homepage on real photography and the approved logo; targeted visual refinements after an "APPROVED, with rework" verdict (logo size, header polish, hero recomposition, product-card polish, demo-language cleanup).
+- **R2B1 (commit `15e621d`):** converted the full catalog from 24 fictional products to **48 real, verified parent products / 51 sellable SKUs / 30 real brands / 7 departments**, replacing the fictional catalog entirely (no dual-catalog state), with an extended validation suite and updated documentation.
+- **R2B2A (this gate, uncommitted at packet-authoring time):** a formal multi-agent planning/asset-resolution/approval gate — 7 specialist deliverables (real-photo sourcing resolution to 47/48 products; an independent commerce-contract audit; a PLP/category/search/PDP UI specification; a GSAP/2.5D motion specification with numeric performance budgets; a frontend/GSAP implementation architecture with a 5-worktree partition; an independent QA/accessibility/performance acceptance plan; and — added mid-gate per a user-issued mandatory addendum — a Premium Visual Acceptance Gate defining a measurable, screenshot-evidenced bar for "art-directed, award-gallery-quality" commerce presentation). **No application route, component, or motion code was written in this gate** — it is planning-only. Full reconciliation, decisions, and defect classification: `production_artifacts/06_recovery_r2b2/Reconciliation_and_R2B2_Implementation_Package.md`.
+
+### R2B2A acceptance evidence
+
+- [x] All 7 specialist deliverables read in full by the orchestrator (not summarized secondhand) before reconciliation.
+- [x] Asset resolution merged and re-validated: `validate_catalog_data.js`, `validate_catalog_assets.js`, `scripts/validate-production-data.mjs` all pass post-merge (47/48 products with real sourced photography, up from 43/48).
+- [x] Two cross-document conflicts found and resolved in writing (not left for an implementer to guess): `.product-card`/`.plp-card` class-naming collision, and a stale "5 placeholder products" figure superseded by the newer 1-product figure.
+- [x] Nine reconciled decisions recorded with owner/evidence/rationale/alternatives/trade-offs; a P0–P3 defect register produced for R2B2 implementation (0 P0, 6 P1, 3 P2, 5 P3).
+- [x] One decision explicitly escalated to the human user rather than resolved by the orchestrator: whether to approve a flagged real-brand substitution (BB Royal Maida for the still-unsourced Pillsbury Maida) — not applied pending that decision.
+- [x] Zero AI-generated images anywhere in this gate's asset work or deliverables, independently verified (not merely claimed) by the QA deliverable via source-table cross-reference and live source-URL re-fetch.
+- [x] `docs/Decision_Log.md` (D-033–D-041) and `docs/Risk_Register.md` (R-044–R-047, plus a superseded note on R-043) updated to reflect this gate's outcome.
+- [x] No `main` modification, no production deployment, at any point in this gate.
+
+### R2B2A known limitations
+
+- This gate produced specifications and one asset/data resolution, not implementation — R2B2 (the actual PLP/PDP/motion/cart-visual implementation) has not started.
+- No automated accessibility scanning exists yet in this repository (`tests/accessibility/` was an empty placeholder); `@axe-core/playwright` adoption is decided (D-038) but not yet installed.
+- Cross-browser automated coverage remains Chromium-only; WebKit/Firefox verification is manual-only by decision (D-038), not automated.
+- The Premium Visual Acceptance Gate's nine categories have not yet been exercised against a real implementation, since none exists yet.
+
+### R2B2A decision requested
+
+1. Human decision needed: approve or reject the Pillsbury Maida → BB Royal Maida brand substitution (see `Reconciliation_and_R2B2_Implementation_Package.md` §2, §8). Default (no action) keeps the honest placeholder.
+2. No further action needed to acknowledge the rest of this gate's reconciled decisions — they are recorded as confirmed and carry forward into R2B2 implementation automatically.
+
+### R2B2A gate
+
+No R2B2 implementation, no `main` merge, and no production deployment should proceed from this branch without a separate, explicit authorization — this gate is planning/approval only.
+
+---
+
+# Phase 7 record (preserved, approved — describes the separate, currently-live `main` deployment)
+
+## Phase
+
 **Phase 7 — Release QA and Vercel Production Deployment**
 
 **Status:** Production live
