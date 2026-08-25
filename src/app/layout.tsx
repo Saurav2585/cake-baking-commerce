@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { catalog } from "@/lib/domain/catalog";
+import { REAL_PRODUCT_SKUS } from "@/data/real-products";
 import { CommerceProvider } from "@/components/commerce-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -39,7 +40,10 @@ export default function RootLayout({
           Skip to main content
         </a>
         <CommerceProvider
-          validSkus={catalog.flatMap((p) => p.variants.map((v) => v.sku))}
+          validSkus={[
+            ...catalog.flatMap((p) => p.variants.map((v) => v.sku)),
+            ...REAL_PRODUCT_SKUS,
+          ]}
         >
           <SiteHeader />
           <main id="main-content" tabIndex={-1}>

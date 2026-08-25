@@ -1,107 +1,216 @@
 import Image from "next/image";
 import Link from "next/link";
-import { catalog, recipes } from "@/lib/domain/catalog";
-import { ProductGrid } from "@/components/product-grid";
+import { recipes } from "@/lib/domain/catalog";
 import { MotionEnhancer } from "@/components/motion-enhancer";
+import { RealProductCard } from "@/components/real-product-card";
+import { RealProductRail } from "@/components/real-product-rail";
+import {
+  departmentDisplay,
+  departmentTileImage,
+  realProductsByBadge,
+  realProductsById,
+  type RealProductDepartment,
+} from "@/data/real-products";
 
-const departments = [
-  [
-    "ingredients",
-    "Ingredients",
-    "Flours, sugars, leaveners and pantry add-ins",
-  ],
-  ["chocolate", "Chocolate", "Cocoa, compounds and inclusions"],
-  [
-    "colours-flavours",
-    "Colours & Flavours",
-    "Gels, powders, essences and emulsions",
-  ],
-  ["fillings-fondant", "Fillings & Fondant", "Layer, glaze, cover and model"],
-  ["decorating", "Decorating", "Piping, sprinkles and finishing detail"],
-  ["bakeware-tools", "Bakeware & Tools", "Shape, measure, mix and prepare"],
-  ["packaging", "Packaging", "Boxes, boards and bags"],
-  ["recipes", "Recipes", "Turn method into a measured supply plan"],
-] as const;
+const shopDepartments = Object.keys(
+  departmentDisplay,
+) as RealProductDepartment[];
+
+const heroProductIds = [
+  "rp_callebaut_811",
+  "rp_magic_colours_gel_red",
+  "rp_bakersville_vizyon_fondant",
+  "rp_wilton_decorating_bags",
+];
+
+const popularBrands = [
+  "Callebaut",
+  "Morde",
+  "Van Houten",
+  "Amul",
+  "Weikfield",
+  "Hershey's",
+  "Wilton",
+  "Nutella",
+  "Urban Platter",
+  "Magic Colours",
+  "Bakersville",
+  "JVG",
+];
 
 export default function Home() {
   const cocoaRecipe = recipes.find((r) => r.slug === "cocoa-celebration-cake")!;
+  const bestsellers = realProductsByBadge("bestseller");
+  const newArrivals = realProductsByBadge("new");
+  const essentials = realProductsByBadge("essential");
+  const toolsAndPackaging = realProductsByBadge("tool");
+  const chocolatePromoImage = realProductsById.get("rp_callebaut_811")!;
+  const decoratingPromoImage = realProductsById.get(
+    "rp_lukzer_decorating_kit",
+  )!;
+
   return (
     <MotionEnhancer>
-      <section className="home-hero">
-        <div className="hero-copy">
+      <section className="commerce-hero">
+        <div className="hero-copy-panel">
           <p className="eyebrow" data-measure-reveal>
-            Raw ingredient · exact measure · joyful making
+            Real brands · exact packs · demo baking marketplace
           </p>
-          <h1 data-measure-reveal>From pantry measure to finished bake.</h1>
+          <h1 data-measure-reveal>
+            Stock the pantry with the brands bakers actually reach for.
+          </h1>
           <p data-measure-reveal>
-            Curated baking ingredients and supplies, with exact packs and
-            recipe-led planning. Every price and availability state is a
-            fictional demo fixture.
+            Chocolate, colour, fondant, tools and packaging from real,
+            recognisable baking-supply brands — every price, pack size and
+            availability state shown is a fictional demo fixture.
           </p>
           <div className="hero-actions" data-measure-reveal>
             <Link className="button primary" href="/shop">
-              Shop exact packs
+              Shop baking essentials
             </Link>
             <Link className="text-link" href="/recipes">
               Plan from a recipe
             </Link>
           </div>
         </div>
-        <div className="hero-stage" data-measure-reveal>
-          <Image
-            src="/assets/catalog/asset_pf5b_recipe_demo-cocoa-celebration-cake_hero_1536x1024_v1.webp"
-            alt="Cocoa celebration cake beside measured cocoa, an illustrative demo recipe presentation"
-            fill
-            priority
-            sizes="(max-width: 768px) 100vw, 62vw"
-          />
-          <div className="measure-mark">
-            <span>180 g</span>
-            <small>ingredient → method</small>
-          </div>
-        </div>
-      </section>
-      <div className="process-ruler" aria-label="Measured making sequence">
-        <span>01 Raw</span>
-        <span>02 Measure</span>
-        <span>03 Method</span>
-        <span>04 Make</span>
-      </div>
-      <section className="section-shell">
-        <header className="editorial-heading">
-          <p className="eyebrow">The pantry atlas</p>
-          <h2>Discover by making material.</h2>
-          <p>
-            Eight useful ways into a broad baking supply cupboard—without
-            marketplace clutter.
-          </p>
-        </header>
-        <div className="department-atlas">
-          {departments.map(([slug, name, copy], index) => (
-            <Link
-              key={slug}
-              href={slug === "recipes" ? "/recipes" : `/shop/${slug}`}
-              className={`department-tile tile-${index + 1}`}
-            >
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <h3>{name}</h3>
-              <p>{copy}</p>
-            </Link>
+        <div className="hero-product-stage" data-measure-reveal>
+          {heroProductIds.map((id, index) => (
+            <RealProductCard
+              key={id}
+              product={realProductsById.get(id)!}
+              priority={index === 0}
+            />
           ))}
         </div>
       </section>
-      <section className="section-shell ingredient-theatre">
-        <div>
-          <p className="eyebrow">Ingredient theatre · factual shopping</p>
-          <h2>See the form. Read the facts. Choose the measure.</h2>
+      <section className="section-shell">
+        <header className="editorial-heading">
+          <p className="eyebrow">Shop by category</p>
+          <h2>Discover by making material.</h2>
           <p>
-            Art direction carries the feeling; structured catalog data carries
-            the decision.
+            48 real, provenance-backed products proposed across 7 departments —
+            a representative sample is shoppable here now.
           </p>
+        </header>
+        <div className="department-atlas">
+          {shopDepartments.map((slug, index) => {
+            const info = departmentDisplay[slug];
+            const image = departmentTileImage[slug];
+            return (
+              <Link
+                key={slug}
+                href={`/shop/${slug}`}
+                className={`department-tile tile-${index + 1}`}
+              >
+                <div className="tile-image">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                  />
+                </div>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h3>{info.title}</h3>
+                <p>{info.blurb}</p>
+              </Link>
+            );
+          })}
+          <Link href="/recipes" className="department-tile tile-8 recipes-tile">
+            <span>08</span>
+            <h3>Recipes</h3>
+            <p>Turn method into a measured supply plan</p>
+          </Link>
         </div>
-        <ProductGrid products={catalog.slice(0, 4)} />
       </section>
-      <section className="recipe-bridge">
+      <section className="section-shell brand-strip-section">
+        <header className="editorial-heading">
+          <p className="eyebrow">Popular brands</p>
+          <h2>Names you already trust in your kitchen.</h2>
+          <p>
+            A curated subset of the 30 real, verified brands referenced in the
+            demo catalog proposal. Typographic placeholder treatment—brand logo
+            assets pending clearance.
+          </p>
+        </header>
+        <ul className="brand-strip">
+          {popularBrands.map((brand) => (
+            <li key={brand}>{brand}</li>
+          ))}
+        </ul>
+        <Link className="text-link" href="/shop">
+          Browse the assortment →
+        </Link>
+      </section>
+      <section className="section-shell">
+        <header className="editorial-heading">
+          <p className="eyebrow">Bestsellers · demo-curated</p>
+          <h2>Reached for again and again.</h2>
+          <p>Curated picks, not real sales data.</p>
+        </header>
+        <RealProductRail products={bestsellers} ariaLabel="Bestsellers" />
+      </section>
+      <section className="section-shell promo-split-section">
+        <div className="promo-split">
+          <Link href="/shop/chocolate" className="promo-panel">
+            <div className="promo-image">
+              <Image
+                src={chocolatePromoImage.image.src}
+                alt={chocolatePromoImage.image.alt}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+            <p className="eyebrow">Chocolate &amp; cocoa essentials</p>
+            <h3>Stock the melt-and-mould basics.</h3>
+            <span className="text-link">Shop chocolate →</span>
+          </Link>
+          <Link href="/shop/decorating" className="promo-panel">
+            <div className="promo-image">
+              <Image
+                src={decoratingPromoImage.image.src}
+                alt={decoratingPromoImage.image.alt}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+            <p className="eyebrow">Cake decorating favourites</p>
+            <h3>Gear up for your next celebration cake.</h3>
+            <span className="text-link">Shop decorating →</span>
+          </Link>
+        </div>
+      </section>
+      <section className="section-shell">
+        <header className="editorial-heading">
+          <p className="eyebrow">New arrivals · demo-curated</p>
+          <h2>Freshly added to the demo assortment.</h2>
+          <p>Recently staged in the R1 real-catalog proposal.</p>
+        </header>
+        <RealProductRail products={newArrivals} ariaLabel="New arrivals" />
+      </section>
+      <section className="section-shell ingredient-theatre">
+        <header className="editorial-heading">
+          <p className="eyebrow">Baking essentials</p>
+          <h2>The repeat-purchase shelf.</h2>
+          <p>
+            Flour, sugar, leavening and fondant staples — the highest-frequency
+            category for real bakers.
+          </p>
+        </header>
+        <RealProductRail products={essentials} ariaLabel="Baking essentials" />
+      </section>
+      <section className="section-shell">
+        <header className="editorial-heading">
+          <p className="eyebrow">Tools, bakeware &amp; packaging</p>
+          <h2>Finish, box and gift it properly.</h2>
+          <p>Piping, decorating kits and cake packaging in one place.</p>
+        </header>
+        <RealProductRail
+          products={toolsAndPackaging}
+          ariaLabel="Tools, bakeware and packaging"
+        />
+      </section>
+      <section className="recipe-bridge recipe-bridge-compact">
         <div className="recipe-image">
           <Image
             src="/assets/catalog/asset_pf5b_recipe_orange-glaze-loaf_hero_1536x1024_v1.webp"
@@ -123,6 +232,24 @@ export default function Home() {
           >
             Explore recipe planning
           </Link>
+        </div>
+      </section>
+      <section className="trust-strip">
+        <div>
+          <h3>Wide selection</h3>
+          <p>7 departments spanning real, verified baking-supply brands.</p>
+        </div>
+        <div>
+          <h3>Clear pack sizes</h3>
+          <p>Every listing states an exact pack size, not a vague estimate.</p>
+        </div>
+        <div>
+          <h3>Recipe-led planning</h3>
+          <p>Turn a method into a measured, reviewable supply plan.</p>
+        </div>
+        <div>
+          <h3>Simulated secure checkout</h3>
+          <p>A demo experience only — no real payment is ever taken.</p>
         </div>
       </section>
     </MotionEnhancer>
