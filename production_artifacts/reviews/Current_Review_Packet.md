@@ -2,6 +2,56 @@
 
 ## Phase
 
+**Recovery R2B2 — Multi-Agent Commerce and Premium Experience Implementation**
+
+**Status:** Implementation and independent QA complete. Real application code shipped on `recovery/real-commerce-visuals`; **not merged to `main`, not deployed** — external human visual approval is required first, per explicit user instruction.
+
+**Prepared:** 2026-08-26
+
+### Review objective
+
+Record the outcome of R2B2: real, working implementation of the seven R2B2A specification documents plus the mandatory Premium Visual Acceptance Gate, executed by six specialist subagents across two dependency-ordered waves plus an independent QA pass. Full detail: `design_review/recovery_r2b2/R2B2_Implementation_And_Verification_Report.md`.
+
+### R2B2 summary
+
+- **Catalog:** the human-approved BB Royal Maida substitution (for the former Pillsbury Maida placeholder) is applied as a complete, truthful product identity change — new canonical id/slug/brand/SKU/price/photo, all 6 recipe mappings updated, zero Pillsbury identity remaining. **The catalog now has 48/48 real, verified product photography — zero honest-placeholder products remain.**
+- **Implementation:** converged product-card component (grid/rail variants, homepage dead-end-link defect fixed), full PLP/category/search rebuild, a from-scratch GSAP motion system (hero pointer-parallax, grouped atlas/rail entrance, PDP variant crossfade), PDP rebuild (single hero image, `.form`→`.subcategory` fix, tri-state facts, conditional recipe module), and homepage/cart/checkout/global-nav visual polish including the sitewide "fictional products" copy fix.
+- **Defects found and fixed during this phase** (by the orchestrator and the independent QA agent, not silently absorbed): one P0 (a shared-image PDP crossfade bug that permanently blanked the hero image for 3 of 48 products after a variant click — reproduced, fixed, re-verified live across both motion and reduced-motion contexts), one P1 (a missing keyboard focus indicator on the PDP's selected variant button — fixed, re-verified live), and one build-adjacent bug found by the orchestrator (a malformed CSS comment that corrupted subsequent rules, caught via a live dev-server error, not by lint/typecheck/build).
+- **Validation:** canonical/asset validation, format check, lint, typecheck, 13/13 unit tests, 10/10 Playwright e2e tests, and a clean production build (80 pages) all pass on the final, fixed code. Live-verified (not just inferred): zero horizontal overflow across 7 routes × 5 required viewports; a full add-to-cart → cart → checkout flow with correct subtotal math; a reduced-motion homepage rendering the identical final composition to the animated version.
+- **Premium Visual Acceptance Gate:** orchestrator self-assessment against all nine categories is PASS, with one disclosed gap (Category I's numeric Core Web Vitals half was not measured with Lighthouse tooling in this phase). Screenshot evidence: 22 files at `design_review/recovery_r2b2/screenshots/`.
+
+### R2B2 acceptance evidence
+
+- [x] Genuine Claude subagents used throughout (6 specialist roles, isolated worktrees, narrow non-overlapping ownership) — confirmed by the orchestrator reviewing and manually merging each role's actual diff, not trusting self-reported summaries.
+- [x] BB Royal Maida substitution applied as a complete truthful identity change, not an image-only swap (`docs/Decision_Log.md` D-040, `Asset_Coverage_Report.md` addendum).
+- [x] 48/48 real product photography confirmed via `validate_catalog_assets.js`.
+- [x] Independent QA agent dispatched only after full integration, found a real P0 and P1 (not a rubber stamp), both fixed and re-verified live by the orchestrator before this packet was written.
+- [x] Full validation suite green: canonical validation, format check, lint, typecheck, unit tests, e2e tests, production build.
+- [x] Zero horizontal overflow at all 5 required viewports; keyboard navigation and reduced-motion verified live, not just asserted.
+- [x] Zero AI-generated images anywhere in this phase — the one new product image (BB Royal Maida) was sourced from a live, verifiable retailer page and processed only through the existing deterministic normalization pipeline.
+- [x] `docs/Decision_Log.md` (D-040 updated to applied, D-042–D-043 added) and `docs/Risk_Register.md` (R-045–R-047 updated/mitigated, R-048 added and closed) updated to reflect this phase's outcome.
+- [x] No `main` modification, no production deployment, at any point in this phase.
+
+### R2B2 known limitations
+
+- WebKit/Firefox automated cross-browser coverage remains deferred (standing R2B2A scoping decision) — Chromium-only Playwright coverage exists.
+- Core Web Vitals / Lighthouse numeric measurement was not performed in this phase — Category I of the Premium Visual Gate is passed on visual/functional grounds, not numeric performance grounds.
+- `@axe-core/playwright` was decided as required tooling in R2B2A but has not yet been installed — a disclosed follow-up, not silently dropped.
+
+### R2B2 decision requested
+
+**External human visual approval** of the implementation against `production_artifacts/06_recovery_r2b2/Premium_Visual_Acceptance_Gate.md` and the screenshot evidence in `design_review/recovery_r2b2/screenshots/`, before any merge to `main` or production deployment. No other decision is currently open — the one prior open decision (D-040, the BB Royal substitution) was resolved by explicit user approval earlier in this same phase.
+
+### R2B2 gate
+
+No merge to `main` and no production deployment should proceed from this branch until external visual approval is explicitly given, per the user's own locked instruction.
+
+---
+
+# Recovery R2B2A record (preserved — planning gate that R2B2 implemented)
+
+## Phase
+
 **Recovery R2B2A — Multi-Agent Asset, Commerce, UI and Motion Gate**
 
 **Status:** Planning/reconciliation complete; no application code shipped by this gate; not deployed; branch `recovery/real-commerce-visuals` only, never merged to `main`.
