@@ -18,7 +18,7 @@ export const BRAND_NAMES: Readonly<Record<string, string>> = Object.freeze({
   brand_amul: "Amul",
   brand_weikfield: "Weikfield",
   brand_hersheys: "Hershey's",
-  brand_pillsbury: "Pillsbury",
+  brand_bb_royal: "BB Royal",
   brand_urban_platter: "Urban Platter",
   brand_eagle: "Eagle",
   brand_ccds: "CCDS",

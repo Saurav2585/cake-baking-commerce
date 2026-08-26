@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default async function ShopPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string; department?: string }>;
+  searchParams: Promise<{ q?: string; department?: string; brand?: string }>;
 }) {
   const params = await searchParams;
   return (
@@ -29,6 +29,7 @@ export default async function ShopPage({
         products={catalog}
         initialQuery={params.q ?? ""}
         lockedDepartment={params.department ?? ""}
+        initialBrands={params.brand ? params.brand.split(",") : []}
       />
     </div>
   );

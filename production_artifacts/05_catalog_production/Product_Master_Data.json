@@ -93,9 +93,9 @@
       "applications": []
     },
     {
-      "id": "prod_real_pillsbury_maida",
-      "slug": "pillsbury-maida",
-      "brand_id": "brand_pillsbury",
+      "id": "prod_real_bb_royal_maida",
+      "slug": "bb-royal-maida",
+      "brand_id": "brand_bb_royal",
       "title": "Maida (All Purpose Flour)",
       "department_id": "dept_ingredients",
       "category_id": "cat_flours_mixes",

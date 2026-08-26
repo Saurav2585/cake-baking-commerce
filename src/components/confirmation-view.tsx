@@ -23,7 +23,8 @@ export function ConfirmationView({ reference }: { reference: string }) {
       <p className="eyebrow">Simulation complete · no payment taken</p>
       <h1>A measured ending, not a real order.</h1>
       <p>
-        Your local demo reference is <strong>{reference}</strong>.
+        Your local demo reference is{" "}
+        <code className="reference-code">{reference}</code>.
       </p>
       <p>
         No paid order, delivery, customer account or fulfilment record was

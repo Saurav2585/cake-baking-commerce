@@ -137,9 +137,9 @@
       "availability": "available"
     },
     {
-      "id": "var_pillsbury_maida_0",
-      "parent_product_id": "prod_real_pillsbury_maida",
-      "sku": "PLB-MDA-1000",
+      "id": "var_bb_royal_maida_0",
+      "parent_product_id": "prod_real_bb_royal_maida",
+      "sku": "BBR-MDA-1000",
       "axis_values": {},
       "normalized_sell_quantity": {
         "kind": "mass",
@@ -149,7 +149,7 @@
         "canonical_unit": "g",
         "display_label": "1 kg"
       },
-      "price_inr_minor": 6500,
+      "price_inr_minor": 5600,
       "availability": "available"
     },
     {

@@ -160,10 +160,10 @@ export const PRODUCTS = [
 
   // Department 2: Baking Essentials (7)
   {
-    id: "prod_real_pillsbury_maida",
-    slug: "pillsbury-maida",
-    brand: "Pillsbury",
-    brandId: "brand_pillsbury",
+    id: "prod_real_bb_royal_maida",
+    slug: "bb-royal-maida",
+    brand: "BB Royal",
+    brandId: "brand_bb_royal",
     dept: DEPARTMENTS.ingredients,
     cat: "cat_flours_mixes",
     subcat: "subcat_flour",
@@ -171,12 +171,12 @@ export const PRODUCTS = [
     title: "Maida (All Purpose Flour)",
     subcategoryLabel: "Refined wheat flour (maida)",
     productType: "ingredient",
-    variants: [{ sku: "PLB-MDA-1000", pack: { kind: "mass", value: 1, unit: "kg", canonicalValue: 1000, canonicalUnit: "g", label: "1 kg" }, priceInr: 65, availability: "available" }],
-    imageSlug: "pillsbury-maida",
-    imageSourceUrl: "https://blinkit.com/prn/pillsbury-maida/prid/598840",
+    variants: [{ sku: "BBR-MDA-1000", pack: { kind: "mass", value: 1, unit: "kg", canonicalValue: 1000, canonicalUnit: "g", label: "1 kg" }, priceInr: 56, availability: "available" }],
+    imageSlug: "bb-royal-maida",
+    imageSourceUrl: "https://www.bigbasket.com/pd/10000416/bb-royal-maida-1-kg-pouch/",
     imageSourceType: "marketplace",
-    confidence: "partially_verified",
-    description: "Pillsbury Maida is a refined all-purpose wheat flour sold under the Pillsbury brand through Indian quick-commerce retail.",
+    confidence: "verified",
+    description: "BB Royal Maida is a refined all-purpose wheat flour sold under BigBasket's BB Royal private label.",
   },
   {
     id: "prod_real_weikfield_baking_powder",

@@ -4,8 +4,8 @@ import { ProductCard } from "./product-card";
 export function ProductGrid({ products }: { products: CatalogProduct[] }) {
   return (
     <div className="product-grid">
-      {products.map((product, index) => (
-        <ProductCard key={product.id} product={product} index={index} />
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );

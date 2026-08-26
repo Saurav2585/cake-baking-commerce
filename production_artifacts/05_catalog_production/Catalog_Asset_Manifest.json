@@ -6,8 +6,8 @@
     "variant_owned_media_count": 0,
     "recipe_count": 6,
     "department_visual_count": 7,
-    "real_product_sourced_count": 47,
-    "real_product_missing_count": 1
+    "real_product_sourced_count": 48,
+    "real_product_missing_count": 0
   },
   "records": [
     {
@@ -2843,72 +2843,72 @@
     },
     {
       "manifest_schema_version": "1.0.0",
-      "asset_id": "asset_real_pillsbury_maida",
+      "asset_id": "asset_real_bb_royal_maida",
       "version": 1,
-      "status": "pending_sourcing",
-      "title": "Pillsbury Maida (All Purpose Flour)",
+      "status": "approved",
+      "title": "BB Royal Maida (All Purpose Flour)",
       "asset_family": "product_packshot",
       "role": "primary",
       "relationships": {
         "product_ids": [
-          "prod_real_pillsbury_maida"
+          "prod_real_bb_royal_maida"
         ],
         "variant_ids": [],
         "skus": [
-          "PLB-MDA-1000"
+          "BBR-MDA-1000"
         ],
         "recipe_ids": [],
         "department_ids": [
           "dept_ingredients"
         ]
       },
-      "source_method": "missing_image_placeholder",
-      "creator": "pantryform_internal_placeholder",
+      "source_method": "real_product_photograph",
+      "creator": "third_party_brand_or_retailer",
       "created_at": "2026-08-25T00:00:00.000Z",
       "provenance": {
-        "confidence_status": "partially_verified",
-        "source_url": "https://blinkit.com/prn/pillsbury-maida/prid/598840",
+        "confidence_status": "verified",
+        "source_url": "https://www.bigbasket.com/pd/10000416/bb-royal-maida-1-kg-pouch/",
         "source_type": "marketplace",
         "source_access_date": "2026-08-25",
         "replacement_note": null,
-        "usage_note": "No real photo has been sourced yet for this product. This is an honest placeholder graphic, not a fabricated or AI-recreated product image."
+        "usage_note": "Third-party brand/manufacturer imagery used for portfolio/demo purposes only; not owned by Pantryform. No watermark removal, trademark alteration, or misleading packaging edit was made."
       },
       "master": {
-        "path": "public/assets/catalog/real/_placeholder_primary.webp",
-        "format": "webp",
-        "width": 1200,
-        "height": 1200,
+        "path": "public/real-products-v2/bb-royal-maida.png",
+        "format": "png",
+        "width": 500,
+        "height": 500,
         "checksum": {
           "algorithm": "sha256",
-          "value": "273f21a515f80ad5931bdffd385f35eaf809ce9c55fc1a2578dc1626dc97ca0b"
+          "value": "d77b5bb20bf7c8a93a9b463c81b025ccc8b02f4a35b53d9502cd6d5a77dfef84"
         }
       },
       "derivatives": [
         {
           "purpose": "primary",
-          "path": "real/pillsbury-maida/primary.webp",
+          "path": "real/bb-royal-maida/primary.webp",
           "format": "webp",
           "width": 1200,
           "height": 1200,
           "checksum": {
             "algorithm": "sha256",
-            "value": "273f21a515f80ad5931bdffd385f35eaf809ce9c55fc1a2578dc1626dc97ca0b"
+            "value": "d6f9a75fbc1af90b34f6dfcb810e4b5ce021cb3f8205d3fe9c7c838e762377df"
           }
         },
         {
           "purpose": "thumbnail",
-          "path": "real/pillsbury-maida/thumbnail.webp",
+          "path": "real/bb-royal-maida/thumbnail.webp",
           "format": "webp",
           "width": 480,
           "height": 480,
           "checksum": {
             "algorithm": "sha256",
-            "value": "fa3892f0c611de91a5f5cd2b943cfea7f2ecc99ae511a442ece79699cdd26b24"
+            "value": "22752237b8dd0bf9322920855d69b6882337dedc40149a5d680c5d951697d389"
           }
         }
       ],
       "alt_text": {
-        "text": "Pillsbury Maida (All Purpose Flour) — product image not yet available."
+        "text": "BB Royal Maida (All Purpose Flour), Refined wheat flour (maida)."
       }
     },
     {

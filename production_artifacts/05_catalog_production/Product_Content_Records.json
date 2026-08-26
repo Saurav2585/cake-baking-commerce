@@ -253,8 +253,8 @@
       }
     },
     {
-      "product_id": "prod_real_pillsbury_maida",
-      "short_description": "Pillsbury Maida is a refined all-purpose wheat flour sold under the Pillsbury brand through Indian quick-commerce retail.",
+      "product_id": "prod_real_bb_royal_maida",
+      "short_description": "BB Royal Maida is a refined all-purpose wheat flour sold under BigBasket's BB Royal private label.",
       "family_attributes": {
         "subcategory": {
           "status": "known",
@@ -264,7 +264,7 @@
         },
         "brand": {
           "status": "known",
-          "value": "Pillsbury",
+          "value": "BB Royal",
           "source_id": "r1_provenance_register",
           "verified_on": "2026-08-25"
         }
@@ -281,8 +281,8 @@
         }
       },
       "provenance": {
-        "confidence_status": "partially_verified",
-        "source_url": "https://blinkit.com/prn/pillsbury-maida/prid/598840",
+        "confidence_status": "verified",
+        "source_url": "https://www.bigbasket.com/pd/10000416/bb-royal-maida-1-kg-pouch/",
         "source_type": "marketplace",
         "replacement_note": null
       }
@@ -1332,7 +1332,7 @@
       },
       "provenance": {
         "confidence_status": "verified",
-        "source_url": "https://myborosil.com/collections/baking-dishes",
+        "source_url": "https://myborosil.com/products/colours-blue-round-cake-dish-1-2l",
         "source_type": "manufacturer",
         "replacement_note": null
       }

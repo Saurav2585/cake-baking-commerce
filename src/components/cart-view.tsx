@@ -42,7 +42,14 @@ export function CartView() {
           const media = resolveMedia(product.id, variant.id);
           return (
             <article key={line.sku}>
-              <Image src={media.thumbnailSrc} alt="" width={140} height={140} />
+              <div className="rp-image">
+                <Image
+                  src={media.thumbnailSrc}
+                  alt={media.alt}
+                  fill
+                  sizes="140px"
+                />
+              </div>
               <div>
                 <p className="eyebrow">{line.brandName}</p>
                 <h2>{line.productTitle}</h2>

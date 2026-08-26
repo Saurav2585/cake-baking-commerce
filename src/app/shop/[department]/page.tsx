@@ -2,56 +2,34 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { catalog } from "@/lib/domain/catalog";
 import { ShopExplorer } from "@/components/shop-explorer";
+import { departments } from "@/lib/shop-departments";
 
-const departments: Record<string, { id: string; title: string; copy: string }> =
-  {
-    ingredients: {
-      id: "dept_ingredients",
-      title: "Ingredients",
-      copy: "Flours, sugars, leaveners and add-ins for measured methods.",
-    },
-    chocolate: {
-      id: "dept_chocolate",
-      title: "Chocolate",
-      copy: "Cocoa, compounds and inclusions in exact baking packs.",
-    },
-    "colours-flavours": {
-      id: "dept_colours_flavours",
-      title: "Colours & Flavours",
-      copy: "Gel, powder, essence and emulsion formats kept distinct.",
-    },
-    "fillings-fondant": {
-      id: "dept_fillings_fondant",
-      title: "Fillings & Fondant",
-      copy: "Layering, glazing, covering and modelling formats.",
-    },
-    decorating: {
-      id: "dept_decorating",
-      title: "Decorating",
-      copy: "Piping, sprinkles and finishing details.",
-    },
-    "bakeware-tools": {
-      id: "dept_bakeware_tools",
-      title: "Bakeware & Tools",
-      copy: "Pans and preparation tools with dimensions kept visible.",
-    },
-    packaging: {
-      id: "dept_packaging",
-      title: "Packaging",
-      copy: "Boxes and boards defined by exact dimensions and counts.",
-    },
-  };
 export function generateStaticParams() {
   return Object.keys(departments).map((department) => ({ department }));
 }
 export default async function DepartmentPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ department: string }>;
+  searchParams: Promise<{ brand?: string }>;
 }) {
   const { department } = await params;
+  const { brand } = await searchParams;
   const record = departments[department];
   if (!record) notFound();
+  const departmentProducts = catalog.filter(
+    (p) => p.department_id === record.id,
+  );
+  const categories = Array.from(
+    new Set(departmentProducts.map((p) => p.category_id)),
+  )
+    .sort()
+    .map((id) => ({
+      id,
+      slug: id.replace("cat_", "").replaceAll("_", "-"),
+      label: id.replace("cat_", "").replaceAll("_", " "),
+    }));
   return (
     <div className="page-shell">
       <nav className="breadcrumbs" aria-label="Breadcrumb">
@@ -68,17 +46,40 @@ export default async function DepartmentPage({
       <header className="page-hero">
         <div>
           <p className="eyebrow">
-            Department atlas ·{" "}
-            {String(Object.keys(departments).indexOf(department) + 1).padStart(
-              2,
-              "0",
-            )}
+            {Object.keys(departments).indexOf(department) + 1} of{" "}
+            {Object.keys(departments).length} departments ·{" "}
+            {departmentProducts.length} product
+            {departmentProducts.length === 1 ? "" : "s"}
           </p>
           <h1>{record.title}</h1>
         </div>
         <p>{record.copy}</p>
       </header>
-      <ShopExplorer products={catalog} lockedDepartment={record.id} />
+      {categories.length > 1 && (
+        <nav className="category-chips" aria-label="Categories">
+          <Link
+            href={`/shop/${department}`}
+            className="category-chip"
+            aria-current="page"
+          >
+            All {record.title}
+          </Link>
+          {categories.map((c) => (
+            <Link
+              key={c.id}
+              href={`/shop/${department}/${c.slug}`}
+              className="category-chip"
+            >
+              {c.label}
+            </Link>
+          ))}
+        </nav>
+      )}
+      <ShopExplorer
+        products={catalog}
+        lockedDepartment={record.id}
+        initialBrands={brand ? brand.split(",") : []}
+      />
     </div>
   );
 }

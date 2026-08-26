@@ -1,6 +1,18 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { catalog } from "@/lib/domain/catalog";
 import { ShopExplorer } from "@/components/shop-explorer";
+
+const DEPARTMENT_SHORTCUTS: { slug: string; label: string }[] = [
+  { slug: "ingredients", label: "Ingredients" },
+  { slug: "chocolate", label: "Chocolate" },
+  { slug: "colours-flavours", label: "Colours & Flavours" },
+  { slug: "fillings-fondant", label: "Fillings & Fondant" },
+  { slug: "decorating", label: "Decorating" },
+  { slug: "bakeware-tools", label: "Bakeware & Tools" },
+  { slug: "packaging", label: "Packaging" },
+];
+
 export const metadata: Metadata = { title: "Search" };
 export default async function SearchPage({
   searchParams,
@@ -12,7 +24,9 @@ export default async function SearchPage({
     <div className="page-shell">
       <header className="page-hero">
         <div>
-          <p className="eyebrow">Search the measured pantry</p>
+          <p className="eyebrow">
+            {q ? "Search results" : "Search the full catalog"}
+          </p>
           <h1>{q ? `Results for “${q}”` : "What are you making?"}</h1>
         </div>
         <p>
@@ -20,7 +34,17 @@ export default async function SearchPage({
           never used as filters.
         </p>
       </header>
-      <ShopExplorer products={catalog} initialQuery={q} />
+      {q ? (
+        <ShopExplorer products={catalog} initialQuery={q} />
+      ) : (
+        <div className="category-chips" aria-label="Browse a department">
+          {DEPARTMENT_SHORTCUTS.map((d) => (
+            <Link key={d.slug} href={`/shop/${d.slug}`} className="category-chip">
+              {d.label}
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

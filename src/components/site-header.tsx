@@ -96,6 +96,17 @@ export function SiteHeader() {
   const drawerRef = useRef<HTMLElement>(null);
   const { cart, wishlist } = useCommerce();
   const cartCount = cart.lines.reduce((n, l) => n + l.quantity, 0);
+  const [cartPulse, setCartPulse] = useState(false);
+  const [prevCartCount, setPrevCartCount] = useState(cartCount);
+  if (cartCount !== prevCartCount) {
+    setPrevCartCount(cartCount);
+    if (cartCount > prevCartCount) setCartPulse(true);
+  }
+  useEffect(() => {
+    if (!cartPulse) return;
+    const timer = setTimeout(() => setCartPulse(false), 320);
+    return () => clearTimeout(timer);
+  }, [cartPulse]);
   useEffect(() => {
     if (!open) return;
     closeRef.current?.focus();
@@ -129,8 +140,9 @@ export function SiteHeader() {
   return (
     <>
       <div className="demo-strip">
-        Portfolio demo · fictional products and INR prices · no real orders or
-        payments
+        Portfolio demo · Pantryform is a fictional retailer showcasing real,
+        sourced products · pricing, checkout and orders are simulated, not
+        real
       </div>
       <div className="offer-bar">
         <span>7 baking-supply departments</span>
@@ -197,7 +209,13 @@ export function SiteHeader() {
               <span className="icon-wrap">
                 <CartIcon />
                 {cartCount > 0 && (
-                  <span className="count-badge">{cartCount}</span>
+                  <span
+                    className={
+                      cartPulse ? "count-badge count-badge--pulse" : "count-badge"
+                    }
+                  >
+                    {cartCount}
+                  </span>
                 )}
               </span>
               <span className="label-text">Cart</span>
@@ -276,7 +294,13 @@ export function SiteHeader() {
                 <CartIcon />
                 Cart
                 {cartCount > 0 && (
-                  <span className="count-badge">{cartCount}</span>
+                  <span
+                    className={
+                      cartPulse ? "count-badge count-badge--pulse" : "count-badge"
+                    }
+                  >
+                    {cartCount}
+                  </span>
                 )}
               </Link>
             </div>
