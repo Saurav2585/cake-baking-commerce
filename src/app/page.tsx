@@ -98,11 +98,23 @@ export default function Home() {
             assets pending clearance.
           </p>
         </header>
-        <ul className="brand-strip">
-          {popularBrands.map((brand) => (
-            <li key={brand}>{brand}</li>
-          ))}
-        </ul>
+        <div className="brand-index">
+          <ul className="brand-strip">
+            {popularBrands.map((brand) => (
+              <li key={brand}>{brand}</li>
+            ))}
+          </ul>
+          <div className="brand-index-stats">
+            <div className="brand-index-stat">
+              <strong>{popularBrands.length}</strong>
+              <span>Brands shown here</span>
+            </div>
+            <div className="brand-index-stat">
+              <strong>30</strong>
+              <span>Verified in the full catalog</span>
+            </div>
+          </div>
+        </div>
         <Link className="text-link" href="/shop">
           Browse the assortment →
         </Link>

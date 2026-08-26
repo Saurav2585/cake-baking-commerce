@@ -34,7 +34,11 @@ export function HeroCollage({
   useHeroParallax(heroRef);
 
   return (
-    <div className="hero-collage" data-measure-reveal ref={heroRef}>
+    <div
+      className="hero-collage surface-tactile"
+      data-measure-reveal
+      ref={heroRef}
+    >
       <div className="collage-frame collage-large">
         <div className="collage-media">
           <Image

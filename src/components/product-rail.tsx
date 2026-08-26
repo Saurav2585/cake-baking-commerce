@@ -90,21 +90,23 @@ export function ProductRail({
   if (pattern === "filmstrip") {
     return (
       <div ref={railRef}>
-        <div
-          className="rail-filmstrip"
-          role="list"
-          aria-label={ariaLabel}
-          data-reveal-group
-        >
-          {products.map((product) => (
-            <div
-              className="rail-filmstrip-item"
-              role="listitem"
-              key={product.id}
-            >
-              <ProductCard product={product} variant="rail" badge={badge} />
-            </div>
-          ))}
+        <div className="rail-filmstrip-shell">
+          <div
+            className="rail-filmstrip"
+            role="list"
+            aria-label={ariaLabel}
+            data-reveal-group
+          >
+            {products.map((product) => (
+              <div
+                className="rail-filmstrip-item"
+                role="listitem"
+                key={product.id}
+              >
+                <ProductCard product={product} variant="rail" badge={badge} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     );
