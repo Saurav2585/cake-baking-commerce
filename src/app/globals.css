@@ -2173,3 +2173,206 @@ h3 {
   justify-content: center;
   margin-top: 1rem;
 }
+
+/* ===== R2B2 PDP (Worktree 2) ===== */
+/* Owner: PDP workstream. Implements Route_UI_Specification.md §4 (single
+   hero image, price/pack block, variant selection, availability, quantity
+   stepper, tri-state critical facts, disclosure, conditional recipe
+   module), Premium_Visual_Acceptance_Gate.md §2.4 (calm/unhurried, quiet
+   critical-facts, decelerating page rhythm) and Motion_3D_Specification.md
+   §6 (Storyboard C crossfade data-attribute hooks). Extends the existing
+   .pdp-*/.buy-panel/.facts-section selectors and reuses the shared
+   .product-image-canvas rule (Decision 2, defined above) rather than
+   redefining it or touching rules owned by other worktrees. */
+
+/* --- §4.1 Single hero image: the reserved frame is now the shared
+   .product-image-canvas, sized to a genuine gallery proportion (34rem) —
+   not the old ad-hoc 44rem/36rem/27rem min-height box. Higher specificity
+   than the bare .pdp-primary rule (and its media-query variants) above, so
+   no edit to those pre-existing declarations is required. --- */
+.pdp-gallery .pdp-primary.product-image-canvas {
+  min-height: 0;
+  max-width: 34rem;
+}
+
+/* --- §4.2 Price/pack block: price is the most-scanned fact on the page —
+   explicit size, demo-price label stays adjacent, not footnoted. --- */
+.buy-panel .pdp-price {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+.buy-panel .pdp-description {
+  max-width: 42ch; /* Gate §7 T3: constrain body-copy measure */
+}
+
+/* --- §4.3 Variant selection: visual restyle only, no behaviour change.
+   Selected state reuses the exact ink-fill token pattern the homepage/
+   checkout profile-choice cards also use, so "selected" reads identically
+   sitewide. --- */
+.variant-option {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.variant-selector button {
+  border: 1.5px solid color-mix(in srgb, var(--ink), transparent 78%);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+.variant-selector button[aria-pressed="true"] {
+  outline: none;
+  border-color: var(--ink);
+  background: var(--ink);
+  color: white;
+}
+.variant-selector button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.variant-unavailable-reason {
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin: 0.2rem 0 0.5rem;
+}
+
+/* --- §4.4 Availability: slightly larger than the PLP card's 0.7rem, since
+   this is a more decision-critical moment; colour-coding is never the only
+   signal — the word itself always states the state. --- */
+.buy-panel .availability {
+  font-size: 0.75rem;
+}
+
+/* --- §4.5 Quantity stepper: labelled −/numeric/+ triplet, each hit target
+   >=44x44px, replacing the bare number input. Reuses the existing
+   clampQuantity()-driven state setter; no new state model. --- */
+.quantity-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.quantity-label {
+  font: 800 0.7rem/1 var(--ui);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.quantity-stepper {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1.5px solid color-mix(in srgb, var(--ink), transparent 78%);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.quantity-step {
+  min-width: 44px;
+  min-height: 44px;
+  border: 0;
+  background: var(--surface-subtle);
+  font: 700 1.1rem/1 var(--ui);
+  color: var(--ink);
+  cursor: pointer;
+}
+.quantity-step:hover {
+  background: color-mix(in srgb, var(--ink), transparent 88%);
+}
+.quantity-stepper input {
+  width: 3.5rem;
+  min-height: 44px;
+  border: 0;
+  border-left: 1px solid color-mix(in srgb, var(--ink), transparent 78%);
+  border-right: 1px solid color-mix(in srgb, var(--ink), transparent 78%);
+  text-align: center;
+  font: 700 1rem/1 var(--ui);
+  color: var(--ink);
+  -moz-appearance: textfield;
+}
+.quantity-stepper input::-webkit-outer-spin-button,
+.quantity-stepper input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* --- §4.8 Attribution/disclosure: same small-print weight as the
+   simulation-note directly above it, so both honesty disclosures read as
+   one compact block. --- */
+.pdp-attribution {
+  margin-top: 0.35rem;
+  max-width: 48ch;
+}
+
+/* --- §4.6/§4.7 Critical facts: quiet, not prominent. De-escalated from a
+   full-bleed inverted dark band to a plain, page-shell-width spec-sheet
+   section — the content is 100% "Information not provided" today and must
+   never look richer than that. --- */
+.facts-section {
+  /* Already contained within .page-shell's max-width; no full-bleed band. */
+  background: none;
+  color: var(--ink);
+  padding: 2.5rem 0;
+  margin: 4rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--ink), transparent 85%);
+  grid-template-columns: 0.6fr 1fr;
+}
+.facts-section .eyebrow {
+  color: var(--muted);
+}
+.facts-section dt,
+.facts-section dd {
+  border-bottom: 1px solid color-mix(in srgb, var(--ink), transparent 88%);
+}
+.facts-section dd {
+  max-width: 42ch; /* Gate §7 T3: constrain measure even for facts text */
+}
+.fact-value {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.fact-known {
+  color: var(--ink);
+  font-weight: 400;
+}
+.fact-pill {
+  display: inline-block;
+  background: var(--surface-subtle);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+}
+.fact-not-applicable {
+  border: 1px solid transparent;
+}
+.fact-not-provided {
+  background: transparent;
+  border: 1px dashed color-mix(in srgb, var(--ink), transparent 70%);
+}
+@media (max-width: 640px) {
+  .facts-section {
+    padding: 1.75rem 1rem;
+  }
+}
+
+/* --- §4.10 Conditional recipe module: a quiet, single/few-row addition
+   between related products and the footer — scoped down from the heavier
+   /recipes listing grid (3-col, 2rem headings), which is designed for
+   browsing many recipes, not a compact "used in this recipe" cross-sell. --- */
+.pdp-recipe-section {
+  margin-top: 5rem;
+}
+.pdp-recipe-section .recipe-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 48rem;
+}
+.pdp-recipe-section .recipe-card h2 {
+  font-size: 1.3rem;
+}
+@media (max-width: 640px) {
+  .pdp-recipe-section .recipe-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== end R2B2 PDP ===== */
