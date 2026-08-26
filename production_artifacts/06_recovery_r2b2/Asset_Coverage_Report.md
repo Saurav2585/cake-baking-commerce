@@ -247,3 +247,29 @@ $ node tools/validate_catalog_data.js
 - Every new/replaced image was opened and visually inspected with the Read tool before being accepted (shown inline in this session's transcript) to confirm correct branding and product identity.
 - `git status --short` in the worktree shows exactly the expected diff: 1 manifest file, 1 source-table file (single-line change), 5 sets of regenerated webp derivatives, 4 new real-products-v2 source images, 1 replaced real-products-v2 source image, and the new report directory — no unintended files touched.
 
+---
+
+## Addendum — BB Royal Maida substitution APPLIED (R2B2, 2026-08-26)
+
+The human user explicitly approved the substitution flagged above as a recommendation. It has now been **applied** as a complete, truthful product substitution — not an image-only swap — executed by the R2B2 "Catalog and Asset Integration Specialist" role and orchestrator-reviewed before merge. This section records what changed; the original report above is left unmodified as the historical record of the sourcing investigation that led to this recommendation.
+
+**Fields changed** (`production_artifacts/05_catalog_production/tools/real_catalog_source.mjs`, then regenerated through the standard pipeline):
+
+| Field | Old (Pillsbury Maida) | New (BB Royal Maida) |
+|---|---|---|
+| `id` | `prod_real_pillsbury_maida` | `prod_real_bb_royal_maida` |
+| `slug` | `pillsbury-maida` | `bb-royal-maida` |
+| `brand` / `brandId` | `Pillsbury` / `brand_pillsbury` | `BB Royal` / `brand_bb_royal` |
+| SKU | `PLB-MDA-1000` | `BBR-MDA-1000` |
+| `imageSourceUrl` | `https://blinkit.com/prn/pillsbury-maida/prid/598840` (never resolved to a real photo) | `https://www.bigbasket.com/pd/10000416/bb-royal-maida-1-kg-pouch/` |
+| `imageSourceType` | `marketplace` | `marketplace` |
+| `confidence` | `partially_verified` (no image) | `verified` |
+| `priceInr` | 65 (fictional-adjacent, never observed) | 56 (real observed retail price) |
+| `description` | Referenced the Pillsbury brand | "BB Royal Maida is a refined all-purpose wheat flour sold under BigBasket's BB Royal private label." |
+
+**Cascade updates confirmed complete:** `Product_Master_Data.json`, `SKU_Variant_Data.json`, `Product_Content_Records.json` regenerated via `generate_real_catalog_data.mjs`; `Catalog_Asset_Manifest.json` regenerated via `generate_real_catalog_assets.mjs` with a genuine sourced primary/thumbnail WebP pair (no longer pointing at the shared placeholder graphic); all 6 `Recipe_Product_Mapping.json` lines that referenced `prod_real_pillsbury_maida` (one `ri_*_flour` ingredient line per recipe, across all 6 recipes) updated to `prod_real_bb_royal_maida`; `src/lib/domain/catalog.ts`'s `BRAND_NAMES` map updated (removed `brand_pillsbury`, added `brand_bb_royal` — confirmed no other product used the Pillsbury brand entry). The orphaned `public/assets/catalog/real/pillsbury-maida/` directory (which held only copies of the shared placeholder graphic, never a real photo) was deleted.
+
+**Verification:** the sourced image was visually inspected (Read tool) and confirmed as a genuine "bb ROYAL · Refined Wheat Flour Maida · 1 kg · bigbasket" packshot — correctly branded, matches every claimed field. All three canonical validators re-run post-substitution: `validate_catalog_data.js` PASS (48 products/51 variants/0 errors), `validate_catalog_assets.js` PASS (**48/48 products sourced, 0 missing** — up from 47/48), `scripts/validate-production-data.mjs` PASS.
+
+**Result:** the catalog now has zero honest-placeholder products in the shipped data — 48/48 real, verified product photography, with no Pillsbury identity of any kind remaining attached to the BB Royal photography or vice versa.
+
