@@ -5,6 +5,8 @@ import { emitAnalytics } from "@/lib/domain/analytics";
 import { formatINR, resolveMedia } from "@/lib/domain/catalog";
 import type { CatalogProduct } from "@/lib/domain/types";
 import { useImageCrossfade } from "@/motion/use-image-crossfade";
+import { useStickyCtaEntrance } from "@/motion/use-sticky-cta-entrance";
+import { useWishlistFeedback } from "@/motion/use-wishlist-feedback";
 import { useCommerce } from "./commerce-provider";
 
 type Fact = { status?: string; value?: string };
@@ -75,6 +77,15 @@ export function ProductDetail({ product }: { product: CatalogProduct }) {
   // `variant.id` (not media.src) is the activeKey so the 3 multi-variant,
   // shared-image products still play a confirming fade-through-same-image.
   useImageCrossfade(primaryRegionRef, variant.id);
+  const wishlistButtonRef = useRef<HTMLButtonElement>(null);
+  const purchaseActionsRef = useRef<HTMLDivElement>(null);
+  const isWishlisted = wishlist.includes(product.id);
+  // Small acknowledgment on a genuine save (never on remove, never on the
+  // localStorage-hydration render) — see src/motion/use-wishlist-feedback.ts.
+  useWishlistFeedback(wishlistButtonRef, isWishlisted);
+  // Subtle first-mount entrance for the mobile sticky CTA bar — see
+  // src/motion/use-sticky-cta-entrance.ts. No-op on desktop / reduced motion.
+  useStickyCtaEntrance(purchaseActionsRef);
   useEffect(
     () =>
       emitAnalytics({
@@ -216,6 +227,7 @@ export function ProductDetail({ product }: { product: CatalogProduct }) {
           <div
             className="purchase-actions"
             data-sticky-price={formatINR(variant.price_inr_minor)}
+            ref={purchaseActionsRef}
           >
             <button
               className="button coral"
@@ -228,12 +240,11 @@ export function ProductDetail({ product }: { product: CatalogProduct }) {
             </button>
             <button
               className="button"
-              aria-pressed={wishlist.includes(product.id)}
+              aria-pressed={isWishlisted}
               onClick={() => toggleWishlist(product.id, product.title)}
+              ref={wishlistButtonRef}
             >
-              {wishlist.includes(product.id)
-                ? "Remove from wishlist"
-                : "Save to wishlist"}
+              {isWishlisted ? "Remove from wishlist" : "Save to wishlist"}
             </button>
           </div>
           <p className="simulation-note">
