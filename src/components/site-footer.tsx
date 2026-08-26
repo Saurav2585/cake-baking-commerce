@@ -10,7 +10,7 @@ const footerDepartments = Object.entries(departmentDisplay);
 export function SiteFooter() {
   const [subscribed, setSubscribed] = useState(false);
   return (
-    <footer className="site-footer">
+    <footer className="site-footer surface-tactile">
       <div className="footer-brand">
         <span className="footer-logo-plate">
           <Image

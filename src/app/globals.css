@@ -15,8 +15,22 @@
   --warning: #f6dca5;
   --line: #767076;
   --max: 1440px;
-  --display: Georgia, "Times New Roman", serif;
-  --ui: Arial, Helvetica, sans-serif;
+  --display: "Iowan Old Style", "Palatino Linotype", Georgia,
+    "Times New Roman", serif;
+  --ui: -apple-system, "Segoe UI", system-ui, Arial, Helvetica, sans-serif;
+  /* R2B2F Design-System: additive premium-direction tokens. Nothing above
+     this line is renamed — too much of the file already references the
+     original names. --cocoa is a new deep roasted-cocoa neutral; --oxblood
+     and --terracotta are semantic aliases onto colors that already existed
+     (they already read as those hues), not new hex values. */
+  --cocoa: #3d2a1f;
+  --oxblood: var(--coral-dark);
+  --terracotta: var(--saffron-dark);
+  --shadow-soft: 0 20px 40px -24px rgba(61, 42, 31, 0.35);
+  --shadow-soft-sm: 0 10px 20px -14px rgba(61, 42, 31, 0.3);
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --grain-speck: color-mix(in srgb, var(--cocoa), transparent 96%);
   color: var(--ink);
   background: var(--canvas);
   font-family: var(--ui);
@@ -75,23 +89,23 @@ select {
   border: 0 !important;
 }
 .demo-strip {
-  background: var(--ink);
+  background: var(--cocoa);
   color: white;
   text-align: center;
-  padding: 0.45rem 1rem;
-  font: 700 0.72rem/1.2 var(--ui);
-  letter-spacing: 0.09em;
+  padding: 0.5rem 1rem;
+  font: 700 0.8125rem/1.3 var(--ui);
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 .offer-bar {
-  background: var(--saffron-dark);
+  background: var(--terracotta);
   color: white;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.4rem 1.5rem;
-  padding: 0.4rem 1rem;
-  font: 600 0.72rem/1.3 var(--ui);
+  padding: 0.45rem 1rem;
+  font: 600 0.8125rem/1.3 var(--ui);
   letter-spacing: 0.01em;
 }
 .offer-bar span::before {
@@ -105,7 +119,7 @@ select {
 .site-header {
   max-width: var(--max);
   margin: auto;
-  padding: 1rem 3vw 0;
+  padding: 1.1rem 3vw 0;
 }
 .header-primary {
   display: grid;
@@ -113,7 +127,7 @@ select {
   gap: 2.5rem;
   align-items: center;
   min-height: 4.75rem;
-  padding-bottom: 1.1rem;
+  padding-bottom: 1.15rem;
 }
 .brand-lockup {
   display: inline-flex;
@@ -121,11 +135,12 @@ select {
   text-decoration: none;
   background: var(--surface);
   border: 1px solid color-mix(in srgb, var(--ink), transparent 88%);
-  padding: 0.5rem 0.9rem;
-  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft-sm);
 }
 .brand-logo-full {
-  width: clamp(150px, 12vw, 200px);
+  width: clamp(158px, 12vw, 208px);
   height: auto;
   display: block;
 }
@@ -137,19 +152,31 @@ select {
 .category-nav {
   display: flex;
   align-items: center;
-  gap: 1.7rem;
+  gap: 1.85rem;
   font-weight: 600;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
   border-top: 1px solid color-mix(in srgb, var(--ink), transparent 88%);
-  padding: 0.85rem 0;
+  padding: 0.9rem 0;
   overflow-x: auto;
 }
 .nav-item {
   position: relative;
 }
 .nav-item > a {
+  display: inline-block;
   text-decoration: none;
   white-space: nowrap;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid transparent;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+.nav-item > a:hover,
+.nav-item > a:focus-visible {
+  color: var(--oxblood);
+  border-bottom-color: var(--oxblood);
 }
 .nav-item.has-mega > a::after {
   content: "▾";
@@ -164,9 +191,11 @@ select {
   left: 0;
   z-index: 20;
   background: var(--surface);
-  border: 1px solid var(--line);
-  box-shadow: 0 12px 24px -12px rgb(0 0 0 / 0.25);
-  padding: 0.6rem;
+  border: 1px solid color-mix(in srgb, var(--ink), transparent 85%);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  padding: 0.65rem;
+  margin-top: 0.4rem;
   min-width: 14rem;
   flex-direction: column;
 }
@@ -180,12 +209,14 @@ select {
   font-weight: 700;
   white-space: nowrap;
   min-height: 44px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
 }
 .mega-panel a:hover,
 .mega-panel a:focus-visible {
   background: var(--surface-subtle);
+  color: var(--oxblood);
 }
 .header-actions {
   display: flex;
@@ -204,7 +235,7 @@ select {
   min-height: 50px;
   border: 1.5px solid color-mix(in srgb, var(--ink), transparent 78%);
   border-right: 0;
-  border-radius: 8px 0 0 8px;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
   background: white;
   font-size: 0.95rem;
   padding: 0.72rem 1rem;
@@ -212,21 +243,22 @@ select {
 .header-search:focus-within {
   outline: 2px solid var(--focus);
   outline-offset: 2px;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
 }
 .header-search button {
   min-height: 50px;
-  border: 1.5px solid var(--ink);
-  border-radius: 0 8px 8px 0;
-  background: var(--ink);
+  border: 1.5px solid var(--cocoa);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: var(--cocoa);
   color: white;
   font-weight: 700;
   padding: 0.72rem 1.3rem;
 }
 .menu-button {
   min-height: 48px;
-  border: 1px solid var(--ink);
-  background: var(--ink);
+  border: 1px solid var(--cocoa);
+  border-radius: var(--radius-md);
+  background: var(--cocoa);
   color: white;
   padding: 0.72rem 1rem;
 }
@@ -237,7 +269,7 @@ select {
   min-height: 44px;
   min-width: 44px;
   padding: 0.4rem 0.65rem;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   color: var(--ink);
   text-decoration: none;
   transition: background 0.15s ease;
@@ -266,12 +298,13 @@ a.icon-action:focus-visible {
   padding: 0 0.25rem;
   display: inline-grid;
   place-items: center;
-  background: var(--saffron-dark);
+  background: var(--terracotta);
   color: white;
   border-radius: 999px;
   font-size: 0.6rem;
   font-weight: 800;
   line-height: 1;
+  box-shadow: 0 0 0 1.5px var(--surface);
 }
 .count-badge--pulse {
   animation: cart-badge-pulse 320ms ease-out;
@@ -299,7 +332,7 @@ a.icon-action:focus-visible {
   position: fixed;
   inset: 0;
   z-index: 50;
-  background: #2b1b2bcc;
+  background: color-mix(in srgb, var(--cocoa), transparent 22%);
   display: flex;
   justify-content: flex-end;
 }
@@ -309,6 +342,7 @@ a.icon-action:focus-visible {
   overflow: auto;
   background: var(--canvas);
   padding: 1.5rem 1.75rem 2rem;
+  box-shadow: var(--shadow-soft);
   display: flex;
   flex-direction: column;
 }
@@ -333,6 +367,7 @@ a.icon-action:focus-visible {
   border: 1px solid color-mix(in srgb, var(--ink), transparent 80%);
   border-radius: 50%;
   padding: 0;
+  box-shadow: var(--shadow-soft-sm);
 }
 .drawer-shortcuts {
   display: flex;
@@ -347,7 +382,7 @@ a.icon-action:focus-visible {
   gap: 0.5rem;
   min-height: 48px;
   border: 1px solid color-mix(in srgb, var(--ink), transparent 80%);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   font: 700 0.85rem var(--ui);
   text-decoration: none;
   position: relative;
@@ -357,10 +392,10 @@ a.icon-action:focus-visible {
   margin-left: 0.15rem;
 }
 .drawer-label {
-  font: 800 0.72rem/1.3 var(--ui);
-  letter-spacing: 0.09em;
+  font: 800 0.8125rem/1.3 var(--ui);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--coral-dark);
+  color: var(--oxblood);
   margin: 0 0 0.5rem;
 }
 .drawer-links {
@@ -372,6 +407,11 @@ a.icon-action:focus-visible {
   padding: 0.8rem 0;
   border-bottom: 1px solid color-mix(in srgb, var(--ink), transparent 90%);
   text-decoration: none;
+  transition: color 0.15s ease;
+}
+.drawer-links a:hover,
+.drawer-links a:focus-visible {
+  color: var(--oxblood);
 }
 .commerce-hero {
   max-width: var(--max);
@@ -495,30 +535,36 @@ a.icon-action:focus-visible {
   border: 5px solid var(--canvas);
 }
 .eyebrow {
-  font: 800 0.72rem/1.3 var(--ui);
-  letter-spacing: 0.11em;
+  font: 700 0.8125rem/1.3 var(--ui);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--coral-dark);
+  color: var(--oxblood);
 }
 h1,
 h2,
 h3 {
   font-family: var(--display);
-  letter-spacing: -0.035em;
+  letter-spacing: -0.02em;
 }
+/* R2B2F: sitewide h1/h2/h3 scale toned down from the earlier oversized
+   editorial clamp() toward Concept A's restrained serif-headline reading —
+   still clamp()-based with the same mobile-override contract downstream
+   components rely on (see the max-width:640px block below), just less
+   extreme at every step so page titles like "Your measured basket." don't
+   render at ~120px. */
 h1 {
-  font-size: clamp(3.5rem, 7.3vw, 7.8rem);
-  line-height: 0.82;
-  margin: 0.5rem 0 2rem;
+  font-size: clamp(2.5rem, 4.6vw, 4.25rem);
+  line-height: 1.05;
+  margin: 0.5rem 0 1.75rem;
 }
 h2 {
-  font-size: clamp(2.4rem, 4.8vw, 5.2rem);
-  line-height: 0.9;
-  margin: 0.5rem 0 1.5rem;
+  font-size: clamp(1.9rem, 3.4vw, 3rem);
+  line-height: 1.1;
+  margin: 0.5rem 0 1.4rem;
 }
 h3 {
-  font-size: 1.55rem;
-  line-height: 1.05;
+  font-size: 1.5rem;
+  line-height: 1.2;
 }
 .hero-actions {
   display: flex;
@@ -531,24 +577,44 @@ h3 {
   align-items: center;
   justify-content: center;
   min-height: 52px;
-  padding: 0.8rem 1.1rem;
-  font-weight: 800;
+  padding: 0.8rem 1.3rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  letter-spacing: 0.01em;
   text-decoration: none;
   border: 1px solid var(--ink);
   cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.1s ease;
 }
 .button.primary {
   background: var(--ink);
   color: white;
+  box-shadow: var(--shadow-soft-sm);
+}
+.button.primary:hover:not([disabled]) {
+  background: var(--cocoa);
 }
 .button.coral {
   background: var(--coral-dark);
   color: white;
   border-color: var(--coral-dark);
+  box-shadow: var(--shadow-soft-sm);
+}
+.button.coral:hover:not([disabled]) {
+  background: color-mix(in srgb, var(--coral-dark), black 12%);
+  border-color: color-mix(in srgb, var(--coral-dark), black 12%);
+}
+.button:active:not([disabled]) {
+  transform: translateY(1px);
 }
 .button[disabled] {
   opacity: 0.5;
   cursor: not-allowed;
+  box-shadow: none;
 }
 .text-link {
   font-weight: 800;
@@ -970,24 +1036,30 @@ h3 {
   font-size: 0.9rem;
 }
 .site-footer {
-  background: var(--ink);
+  background: var(--cocoa);
   color: white;
-  padding: 5rem max(3vw, calc((100vw - var(--max)) / 2)) 3rem;
+  padding: 5.5rem max(3vw, calc((100vw - var(--max)) / 2)) 3rem;
   display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 3.5rem;
 }
 .footer-brand {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.1rem;
   align-items: flex-start;
+}
+.footer-brand > p {
+  color: color-mix(in srgb, white, transparent 22%);
+  max-width: 30ch;
+  line-height: 1.6;
 }
 .footer-logo-plate {
   display: inline-flex;
   background: var(--surface);
-  padding: 0.6rem 0.9rem;
-  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft-sm);
 }
 .footer-logo-plate img {
   height: 2.4rem;
@@ -995,16 +1067,19 @@ h3 {
 }
 .newsletter-form {
   display: flex;
-  gap: 0.5rem;
+  gap: 0;
   width: 100%;
   max-width: 24rem;
+  border: 1px solid color-mix(in srgb, white, transparent 65%);
+  border-radius: var(--radius-md);
+  overflow: hidden;
 }
 .newsletter-form input {
   flex: 1;
   min-width: 0;
-  min-height: 44px;
-  padding: 0.6rem 0.8rem;
-  border: 1px solid #ffffff55;
+  min-height: 46px;
+  padding: 0.6rem 0.9rem;
+  border: 0;
   background: transparent;
   color: white;
 }
@@ -1012,35 +1087,46 @@ h3 {
   color: #ffffffaa;
 }
 .newsletter-form button {
-  min-height: 44px;
-  padding: 0.6rem 1rem;
+  min-height: 46px;
+  padding: 0.6rem 1.1rem;
   background: var(--saffron);
-  color: var(--ink);
+  color: var(--cocoa);
   border: 0;
   font-weight: 800;
+  transition: background 0.15s ease;
+}
+.newsletter-form button:hover {
+  background: color-mix(in srgb, var(--saffron), white 12%);
 }
 .footer-nav {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.8rem;
 }
 .footer-nav strong {
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   color: #e7dce5;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.3rem;
 }
 .footer-nav a {
   text-decoration: none;
   min-height: 24px;
+  color: color-mix(in srgb, white, transparent 12%);
+  transition: color 0.15s ease;
+}
+.footer-nav a:hover,
+.footer-nav a:focus-visible {
+  color: var(--saffron);
 }
 .footer-disclosure {
   grid-column: 1/-1;
   color: #e7dce5;
   border-top: 1px solid #ffffff2a;
   padding-top: 2rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  line-height: 1.6;
 }
 .page-shell {
   max-width: var(--max);
@@ -1185,7 +1271,9 @@ h3 {
     text-align: left;
   }
   .offer-bar {
-    font-size: 0.62rem;
+    font-size: 0.8125rem;
+    letter-spacing: 0;
+    gap: 0.3rem 1rem;
     padding: 0.4rem 0.75rem;
   }
   .site-header {
@@ -1288,7 +1376,10 @@ h3 {
     padding: 3rem 1rem 6rem;
   }
   h1 {
-    font-size: clamp(3.2rem, 18vw, 5rem);
+    font-size: clamp(2.15rem, 9vw, 3rem);
+  }
+  h2 {
+    font-size: clamp(1.7rem, 7vw, 2.35rem);
   }
   .product-card h2 {
     min-height: 0;
@@ -2731,3 +2822,37 @@ h3 {
   display: none;
 }
 /* ===== end R2B2V Homepage/PLP ===== */
+
+/* ===== R2B2F Design-System and Global-Shell ===== */
+/* Owner: Design-System and Global-Shell engineer. New rules only — nothing
+   above this banner in this section overrides an earlier declaration. */
+
+/* Reusable CSS-only tactile grain for large panels (dark footer, feature
+   surfaces) — layered low-opacity radial-gradient speckling, no images.
+   Any element may opt in; it only needs to already establish (or accept)
+   a positioning context, which this rule provides via position: relative
+   when the element doesn't set its own. The speckle sits at the very back
+   of paint order (negative z-index) so it never dims real content above
+   it, and pointer-events: none keeps it out of the hit-testing path. */
+.surface-tactile {
+  position: relative;
+  isolation: isolate;
+}
+.surface-tactile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  background-image:
+    radial-gradient(circle, var(--grain-speck) 1px, transparent 1.4px),
+    radial-gradient(circle, var(--grain-speck) 1px, transparent 1.1px);
+  background-size:
+    26px 26px,
+    14px 14px;
+  background-position:
+    0 0,
+    7px 11px;
+}
+/* ===== end R2B2F Design-System and Global-Shell ===== */
