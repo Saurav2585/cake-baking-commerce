@@ -1,0 +1,878 @@
+[
+  {
+    "id": "prod_real_callebaut_811",
+    "title": "811 Dark Chocolate Callets",
+    "brand": "Callebaut",
+    "dept": "dept_chocolate",
+    "cat": "cat_cocoa",
+    "price": "\u20b9950",
+    "price_paise": 95000,
+    "pack": "400 g",
+    "variants": [
+      {
+        "label": "400 g",
+        "price": "\u20b9950"
+      },
+      {
+        "label": "1 kg",
+        "price": "\u20b92,200"
+      }
+    ],
+    "img": "/real-products/callebaut-811-callets.png",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_morde_dark_slab",
+    "title": "Dark Compound Chocolate Slab",
+    "brand": "Morde",
+    "dept": "dept_chocolate",
+    "cat": "cat_baking_chocolate",
+    "price": "\u20b9250",
+    "price_paise": 25000,
+    "pack": "500 g",
+    "variants": [
+      {
+        "label": "500 g",
+        "price": "\u20b9250"
+      }
+    ],
+    "img": "/real-products/morde-dark-compound-slab.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_van_houten_cocoa",
+    "title": "Cocoa Powder (Medium Brown 10/12)",
+    "brand": "Van Houten",
+    "dept": "dept_chocolate",
+    "cat": "cat_cocoa",
+    "price": "\u20b9650",
+    "price_paise": 65000,
+    "pack": "1 kg",
+    "variants": [
+      {
+        "label": "1 kg",
+        "price": "\u20b9650"
+      }
+    ],
+    "img": "/real-products-v2/van-houten-cocoa-powder.png",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_amul_dark_compound_bar",
+    "title": "Dark Compound Chocolate Bar (DCO-18)",
+    "brand": "Amul",
+    "dept": "dept_chocolate",
+    "cat": "cat_baking_chocolate",
+    "price": "\u20b9230",
+    "price_paise": 23000,
+    "pack": "500 g",
+    "variants": [
+      {
+        "label": "500 g",
+        "price": "\u20b9230"
+      }
+    ],
+    "img": "/real-products-v2/amul-dark-compound-bar.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_morde_compound_chips",
+    "title": "Dark Compound Chocolate Chips",
+    "brand": "Morde",
+    "dept": "dept_chocolate",
+    "cat": "cat_chips_inclusions",
+    "price": "\u20b9220",
+    "price_paise": 22000,
+    "pack": "500 g",
+    "variants": [
+      {
+        "label": "500 g",
+        "price": "\u20b9220"
+      }
+    ],
+    "img": "/real-products-v2/morde-compound-chips.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_weikfield_cocoa",
+    "title": "Cocoa Powder",
+    "brand": "Weikfield",
+    "dept": "dept_chocolate",
+    "cat": "cat_cocoa",
+    "price": "\u20b9110",
+    "price_paise": 11000,
+    "pack": "150 g",
+    "variants": [
+      {
+        "label": "150 g",
+        "price": "\u20b9110"
+      }
+    ],
+    "img": "/real-products-v2/weikfield-cocoa-powder.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_hersheys_cocoa",
+    "title": "Cocoa Powder (Natural Unsweetened)",
+    "brand": "Hershey's",
+    "dept": "dept_chocolate",
+    "cat": "cat_cocoa",
+    "price": "\u20b9399",
+    "price_paise": 39900,
+    "pack": "225 g",
+    "variants": [
+      {
+        "label": "225 g",
+        "price": "\u20b9399"
+      }
+    ],
+    "img": "/real-products-v2/hersheys-cocoa-powder.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_bb_royal_maida",
+    "title": "Maida (All Purpose Flour)",
+    "brand": "BB Royal",
+    "dept": "dept_ingredients",
+    "cat": "cat_flours_mixes",
+    "price": "\u20b956",
+    "price_paise": 5600,
+    "pack": "1 kg",
+    "variants": [
+      {
+        "label": "1 kg",
+        "price": "\u20b956"
+      }
+    ],
+    "img": "/real-products-v2/bb-royal-maida.png",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_weikfield_baking_powder",
+    "title": "Double Action Baking Powder",
+    "brand": "Weikfield",
+    "dept": "dept_ingredients",
+    "cat": "cat_leavening_essentials",
+    "price": "\u20b940",
+    "price_paise": 4000,
+    "pack": "100 g",
+    "variants": [
+      {
+        "label": "100 g",
+        "price": "\u20b940"
+      }
+    ],
+    "img": "/real-products/weikfield-baking-powder.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_weikfield_corn_flour",
+    "title": "Corn Flour",
+    "brand": "Weikfield",
+    "dept": "dept_ingredients",
+    "cat": "cat_flours_mixes",
+    "price": "\u20b990",
+    "price_paise": 9000,
+    "pack": "500 g",
+    "variants": [
+      {
+        "label": "500 g",
+        "price": "\u20b990"
+      }
+    ],
+    "img": "/real-products-v2/weikfield-corn-flour.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_urban_platter_baking_soda",
+    "title": "Baking Soda",
+    "brand": "Urban Platter",
+    "dept": "dept_ingredients",
+    "cat": "cat_leavening_essentials",
+    "price": "\u20b9120",
+    "price_paise": 12000,
+    "pack": "250 g",
+    "variants": [
+      {
+        "label": "250 g",
+        "price": "\u20b9120"
+      }
+    ],
+    "img": "/real-products-v2/urban-platter-baking-soda.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_eagle_icing_sugar",
+    "title": "Icing Sugar",
+    "brand": "Eagle",
+    "dept": "dept_ingredients",
+    "cat": "cat_sugars_sweeteners",
+    "price": "\u20b955",
+    "price_paise": 5500,
+    "pack": "200 g",
+    "variants": [
+      {
+        "label": "200 g",
+        "price": "\u20b955"
+      }
+    ],
+    "img": "/real-products/eagle-icing-sugar.png",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_weikfield_custard_powder",
+    "title": "Vanilla Custard Powder",
+    "brand": "Weikfield",
+    "dept": "dept_ingredients",
+    "cat": "cat_sugars_sweeteners",
+    "price": "\u20b950",
+    "price_paise": 5000,
+    "pack": "100 g",
+    "variants": [
+      {
+        "label": "100 g",
+        "price": "\u20b950"
+      }
+    ],
+    "img": "/real-products-v2/weikfield-vanilla-custard-powder.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_ccds_baking_powder",
+    "title": "Baking Powder",
+    "brand": "CCDS",
+    "dept": "dept_ingredients",
+    "cat": "cat_leavening_essentials",
+    "price": "\u20b945",
+    "price_paise": 4500,
+    "pack": "1 pack (size not stated)",
+    "variants": [
+      {
+        "label": "1 pack (size not stated)",
+        "price": "\u20b945"
+      }
+    ],
+    "img": "/real-products-v2/ccds-baking-powder.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_magic_colours_gel",
+    "title": "Spectral Gel Colour \u2014 Red",
+    "brand": "Magic Colours",
+    "dept": "dept_colours_flavours",
+    "cat": "cat_food_colours",
+    "price": "\u20b9180",
+    "price_paise": 18000,
+    "pack": "25 g",
+    "variants": [
+      {
+        "label": "25 g",
+        "price": "\u20b9180"
+      }
+    ],
+    "img": "/real-products/magic-colours-gel-red.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_magic_colours_genie_tube",
+    "title": "Spectral Genie Gel Tube Colours",
+    "brand": "Magic Colours",
+    "dept": "dept_colours_flavours",
+    "cat": "cat_food_colours",
+    "price": "\u20b9190",
+    "price_paise": 19000,
+    "pack": "25 g",
+    "variants": [
+      {
+        "label": "25 g",
+        "price": "\u20b9190"
+      }
+    ],
+    "img": "/real-products-v2/magic-colours-genie-gel-tube.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_colourmist_gel_paste",
+    "title": "Soft Gel Paste Food Colours (10-Pack)",
+    "brand": "Colourmist",
+    "dept": "dept_colours_flavours",
+    "cat": "cat_food_colours",
+    "price": "\u20b9350",
+    "price_paise": 35000,
+    "pack": "10 x 10 g set",
+    "variants": [
+      {
+        "label": "10 x 10 g set",
+        "price": "\u20b9350"
+      }
+    ],
+    "img": "/real-products-v2/colourmist-gel-paste-set.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_puramate_liquid_colour",
+    "title": "Liquid Food Colour",
+    "brand": "Puramate",
+    "dept": "dept_colours_flavours",
+    "cat": "cat_food_colours",
+    "price": "\u20b940",
+    "price_paise": 4000,
+    "pack": "1 bottle (volume not stated)",
+    "variants": [
+      {
+        "label": "1 bottle (volume not stated)",
+        "price": "\u20b940"
+      }
+    ],
+    "img": "/real-products-v2/puramate-liquid-food-colour.png",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_puramate_essence_set",
+    "title": "Culinary Essence Assorted Pack",
+    "brand": "Puramate",
+    "dept": "dept_colours_flavours",
+    "cat": "cat_flavours_extracts",
+    "price": "\u20b9320",
+    "price_paise": 32000,
+    "pack": "10 x 30 ml set",
+    "variants": [
+      {
+        "label": "10 x 30 ml set",
+        "price": "\u20b9320"
+      }
+    ],
+    "img": "/real-products-v2/puramate-culinary-essence-set.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_urban_platter_vanilla",
+    "title": "Premium Vanilla Extract",
+    "brand": "Urban Platter",
+    "dept": "dept_colours_flavours",
+    "cat": "cat_flavours_extracts",
+    "price": "\u20b9280",
+    "price_paise": 28000,
+    "pack": "100 ml",
+    "variants": [
+      {
+        "label": "100 ml",
+        "price": "\u20b9280"
+      },
+      {
+        "label": "150 ml",
+        "price": "\u20b9400"
+      }
+    ],
+    "img": "/real-products/urban-platter-vanilla-extract.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_wilton_gel_icing_color",
+    "title": "Gel Food Coloring Icing Color",
+    "brand": "Wilton",
+    "dept": "dept_colours_flavours",
+    "cat": "cat_food_colours",
+    "price": "\u20b9280",
+    "price_paise": 28000,
+    "pack": "1 jar (~1 oz)",
+    "variants": [
+      {
+        "label": "1 jar (~1 oz)",
+        "price": "\u20b9280"
+      }
+    ],
+    "img": "/real-products-v2/wilton-gel-icing-color.webp",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_bakersville_vizyon_fondant",
+    "title": "Vizyon Sugar Paste \u2014 White",
+    "brand": "Bakersville",
+    "dept": "dept_fillings_fondant",
+    "cat": "cat_fondant_modelling",
+    "price": "\u20b9450",
+    "price_paise": 45000,
+    "pack": "1 kg",
+    "variants": [
+      {
+        "label": "1 kg",
+        "price": "\u20b9450"
+      }
+    ],
+    "img": "/real-products/bakersville-vizyon-fondant-white.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_tropolite_whip_topping",
+    "title": "Premium Whip Topping Cream",
+    "brand": "Tropolite",
+    "dept": "dept_fillings_fondant",
+    "cat": "cat_fillings_glazes",
+    "price": "\u20b9320",
+    "price_paise": 32000,
+    "pack": "500 g",
+    "variants": [
+      {
+        "label": "500 g",
+        "price": "\u20b9320"
+      }
+    ],
+    "img": "/real-products-v2/tropolite-whip-topping.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_richs_whip_topping",
+    "title": "Chocolate Whip Topping",
+    "brand": "Rich's",
+    "dept": "dept_fillings_fondant",
+    "cat": "cat_fillings_glazes",
+    "price": "\u20b9420",
+    "price_paise": 42000,
+    "pack": "1 kg",
+    "variants": [
+      {
+        "label": "1 kg",
+        "price": "\u20b9420"
+      }
+    ],
+    "img": "/real-products-v2/richs-chocolate-whip-topping.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_richs_truffle_base",
+    "title": "Truffle Base",
+    "brand": "Rich's",
+    "dept": "dept_fillings_fondant",
+    "cat": "cat_fillings_glazes",
+    "price": "\u20b9550",
+    "price_paise": 55000,
+    "pack": "1 tub (size not stated)",
+    "variants": [
+      {
+        "label": "1 tub (size not stated)",
+        "price": "\u20b9550"
+      }
+    ],
+    "img": "/real-products-v2/richs-truffle-base.png",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_funcakes_fondant",
+    "title": "Rolled Fondant",
+    "brand": "FunCakes",
+    "dept": "dept_fillings_fondant",
+    "cat": "cat_fondant_modelling",
+    "price": "\u20b9380",
+    "price_paise": 38000,
+    "pack": "250 g",
+    "variants": [
+      {
+        "label": "250 g",
+        "price": "\u20b9380"
+      }
+    ],
+    "img": "/real-products-v2/funcakes-rolled-fondant.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_nutella_spread",
+    "title": "Hazelnut Spread with Cocoa",
+    "brand": "Nutella (Ferrero)",
+    "dept": "dept_fillings_fondant",
+    "cat": "cat_fillings_glazes",
+    "price": "\u20b9250",
+    "price_paise": 25000,
+    "pack": "200 g",
+    "variants": [
+      {
+        "label": "200 g",
+        "price": "\u20b9250"
+      },
+      {
+        "label": "750 g",
+        "price": "\u20b9750"
+      }
+    ],
+    "img": "/real-products/nutella-hazelnut-spread.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_amul_fresh_cream",
+    "title": "Fresh Cream (25% Milk Fat)",
+    "brand": "Amul",
+    "dept": "dept_fillings_fondant",
+    "cat": "cat_fillings_glazes",
+    "price": "\u20b965",
+    "price_paise": 6500,
+    "pack": "250 ml",
+    "variants": [
+      {
+        "label": "250 ml",
+        "price": "\u20b965"
+      }
+    ],
+    "img": "/real-products-v2/amul-fresh-cream.png",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_wilton_edible_sprinkles",
+    "title": "Edible Baking Sprinkles",
+    "brand": "Wilton",
+    "dept": "dept_decorating",
+    "cat": "cat_sprinkles_decor",
+    "price": "\u20b9320",
+    "price_paise": 32000,
+    "pack": "1 jar (size not stated)",
+    "variants": [
+      {
+        "label": "1 jar (size not stated)",
+        "price": "\u20b9320"
+      }
+    ],
+    "img": "/real-products-v2/wilton-edible-sprinkles.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_wilton_rainbow_nonpareils",
+    "title": "Rainbow Nonpareils",
+    "brand": "Wilton",
+    "dept": "dept_decorating",
+    "cat": "cat_sprinkles_decor",
+    "price": "\u20b9350",
+    "price_paise": 35000,
+    "pack": "7.8 oz",
+    "variants": [
+      {
+        "label": "7.8 oz",
+        "price": "\u20b9350"
+      }
+    ],
+    "img": "/real-products-v2/wilton-rainbow-nonpareils.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_bakersville_wow_confetti",
+    "title": "Wow Confetti Deco Sprinkles",
+    "brand": "Bakersville",
+    "dept": "dept_decorating",
+    "cat": "cat_sprinkles_decor",
+    "price": "\u20b9150",
+    "price_paise": 15000,
+    "pack": "200 g",
+    "variants": [
+      {
+        "label": "200 g",
+        "price": "\u20b9150"
+      }
+    ],
+    "img": "/real-products-v2/bakersville-wow-confetti.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_bakersville_glint_pearl_spray",
+    "title": "Glint Pearl Spray",
+    "brand": "Bakersville",
+    "dept": "dept_decorating",
+    "cat": "cat_sprinkles_decor",
+    "price": "\u20b9380",
+    "price_paise": 38000,
+    "pack": "1 can (size not stated)",
+    "variants": [
+      {
+        "label": "1 can (size not stated)",
+        "price": "\u20b9380"
+      }
+    ],
+    "img": "/real-products-v2/bakersville-glint-pearl-spray.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_jvg_chocolate_sprinkles",
+    "title": "Chocolate Vermicelli Sprinkles",
+    "brand": "JVG",
+    "dept": "dept_decorating",
+    "cat": "cat_sprinkles_decor",
+    "price": "\u20b9380",
+    "price_paise": 38000,
+    "pack": "1 kg",
+    "variants": [
+      {
+        "label": "1 kg",
+        "price": "\u20b9380"
+      }
+    ],
+    "img": "/real-products-v2/jvg-chocolate-sprinkles.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_jvg_rainbow_sprinkles",
+    "title": "Rainbow Sprinkles",
+    "brand": "JVG",
+    "dept": "dept_decorating",
+    "cat": "cat_sprinkles_decor",
+    "price": "\u20b9380",
+    "price_paise": 38000,
+    "pack": "1 kg",
+    "variants": [
+      {
+        "label": "1 kg",
+        "price": "\u20b9380"
+      }
+    ],
+    "img": "/real-products/jvg-rainbow-sprinkles.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_pme_sugar_pearls",
+    "title": "Edible Sugar Pearls",
+    "brand": "PME",
+    "dept": "dept_decorating",
+    "cat": "cat_sprinkles_decor",
+    "price": "\u20b9320",
+    "price_paise": 32000,
+    "pack": "1 tub (weight varies by colour/size)",
+    "variants": [
+      {
+        "label": "1 tub (weight varies by colour/size)",
+        "price": "\u20b9320"
+      }
+    ],
+    "img": "/real-products-v2/pme-sugar-pearls.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_wilton_decorating_bags",
+    "title": "16-Inch Disposable Decorating Bags",
+    "brand": "Wilton",
+    "dept": "dept_bakeware_tools",
+    "cat": "cat_piping_finishing",
+    "price": "\u20b9450",
+    "price_paise": 45000,
+    "pack": "12-pack",
+    "variants": [
+      {
+        "label": "12-pack",
+        "price": "\u20b9450"
+      }
+    ],
+    "img": "/real-products/wilton-decorating-bags.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_wilton_pan_set",
+    "title": "Aluminum Round Cake Pan Set",
+    "brand": "Wilton",
+    "dept": "dept_bakeware_tools",
+    "cat": "cat_pans_moulds",
+    "price": "\u20b93,200",
+    "price_paise": 320000,
+    "pack": "Set of 4 (6/8/10/12 in)",
+    "variants": [
+      {
+        "label": "Set of 4 (6/8/10/12 in)",
+        "price": "\u20b93,200"
+      }
+    ],
+    "img": "/real-products-v2/wilton-aluminum-pan-set.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_borosil_baking_dish",
+    "title": "Round Baking & Serving Dish",
+    "brand": "Borosil",
+    "dept": "dept_bakeware_tools",
+    "cat": "cat_pans_moulds",
+    "price": "\u20b9899",
+    "price_paise": 89900,
+    "pack": "1.2 L",
+    "variants": [
+      {
+        "label": "1.2 L",
+        "price": "\u20b9899"
+      }
+    ],
+    "img": "/real-products-v2/borosil-baking-dish.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_wonderchef_cake_mould",
+    "title": "Non-Stick Cake Mould",
+    "brand": "Wonderchef",
+    "dept": "dept_bakeware_tools",
+    "cat": "cat_pans_moulds",
+    "price": "\u20b9650",
+    "price_paise": 65000,
+    "pack": "1 mould (size varies)",
+    "variants": [
+      {
+        "label": "1 mould (size varies)",
+        "price": "\u20b9650"
+      }
+    ],
+    "img": "/real-products-v2/wonderchef-cake-mould.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_pme_supatube",
+    "title": "Supatube Piping Tip (Writer #1)",
+    "brand": "PME",
+    "dept": "dept_bakeware_tools",
+    "cat": "cat_piping_finishing",
+    "price": "\u20b9280",
+    "price_paise": 28000,
+    "pack": "1 tip",
+    "variants": [
+      {
+        "label": "1 tip",
+        "price": "\u20b9280"
+      }
+    ],
+    "img": "/real-products-v2/pme-supatube-tip.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_ateco_tip_set",
+    "title": "55-Piece Cake Decorating Tip Set",
+    "brand": "Ateco",
+    "dept": "dept_bakeware_tools",
+    "cat": "cat_piping_finishing",
+    "price": "\u20b92,800",
+    "price_paise": 280000,
+    "pack": "55-piece boxed set",
+    "variants": [
+      {
+        "label": "55-piece boxed set",
+        "price": "\u20b92,800"
+      }
+    ],
+    "img": "/real-products-v2/ateco-tip-set.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_lukzer_decorating_kit",
+    "title": "Cake Decorating Kit with Turntable",
+    "brand": "Lukzer",
+    "dept": "dept_bakeware_tools",
+    "cat": "cat_pans_moulds",
+    "price": "\u20b9650",
+    "price_paise": 65000,
+    "pack": "46-piece kit (approx.)",
+    "variants": [
+      {
+        "label": "46-piece kit (approx.)",
+        "price": "\u20b9650"
+      }
+    ],
+    "img": "/real-products/lukzer-cake-decorating-kit.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_pme_cake_drum_board",
+    "title": "Cake Drum Board (Round, Silver)",
+    "brand": "PME",
+    "dept": "dept_packaging",
+    "cat": "cat_boards_bases",
+    "price": "\u20b9450",
+    "price_paise": 45000,
+    "pack": "1 board (12 in round)",
+    "variants": [
+      {
+        "label": "1 board (12 in round)",
+        "price": "\u20b9450"
+      }
+    ],
+    "img": "/real-products-v2/pme-cake-drum-board.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_cake_craft_shop_board",
+    "title": "Silver Round Cake Board (6-Pack)",
+    "brand": "Cake Craft Shop",
+    "dept": "dept_packaging",
+    "cat": "cat_boards_bases",
+    "price": "\u20b9180",
+    "price_paise": 18000,
+    "pack": "6-inch, pack of 6",
+    "variants": [
+      {
+        "label": "6-inch, pack of 6",
+        "price": "\u20b9180"
+      }
+    ],
+    "img": "/real-products-v2/cake-craft-shop-board.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_bakers_mart_window_box",
+    "title": "Tall Corrugated Window Cake Box",
+    "brand": "The Baker's Mart",
+    "dept": "dept_packaging",
+    "cat": "cat_boxes",
+    "price": "\u20b960",
+    "price_paise": 6000,
+    "pack": "1 box (dimensions not stated)",
+    "variants": [
+      {
+        "label": "1 box (dimensions not stated)",
+        "price": "\u20b960"
+      }
+    ],
+    "img": "/real-products-v2/bakers-mart-window-box.webp",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_eco_bags_cake_box",
+    "title": "Cake Box with Window",
+    "brand": "Eco Bags India",
+    "dept": "dept_packaging",
+    "cat": "cat_boxes",
+    "price": "\u20b928",
+    "price_paise": 2800,
+    "pack": "8\u00d78\u00d74 in \u00b7 fits ~1 kg cake",
+    "variants": [
+      {
+        "label": "8\u00d78\u00d74 in \u00b7 fits ~1 kg cake",
+        "price": "\u20b928"
+      }
+    ],
+    "img": "/real-products/eco-bags-cake-box.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_famous_packaging_box",
+    "title": "Window Bakery Box",
+    "brand": "Famous Packaging",
+    "dept": "dept_packaging",
+    "cat": "cat_boxes",
+    "price": "\u20b935",
+    "price_paise": 3500,
+    "pack": "1 box (dimensions not itemized)",
+    "variants": [
+      {
+        "label": "1 box (dimensions not itemized)",
+        "price": "\u20b935"
+      }
+    ],
+    "img": "/real-products-v2/famous-packaging-window-box.jpg",
+    "avail": "available"
+  },
+  {
+    "id": "prod_real_pirsq_cake_box",
+    "title": "Cake Box with Logo Printing",
+    "brand": "Pirsq",
+    "dept": "dept_packaging",
+    "cat": "cat_boxes",
+    "price": "\u20b945",
+    "price_paise": 4500,
+    "pack": "1 box (customizable size)",
+    "variants": [
+      {
+        "label": "1 box (customizable size)",
+        "price": "\u20b945"
+      }
+    ],
+    "img": "/real-products-v2/pirsq-cake-box.jpg",
+    "avail": "available"
+  }
+]

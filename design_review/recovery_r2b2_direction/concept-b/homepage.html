@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pantryform — Everything For Your Next Bake</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- motion: header shrinks 4px on scroll, no color change -->
+<header class="site-header">
+  <div class="header-top">
+    <div class="header-top-inner">
+      <a class="logo" href="homepage.html" aria-label="Pantryform home">
+        <img src="../../../public/brand/pantryform-logo-header.png" alt="Pantryform logo">
+      </a>
+      <div class="header-search">
+        <span class="search-icon" aria-hidden="true"></span>
+        <input type="search" placeholder="Search chocolate, fondant, tools, boxes…" aria-label="Search products">
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Account">
+          <span class="glyph" aria-hidden="true">&#9679;</span>
+        </button>
+        <button class="icon-btn" aria-label="Wishlist">
+          <span class="glyph" aria-hidden="true">&#9825;</span>
+        </button>
+        <button class="icon-btn" aria-label="Cart, 3 items">
+          <span class="glyph" aria-hidden="true">&#128722;</span>
+          <span class="cart-count">3</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <nav class="dept-nav" aria-label="Departments">
+    <div class="dept-nav-inner">
+      <a class="dept-chip" href="plp.html">Ingredients</a>
+      <a class="dept-chip is-active" href="plp.html">Chocolate</a>
+      <a class="dept-chip" href="plp.html">Colours &amp; Flavours</a>
+      <a class="dept-chip" href="plp.html">Fillings &amp; Fondant</a>
+      <a class="dept-chip" href="plp.html">Decorating</a>
+      <a class="dept-chip" href="plp.html">Bakeware &amp; Tools</a>
+      <a class="dept-chip" href="plp.html">Packaging</a>
+      <a class="dept-chip recipes" href="#recipes">Recipes</a>
+    </div>
+  </nav>
+
+  <!-- mobile header: logo + hamburger/search/cart only -->
+  <div class="mobile-header">
+    <button class="icon-btn" aria-label="Open menu">
+      <span class="hamburger" aria-hidden="true"><span></span></span>
+    </button>
+    <a class="logo" href="homepage.html" aria-label="Pantryform home">
+      <img src="../../../public/brand/pantryform-mark-square.png" alt="Pantryform logo">
+    </a>
+    <div class="m-actions">
+      <button class="icon-btn" aria-label="Search"><span class="glyph" aria-hidden="true">&#128269;</span></button>
+      <button class="icon-btn" aria-label="Cart, 3 items">
+        <span class="glyph" aria-hidden="true">&#128722;</span>
+        <span class="cart-count">3</span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-dept-strip" aria-label="Departments">
+    <a class="dept-chip is-active" href="plp.html">Chocolate</a>
+    <a class="dept-chip" href="plp.html">Ingredients</a>
+    <a class="dept-chip" href="plp.html">Colours</a>
+    <a class="dept-chip" href="plp.html">Fondant</a>
+    <a class="dept-chip" href="plp.html">Decorating</a>
+    <a class="dept-chip" href="plp.html">Tools</a>
+    <a class="dept-chip" href="plp.html">Packaging</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO — desktop: bold color-blocked banner, 4 real products overlapping the field -->
+  <section class="hero" aria-label="Featured">
+    <div class="hero-blob-1" aria-hidden="true"></div>
+    <div class="hero-diagonal" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow">PANTRYFORM MARKETPLACE</span>
+        <h1>Everything For Your Next Bake, In Stock Today</h1>
+        <p class="hero-sub">Belgian couverture, gel colours, fondant, tools and packaging — 48 real baking SKUs, sourced and ready to ship across India.</p>
+        <a class="btn-primary" href="plp.html">Shop Chocolate &amp; Cocoa</a>
+      </div>
+      <div class="hero-products">
+        <span class="hero-tag ht-1">From ₹110</span>
+        <span class="hero-tag ht-2">Belgian couverture</span>
+        <div class="hero-frame hf-1">
+          <img src="../../../public/real-products/callebaut-811-callets.png" alt="Callebaut 811 Dark Chocolate Callets pack shot">
+        </div>
+        <div class="hero-frame hf-2">
+          <img src="../../../public/real-products/bakersville-vizyon-fondant-white.jpg" alt="Bakersville Vizyon Sugar Paste White pack shot">
+        </div>
+        <div class="hero-frame hf-3">
+          <img src="../../../public/real-products/magic-colours-gel-red.jpg" alt="Magic Colours Spectral Gel Colour Red bottle shot">
+        </div>
+        <div class="hero-frame hf-4">
+          <img src="../../../public/real-products-v2/pme-sugar-pearls.jpg" alt="PME Edible Sugar Pearls tub shot">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERO — mobile: single dominant product photo -->
+  <section class="hero-mobile" aria-label="Featured">
+    <div class="hero-mobile-photo">
+      <span class="hm-badge">Belgian couverture</span>
+      <img src="../../../public/real-products/callebaut-811-callets.png" alt="Callebaut 811 Dark Chocolate Callets pack shot">
+    </div>
+    <div class="hero-mobile-copy">
+      <span class="eyebrow">PANTRYFORM MARKETPLACE</span>
+      <p class="mobile-h1" role="heading" aria-level="1">Everything For Your Next Bake</p>
+      <p class="hero-sub">48 real baking SKUs — chocolate, colours, fondant, tools and packaging, ready to ship.</p>
+      <a class="btn-primary" href="plp.html">Shop Chocolate &amp; Cocoa</a>
+    </div>
+  </section>
+
+  <!-- DISCOVERY: first pull toward browsing -->
+  <section class="section" id="bestsellers">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">SHOP BESTSELLERS</span>
+          <h2>Most-Reordered This Month</h2>
+        </div>
+        <a class="section-link" href="plp.html">View All Chocolate &amp; Cocoa</a>
+      </div>
+
+      <div class="product-grid">
+
+        <article class="product-card">
+          <span class="corner-ribbon">Bestseller</span>
+          <div class="product-photo">
+            <img src="../../../public/real-products/callebaut-811-callets.png" alt="Callebaut 811 Dark Chocolate Callets pack shot">
+            <button class="fav-btn" aria-label="Save to wishlist">&#9825;</button>
+          </div>
+          <div class="product-brand">Callebaut</div>
+          <div class="product-title">811 Dark Chocolate Callets</div>
+          <div class="product-pack">400 g</div>
+          <div class="product-price-row"><span class="product-price">₹950</span></div>
+          <button class="btn-add-cart-sm">Add to Cart</button>
+        </article>
+
+        <article class="product-card">
+          <div class="product-photo">
+            <img src="../../../public/real-products/bakersville-vizyon-fondant-white.jpg" alt="Bakersville Vizyon Sugar Paste White pack shot">
+            <button class="fav-btn" aria-label="Save to wishlist">&#9825;</button>
+          </div>
+          <div class="product-brand">Bakersville</div>
+          <div class="product-title">Vizyon Sugar Paste — White</div>
+          <div class="product-pack">1 kg</div>
+          <div class="product-price-row"><span class="product-price">₹450</span></div>
+          <button class="btn-add-cart-sm">Add to Cart</button>
+        </article>
+
+        <article class="product-card">
+          <span class="corner-ribbon saffron">New</span>
+          <div class="product-photo">
+            <img src="../../../public/real-products/magic-colours-gel-red.jpg" alt="Magic Colours Spectral Gel Colour Red bottle shot">
+            <button class="fav-btn" aria-label="Save to wishlist">&#9825;</button>
+          </div>
+          <div class="product-brand">Magic Colours</div>
+          <div class="product-title">Spectral Gel Colour — Red</div>
+          <div class="product-pack">25 g</div>
+          <div class="product-price-row"><span class="product-price">₹180</span></div>
+          <button class="btn-add-cart-sm">Add to Cart</button>
+        </article>
+
+        <article class="product-card">
+          <div class="product-photo">
+            <img src="../../../public/real-products-v2/pme-sugar-pearls.jpg" alt="PME Edible Sugar Pearls tub shot">
+            <button class="fav-btn" aria-label="Save to wishlist">&#9825;</button>
+          </div>
+          <div class="product-brand">PME</div>
+          <div class="product-title">Edible Sugar Pearls</div>
+          <div class="product-pack">1 tub</div>
+          <div class="product-price-row"><span class="product-price">₹320</span></div>
+          <button class="btn-add-cart-sm">Add to Cart</button>
+        </article>
+
+        <!-- occasional 2-up feature break for visual variety -->
+        <div class="feature-pair">
+          <a class="feature-half a" href="plp.html">
+            <img src="../../../public/real-products-v2/wilton-aluminum-pan-set.jpg" alt="Wilton Aluminum Round Cake Pan Set of four pans">
+            <h3>Bakeware &amp; Tools</h3>
+            <p>Pans, moulds &amp; piping kits for every layer.</p>
+          </a>
+          <a class="feature-half b" href="plp.html">
+            <img src="../../../public/real-products/nutella-hazelnut-spread.jpg" alt="Nutella Hazelnut Spread with Cocoa jar">
+            <h3>Fillings &amp; Fondant</h3>
+            <p>Spreads, creams and rolled fondant.</p>
+          </a>
+        </div>
+
+        <article class="product-card">
+          <div class="product-photo">
+            <img src="../../../public/real-products/weikfield-baking-powder.jpg" alt="Weikfield Double Action Baking Powder tin">
+            <button class="fav-btn" aria-label="Save to wishlist">&#9825;</button>
+          </div>
+          <div class="product-brand">Weikfield</div>
+          <div class="product-title">Double Action Baking Powder</div>
+          <div class="product-pack">100 g</div>
+          <div class="product-price-row"><span class="product-price">₹40</span></div>
+          <button class="btn-add-cart-sm">Add to Cart</button>
+        </article>
+
+        <article class="product-card">
+          <span class="corner-ribbon">Bestseller</span>
+          <div class="product-photo">
+            <img src="../../../public/real-products/jvg-rainbow-sprinkles.jpg" alt="JVG Rainbow Sprinkles jar">
+            <button class="fav-btn" aria-label="Save to wishlist">&#9825;</button>
+          </div>
+          <div class="product-brand">JVG</div>
+          <div class="product-title">Rainbow Sprinkles</div>
+          <div class="product-pack">1 kg</div>
+          <div class="product-price-row"><span class="product-price">₹380</span></div>
+          <button class="btn-add-cart-sm">Add to Cart</button>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP BY DEPARTMENT -->
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">SHOP BY DEPARTMENT</span>
+          <h2>Seven Aisles, One Checkout</h2>
+        </div>
+      </div>
+      <div class="dept-tiles">
+        <a class="dept-tile dt-1" href="plp.html"><span class="blob" aria-hidden="true"></span><span class="name">Ingredients</span><span class="count">7 products</span></a>
+        <a class="dept-tile dt-2" href="plp.html"><span class="blob" aria-hidden="true"></span><span class="name">Chocolate</span><span class="count">7 products</span></a>
+        <a class="dept-tile dt-3" href="plp.html"><span class="blob" aria-hidden="true"></span><span class="name">Colours &amp; Flavours</span><span class="count">7 products</span></a>
+        <a class="dept-tile dt-4" href="plp.html"><span class="blob" aria-hidden="true"></span><span class="name">Fillings &amp; Fondant</span><span class="count">7 products</span></a>
+        <a class="dept-tile dt-5" href="plp.html"><span class="blob" aria-hidden="true"></span><span class="name">Decorating</span><span class="count">7 products</span></a>
+        <a class="dept-tile dt-6" href="plp.html"><span class="blob" aria-hidden="true"></span><span class="name">Bakeware &amp; Tools</span><span class="count">7 products</span></a>
+        <a class="dept-tile dt-7" href="plp.html"><span class="blob" aria-hidden="true"></span><span class="name">Packaging</span><span class="count">6 products</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a class="logo" href="homepage.html"><img src="../../../public/brand/pantryform-logo-header.png" alt="Pantryform logo"></a>
+        <p class="footer-tag">India's baking supplies marketplace — ingredients, tools and packaging for home bakers and pastry pros.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li>Chocolate &amp; Cocoa</li>
+          <li>Colours &amp; Flavours</li>
+          <li>Fillings &amp; Fondant</li>
+          <li>Bakeware &amp; Tools</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li>Track Order</li>
+          <li>Shipping</li>
+          <li>Returns</li>
+          <li>Contact Us</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li>About Pantryform</li>
+          <li>Recipes</li>
+          <li>Bulk &amp; Trade</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <ul>
+          <li>Instagram</li>
+          <li>YouTube</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Pantryform. All rights reserved.</span>
+      <span>Prices in ₹ INR · Concept B — Contemporary Baking Market</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

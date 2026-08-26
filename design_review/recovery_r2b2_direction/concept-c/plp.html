@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chocolate &amp; Cocoa — Pantryform (Concept C)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-index">
+    <div class="wrap">
+      <span>INDEX VOL. I — INDIAN BAKING PANTRY</span>
+      <span>SPECIMEN COUNT: 48 CATALOGUED</span>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="header-row">
+      <a class="logo" href="homepage.html" aria-label="Pantryform home">
+        <img src="../../../public/brand/pantryform-logo-header.png" alt="Pantryform">
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" id="navToggle">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+
+      <nav class="primary-nav" aria-label="Primary" id="primaryNav">
+        <ul>
+          <li><a href="#">Ingredients</a></li>
+          <li><a href="plp.html" aria-current="page">Chocolate</a></li>
+          <li><a href="#">Colours &amp; Flavours</a></li>
+          <li><a href="#">Fillings &amp; Fondant</a></li>
+          <li><a href="#">Decorating</a></li>
+          <li><a href="#">Bakeware &amp; Tools</a></li>
+          <li><a href="#">Packaging</a></li>
+          <li><a href="#">Recipes</a></li>
+        </ul>
+      </nav>
+
+      <form class="header-search" role="search" id="headerSearch">
+        <label for="siteSearch" class="visually-hidden">Search the catalog index</label>
+        <input type="search" id="siteSearch" placeholder="Search the catalog index…">
+      </form>
+
+      <div class="header-actions">
+        <button class="icon-btn" type="button" aria-label="Account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.4"/><path d="M4.5 20c1.6-4 4.4-6 7.5-6s5.9 2 7.5 6"/></svg>
+        </button>
+        <button class="icon-btn" type="button" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20.5s-7.5-4.6-9.6-9.3C.9 7.7 2.7 4.5 6 4c2.1-.3 4.2.9 6 3 1.8-2.1 3.9-3.3 6-3 3.3.5 5.1 3.7 3.6 7.2C19.5 15.9 12 20.5 12 20.5z"/></svg>
+        </button>
+        <button class="icon-btn" type="button" aria-label="Cart, 3 items">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h2l1.6 10.6a2 2 0 0 0 2 1.7h7a2 2 0 0 0 2-1.6L20 8H7"/><circle cx="10" cy="21" r="1.1"/><circle cx="17" cy="21" r="1.1"/></svg>
+          <span class="cart-count">3</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div class="breadcrumb wrap">
+    <a href="homepage.html">Index</a><span class="sep">/</span><span class="current">Chocolate &amp; Cocoa</span>
+  </div>
+
+  <!-- SECTION: CATEGORY INTRO -->
+  <section class="category-intro">
+    <div class="wrap">
+      <div class="rule-overlay" style="--cols:12" aria-hidden="true"></div>
+      <div class="category-intro-inner">
+        <span class="eyebrow eyebrow--coral">Department 02 / Cross-Merchandised</span>
+        <h1 class="h1-display">Chocolate &amp; Cocoa</h1>
+        <p class="lede">Couverture callets, compound slabs, cocoa powders and one honorary spread — every entry indexed by cocoa content, format and origin for accurate substitution.</p>
+        <span class="result-count mono">Showing <strong>8</strong> of <strong>48</strong> products</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: FILTER / SORT BAR -->
+  <section class="filter-bar">
+    <div class="wrap">
+      <div class="filter-bar-inner">
+        <div class="dept-chips" role="group" aria-label="Filter by department">
+          <button class="chip" type="button">Ingredients</button>
+          <button class="chip" type="button" aria-current="true">Chocolate</button>
+          <button class="chip" type="button">Colours &amp; Flavours</button>
+          <button class="chip" type="button">Fillings &amp; Fondant</button>
+          <button class="chip" type="button">Decorating</button>
+          <button class="chip" type="button">Bakeware &amp; Tools</button>
+          <button class="chip" type="button">Packaging</button>
+        </div>
+        <div class="sort-control">
+          <label for="sortSelect">Sort</label>
+          <select id="sortSelect">
+            <option>Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Popularity</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: PRODUCT GRID + MERCHANDISING BREAK -->
+  <section>
+    <div class="wrap">
+      <div class="plp-grid">
+
+        <article class="specimen-card is-tilted-l">
+          <span class="index-no">01</span>
+          <div class="frame">
+            <img src="../../../public/real-products/callebaut-811-callets.png" alt="Callebaut 811 Dark Chocolate Callets pack, 400 g">
+          </div>
+          <div class="body">
+            <span class="brand">Callebaut</span>
+            <h3 class="title">811 Dark Chocolate Callets</h3>
+            <div class="meta-row">
+              <div>
+                <span class="price">₹950</span>
+                <span class="pack">400 g</span>
+              </div>
+              <button class="add-btn" aria-label="Add Callebaut 811 Dark Chocolate Callets to cart">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="specimen-card">
+          <span class="index-no">02</span>
+          <div class="frame">
+            <img src="../../../public/real-products/morde-dark-compound-slab.jpg" alt="Morde Dark Compound Chocolate Slab, 500 g">
+          </div>
+          <div class="body">
+            <span class="brand">Morde</span>
+            <h3 class="title">Dark Compound Chocolate Slab</h3>
+            <div class="meta-row">
+              <div>
+                <span class="price">₹250</span>
+                <span class="pack">500 g</span>
+              </div>
+              <button class="add-btn" aria-label="Add Morde Dark Compound Chocolate Slab to cart">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="specimen-card is-tilted-r">
+          <span class="index-no">03</span>
+          <div class="frame">
+            <img src="../../../public/real-products-v2/van-houten-cocoa-powder.png" alt="Van Houten Cocoa Powder, medium brown 10/12, 1 kg pack">
+          </div>
+          <div class="body">
+            <span class="brand">Van Houten</span>
+            <h3 class="title">Cocoa Powder (Medium Brown 10/12)</h3>
+            <div class="meta-row">
+              <div>
+                <span class="price">₹650</span>
+                <span class="pack">1 kg</span>
+              </div>
+              <button class="add-btn" aria-label="Add Van Houten Cocoa Powder to cart">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="specimen-card">
+          <span class="index-no">04</span>
+          <div class="frame">
+            <img src="../../../public/real-products-v2/amul-dark-compound-bar.jpg" alt="Amul Dark Compound Chocolate Bar, DCO-18, 500 g">
+          </div>
+          <div class="body">
+            <span class="brand">Amul</span>
+            <h3 class="title">Dark Compound Chocolate Bar (DCO-18)</h3>
+            <div class="meta-row">
+              <div>
+                <span class="price">₹230</span>
+                <span class="pack">500 g</span>
+              </div>
+              <button class="add-btn" aria-label="Add Amul Dark Compound Chocolate Bar to cart">+</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- MERCHANDISING BREAK: taxonomy strip + oversized Callebaut lab spotlight -->
+        <div class="merch-break">
+          <div class="taxonomy-strip">
+            <span>Reading this index by:</span>
+            <span class="tx-label">Cocoa %</span><span class="tx-sep">·</span>
+            <span class="tx-label">Origin</span><span class="tx-sep">·</span>
+            <span class="tx-label">Format</span><span class="tx-sep">·</span>
+            <span class="tx-label">Melt Point</span>
+          </div>
+          <div class="spotlight">
+            <div class="spotlight-photo">
+              <span class="reg-mark reg-mark--tl" aria-hidden="true"></span>
+              <span class="reg-mark reg-mark--br" aria-hidden="true"></span>
+              <img src="../../../public/real-products/callebaut-811-callets.png" alt="Callebaut 811 Dark Chocolate Callets, close view">
+              <span class="spotlight-index" aria-hidden="true">00</span>
+            </div>
+            <div class="spotlight-copy">
+              <span class="eyebrow eyebrow--coral">Brand Spotlight</span>
+              <h3>Callebaut — Belgian couverture, since 1911</h3>
+              <p>Tempering-grade callets formulated for consistent snap and gloss across ganache, coating and moulding work. The reference standard this index measures other compounds against.</p>
+              <div class="spotlight-specs">
+                <span>Cocoa %<strong>53.8%</strong></span>
+                <span>Origin<strong>Belgium</strong></span>
+                <span>Format<strong>Callets</strong></span>
+                <span>Melt Point<strong>~34°C</strong></span>
+              </div>
+            </div>
+            <div class="spotlight-cta">
+              <span class="price mono">₹950</span>
+              <a class="btn btn-outline" href="pdp.html">View Specimen →</a>
+            </div>
+          </div>
+        </div>
+
+        <article class="specimen-card">
+          <span class="index-no">05</span>
+          <div class="frame">
+            <img src="../../../public/real-products-v2/morde-compound-chips.jpg" alt="Morde Dark Compound Chocolate Chips, 500 g">
+          </div>
+          <div class="body">
+            <span class="brand">Morde</span>
+            <h3 class="title">Dark Compound Chocolate Chips</h3>
+            <div class="meta-row">
+              <div>
+                <span class="price">₹220</span>
+                <span class="pack">500 g</span>
+              </div>
+              <button class="add-btn" aria-label="Add Morde Dark Compound Chocolate Chips to cart">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="specimen-card is-tilted-l">
+          <span class="index-no">06</span>
+          <div class="frame">
+            <img src="../../../public/real-products-v2/weikfield-cocoa-powder.jpg" alt="Weikfield Cocoa Powder, 150 g pack">
+          </div>
+          <div class="body">
+            <span class="brand">Weikfield</span>
+            <h3 class="title">Cocoa Powder</h3>
+            <div class="meta-row">
+              <div>
+                <span class="price">₹110</span>
+                <span class="pack">150 g</span>
+              </div>
+              <button class="add-btn" aria-label="Add Weikfield Cocoa Powder to cart">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="specimen-card">
+          <span class="index-no">07</span>
+          <div class="frame">
+            <img src="../../../public/real-products-v2/hersheys-cocoa-powder.jpg" alt="Hershey's Cocoa Powder, natural unsweetened, 225 g pack">
+          </div>
+          <div class="body">
+            <span class="brand">Hershey's</span>
+            <h3 class="title">Cocoa Powder (Natural Unsweetened)</h3>
+            <div class="meta-row">
+              <div>
+                <span class="price">₹399</span>
+                <span class="pack">225 g</span>
+              </div>
+              <button class="add-btn" aria-label="Add Hershey's Cocoa Powder to cart">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="specimen-card is-tilted-r">
+          <span class="index-no">08</span>
+          <div class="frame">
+            <img src="../../../public/real-products/nutella-hazelnut-spread.jpg" alt="Nutella Hazelnut Spread with Cocoa, 200 g jar">
+          </div>
+          <div class="body">
+            <span class="brand">Nutella (Ferrero)</span>
+            <h3 class="title">Hazelnut Spread with Cocoa</h3>
+            <div class="meta-row">
+              <div>
+                <span class="price">₹250</span>
+                <span class="pack">200 g</span>
+              </div>
+              <button class="add-btn" aria-label="Add Nutella Hazelnut Spread to cart">+</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Departments</h4>
+        <a href="#">Ingredients</a>
+        <a href="plp.html">Chocolate</a>
+        <a href="#">Colours &amp; Flavours</a>
+        <a href="#">Fillings &amp; Fondant</a>
+      </div>
+      <div>
+        <h4>Departments</h4>
+        <a href="#">Decorating</a>
+        <a href="#">Bakeware &amp; Tools</a>
+        <a href="#">Packaging</a>
+        <a href="#">Recipes</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="#">Shipping &amp; Returns</a>
+        <a href="#">Bulk &amp; Wholesale</a>
+        <a href="#">Contact the Index</a>
+      </div>
+      <div>
+        <h4>Pantryform</h4>
+        <a href="#">About</a>
+        <a href="#">Sourcing Notes</a>
+        <a href="#">Careers</a>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>© 2026 Pantryform — Indian Baking Supplies Index</span>
+      <span>Concept C — Editorial Pantry Laboratory</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Non-destructive mobile nav toggle only — no fetch/submit/navigate.
+  (function () {
+    var toggle = document.getElementById('navToggle');
+    var nav = document.getElementById('primaryNav');
+    var search = document.getElementById('headerSearch');
+    if (!toggle || !nav) return;
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('is-open');
+      if (search) search.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  })();
+</script>
+
+</body>
+</html>
