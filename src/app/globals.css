@@ -2856,3 +2856,248 @@ h3 {
     7px 11px;
 }
 /* ===== end R2B2F Design-System and Global-Shell ===== */
+
+/* ===== R2B2F PLP, Category and Search ===== */
+/* Owner: PLP, Category and Search engineer. This is a visual-refinement
+   banner only — it overrides earlier declarations (the pre-banner base
+   rules and the older "R2B2 PLP/Category/Search (Worktree 1)" /
+   "R2B2V Homepage/PLP" sections above) by appearing later in cascade order
+   and, where needed, with matching or greater selector specificity. No
+   filtering/sorting/search/wishlist/quick-add JS logic is touched, no
+   .product-card root class or variant contract changes, no image asset
+   references change. Concept A restraint is the base language; the
+   taxonomy/rule-line touches below are Concept C's grid/taxonomy
+   discipline borrowed narrowly, in Concept A's warm palette. */
+
+/* --- Card shell (grid + rail): warmer resting lift, generous radius,
+   image plate now visually distinct from the card body so real packshots
+   read as staged objects rather than sitting flush on white. --- */
+.product-grid .product-card,
+.rp-card,
+.product-card--rail {
+  border-radius: var(--radius-lg);
+  border-color: color-mix(in srgb, var(--cocoa), transparent 88%);
+  box-shadow: var(--shadow-soft-sm);
+}
+.product-grid .product-card:hover,
+.product-grid .product-card:focus-within,
+.rp-card:hover,
+.rp-card:focus-within,
+.product-card--rail:hover,
+.product-card--rail:focus-within {
+  border-color: color-mix(in srgb, var(--cocoa), transparent 72%);
+  box-shadow: var(--shadow-soft);
+}
+.product-image-canvas,
+.rp-image {
+  background: var(--surface-subtle);
+  border-radius: var(--radius-md);
+}
+.product-image-canvas.is-placeholder {
+  background: var(--surface-subtle);
+}
+
+/* --- Facts: the price reads in the display serif, a small but genuine
+   Concept A signal that this is a considered product record, not a plain
+   spec row. Availability label gets a touch more breathing room. --- */
+.card-facts strong {
+  font-family: var(--display);
+  color: var(--cocoa);
+  letter-spacing: -0.01em;
+}
+.availability {
+  letter-spacing: 0.04em;
+}
+
+/* --- Badge / wishlist: align the pill and circle chrome to the shared
+   radius/shadow tokens instead of one-off values. --- */
+.product-badge,
+.rp-badge {
+  border-radius: var(--radius-md);
+  background: var(--terracotta);
+  border-color: color-mix(in srgb, var(--terracotta), black 15%);
+}
+.product-wishlist,
+.rp-wishlist {
+  box-shadow: var(--shadow-soft-sm);
+}
+.product-wishlist.is-saved,
+.rp-wishlist.is-saved {
+  background: var(--oxblood);
+  border-color: var(--oxblood);
+}
+.product-wishlist:hover,
+.rp-wishlist:hover {
+  border-color: var(--oxblood);
+}
+
+/* --- Quick add / Select options: calmer radius language matching the
+   button family Role 1 refined; hover state keyed to the oxblood accent
+   rather than a second coral. --- */
+.product-add,
+.rp-add {
+  border-radius: var(--radius-md);
+}
+.product-add.primary:hover,
+.rp-add:hover {
+  background: var(--oxblood);
+  border-color: var(--oxblood);
+}
+
+/* --- Category introduction (.page-hero): compact, not tall. A hairline
+   closes the block instead of relying on large margin alone, and the
+   eyebrow gets a small taxonomic index mark (a quiet nod to Concept C's
+   indexing discipline, restrained to a single accent dot, not its ink/mono
+   system). --- */
+.page-hero {
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--cocoa), transparent 87%);
+}
+.page-hero .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.page-hero .eyebrow::before {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  flex: none;
+  background: var(--terracotta);
+}
+.page-hero h1 {
+  margin: 0.35rem 0 0.6rem;
+}
+.page-hero p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* --- Breadcrumbs: quiet small-caps trail instead of plain body text,
+   current page picked out in ink, everything else recedes. --- */
+.breadcrumbs {
+  color: var(--muted);
+  font: 700 0.72rem/1.4 var(--ui);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.breadcrumbs a {
+  text-decoration: none;
+  color: var(--muted);
+}
+.breadcrumbs a:hover,
+.breadcrumbs a:focus-visible {
+  color: var(--oxblood);
+}
+.breadcrumbs li[aria-current="page"] {
+  color: var(--ink);
+}
+
+/* --- Filters/sort bar: calmer border/radius language, checkboxes tinted
+   to the accent rather than default UA blue. --- */
+.filters {
+  border-radius: var(--radius-lg);
+  border-color: color-mix(in srgb, var(--cocoa), transparent 88%);
+  box-shadow: var(--shadow-soft-sm);
+}
+.filters input,
+.filters select {
+  border-radius: var(--radius-md);
+  border-color: color-mix(in srgb, var(--cocoa), transparent 76%);
+}
+.filter-checkboxes input[type="checkbox"] {
+  accent-color: var(--oxblood);
+}
+.filter-expander {
+  color: var(--oxblood);
+}
+
+/* --- Category chips: cocoa for the active chip (warmer than plain ink),
+   oxblood on hover for a consistent accent language with the rest of the
+   card/filter system. --- */
+.category-chip {
+  border-color: color-mix(in srgb, var(--cocoa), transparent 80%);
+}
+.category-chip:hover,
+.category-chip:focus-visible {
+  border-color: var(--oxblood);
+  color: var(--oxblood);
+}
+.category-chip[aria-current="page"] {
+  background: var(--cocoa);
+  border-color: var(--cocoa);
+  color: white;
+}
+
+/* --- Results count: tabular numerals so the count doesn't jitter width as
+   filters change. --- */
+.results-count {
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Merchandising break: was a single thin divider line, easy to miss
+   mid-scroll. Given real presence as a banded panel with its own surface,
+   bounded by hairlines top and bottom, short flanking rules either side of
+   the label instead of full-bleed ones — reads as an intentional pause in
+   the grid, not a stray rule. Pure CSS, no new markup: product-grid.tsx
+   already renders one .grid-merch-break per interval with a single <span>
+   child carrying the department/count label. */
+.grid-merch-break {
+  gap: 1rem;
+  margin: 0.5rem 0 1.25rem;
+  padding: 1.15rem 1.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--cocoa), transparent 84%);
+  border-bottom: 1px solid color-mix(in srgb, var(--cocoa), transparent 84%);
+  background: var(--surface-subtle);
+  border-radius: var(--radius-md);
+}
+.grid-merch-break::before,
+.grid-merch-break::after {
+  max-width: 5rem;
+  background: color-mix(in srgb, var(--cocoa), transparent 68%);
+}
+.grid-merch-break span {
+  color: var(--oxblood);
+  font-weight: 800;
+}
+
+/* --- Empty states: warm surface instead of a dashed placeholder box, so
+   "no results" reads as a considered recovery moment rather than an
+   unfinished component. Both the has-query and filtered-to-nothing copy
+   branches in shop-explorer.tsx share this shell. --- */
+.empty-state {
+  background: var(--surface-subtle);
+  border: 1px solid color-mix(in srgb, var(--cocoa), transparent 85%);
+  border-radius: var(--radius-lg);
+}
+.empty-state h2 {
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+  margin: 0 0 0.5rem;
+}
+.empty-state p {
+  color: var(--muted);
+}
+.empty-state .empty-mark {
+  opacity: 0.6;
+}
+.empty-state .active-filters li {
+  border-color: color-mix(in srgb, var(--cocoa), transparent 78%);
+}
+
+@media (max-width: 640px) {
+  .page-hero {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.1rem;
+  }
+  .grid-merch-break {
+    padding: 0.9rem 1rem;
+    margin: 0.25rem 0 0.85rem;
+  }
+  .grid-merch-break::before,
+  .grid-merch-break::after {
+    max-width: 2.25rem;
+  }
+}
+/* ===== end R2B2F PLP, Category and Search ===== */
