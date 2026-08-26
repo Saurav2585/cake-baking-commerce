@@ -171,7 +171,10 @@ export function useImageCrossfade(
         timelineRef.current = tl;
         tl.fromTo(
           currentImage,
-          { opacity: MOTION_OPACITY_SOFT, scale: coarse ? 1 : MOTION_SCALE.enter },
+          {
+            opacity: MOTION_OPACITY_SOFT,
+            scale: coarse ? 1 : MOTION_SCALE.enter,
+          },
           {
             opacity: 1,
             scale: 1,

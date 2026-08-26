@@ -62,17 +62,24 @@ export function useWishlistFeedback(
       return;
     }
 
-    gsap.fromTo(
-      button,
-      { scale: 1 },
-      {
-        scale: MOTION_SCALE.emphasis,
-        duration: MOTION_DURATION.feedback,
-        ease: MOTION_EASE.emphasis,
-        yoyo: true,
-        repeat: 1,
-        clearProps: "scale",
-      },
-    );
+    // Scoped like every other hook in this directory: if the button
+    // unmounts (e.g. the shopper navigates away) before this ~240ms
+    // tween finishes, ctx.revert() kills it instead of leaving it running
+    // against a detached node.
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        button,
+        { scale: 1 },
+        {
+          scale: MOTION_SCALE.emphasis,
+          duration: MOTION_DURATION.feedback,
+          ease: MOTION_EASE.emphasis,
+          yoyo: true,
+          repeat: 1,
+          clearProps: "scale",
+        },
+      );
+    }, button);
+    return () => ctx.revert();
   }, [saved, buttonRef]);
 }

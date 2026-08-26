@@ -472,6 +472,7 @@ a.icon-action:focus-visible {
 }
 .hero-collage {
   position: relative;
+  overflow: hidden;
   min-height: 30rem;
   border-radius: 20px;
   padding: 1rem;
