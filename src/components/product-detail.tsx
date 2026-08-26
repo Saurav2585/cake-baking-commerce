@@ -13,8 +13,13 @@ type Fact = { status?: string; value?: string };
  * Tri-state critical-fact rendering (Route_UI_Specification.md §4.6/§4.7):
  * - `known` → plain text, no pill.
  * - `not_applicable` → muted solid pill.
- * - `information_not_provided` (the default/missing case) → muted dashed
- *   pill, same size as a populated value, never red/alarming, never a dash.
+ * - `information_not_provided` (the default/missing case) → a quiet
+ *   designed empty state (R2B2V remediation): italic muted text with a
+ *   left tick border, deliberately NOT a pill, so it stays visually
+ *   distinct from `not_applicable`'s solid pill. Never red/alarming,
+ *   never a dash, never fabricated. Copy stays the exact protected phrase
+ *   ("Information not provided," D-017) — only the visual treatment
+ *   changed in R2B2V, not the wording.
  */
 function FactValue({ fact }: { fact: Fact | undefined }) {
   if (fact?.status === "known") {
@@ -28,7 +33,7 @@ function FactValue({ fact }: { fact: Fact | undefined }) {
     );
   }
   return (
-    <span className="fact-value fact-pill fact-not-provided">
+    <span className="fact-value fact-not-provided">
       Information not provided
     </span>
   );

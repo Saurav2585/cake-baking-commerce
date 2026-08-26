@@ -1302,7 +1302,7 @@ h3 {
 }
 .pdp-layout {
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
+  grid-template-columns: 1.15fr 0.85fr;
   gap: 5vw;
   align-items: start;
 }
@@ -2192,7 +2192,10 @@ h3 {
    no edit to those pre-existing declarations is required. --- */
 .pdp-gallery .pdp-primary.product-image-canvas {
   min-height: 0;
-  max-width: 34rem;
+  width: 100%;
+  max-width: 44rem; /* safety ceiling only, not the driving constraint */
+  padding: 5%; /* reduced from the shared 10% grid-canvas padding: PDP is
+    a single dominant image, not a small PLP thumbnail */
 }
 
 /* --- §4.2 Price/pack block: price is the most-scanned fact on the page —
@@ -2351,8 +2354,16 @@ h3 {
   border: 1px solid transparent;
 }
 .fact-not-provided {
+  /* Quiet designed empty state, not a dashed placeholder pill: italic
+     type + a short left tick, distinct from the solid fact-not-applicable
+     pill so the tri-state remains unambiguous at a glance. */
+  display: inline-block;
   background: transparent;
-  border: 1px dashed color-mix(in srgb, var(--ink), transparent 70%);
+  border: 0;
+  border-left: 2px solid var(--muted);
+  border-radius: 0;
+  padding: 0.1rem 0 0.1rem 0.6rem;
+  font-style: italic;
 }
 @media (max-width: 640px) {
   .facts-section {
@@ -2380,3 +2391,70 @@ h3 {
   }
 }
 /* ===== end R2B2 PDP ===== */
+
+/* ===== R2B2V PDP/Cart/Checkout ===== */
+/* Owner: R2B2V remediation (PDP + Cart/Checkout sections of
+   Remediation_Specification.md). Visual composition only — no logic, data
+   or commerce-state changes. Extends the existing R2B2 PDP selectors above
+   rather than re-defining them; the rules here are the ones that did not
+   exist anywhere in the file before this pass. */
+
+/* --- PDP: gallery/buy-panel share a top reference. The gallery's top edge
+   is nudged down to meet the buy-panel's eyebrow, not its coral border-top,
+   so the two columns read as one composed block instead of two independently
+   top-aligned boxes. Only applies once the layout is genuinely two columns
+   (matches .pdp-layout's own 1024px breakpoint). --- */
+@media (min-width: 1025px) {
+  .pdp-gallery {
+    padding-top: calc(2rem + 6px);
+  }
+}
+
+/* --- PDP: the primary "Add to cart" CTA gets a slightly heavier presence
+   than "Save to wishlist" beneath it — the only saturated-color control in
+   the purchase-actions stack (wishlist stays outline-only via the base
+   .button rule; confirmed not accidentally coral anywhere). --- */
+.purchase-actions .button.coral {
+  min-height: 58px;
+}
+
+/* --- PDP mobile: .buy-panel h1 had no breakpoint override at all, so a
+   clamp(3rem, 5.5vw, 6rem) floor (48px) forced titles like "811 Dark
+   Chocolate Callets" across three lines. Mirrors how .hero-copy-panel h1
+   is already scaled down at this same 640px breakpoint. --- */
+@media (max-width: 640px) {
+  .buy-panel h1 {
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
+  }
+}
+
+/* --- Cart: give line items a thin left accent in the brand coral so they
+   visibly belong to the same system as .buy-panel's border-top and
+   .cart-summary's border-top, without adding scanning friction. Applies at
+   every existing breakpoint since none of them override the border. --- */
+.cart-lines article {
+  border-left: 4px solid var(--coral);
+}
+
+/* --- Cart/Checkout: tighten the vertical rhythm of the summary card so the
+   subtotal, its caption and the simulated-commerce notice read as one
+   confidence-building block rather than three equally-spaced paragraphs. --- */
+.cart-summary h2 {
+  margin: 0.3rem 0 0.5rem;
+}
+.cart-summary > p {
+  margin: 0 0 0.4rem;
+}
+.cart-summary > p:last-of-type,
+.cart-summary > .notice {
+  margin-bottom: 0;
+}
+
+/* --- Checkout: .profile-choice's corner radius/border weight brought in
+   line with .variant-selector button (8px/1.5px) so the same "selected
+   ink-fill card" pattern reads identically on PDP and checkout. --- */
+.profile-choice {
+  border-width: 1.5px;
+  border-radius: 8px;
+}
+/* ===== end R2B2V PDP/Cart/Checkout ===== */
