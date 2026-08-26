@@ -2,6 +2,106 @@
 
 ## Phase
 
+**Recovery R2B2F — Selected Premium Direction Implementation**
+
+**Status:** Implementation and independent QA complete. Real application code shipped on
+`recovery/real-commerce-visuals`; **not merged to `main`, not deployed** — external final visual
+approval is required first, per explicit user instruction.
+
+**Prepared:** 2026-08-27
+
+### Review objective
+
+Record the outcome of R2B2F: implementation of the externally-selected visual direction (Concept A
+primary + Concept C grid/taxonomy borrow + Concept B mobile sticky CTA borrow, from the R2B2V-Direction
+concept gate) into the real, live application, executed by six specialist subagents across two
+dependency-ordered waves plus an independent QA pass. Full detail:
+`design_review/recovery_r2b2_final/R2B2F_Implementation_And_Verification_Report.md`.
+
+### R2B2F summary
+
+- **Direction:** Concept A ("Modern Ingredient Atelier") as primary visual identity; Concept C's grid
+  precision/taxonomy/factual-clarity borrowed narrowly (not its ink/mono aesthetic); Concept B's mobile
+  sticky price + Add-to-Cart bar borrowed narrowly (nothing else from B). No fourth direction invented,
+  concepts not blended evenly.
+- **Implementation:** new `--cocoa`/`--oxblood`/`--terracotta` accent tokens and refined serif/sans
+  type system applied sitewide; homepage hero/rails/brand-discovery/trust-strip restyled while
+  preserving all four distinct rail patterns; PLP card shell, filters, category intro and merchandising
+  break restyled with Concept C's grid/taxonomy discipline; PDP gallery/buy-panel composed as one
+  surface, tri-state facts section redesigned for factual clarity, mobile sticky CTA bar added with a
+  buy-panel reorder fixing a concept-review-identified gap (variant/quantity now immediately after the
+  core summary on mobile, not buried below the fold); GSAP motion re-verified against the new
+  composition (including the shared-image PDP crossfade edge case) plus two new small, restrained
+  moments (wishlist feedback, sticky-bar entrance).
+- **Defects found and fixed during this phase:** by the orchestrator's own QA-gate pass (a pre-existing
+  Prettier violation, a missing GSAP cleanup, 2px of real horizontal overflow at 768×1024 traced to a
+  pre-existing hero decorative element) and by the independent QA agent after full integration (a
+  systemic sub-13px label-size violation across ~18 instances spanning all four implementation roles,
+  and a recurrence of a previously-"mitigated" cart-notice contrast bug) — all fixed and live
+  re-verified, not silently absorbed.
+- **Lighthouse CLS investigation:** a repeatable, identical-across-pages Cumulative Layout Shift score
+  was investigated via five independent methods (two browser-engine JS captures, a raw CDP trace parse,
+  a direct before/after screenshot comparison, and the independent QA agent's separate reproduction).
+  None found evidence of a real shift on the production build; the specific root cause a dev-mode
+  reproduction found (Next.js's `<nextjs-portal>` indicator) was confirmed absent from production, so it
+  does not explain the production reading. Documented as an investigated, unresolved, low-real-world-risk
+  finding — a materially deeper pass than the prior phase, which did not run Lighthouse at all.
+- **Validation:** canonical/asset validation, format check, lint, typecheck, 13/13 unit tests, 10/10
+  Playwright e2e tests, and a clean production build (80 pages) all pass on the final, fixed code.
+  Live-verified: zero horizontal overflow across the 5 required viewports on every route checked; zero
+  console errors/broken images/failed requests; full keyboard and focus audit; complete reduced-motion
+  fallback for every motion moment including the two new ones.
+
+### R2B2F acceptance evidence
+
+- [x] Genuine Claude subagents used throughout (6 specialist roles, isolated git worktrees, narrow
+  non-overlapping ownership, two dependency-ordered waves) — confirmed by the orchestrator reviewing and
+  manually merging each role's actual diff, not trusting self-reported summaries.
+- [x] Locked direction implemented as specified: Concept A primary, Concept C grid/taxonomy borrowed
+  narrowly, Concept B mobile sticky CTA borrowed narrowly, no fourth direction, no even blend —
+  confirmed by the independent QA agent's live visual audit against every locked rule.
+- [x] Zero AI-generated images anywhere in this phase; zero new image assets of any kind.
+- [x] Independent QA agent dispatched only after full integration, found two real P1 defects (not a
+  rubber stamp), both fixed and re-verified live by the orchestrator before this packet was written.
+- [x] Full validation suite green: canonical validation, format check, lint, typecheck, unit tests, e2e
+  tests, production build.
+- [x] Zero horizontal overflow at all 5 required viewports; keyboard navigation and reduced-motion
+  verified live by both the orchestrator and independent QA, not just asserted.
+- [x] Lighthouse run for the first time in this recovery track's history (prior phase disclosed it as
+  not performed); the one anomalous metric found was investigated five independent ways and honestly
+  documented rather than hidden or overclaimed.
+- [x] `docs/Decision_Log.md` (D-044–D-046 added) and `docs/Risk_Register.md` (R-046 updated, R-049–R-050
+  added) updated to reflect this phase's outcome.
+- [x] No `main` modification, no production deployment, at any point in this phase.
+
+### R2B2F known limitations
+
+- The Lighthouse CLS discrepancy on the production build remains formally unresolved despite five
+  independent diagnostic passes, though confirmed low real-world risk by all of them.
+- No automated lint/test enforces the locked 13px label / 44px tap-target floors sitewide — the ~18
+  found instances were fixed, but recurrence would currently only be caught by a future manual/QA pass,
+  not a gate.
+- WebKit/Firefox automated cross-browser coverage remains deferred (standing R2B2A scoping decision).
+- Performance scores (69–79 across the six Lighthouse runs) were not specifically optimized in this
+  phase — this was a visual-direction implementation phase, not a performance-tuning pass.
+
+### R2B2F decision requested
+
+**External final visual approval** of the implementation against the locked direction and the evidence
+in `design_review/recovery_r2b2_final/`, before any merge to `main` or production deployment. No other
+decision is currently open.
+
+### R2B2F gate
+
+No merge to `main` and no production deployment should proceed from this branch until external final
+visual approval is explicitly given, per the user's own locked instruction.
+
+---
+
+# Recovery R2B2 record (preserved — implementation R2B2F built on)
+
+## Phase
+
 **Recovery R2B2 — Multi-Agent Commerce and Premium Experience Implementation**
 
 **Status:** Implementation and independent QA complete. Real application code shipped on `recovery/real-commerce-visuals`; **not merged to `main`, not deployed** — external human visual approval is required first, per explicit user instruction.
