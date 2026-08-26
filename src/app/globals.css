@@ -2229,6 +2229,10 @@ h3 {
   background: var(--ink);
   color: white;
 }
+.variant-selector button[aria-pressed="true"]:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
 .variant-selector button:disabled {
   opacity: 0.45;
   cursor: not-allowed;

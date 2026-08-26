@@ -146,6 +146,57 @@ export function useImageCrossfade(
     const { reduce, coarse } = conditionsRef.current;
     const outgoing = prev.imageNode;
 
+    // Shared-image case: several products (e.g. Callebaut 811, Urban
+    // Platter Vanilla Extract, Nutella) resolve the same media.src for
+    // every variant, so React's `key={media.src}` never remounts the
+    // `data-crossfade-image` node — `currentImage` and `outgoing` are the
+    // *same* DOM element, not a genuine new/old pair. Treating them as
+    // distinct (re-attaching one as an overlay, then removing it on
+    // completion) destroys the only live image node. Per
+    // Motion_3D_Specification.md §6, "a fade-through-same-image reads as
+    // confirmed, not broken" — so this case gets a brief, non-destructive
+    // confirmation pulse on the single node instead of a two-layer
+    // crossfade, and the node is never removed.
+    if (outgoing === currentImage) {
+      if (reduce) {
+        if (currentImage)
+          gsap.set(currentImage, { opacity: 1, clearProps: "scale" });
+        if (withEls.length) gsap.set(withEls, { opacity: 1 });
+      } else if (currentImage) {
+        const tl = gsap.timeline({
+          onComplete: () => {
+            if (timelineRef.current === tl) timelineRef.current = null;
+          },
+        });
+        timelineRef.current = tl;
+        tl.fromTo(
+          currentImage,
+          { opacity: MOTION_OPACITY_SOFT, scale: coarse ? 1 : MOTION_SCALE.enter },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: CROSSFADE_DURATION_SEC,
+            ease: MOTION_EASE.standard,
+          },
+          0,
+        );
+        if (withEls.length) {
+          tl.fromTo(
+            withEls,
+            { opacity: MOTION_OPACITY_SOFT },
+            {
+              opacity: 1,
+              duration: CROSSFADE_DURATION_SEC,
+              ease: MOTION_EASE.standard,
+            },
+            0,
+          );
+        }
+      }
+      stateRef.current = { key: activeKey, imageNode: currentImage };
+      return;
+    }
+
     if (reduce || !outgoing) {
       // Immediate atomic replacement: no crossfade, no scale — matches
       // exactly the content the animated version eventually settles into.
