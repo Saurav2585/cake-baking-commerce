@@ -14,12 +14,15 @@ type Fact = { status?: string; value?: string };
  * - `known` → plain text, no pill.
  * - `not_applicable` → muted solid pill.
  * - `information_not_provided` (the default/missing case) → a quiet
- *   designed empty state (R2B2V remediation): italic muted text with a
- *   left tick border, deliberately NOT a pill, so it stays visually
- *   distinct from `not_applicable`'s solid pill. Never red/alarming,
- *   never a dash, never fabricated. Copy stays the exact protected phrase
- *   ("Information not provided," D-017) — only the visual treatment
- *   changed in R2B2V, not the wording.
+ *   designed empty state, refined again in R2B2F: non-italic small text,
+ *   a quiet dot mark plus the existing left tick (CSS-only, see
+ *   `.fact-not-provided` in globals.css), reading as a deliberate
+ *   spec-sheet disclosure rather than an unfinished field. Deliberately
+ *   NOT a pill, so it stays visually distinct from `not_applicable`'s
+ *   solid pill. Never red/alarming, never a literal dash character in the
+ *   markup, never fabricated. Copy stays the exact protected phrase
+ *   ("Information not provided," D-017) — only the visual treatment has
+ *   ever changed, not the wording.
  */
 function FactValue({ fact }: { fact: Fact | undefined }) {
   if (fact?.status === "known") {
@@ -127,7 +130,7 @@ export function ProductDetail({ product }: { product: CatalogProduct }) {
           <p className="pdp-price" data-crossfade-with>
             {formatINR(variant.price_inr_minor)} <small>demo price</small>
           </p>
-          <p data-crossfade-with>
+          <p className="pdp-pack-meta" data-crossfade-with>
             <strong>{variant.normalized_sell_quantity.display_label}</strong> ·{" "}
             {variant.sku}
           </p>
@@ -210,7 +213,10 @@ export function ProductDetail({ product }: { product: CatalogProduct }) {
               </button>
             </div>
           </div>
-          <div className="purchase-actions">
+          <div
+            className="purchase-actions"
+            data-sticky-price={formatINR(variant.price_inr_minor)}
+          >
             <button
               className="button coral"
               onClick={add}
