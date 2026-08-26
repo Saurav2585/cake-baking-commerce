@@ -39,7 +39,11 @@ export default async function SearchPage({
       ) : (
         <div className="category-chips" aria-label="Browse a department">
           {DEPARTMENT_SHORTCUTS.map((d) => (
-            <Link key={d.slug} href={`/shop/${d.slug}`} className="category-chip">
+            <Link
+              key={d.slug}
+              href={`/shop/${d.slug}`}
+              className="category-chip"
+            >
               {d.label}
             </Link>
           ))}

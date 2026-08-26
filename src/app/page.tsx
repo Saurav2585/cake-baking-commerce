@@ -1,20 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { recipes } from "@/lib/domain/catalog";
+import { DepartmentAtlas } from "@/components/department-atlas";
+import { HeroCollage } from "@/components/hero-collage";
 import { MotionEnhancer } from "@/components/motion-enhancer";
-import { RealProductRail } from "@/components/real-product-rail";
+import { ProductRail } from "@/components/product-rail";
 import {
-  departmentDisplay,
-  departmentTileImage,
-  realProducts,
-  realProductsByBadge,
-  realProductsById,
-  type RealProductDepartment,
+  getHomepageProduct,
+  homepageProductsByBadge,
+  homepageSelectedProducts,
 } from "@/data/real-products";
-
-const shopDepartments = Object.keys(
-  departmentDisplay,
-) as RealProductDepartment[];
 
 const popularBrands = [
   "Callebaut",
@@ -33,21 +28,21 @@ const popularBrands = [
 
 export default function Home() {
   const cocoaRecipe = recipes.find((r) => r.slug === "cocoa-celebration-cake")!;
-  const bestsellers = realProductsByBadge("bestseller");
-  const newArrivals = realProductsByBadge("new");
-  const essentials = realProductsByBadge("essential");
-  const toolsAndPackaging = realProductsByBadge("tool");
-  const chocolatePromoImage = realProductsById.get("prod_real_callebaut_811")!;
-  const decoratingPromoImage = realProductsById.get(
+  const bestsellers = homepageProductsByBadge("bestseller");
+  const newArrivals = homepageProductsByBadge("new");
+  const essentials = homepageProductsByBadge("essential");
+  const toolsAndPackaging = homepageProductsByBadge("tool");
+  const chocolatePromoImage = getHomepageProduct("prod_real_callebaut_811");
+  const decoratingPromoImage = getHomepageProduct(
     "prod_real_lukzer_decorating_kit",
-  )!;
-  const heroLarge = realProductsById.get("prod_real_callebaut_811")!;
-  const heroA = realProductsById.get("prod_real_magic_colours_gel")!;
-  const heroB = realProductsById.get("prod_real_wilton_decorating_bags")!;
-  const heroSmall = realProductsById.get(
-    "prod_real_bakersville_vizyon_fondant",
-  )!;
-  const lowestPrice = Math.min(...realProducts.map((p) => p.priceInr));
+  );
+  const heroLarge = getHomepageProduct("prod_real_callebaut_811");
+  const heroA = getHomepageProduct("prod_real_magic_colours_gel");
+  const heroB = getHomepageProduct("prod_real_wilton_decorating_bags");
+  const heroSmall = getHomepageProduct("prod_real_bakersville_vizyon_fondant");
+  const lowestPrice = Math.min(
+    ...homepageSelectedProducts.map((p) => p.variants[0].price_inr_minor / 100),
+  );
 
   return (
     <MotionEnhancer>
@@ -75,49 +70,12 @@ export default function Home() {
             <li>Demo prices from ₹{lowestPrice}</li>
           </ul>
         </div>
-        <div className="hero-collage" data-measure-reveal>
-          <div className="collage-frame collage-large">
-            <div className="collage-media">
-              <Image
-                src={heroLarge.image.src}
-                alt={heroLarge.image.alt}
-                fill
-                priority
-                sizes="(max-width: 640px) 80vw, 28vw"
-              />
-            </div>
-          </div>
-          <div className="collage-frame collage-a">
-            <div className="collage-media">
-              <Image
-                src={heroA.image.src}
-                alt={heroA.image.alt}
-                fill
-                sizes="(max-width: 640px) 0vw, 20vw"
-              />
-            </div>
-          </div>
-          <div className="collage-frame collage-b">
-            <div className="collage-media">
-              <Image
-                src={heroB.image.src}
-                alt={heroB.image.alt}
-                fill
-                sizes="(max-width: 640px) 0vw, 20vw"
-              />
-            </div>
-          </div>
-          <div className="collage-frame collage-small">
-            <div className="collage-media">
-              <Image
-                src={heroSmall.image.src}
-                alt={heroSmall.image.alt}
-                fill
-                sizes="(max-width: 640px) 36vw, 12vw"
-              />
-            </div>
-          </div>
-        </div>
+        <HeroCollage
+          large={heroLarge}
+          secondaryA={heroA}
+          secondaryB={heroB}
+          foreground={heroSmall}
+        />
       </section>
       <section className="section-shell">
         <header className="editorial-heading">
@@ -128,36 +86,7 @@ export default function Home() {
             a representative sample is shoppable here now.
           </p>
         </header>
-        <div className="department-atlas">
-          {shopDepartments.map((slug, index) => {
-            const info = departmentDisplay[slug];
-            const image = departmentTileImage[slug];
-            return (
-              <Link
-                key={slug}
-                href={`/shop/${slug}`}
-                className={`department-tile tile-${index + 1}`}
-              >
-                <div className="tile-image">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    fill
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                  />
-                </div>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{info.title}</h3>
-                <p>{info.blurb}</p>
-              </Link>
-            );
-          })}
-          <Link href="/recipes" className="department-tile tile-8 recipes-tile">
-            <span>08</span>
-            <h3>Recipes</h3>
-            <p>Turn method into a measured supply plan</p>
-          </Link>
-        </div>
+        <DepartmentAtlas />
       </section>
       <section className="section-shell brand-strip-section">
         <header className="editorial-heading">
@@ -184,15 +113,19 @@ export default function Home() {
           <h2>Reached for again and again.</h2>
           <p>Curated picks, not real sales data.</p>
         </header>
-        <RealProductRail products={bestsellers} ariaLabel="Bestsellers" />
+        <ProductRail
+          products={bestsellers}
+          ariaLabel="Bestsellers"
+          badge="Bestseller"
+        />
       </section>
       <section className="section-shell promo-split-section">
         <div className="promo-split">
           <Link href="/shop/chocolate" className="promo-panel">
             <div className="promo-image">
               <Image
-                src={chocolatePromoImage.image.src}
-                alt={chocolatePromoImage.image.alt}
+                src={chocolatePromoImage.media.src}
+                alt={chocolatePromoImage.media.alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
@@ -204,8 +137,8 @@ export default function Home() {
           <Link href="/shop/decorating" className="promo-panel">
             <div className="promo-image">
               <Image
-                src={decoratingPromoImage.image.src}
-                alt={decoratingPromoImage.image.alt}
+                src={decoratingPromoImage.media.src}
+                alt={decoratingPromoImage.media.alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
@@ -222,7 +155,11 @@ export default function Home() {
           <h2>Freshly added to the demo assortment.</h2>
           <p>Recently staged in the R1 real-catalog proposal.</p>
         </header>
-        <RealProductRail products={newArrivals} ariaLabel="New arrivals" />
+        <ProductRail
+          products={newArrivals}
+          ariaLabel="New arrivals"
+          badge="New"
+        />
       </section>
       <section className="section-shell ingredient-theatre">
         <header className="editorial-heading">
@@ -233,7 +170,11 @@ export default function Home() {
             category for real bakers.
           </p>
         </header>
-        <RealProductRail products={essentials} ariaLabel="Baking essentials" />
+        <ProductRail
+          products={essentials}
+          ariaLabel="Baking essentials"
+          badge="Essential"
+        />
       </section>
       <section className="section-shell">
         <header className="editorial-heading">
@@ -241,9 +182,10 @@ export default function Home() {
           <h2>Finish, box and gift it properly.</h2>
           <p>Piping, decorating kits and cake packaging in one place.</p>
         </header>
-        <RealProductRail
+        <ProductRail
           products={toolsAndPackaging}
           ariaLabel="Tools, bakeware and packaging"
+          badge="Tool pick"
         />
       </section>
       <section className="recipe-bridge recipe-bridge-compact">

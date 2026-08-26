@@ -89,7 +89,10 @@ export function useImageCrossfade(
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia();
       mm.add(
-        { reduce: MOTION_QUERY.reducedMotion, coarse: MOTION_QUERY.coarsePointer },
+        {
+          reduce: MOTION_QUERY.reducedMotion,
+          coarse: MOTION_QUERY.coarsePointer,
+        },
         (context) => {
           const { reduce, coarse } = context.conditions as {
             reduce: boolean;
@@ -120,7 +123,9 @@ export function useImageCrossfade(
     if (!container) return;
 
     const currentImage = container.querySelector<HTMLElement>(IMAGE_SELECTOR);
-    const withEls = Array.from(container.querySelectorAll<HTMLElement>(WITH_SELECTOR));
+    const withEls = Array.from(
+      container.querySelectorAll<HTMLElement>(WITH_SELECTOR),
+    );
     const prev = stateRef.current;
 
     // Interruption contract: a new activeKey always kills the prior
@@ -131,7 +136,8 @@ export function useImageCrossfade(
     if (!prev || prev.key === activeKey) {
       // First run, or activeKey unchanged: nothing to crossfade — settle
       // to final state and record this content as the next baseline.
-      if (currentImage) gsap.set(currentImage, { opacity: 1, clearProps: "scale" });
+      if (currentImage)
+        gsap.set(currentImage, { opacity: 1, clearProps: "scale" });
       if (withEls.length) gsap.set(withEls, { opacity: 1 });
       stateRef.current = { key: activeKey, imageNode: currentImage };
       return;
@@ -144,7 +150,8 @@ export function useImageCrossfade(
       // Immediate atomic replacement: no crossfade, no scale — matches
       // exactly the content the animated version eventually settles into.
       if (outgoing?.parentElement) outgoing.remove();
-      if (currentImage) gsap.set(currentImage, { opacity: 1, clearProps: "scale" });
+      if (currentImage)
+        gsap.set(currentImage, { opacity: 1, clearProps: "scale" });
       if (withEls.length) gsap.set(withEls, { opacity: 1 });
       stateRef.current = { key: activeKey, imageNode: currentImage };
       return;
@@ -153,7 +160,10 @@ export function useImageCrossfade(
     // Re-attach the captured outgoing node as an absolutely-positioned
     // overlay so it can fade out while the already-rendered incoming node
     // fades in, both inside the same reserved frame (zero CLS).
-    if (currentImage?.parentElement && !currentImage.parentElement.contains(outgoing)) {
+    if (
+      currentImage?.parentElement &&
+      !currentImage.parentElement.contains(outgoing)
+    ) {
       outgoing.setAttribute("aria-hidden", "true");
       outgoing.style.position = "absolute";
       outgoing.style.inset = "0";
@@ -174,16 +184,33 @@ export function useImageCrossfade(
       tl.fromTo(
         currentImage,
         { opacity: 0, scale: coarse ? 1 : MOTION_SCALE.enter },
-        { opacity: 1, scale: 1, duration: CROSSFADE_DURATION_SEC, ease: MOTION_EASE.standard },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: CROSSFADE_DURATION_SEC,
+          ease: MOTION_EASE.standard,
+        },
         0,
       );
     }
-    tl.to(outgoing, { opacity: 0, duration: CROSSFADE_DURATION_SEC, ease: MOTION_EASE.standard }, 0);
+    tl.to(
+      outgoing,
+      {
+        opacity: 0,
+        duration: CROSSFADE_DURATION_SEC,
+        ease: MOTION_EASE.standard,
+      },
+      0,
+    );
     if (withEls.length) {
       tl.fromTo(
         withEls,
         { opacity: MOTION_OPACITY_SOFT },
-        { opacity: 1, duration: CROSSFADE_DURATION_SEC, ease: MOTION_EASE.standard },
+        {
+          opacity: 1,
+          duration: CROSSFADE_DURATION_SEC,
+          ease: MOTION_EASE.standard,
+        },
         0,
       );
     }

@@ -90,9 +90,7 @@ export function ShopExplorer({
 
   const toggleBrand = (brand: string) => {
     setBrands((prev) =>
-      prev.includes(brand)
-        ? prev.filter((b) => b !== brand)
-        : [...prev, brand],
+      prev.includes(brand) ? prev.filter((b) => b !== brand) : [...prev, brand],
     );
   };
 

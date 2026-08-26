@@ -31,8 +31,9 @@
 
 import type gsapType from "gsap";
 
-let registerPromise: Promise<typeof import("gsap/ScrollTrigger").ScrollTrigger | null> | null =
-  null;
+let registerPromise: Promise<
+  typeof import("gsap/ScrollTrigger").ScrollTrigger | null
+> | null = null;
 
 /**
  * Dynamically imports and registers GSAP's ScrollTrigger plugin exactly

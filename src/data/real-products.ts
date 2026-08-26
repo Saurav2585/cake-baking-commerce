@@ -1,13 +1,15 @@
 /**
- * Recovery R2A/R2B1 — homepage merchandising view over the canonical real catalog.
+ * Recovery R2A/R2B1/R2B2 — homepage merchandising view over the canonical real catalog.
  *
- * This is not a second catalog: every field here is read directly off the 48-product
- * canonical catalog in `src/lib/domain/catalog.ts` (Product_Master_Data.json /
- * SKU_Variant_Data.json / Catalog_Asset_Manifest.json). This module only picks a
- * representative subset of 12 products and attaches homepage-only curatorial data
- * (which merchandising rail/badge each one appears under) that has no canonical home.
- * Add-to-cart and wishlist use the real canonical product/variant/SKU IDs, so a line
- * added from the homepage is the same line a future PLP/PDP would add.
+ * This is not a second catalog: every field consumed by the homepage comes directly
+ * off the 48-product canonical catalog in `src/lib/domain/catalog.ts`
+ * (Product_Master_Data.json / SKU_Variant_Data.json / Catalog_Asset_Manifest.json).
+ * This module only picks a representative subset of 12 products and attaches
+ * homepage-only curatorial data (which merchandising rail/badge each one appears
+ * under) that has no canonical home. Callers use the returned `CatalogProduct`
+ * values directly (via `ProductCard`), so add-to-cart and wishlist use the real
+ * canonical product/variant/SKU IDs — a line added from the homepage is the same
+ * line a future PLP/PDP would add.
  */
 import { catalog } from "@/lib/domain/catalog";
 import type { CatalogProduct } from "@/lib/domain/types";
@@ -21,30 +23,6 @@ export type RealProductDepartment =
   | "decorating"
   | "bakeware-tools"
   | "packaging";
-
-const DEPARTMENT_BY_ID: Record<string, RealProductDepartment> = {
-  dept_ingredients: "ingredients",
-  dept_chocolate: "chocolate",
-  dept_colours_flavours: "colours-flavours",
-  dept_fillings_fondant: "fillings-fondant",
-  dept_decorating: "decorating",
-  dept_bakeware_tools: "bakeware-tools",
-  dept_packaging: "packaging",
-};
-
-export interface RealProduct {
-  id: string;
-  sku: string;
-  variantId: string;
-  brand: string;
-  title: string;
-  department: RealProductDepartment;
-  packLabel: string;
-  priceInr: number;
-  image: { src: string; alt: string; width: number; height: number };
-  badges: RealProductBadge[];
-  note?: string;
-}
 
 const HOMEPAGE_SELECTION: Record<
   string,
@@ -70,46 +48,28 @@ const HOMEPAGE_SELECTION: Record<
   prod_real_eco_bags_cake_box: { badges: ["new", "tool"] },
 };
 
-function toRealProduct(product: CatalogProduct): RealProduct {
-  const selection = HOMEPAGE_SELECTION[product.id];
-  const variant = product.variants[0];
-  const department = DEPARTMENT_BY_ID[product.department_id];
-  if (!selection || !department)
-    throw new Error(`Unmapped homepage product: ${product.id}`);
-  return {
-    id: product.id,
-    sku: variant.sku,
-    variantId: variant.id,
-    brand: product.brandName,
-    title: product.title,
-    department,
-    packLabel: variant.normalized_sell_quantity.display_label,
-    priceInr: variant.price_inr_minor / 100,
-    image: {
-      src: product.media.src,
-      alt: product.media.alt,
-      width: product.media.width,
-      height: product.media.height,
-    },
-    badges: selection.badges,
-    note: selection.note,
-  };
+export const homepageSelectedProducts: CatalogProduct[] = catalog.filter(
+  (product) => Object.hasOwn(HOMEPAGE_SELECTION, product.id),
+);
+
+const homepageProductsById = new Map(
+  homepageSelectedProducts.map((product) => [product.id, product]),
+);
+
+/** Looks up one homepage-curated product by canonical catalog id. Throws if the
+ * id isn't in `HOMEPAGE_SELECTION` — every homepage caller passes a known id. */
+export function getHomepageProduct(id: string): CatalogProduct {
+  const product = homepageProductsById.get(id);
+  if (!product) throw new Error(`Unmapped homepage product: ${id}`);
+  return product;
 }
 
-export const realProducts: RealProduct[] = catalog
-  .filter((product) => Object.hasOwn(HOMEPAGE_SELECTION, product.id))
-  .map(toRealProduct);
-
-export const realProductsById = new Map(realProducts.map((p) => [p.id, p]));
-
-export function realProductsByBadge(badge: RealProductBadge): RealProduct[] {
-  return realProducts.filter((product) => product.badges.includes(badge));
-}
-
-export function realProductsByDepartment(
-  department: RealProductDepartment,
-): RealProduct[] {
-  return realProducts.filter((product) => product.department === department);
+export function homepageProductsByBadge(
+  badge: RealProductBadge,
+): CatalogProduct[] {
+  return homepageSelectedProducts.filter((product) =>
+    HOMEPAGE_SELECTION[product.id]!.badges.includes(badge),
+  );
 }
 
 export const departmentDisplay: Record<
@@ -161,7 +121,7 @@ export const departmentTileImage: Record<
   { src: string; alt: string }
 > = Object.fromEntries(
   Object.entries(DEPARTMENT_TILE_PRODUCT_ID).map(([department, productId]) => {
-    const product = realProductsById.get(productId)!;
-    return [department, { src: product.image.src, alt: product.image.alt }];
+    const product = getHomepageProduct(productId);
+    return [department, { src: product.media.src, alt: product.media.alt }];
   }),
 ) as Record<RealProductDepartment, { src: string; alt: string }>;

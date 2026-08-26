@@ -1086,8 +1086,8 @@ h3 {
   margin-top: 2.5rem;
 }
 .confirmation .reference-code {
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
-    monospace;
+  font-family:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
   background: var(--surface-subtle);
   padding: 0.15rem 0.5rem;
   border-radius: 4px;
@@ -2181,7 +2181,7 @@ h3 {
    module), Premium_Visual_Acceptance_Gate.md §2.4 (calm/unhurried, quiet
    critical-facts, decelerating page rhythm) and Motion_3D_Specification.md
    §6 (Storyboard C crossfade data-attribute hooks). Extends the existing
-   .pdp-*/.buy-panel/.facts-section selectors and reuses the shared
+   .pdp-, .buy-panel and .facts-section selectors and reuses the shared
    .product-image-canvas rule (Decision 2, defined above) rather than
    redefining it or touching rules owned by other worktrees. */
 

@@ -68,11 +68,15 @@ export function useGroupedReveal(
         const groups = (self?.selector?.(groupSelector) ?? []) as Element[];
 
         const targetsFor = (group: Element) =>
-          itemSelector ? Array.from(group.querySelectorAll(itemSelector)) : [group];
+          itemSelector
+            ? Array.from(group.querySelectorAll(itemSelector))
+            : [group];
 
         if (reduce) {
           // Static final state; IntersectionObserver is never attached.
-          groups.forEach((group) => gsap.set(targetsFor(group), { y: 0, opacity: 1 }));
+          groups.forEach((group) =>
+            gsap.set(targetsFor(group), { y: 0, opacity: 1 }),
+          );
           return;
         }
 
@@ -109,7 +113,8 @@ export function useGroupedReveal(
                 return;
               }
               const groupIndex = groups.indexOf(group);
-              const delaySec = groupIndex >= 0 ? groupIndex * MOTION_STAGGER.tight : 0;
+              const delaySec =
+                groupIndex >= 0 ? groupIndex * MOTION_STAGGER.tight : 0;
               settle(group, delaySec);
             });
           },

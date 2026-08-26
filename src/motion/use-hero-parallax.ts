@@ -80,19 +80,27 @@ export function useHeroParallax(containerRef: RefObject<HTMLElement | null>) {
             // Full final composition renders immediately. The mousemove
             // listener is never attached at all (we return here, before
             // any pointer handler is registered below).
-            gsap.set([z2, z3, z4], { x: 0, y: 0, opacity: 1, clearProps: "rotate" });
+            gsap.set([z2, z3, z4], {
+              x: 0,
+              y: 0,
+              opacity: 1,
+              clearProps: "rotate",
+            });
             return;
           }
 
           // ENTRY: depth-staggered settle, runs once regardless of breakpoint.
-          const entryDistance = mobile ? HERO_PARALLAX_MAX_PX.mobile : undefined;
+          const entryDistance = mobile
+            ? HERO_PARALLAX_MAX_PX.mobile
+            : undefined;
           gsap.fromTo(
             z2,
             { y: entryDistance ?? 6, opacity: MOTION_OPACITY_SOFT },
             {
               y: 0,
               opacity: 1,
-              duration: HERO_ENTRY_PHASE_SEC.z2.end - HERO_ENTRY_PHASE_SEC.z2.start,
+              duration:
+                HERO_ENTRY_PHASE_SEC.z2.end - HERO_ENTRY_PHASE_SEC.z2.start,
               delay: HERO_ENTRY_PHASE_SEC.z2.start,
               ease: MOTION_EASE.enter,
             },
@@ -104,7 +112,8 @@ export function useHeroParallax(containerRef: RefObject<HTMLElement | null>) {
               {
                 y: 0,
                 opacity: 1,
-                duration: HERO_ENTRY_PHASE_SEC.z3.end - HERO_ENTRY_PHASE_SEC.z3.start,
+                duration:
+                  HERO_ENTRY_PHASE_SEC.z3.end - HERO_ENTRY_PHASE_SEC.z3.start,
                 delay: HERO_ENTRY_PHASE_SEC.z3.start,
                 ease: MOTION_EASE.enter,
               },
@@ -121,7 +130,8 @@ export function useHeroParallax(containerRef: RefObject<HTMLElement | null>) {
               y: 0,
               opacity: 1,
               rotate: RESTING_ROTATE_DEG,
-              duration: HERO_ENTRY_PHASE_SEC.z4.end - HERO_ENTRY_PHASE_SEC.z4.start,
+              duration:
+                HERO_ENTRY_PHASE_SEC.z4.end - HERO_ENTRY_PHASE_SEC.z4.start,
               delay: HERO_ENTRY_PHASE_SEC.z4.start,
               ease: MOTION_EASE.enter,
             },
@@ -135,26 +145,77 @@ export function useHeroParallax(containerRef: RefObject<HTMLElement | null>) {
           const container = containerRef.current;
           if (!container) return;
 
-          const quickZ2X = gsap.quickTo(z2, "x", { duration: 0.4, ease: MOTION_EASE.standard });
-          const quickZ2Y = gsap.quickTo(z2, "y", { duration: 0.4, ease: MOTION_EASE.standard });
-          const quickZ3X = gsap.quickTo(z3, "x", { duration: 0.4, ease: MOTION_EASE.standard });
-          const quickZ3Y = gsap.quickTo(z3, "y", { duration: 0.4, ease: MOTION_EASE.standard });
-          const quickZ4X = gsap.quickTo(z4, "x", { duration: 0.4, ease: MOTION_EASE.standard });
-          const quickZ4Y = gsap.quickTo(z4, "y", { duration: 0.4, ease: MOTION_EASE.standard });
+          const quickZ2X = gsap.quickTo(z2, "x", {
+            duration: 0.4,
+            ease: MOTION_EASE.standard,
+          });
+          const quickZ2Y = gsap.quickTo(z2, "y", {
+            duration: 0.4,
+            ease: MOTION_EASE.standard,
+          });
+          const quickZ3X = gsap.quickTo(z3, "x", {
+            duration: 0.4,
+            ease: MOTION_EASE.standard,
+          });
+          const quickZ3Y = gsap.quickTo(z3, "y", {
+            duration: 0.4,
+            ease: MOTION_EASE.standard,
+          });
+          const quickZ4X = gsap.quickTo(z4, "x", {
+            duration: 0.4,
+            ease: MOTION_EASE.standard,
+          });
+          const quickZ4Y = gsap.quickTo(z4, "y", {
+            duration: 0.4,
+            ease: MOTION_EASE.standard,
+          });
 
-          const clamp = (value: number, max: number) => Math.max(-max, Math.min(max, value));
+          const clamp = (value: number, max: number) =>
+            Math.max(-max, Math.min(max, value));
 
           const onMouseMove = (event: MouseEvent) => {
             const rect = container.getBoundingClientRect();
-            const relX = (event.clientX - rect.left - rect.width / 2) / (rect.width / 2);
-            const relY = (event.clientY - rect.top - rect.height / 2) / (rect.height / 2);
+            const relX =
+              (event.clientX - rect.left - rect.width / 2) / (rect.width / 2);
+            const relY =
+              (event.clientY - rect.top - rect.height / 2) / (rect.height / 2);
 
-            quickZ2X(clamp(relX * HERO_PARALLAX_MAX_PX.z2 * HERO_PARALLAX_COEFFICIENT.z2, HERO_PARALLAX_MAX_PX.z2));
-            quickZ2Y(clamp(relY * HERO_PARALLAX_MAX_PX.z2 * HERO_PARALLAX_COEFFICIENT.z2, HERO_PARALLAX_MAX_PX.z2));
-            quickZ3X(clamp(relX * HERO_PARALLAX_MAX_PX.z3 * HERO_PARALLAX_COEFFICIENT.z3, HERO_PARALLAX_MAX_PX.z3));
-            quickZ3Y(clamp(relY * HERO_PARALLAX_MAX_PX.z3 * HERO_PARALLAX_COEFFICIENT.z3, HERO_PARALLAX_MAX_PX.z3));
-            quickZ4X(clamp(relX * HERO_PARALLAX_MAX_PX.z4 * HERO_PARALLAX_COEFFICIENT.z4, HERO_PARALLAX_MAX_PX.z4));
-            quickZ4Y(clamp(relY * HERO_PARALLAX_MAX_PX.z4 * HERO_PARALLAX_COEFFICIENT.z4, HERO_PARALLAX_MAX_PX.z4));
+            quickZ2X(
+              clamp(
+                relX * HERO_PARALLAX_MAX_PX.z2 * HERO_PARALLAX_COEFFICIENT.z2,
+                HERO_PARALLAX_MAX_PX.z2,
+              ),
+            );
+            quickZ2Y(
+              clamp(
+                relY * HERO_PARALLAX_MAX_PX.z2 * HERO_PARALLAX_COEFFICIENT.z2,
+                HERO_PARALLAX_MAX_PX.z2,
+              ),
+            );
+            quickZ3X(
+              clamp(
+                relX * HERO_PARALLAX_MAX_PX.z3 * HERO_PARALLAX_COEFFICIENT.z3,
+                HERO_PARALLAX_MAX_PX.z3,
+              ),
+            );
+            quickZ3Y(
+              clamp(
+                relY * HERO_PARALLAX_MAX_PX.z3 * HERO_PARALLAX_COEFFICIENT.z3,
+                HERO_PARALLAX_MAX_PX.z3,
+              ),
+            );
+            quickZ4X(
+              clamp(
+                relX * HERO_PARALLAX_MAX_PX.z4 * HERO_PARALLAX_COEFFICIENT.z4,
+                HERO_PARALLAX_MAX_PX.z4,
+              ),
+            );
+            quickZ4Y(
+              clamp(
+                relY * HERO_PARALLAX_MAX_PX.z4 * HERO_PARALLAX_COEFFICIENT.z4,
+                HERO_PARALLAX_MAX_PX.z4,
+              ),
+            );
 
             gsap.set([z2, z3, z4], { willChange: "transform" });
           };
@@ -166,7 +227,8 @@ export function useHeroParallax(containerRef: RefObject<HTMLElement | null>) {
               duration: MOTION_DURATION.local,
               ease: MOTION_EASE.standard,
               overwrite: true,
-              onComplete: () => gsap.set([z2, z3, z4], { clearProps: "willChange" }),
+              onComplete: () =>
+                gsap.set([z2, z3, z4], { clearProps: "willChange" }),
             });
           };
 

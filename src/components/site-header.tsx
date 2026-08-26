@@ -141,8 +141,7 @@ export function SiteHeader() {
     <>
       <div className="demo-strip">
         Portfolio demo · Pantryform is a fictional retailer showcasing real,
-        sourced products · pricing, checkout and orders are simulated, not
-        real
+        sourced products · pricing, checkout and orders are simulated, not real
       </div>
       <div className="offer-bar">
         <span>7 baking-supply departments</span>
@@ -211,7 +210,9 @@ export function SiteHeader() {
                 {cartCount > 0 && (
                   <span
                     className={
-                      cartPulse ? "count-badge count-badge--pulse" : "count-badge"
+                      cartPulse
+                        ? "count-badge count-badge--pulse"
+                        : "count-badge"
                     }
                   >
                     {cartCount}
@@ -296,7 +297,9 @@ export function SiteHeader() {
                 {cartCount > 0 && (
                   <span
                     className={
-                      cartPulse ? "count-badge count-badge--pulse" : "count-badge"
+                      cartPulse
+                        ? "count-badge count-badge--pulse"
+                        : "count-badge"
                     }
                   >
                     {cartCount}
