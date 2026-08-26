@@ -10,5 +10,6 @@ export default defineConfig([
     "design_review/**",
     "production_artifacts/**",
     "public/catalog-assets/**",
+    ".claude/worktrees/**",
   ]),
 ]);

@@ -377,7 +377,7 @@ a.icon-action:focus-visible {
   max-width: var(--max);
   margin: auto;
   display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
+  grid-template-columns: minmax(0, 24rem) 1fr;
   gap: 3.5vw;
   align-items: center;
   padding: 2.75rem 3vw 3.25rem;
@@ -432,13 +432,9 @@ a.icon-action:focus-visible {
 }
 .hero-collage {
   position: relative;
-  min-height: 28rem;
+  min-height: 30rem;
   border-radius: 20px;
-  padding: 1.75rem;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 1rem;
+  padding: 1rem;
   background:
     radial-gradient(
       120% 130% at 100% 0%,
@@ -447,11 +443,16 @@ a.icon-action:focus-visible {
     ),
     linear-gradient(155deg, var(--ink) 0%, #3a2438 55%, var(--ink) 100%);
 }
+/* R2B2V: every packshot frame is now absolutely positioned inside the
+   padded box (the containing block for an abspos child is the parent's
+   padding box, so inset:0 already respects .hero-collage's own padding
+   without any extra math) — this replaces the old 2x2-ish CSS grid with
+   one dominant primary frame plus layered, overlapping accent chips. */
 .collage-frame {
-  position: relative;
+  position: absolute;
   background: var(--surface);
   border-radius: 12px;
-  padding: 12%;
+  padding: 5%;
   box-shadow: 0 18px 34px -20px rgb(0 0 0 / 0.5);
 }
 .collage-media {
@@ -463,14 +464,32 @@ a.icon-action:focus-visible {
   object-fit: contain;
 }
 .collage-large {
-  grid-row: 1/3;
+  inset: 0;
+  z-index: 1;
+}
+.collage-a {
+  z-index: 2;
+  top: -1rem;
+  right: 7%;
+  width: 29%;
+  aspect-ratio: 1;
+  transform: rotate(6deg);
+  border: 5px solid var(--canvas);
+}
+.collage-b {
+  z-index: 2;
+  bottom: 16%;
+  right: -1.2rem;
+  width: 24%;
+  aspect-ratio: 1;
+  transform: rotate(-4deg);
+  border: 5px solid var(--canvas);
 }
 .collage-small {
-  position: absolute;
-  z-index: 2;
+  z-index: 3;
   left: -1.1rem;
   bottom: -1.1rem;
-  width: 38%;
+  width: 34%;
   aspect-ratio: 1;
   transform: rotate(-6deg);
   border: 5px solid var(--canvas);
@@ -602,16 +621,11 @@ h3 {
 .department-tile.recipes-tile {
   background: var(--ink);
 }
-.department-tile > span,
 .department-tile > h3,
 .department-tile > p {
   position: relative;
   z-index: 1;
   color: white;
-}
-.department-tile span {
-  color: var(--saffron);
-  font-weight: 900;
 }
 .department-tile h3 {
   margin-top: auto;
@@ -724,15 +738,13 @@ h3 {
 .recipe-bridge-compact .recipe-image {
   min-height: 26rem;
 }
-.rp-rail {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.5rem;
-}
-.rp-rail[aria-label="Tools, bakeware and packaging"] {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-.rp-card {
+/* R2B2V fix: the rail variant's actual DOM class is `.product-card--rail`
+   (product-card.tsx) — `.rp-card` alone never matched anything, so rail
+   cards rendered with no border/radius/hover treatment at all. Extending
+   the selector list (not renaming `.product-card`'s root class) restores
+   the chrome this rule was always meant to provide. */
+.rp-card,
+.product-card--rail {
   position: relative;
   min-width: 0;
   background: var(--surface);
@@ -747,12 +759,15 @@ h3 {
     border-color 0.18s ease;
 }
 .rp-card:hover,
-.rp-card:focus-within {
+.rp-card:focus-within,
+.product-card--rail:hover,
+.product-card--rail:focus-within {
   border-color: color-mix(in srgb, var(--ink), transparent 78%);
   box-shadow: 0 16px 30px -20px rgb(43 27 43 / 0.4);
   transform: translateY(-3px);
 }
-.rp-card h3 {
+.rp-card h3,
+.product-card--rail h3 {
   font-size: 1.2rem;
   min-height: 2.3em;
   margin: 0.5rem 0 0.3rem;
@@ -764,13 +779,23 @@ h3 {
   background: var(--surface);
   border-radius: 6px;
   overflow: hidden;
-  padding: 10%;
+  padding: 5%;
 }
+/* R2B2V fix: see the matching comment on .product-image-canvas img above —
+   next/image's inline `inset:0; width:100%; height:100%` otherwise
+   overrides this container's padding entirely. All three must be
+   overridden together: inset alone only shifts the image's top-left
+   origin (it still bleeds past the shrunk box on the far edges) unless
+   width/height also shrink to match. */
 .rp-image img {
+  inset: 5% !important;
+  width: 90% !important;
+  height: 90% !important;
   object-fit: contain;
   transition: transform 0.22s ease;
 }
-.rp-card:hover .rp-image img {
+.rp-card:hover .rp-image img,
+.product-card--rail:hover .rp-image img {
   transform: scale(1.04);
 }
 .rp-badge {
@@ -784,7 +809,8 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   padding: 0.34rem 0.6rem;
-  border-radius: 999px;
+  border-radius: 8px;
+  border: 1.5px solid color-mix(in srgb, var(--saffron-dark), black 15%);
 }
 .rp-wishlist {
   position: absolute;
@@ -797,7 +823,7 @@ h3 {
   place-items: center;
   background: var(--surface);
   color: var(--ink);
-  border: 1px solid color-mix(in srgb, var(--ink), transparent 82%);
+  border: 1.5px solid color-mix(in srgb, var(--ink), transparent 82%);
   border-radius: 50%;
   transition:
     background 0.15s ease,
@@ -812,14 +838,20 @@ h3 {
   border-color: var(--coral-dark);
   color: white;
 }
+.card-facts span {
+  font-size: 1rem;
+  color: var(--muted);
+}
 .card-facts strong {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
+  font-weight: 800;
 }
 .rp-add {
   width: 100%;
-  margin-top: 0.75rem;
+  margin-top: 0.9rem;
   min-height: 46px;
-  border-radius: 6px;
+  border-radius: 8px;
+  border-width: 1.5px;
   font-size: 0.85rem;
   letter-spacing: 0.02em;
   transition:
@@ -1128,10 +1160,6 @@ h3 {
   .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .rp-rail,
-  .rp-rail[aria-label="Tools, bakeware and packaging"] {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
   .promo-split {
     grid-template-columns: 1fr;
   }
@@ -1204,18 +1232,13 @@ h3 {
     flex-direction: column;
   }
   .hero-collage {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
     min-height: 0;
-    padding: 1.1rem;
+    aspect-ratio: 1;
+    padding: 0.6rem;
   }
   .collage-a,
   .collage-b {
     display: none;
-  }
-  .collage-large {
-    grid-row: auto;
-    aspect-ratio: 4/3;
   }
   .collage-small {
     width: 46%;
@@ -1231,10 +1254,6 @@ h3 {
   }
   .department-tile {
     min-height: 12rem;
-  }
-  .rp-rail,
-  .rp-rail[aria-label="Tools, bakeware and packaging"] {
-    grid-template-columns: 1fr;
   }
   .brand-strip li {
     padding: 0.6rem 1rem;
@@ -1874,9 +1893,23 @@ h3 {
   background: var(--surface);
   border-radius: 6px;
   overflow: hidden;
-  padding: 10%;
+  padding: 5%;
 }
+/* R2B2V fix: next/image's `fill` prop sets `inset:0; width:100%;
+   height:100%` as INLINE styles on the <img>, which win over the `padding`
+   declared above — the containing block for an absolutely positioned
+   element is its ancestor's *padding* box, so that padding never actually
+   shrank the image (a pre-existing no-op predating this phase; confirmed
+   via computed styles, canvas and img boxes were pixel-identical).
+   !important is required to win over the inline styles, and all three
+   properties must be overridden together: inset alone only moves the
+   image's origin, it still bleeds past the shrunk box on the far edges
+   unless width/height shrink to match. This is the only lever that
+   actually controls image fill percentage. */
 .product-image-canvas img {
+  inset: 5% !important;
+  width: 90% !important;
+  height: 90% !important;
   object-fit: contain;
   transition: transform 0.22s ease;
 }
@@ -1901,7 +1934,12 @@ h3 {
 }
 @media (max-width: 640px) {
   .product-grid .product-image-canvas {
-    padding: 8%;
+    padding: 6%;
+  }
+  .product-grid .product-image-canvas img {
+    inset: 6% !important;
+    width: 88% !important;
+    height: 88% !important;
   }
 }
 
@@ -1918,7 +1956,8 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   padding: 0.34rem 0.6rem;
-  border-radius: 999px;
+  border-radius: 8px;
+  border: 1.5px solid color-mix(in srgb, var(--saffron-dark), black 15%);
 }
 .product-wishlist {
   position: absolute;
@@ -1931,7 +1970,7 @@ h3 {
   place-items: center;
   background: var(--surface);
   color: var(--ink);
-  border: 1px solid color-mix(in srgb, var(--ink), transparent 82%);
+  border: 1.5px solid color-mix(in srgb, var(--ink), transparent 82%);
   border-radius: 50%;
   transition:
     background 0.15s ease,
@@ -1950,9 +1989,10 @@ h3 {
 /* --- Quick add / Select options (Route_UI_Specification.md §1.5) --- */
 .product-add {
   width: 100%;
-  margin-top: 0.75rem;
+  margin-top: 0.9rem;
   min-height: 46px;
-  border-radius: 6px;
+  border-radius: 8px;
+  border-width: 1.5px;
   font-size: 0.85rem;
   letter-spacing: 0.02em;
   text-decoration: none;
@@ -2018,7 +2058,7 @@ h3 {
     color: var(--muted);
   }
   .product-grid .card-facts strong {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
   }
   .product-add {
     min-height: 42px;
@@ -2036,7 +2076,7 @@ h3 {
   background: var(--surface);
   border: 1px solid color-mix(in srgb, var(--ink), transparent 90%);
   border-radius: 10px;
-  padding: 1rem 1.25rem;
+  padding: 0.85rem 1.25rem;
   align-items: flex-end;
 }
 .filters label {
@@ -2458,3 +2498,236 @@ h3 {
   border-radius: 8px;
 }
 /* ===== end R2B2V PDP/Cart/Checkout ===== */
+
+/* ===== R2B2V Homepage/PLP ===== */
+/* Owner: Homepage/PLP workstream. Implements the "Homepage", "Product Cards"
+   and "PLP/Category/Search" sections of
+   design_review/recovery_r2b2v/Remediation_Specification.md. Every rule here
+   is scoped under a new wrapper class (.rail-*, .grid-merch-break, .page-hero
+   h1) or targets a heading modifier added in page.tsx — nothing here touches
+   `.product-card`'s root selector, its variant contract, or commerce state.
+   Sizing/padding rules the spec asks to change in place (.hero-collage,
+   .collage-frame, .product-image-canvas/.rp-image, .card-facts,
+   .product-badge/.rp-badge/.product-wishlist/.rp-wishlist/.product-add/
+   .rp-add, .filters) were edited directly at their original declarations
+   above, per the ownership note for this phase — this banner only holds
+   genuinely new rules. */
+
+/* --- PLP/category/search: the sitewide hero h1 (up to 125px) was sized for
+   the homepage hero, not a 48-product listing page. --- */
+.page-hero h1 {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+}
+
+/* --- Homepage section header without an eyebrow (filmstrip + shelf
+   patterns): one line tighter since there's no eyebrow row above the h2. --- */
+.editorial-heading-compact {
+  margin-bottom: 2.25rem;
+}
+
+/* --- PLP scanability break: one full-width divider row inside the flat
+   .product-grid, after the first 8 items and every 16 after that. --- */
+.grid-merch-break {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.35rem 0;
+  color: var(--muted);
+  font: 800 0.72rem/1 var(--ui);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.grid-merch-break::before,
+.grid-merch-break::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: color-mix(in srgb, var(--ink), transparent 88%);
+}
+
+/* --- Compact mini-card layout shared by the editorial rail's stack rows
+   and the split rail's tiles: image left (spanning every text row via
+   grid-row: 1/-1), a stacked text column on the right. Scoped strictly
+   under these two wrapper classes — `.rp-card`'s default (image-above-text)
+   layout used everywhere else on the site is untouched. --- */
+.rail-editorial-row .product-card,
+.rail-split-tile .product-card {
+  display: grid;
+  grid-template-columns: 4.75rem 1fr;
+  column-gap: 0.9rem;
+  align-items: center;
+  padding: 0.6rem;
+}
+.rail-editorial-row .rp-image,
+.rail-split-tile .rp-image {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  width: 100%;
+  padding: 8%;
+}
+.rail-editorial-row .rp-image img,
+.rail-split-tile .rp-image img {
+  inset: 8% !important;
+  width: 84% !important;
+  height: 84% !important;
+}
+.rail-editorial-row .rp-card .eyebrow,
+.rail-editorial-row .rp-card h3,
+.rail-editorial-row .rp-card .card-facts,
+.rail-editorial-row .rp-add,
+.rail-split-tile .rp-card .eyebrow,
+.rail-split-tile .rp-card h3,
+.rail-split-tile .rp-card .card-facts,
+.rail-split-tile .rp-add {
+  grid-column: 2;
+}
+.rail-editorial-row h3,
+.rail-split-tile h3 {
+  font-size: 0.95rem;
+  min-height: 0;
+  margin: 0.1rem 0;
+}
+.rail-editorial-row .availability,
+.rail-split-tile .availability {
+  display: none;
+}
+.rail-editorial-row .rp-badge,
+.rail-split-tile .rp-badge {
+  display: none;
+}
+.rail-editorial-row .rp-wishlist,
+.rail-split-tile .rp-wishlist {
+  position: static;
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-left: auto;
+}
+.rail-editorial-row .rp-add,
+.rail-split-tile .rp-add {
+  width: auto;
+  justify-self: start;
+  margin-top: 0.4rem;
+  min-height: 34px;
+  padding: 0 0.75rem;
+  font-size: 0.75rem;
+}
+
+/* --- Pattern 1: editorial feature (Bestsellers). One oversized hero-pick
+   card at roughly 45% width beside a tighter vertical stack of the
+   remaining picks — not a 4-up grid. --- */
+.rail-editorial {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.rail-editorial-feature .product-card {
+  height: 100%;
+}
+.rail-editorial-feature .rp-image {
+  padding: 4%;
+}
+.rail-editorial-feature .rp-image img {
+  inset: 4% !important;
+  width: 92% !important;
+  height: 92% !important;
+}
+.rail-editorial-feature h3 {
+  font-size: 1.5rem;
+}
+.rail-feature-caption {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  max-width: 32ch;
+}
+.rail-editorial-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+@media (max-width: 900px) {
+  .rail-editorial {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Pattern 2: horizontal filmstrip (New Arrivals). Fixed-width cards in a
+   scroll-snapped row, not stretched grid columns — a different silhouette
+   even before content loads. --- */
+.rail-filmstrip {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  margin: 0 -0.25rem;
+  padding: 0.25rem 0.25rem 0.75rem;
+}
+.rail-filmstrip-item {
+  flex: 0 0 16rem;
+  scroll-snap-align: start;
+}
+.rail-filmstrip-item .product-card {
+  height: 100%;
+}
+@media (max-width: 640px) {
+  .rail-filmstrip-item {
+    flex: 0 0 13rem;
+  }
+}
+
+/* --- Pattern 3: asymmetric category split (Baking essentials). One
+   CSS-textured .promo-panel introducing the category, compact product tiles
+   stacked beside it. --- */
+.rail-split {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+.rail-split-panel {
+  min-height: 100%;
+}
+.rail-split-tiles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+@media (max-width: 900px) {
+  .rail-split {
+    grid-template-columns: 1fr;
+  }
+  .rail-split-panel {
+    min-height: 16rem;
+  }
+}
+
+/* --- Pattern 4: compact shelf (Tools/Bakeware/Packaging). Denser,
+   smaller-format, minimal-copy cards that wrap rather than stretch to fill
+   equal grid columns. --- */
+.rail-shelf {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.rail-shelf-item {
+  flex: 0 1 11rem;
+  min-width: 8.5rem;
+}
+.rail-shelf-item .rp-image {
+  padding: 8%;
+}
+.rail-shelf-item .rp-image img {
+  inset: 8% !important;
+  width: 84% !important;
+  height: 84% !important;
+}
+.rail-shelf-item h3 {
+  font-size: 1rem;
+  min-height: 0;
+}
+.rail-shelf-item .availability {
+  display: none;
+}
+/* ===== end R2B2V Homepage/PLP ===== */

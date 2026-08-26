@@ -31,3 +31,6 @@ temp/
 .vscode/
 .vercel
 .env*
+
+# Claude Code agent worktrees
+.claude/worktrees/

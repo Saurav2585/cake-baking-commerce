@@ -117,6 +117,9 @@ export default function Home() {
           products={bestsellers}
           ariaLabel="Bestsellers"
           badge="Bestseller"
+          pattern="editorial"
+          featureId="prod_real_callebaut_811"
+          featureCaption="Dark couverture callets — melt, mould or temper for ganache, coatings and shells."
         />
       </section>
       <section className="section-shell promo-split-section">
@@ -150,8 +153,7 @@ export default function Home() {
         </div>
       </section>
       <section className="section-shell">
-        <header className="editorial-heading">
-          <p className="eyebrow">New arrivals · demo-curated</p>
+        <header className="editorial-heading editorial-heading-compact">
           <h2>Freshly added to the demo assortment.</h2>
           <p>Recently staged in the R1 real-catalog proposal.</p>
         </header>
@@ -159,6 +161,7 @@ export default function Home() {
           products={newArrivals}
           ariaLabel="New arrivals"
           badge="New"
+          pattern="filmstrip"
         />
       </section>
       <section className="section-shell ingredient-theatre">
@@ -174,11 +177,12 @@ export default function Home() {
           products={essentials}
           ariaLabel="Baking essentials"
           badge="Essential"
+          pattern="split"
+          splitPanelId="prod_real_bakersville_vizyon_fondant"
         />
       </section>
       <section className="section-shell">
-        <header className="editorial-heading">
-          <p className="eyebrow">Tools, bakeware &amp; packaging</p>
+        <header className="editorial-heading editorial-heading-compact">
           <h2>Finish, box and gift it properly.</h2>
           <p>Piping, decorating kits and cake packaging in one place.</p>
         </header>
@@ -186,6 +190,7 @@ export default function Home() {
           products={toolsAndPackaging}
           ariaLabel="Tools, bakeware and packaging"
           badge="Tool pick"
+          pattern="shelf"
         />
       </section>
       <section className="recipe-bridge recipe-bridge-compact">

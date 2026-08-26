@@ -73,7 +73,6 @@ export function DepartmentAtlas() {
                   href="/recipes"
                   className={`department-tile tile-${tile.tileIndex} recipes-tile`}
                 >
-                  <span>{String(tile.tileIndex).padStart(2, "0")}</span>
                   <h3>Recipes</h3>
                   <p>Turn method into a measured supply plan</p>
                 </Link>
@@ -95,7 +94,6 @@ export function DepartmentAtlas() {
                     sizes="(max-width: 768px) 50vw, 25vw"
                   />
                 </div>
-                <span>{String(tile.tileIndex).padStart(2, "0")}</span>
                 <h3>{info.title}</h3>
                 <p>{info.blurb}</p>
               </Link>
