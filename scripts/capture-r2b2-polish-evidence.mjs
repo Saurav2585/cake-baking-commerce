@@ -11,7 +11,8 @@ import path from "node:path";
 
 const BASE_URL = process.env.EVIDENCE_BASE_URL ?? "http://127.0.0.1:3000";
 const OUT_DIR = path.resolve(
-  "design_review/recovery_r2b2_final_polish/screenshots",
+  process.env.EVIDENCE_OUT_DIR ??
+    "design_review/recovery_r2b2_final_polish/screenshots",
 );
 
 // Only waits on images currently within (or just below) the viewport —
@@ -226,6 +227,22 @@ async function main() {
   }
 
   console.log("Cart and checkout (mobile)...");
+  // R2B2R fix: the prior evidence script waited on `networkidle` after
+  // clicking through to /checkout, which is entirely disconnected from
+  // CheckoutForm's own `!ready` gate (CommerceProvider's localStorage
+  // hydration, gone in 5-314ms in every scenario measured live — see
+  // tests/e2e/checkout-regression.spec.ts). That produced a screenshot of
+  // the transient "Measuring the pantry…" state instead of the populated
+  // checkout UI. This waits for the actual readiness condition instead.
+  async function waitForCheckoutReady(page) {
+    await page.waitForFunction(
+      () => !document.body.innerText.includes("Measuring the pantry"),
+      undefined,
+      { timeout: 10000 },
+    );
+    await page.waitForSelector(".cart-summary", { timeout: 10000 });
+    await page.waitForTimeout(150);
+  }
   {
     const page = await mobile390.newPage();
     await page.goto(BASE_URL + pdpUrl, { waitUntil: "networkidle" });
@@ -238,13 +255,68 @@ async function main() {
       path: path.join(OUT_DIR, "14-cart-390.png"),
       fullPage: true,
     });
+    // Loading-to-ready timing evidence: capture the transient state
+    // immediately after the click (best-effort — it may already have
+    // resolved), then the actual ready state, both timestamped.
+    const clickedAt = Date.now();
     await page.getByRole("link", { name: /simulated checkout/i }).click();
-    await page.waitForLoadState("networkidle");
     await page.screenshot({
-      path: path.join(OUT_DIR, "15-checkout-390.png"),
+      path: path.join(OUT_DIR, "15-checkout-loading-390.png"),
+    });
+    await waitForCheckoutReady(page);
+    const readyAt = Date.now();
+    console.log(
+      `  cart-to-checkout: ready ${readyAt - clickedAt}ms after click`,
+    );
+    await page.screenshot({
+      path: path.join(OUT_DIR, "16-checkout-cart-to-checkout-390.png"),
       fullPage: true,
     });
     await page.close();
+  }
+  {
+    // Direct-navigation checkout evidence, both required mobile viewports.
+    for (const [ctx, label] of [
+      [mobile390, "390"],
+      [mobile360, "360"],
+    ]) {
+      const page = await ctx.newPage();
+      // addInitScript (not a post-navigation evaluate()) so the seed always
+      // wins the race against CommerceProvider's own mount-time write-back
+      // effect — see tests/e2e/checkout-regression.spec.ts's seedCart() for
+      // the full explanation of why a post-goto evaluate() can flake.
+      await page.addInitScript(() => {
+        localStorage.setItem(
+          "pantryform:cart:v1",
+          JSON.stringify({
+            schemaVersion: 1,
+            revision: 1,
+            lines: [
+              {
+                sku: "WLT-BAG-0012",
+                quantity: 1,
+                observedUnitPricePaise: 45000,
+                productId: "prod_real_wilton_decorating_bags",
+                variantId: "var_wilton_decorating_bags_0",
+                productTitle: "16-Inch Disposable Decorating Bags",
+                variantLabel: "12-pack",
+                brandName: "Wilton",
+                sources: [{ kind: "manual" }],
+              },
+            ],
+          }),
+        );
+      });
+      const t0 = Date.now();
+      await page.goto(BASE_URL + "/checkout", { waitUntil: "networkidle" });
+      await waitForCheckoutReady(page);
+      console.log(`  direct nav ${label}px: ready ${Date.now() - t0}ms`);
+      await page.screenshot({
+        path: path.join(OUT_DIR, `17-checkout-direct-nav-${label}.png`),
+        fullPage: true,
+      });
+      await page.close();
+    }
   }
 
   console.log("Reduced motion + keyboard focus sanity...");

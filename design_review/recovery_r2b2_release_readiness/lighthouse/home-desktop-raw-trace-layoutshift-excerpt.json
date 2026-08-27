@@ -1,0 +1,102 @@
+{
+  "layoutShiftAndPaintEvents": [
+    {
+      "args": {
+        "data": {
+          "navigationId": "42198A8CC7C94C022EEFD28C8AE50768"
+        },
+        "frame": "6F3BD8F5D75FA46C2903D0CC0D56F17B"
+      },
+      "cat": "loading,rail,devtools.timeline",
+      "name": "firstContentfulPaint",
+      "ph": "R",
+      "pid": 41700,
+      "s": "t",
+      "tid": 411345,
+      "ts": 21755992916
+    },
+    {
+      "args": {
+        "data": {
+          "navigationId": "42198A8CC7C94C022EEFD28C8AE50768"
+        },
+        "frame": "6F3BD8F5D75FA46C2903D0CC0D56F17B"
+      },
+      "cat": "loading,rail,devtools.timeline",
+      "name": "firstPaint",
+      "ph": "R",
+      "pid": 41700,
+      "s": "t",
+      "tid": 411345,
+      "ts": 21755992916
+    },
+    {
+      "args": {
+        "data": {
+          "cumulative_score": 0.5276595744680851,
+          "frame_max_distance": 9057,
+          "had_recent_input": false,
+          "impacted_nodes": [
+            {
+              "new_rect": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "node_id": 61,
+              "old_rect": [
+                0,
+                444,
+                1350,
+                496
+              ]
+            }
+          ],
+          "is_main_frame": true,
+          "last_input_timestamp": 0,
+          "overall_max_distance": 9057,
+          "region_rects": [
+            [
+              0,
+              444,
+              1350,
+              496
+            ]
+          ],
+          "score": 0.5276595744680851,
+          "weighted_score_delta": 0.5276595744680851
+        },
+        "frame": "6F3BD8F5D75FA46C2903D0CC0D56F17B"
+      },
+      "cat": "loading",
+      "name": "LayoutShift",
+      "ph": "I",
+      "pid": 41700,
+      "s": "t",
+      "tid": 411345,
+      "ts": 21756046903,
+      "tts": 1153256
+    }
+  ],
+  "navigationStartEvents": [
+    {
+      "args": {
+        "data": {
+          "documentLoaderURL": "http://127.0.0.1:4650/",
+          "isLoadingMainFrame": true,
+          "isOutermostMainFrame": true,
+          "navigationId": "42198A8CC7C94C022EEFD28C8AE50768"
+        },
+        "frame": "6F3BD8F5D75FA46C2903D0CC0D56F17B"
+      },
+      "cat": "blink.user_timing",
+      "name": "navigationStart",
+      "ph": "R",
+      "pid": 41700,
+      "s": "t",
+      "tid": 411345,
+      "ts": 21755939873
+    }
+  ]
+}
