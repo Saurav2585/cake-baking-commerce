@@ -88,14 +88,19 @@ select {
   white-space: nowrap !important;
   border: 0 !important;
 }
+/* R2B2F-POLISH fix 6/7: the complete truthful disclosure is preserved
+   verbatim — only its visual weight changes. Was bold uppercase with wide
+   tracking (read as an alarm banner and, wrapped to 4 lines on narrow
+   screens, pushed the entire brand/commerce experience off the initial
+   viewport). Now a quiet utility notice: normal case, lighter weight,
+   tighter line-height, still >=13px and still full-contrast on --cocoa. */
 .demo-strip {
   background: var(--cocoa);
   color: white;
   text-align: center;
-  padding: 0.5rem 1rem;
-  font: 700 0.8125rem/1.3 var(--ui);
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  font: 600 0.8125rem/1.35 var(--ui);
+  letter-spacing: 0.01em;
 }
 .offer-bar {
   background: var(--terracotta);
@@ -503,19 +508,31 @@ a.icon-action:focus-visible {
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
+/* R2B2F-POLISH: packshot photography carries its own studio-white margin,
+   so plain `contain` inside a same-colour white frame read as a mostly
+   blank panel with a small product floating in the middle (external
+   review, fix 1/7). `cover` fills the frame edge-to-edge — it crops the
+   photo's built-in margin, never the product itself, and never distorts
+   (aspect ratio is preserved, unlike a non-uniform stretch) — verified per
+   frame below since each holds a different product silhouette. */
 .collage-media img {
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center 38%;
 }
 .collage-large {
   inset: 0;
   z-index: 1;
 }
+.collage-large .collage-media img {
+  object-position: center 30%;
+}
 .collage-a {
   z-index: 2;
   top: -1rem;
   right: 7%;
-  width: 29%;
+  width: 34%;
   aspect-ratio: 1;
   transform: rotate(6deg);
   border: 5px solid var(--canvas);
@@ -524,7 +541,7 @@ a.icon-action:focus-visible {
   z-index: 2;
   bottom: 16%;
   right: -1.2rem;
-  width: 24%;
+  width: 29%;
   aspect-ratio: 1;
   transform: rotate(-4deg);
   border: 5px solid var(--canvas);
@@ -533,7 +550,7 @@ a.icon-action:focus-visible {
   z-index: 3;
   left: -1.1rem;
   bottom: -1.1rem;
-  width: 34%;
+  width: 40%;
   aspect-ratio: 1;
   transform: rotate(-6deg);
   border: 5px solid var(--canvas);
@@ -1047,6 +1064,20 @@ h3 {
   padding: 5.5rem max(3vw, calc((100vw - var(--max)) / 2)) 3rem;
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
+  /* R2B2F-POLISH fix 8/7 (performance/CLS): traced via CDP LayoutShift
+     attribution — .surface-tactile::before's inset:0 grain texture spans
+     this whole (~700px) footer, and on the homepage that large a pseudo-
+     element flipping between its full box and zero size during initial
+     paint (before the footer's own layout has settled) reported a huge
+     CLS score despite being nowhere near the viewport at that point. Not
+     present on shorter pages (e.g. /about) — confirmed independent of the
+     GSAP entrance system (persists with prefers-reduced-motion). Deferring
+     the footer's own layout/paint cost until it nears the viewport is
+     Chrome's own recommended fix for exactly this "large below-the-fold
+     section shifts early" class of bug; it does not change how the
+     footer looks once shown. */
+  content-visibility: auto;
+  contain-intrinsic-size: 0 700px;
   gap: 3.5rem;
 }
 .footer-brand {
@@ -1054,6 +1085,12 @@ h3 {
   flex-direction: column;
   gap: 1.1rem;
   align-items: flex-start;
+}
+.footer-brand > small {
+  /* R2B2F-POLISH fix 5/7: browser-default `<small>` sizing (12.8px) fell
+     under the locked 13px label floor. */
+  font-size: 0.8125rem;
+  color: color-mix(in srgb, white, transparent 25%);
 }
 .footer-brand > p {
   color: color-mix(in srgb, white, transparent 22%);
@@ -1132,7 +1169,14 @@ h3 {
   border-top: 1px solid #ffffff2a;
   padding-top: 2rem;
   margin-top: 1.5rem;
-  line-height: 1.6;
+  /* R2B2F-POLISH fix 5/7: `<small>` was left at the browser default ~80%
+     of the footer's font size (12.8px), under the locked 13px label
+     floor; explicit size plus a taller line-height for legal-copy
+     legibility. */
+  display: block;
+  max-width: 68ch;
+  font-size: 0.8125rem;
+  line-height: 1.75;
 }
 .page-shell {
   max-width: var(--max);
@@ -1237,6 +1281,12 @@ h3 {
     grid-template-columns: 1fr;
     padding-top: 2.5rem;
   }
+  /* R2B2F-POLISH fix 1/7: bring product imagery into the initial viewport
+     on narrow screens — the collage now leads, the copy panel follows,
+     instead of ~700px of text pushing every packshot below the fold. */
+  .hero-collage {
+    order: -1;
+  }
   .hero-copy-panel h1 {
     max-width: none;
   }
@@ -1331,9 +1381,16 @@ h3 {
     aspect-ratio: 1;
     padding: 0.6rem;
   }
-  .collage-a,
+  /* R2B2F-POLISH fix 1/7: keep the dominant packshot plus one clearly
+     visible supporting product on mobile (not text-only, not cluttered) —
+     .collage-b stays hidden, .collage-a and .collage-small both show. */
   .collage-b {
     display: none;
+  }
+  .collage-a {
+    width: 32%;
+    top: -0.6rem;
+    right: 6%;
   }
   .collage-small {
     width: 46%;
@@ -1998,7 +2055,7 @@ h3 {
   background: var(--surface);
   border-radius: 6px;
   overflow: hidden;
-  padding: 5%;
+  padding: 2%;
 }
 /* R2B2V fix: next/image's `fill` prop sets `inset:0; width:100%;
    height:100%` as INLINE styles on the <img>, which win over the `padding`
@@ -2011,16 +2068,29 @@ h3 {
    image's origin, it still bleeds past the shrunk box on the far edges
    unless width/height shrink to match. This is the only lever that
    actually controls image fill percentage. */
+/* R2B2F-POLISH fix 7/7: real packshot photography carries a studio-white
+   margin of its own (verified across the 48-product set); `contain` at
+   the old 90% fill left a wide blank border on top of that margin, so
+   products read small and frames read empty. `contain` stays — it's the
+   only fit mode that can never crop a real product photo, and these 48
+   images are never distorted, cropped by hand or regenerated — but the
+   fill area grows to 96% and a small deterministic zoom (1.12x, identical
+   for every card) trims the photography's own margin evenly. 1.12x is
+   conservative against the tightest-cropped real samples audited
+   (packshots that already fill most of their frame), so no product's
+   content is ever cut off; overflow stays clipped by this canvas's own
+   rounded corner, never distorting the image itself (uniform scale only). */
 .product-image-canvas img {
-  inset: 5% !important;
-  width: 90% !important;
-  height: 90% !important;
+  inset: 2% !important;
+  width: 96% !important;
+  height: 96% !important;
   object-fit: contain;
+  transform: scale(1.12);
   transition: transform 0.22s ease;
 }
 .product-grid .product-card:hover .product-image-canvas img,
 .product-grid .product-card:focus-within .product-image-canvas img {
-  transform: scale(1.04);
+  transform: scale(1.16);
 }
 .product-image-canvas.is-placeholder {
   background: var(--surface-subtle);
@@ -2164,14 +2234,17 @@ h3 {
     gap: 0.15rem;
   }
   .product-grid .card-facts span {
-    font-size: 0.7rem;
+    /* R2B2F-POLISH fix 5/7: was 0.7rem (11.2px), under the locked 13px
+       label floor — the pack-size label the external review flagged. */
+    font-size: 0.8125rem;
     color: var(--muted);
   }
   .product-grid .card-facts strong {
     font-size: 1.05rem;
   }
   .product-add {
-    min-height: 42px;
+    /* R2B2F-POLISH fix 5/7: was 42px, under the locked 44px target floor. */
+    min-height: 44px;
   }
   .product-add .label-full {
     display: none;
@@ -2317,7 +2390,9 @@ h3 {
   border: 1px solid color-mix(in srgb, var(--ink), transparent 80%);
   border-radius: 999px;
   padding: 0.3rem 0.8rem;
-  font-size: 0.8rem;
+  /* R2B2F-POLISH fix 5/7: was 0.8rem (12.8px), under the locked 13px
+     label floor. */
+  font-size: 0.8125rem;
 }
 .empty-state .recovery-links {
   display: flex;
@@ -2394,7 +2469,9 @@ h3 {
   cursor: not-allowed;
 }
 .variant-unavailable-reason {
-  font-size: 0.7rem;
+  /* R2B2F-POLISH fix 5/7: was 0.7rem (11.2px), under the locked 13px
+     label floor. */
+  font-size: 0.8125rem;
   color: var(--muted);
   margin: 0.2rem 0 0.5rem;
 }
@@ -2417,7 +2494,9 @@ h3 {
   gap: 0.5rem;
 }
 .quantity-label {
-  font: 800 0.7rem/1 var(--ui);
+  /* R2B2F-POLISH fix 5/7: was 0.7rem (11.2px), under the locked 13px
+     label floor. */
+  font: 800 0.8125rem/1.2 var(--ui);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--muted);
@@ -3083,46 +3162,66 @@ h3 {
   .buy-panel > .availability {
     order: 8;
   }
-  .buy-panel > .purchase-actions {
+  .buy-panel > .cta-sentinel,
+  .buy-panel > .purchase-actions,
+  .buy-panel > .purchase-actions-spacer {
     order: 9;
   }
   .buy-panel > .simulation-note {
     order: 10;
   }
+  .cta-sentinel {
+    display: block;
+    height: 0;
+  }
 
-  /* --- Mobile sticky price + Add to Cart bar (Concept B's ".cta-row"
-     pattern, adapted into Concept A's system): the existing
-     .purchase-actions element itself becomes the sticky bar rather than
+  /* --- R2B2F-POLISH fix 4/7 — mobile price + Add to Cart bar: the
+     existing .purchase-actions element still becomes the bar rather than
      duplicating the Add-to-Cart button anywhere, so there is still only
      ever one control whose accessible name matches "add ... demo cart."
-     It sticks to the bottom of the viewport only while its own
-     containing block (.buy-panel) is still on screen — once the shopper
-     scrolls past the buy panel into the facts section or the footer, it
-     naturally releases and scrolls away with the rest of the page, so it
-     never sits fixed across the whole route. A safe-area-aware bottom
-     inset keeps it clear of iOS home-indicator gesture areas. */
+     It no longer uses plain `position: sticky` — on a compact buy panel
+     that activates almost immediately and overlaps the quantity stepper
+     and availability status sitting just above it (confirmed defect, not
+     just a screenshot artefact: see use-sticky-cta-visibility.ts's doc
+     comment). `useStickyCtaVisibility` instead pins it to `position:
+     fixed` only once the shopper has genuinely scrolled past its natural
+     position (tracked via `.cta-sentinel`, a zero-height marker left
+     behind at that position), and releases it before the footer. The
+     `.purchase-actions-spacer` (rendered only while pinned) reserves the
+     bar's own height so unpinning/pinning never shifts layout (no CLS).
+     A safe-area-aware bottom inset keeps it clear of iOS home-indicator
+     gesture areas. */
   .buy-panel > .purchase-actions {
-    position: sticky;
+    gap: 0.6rem;
+  }
+  .buy-panel > .purchase-actions[data-pinned="true"] {
+    position: fixed;
+    left: 0;
+    right: 0;
     bottom: 0;
     z-index: 5;
-    gap: 0.6rem;
-    margin: 0.5rem -1.25rem -1.25rem;
-    padding: 0.75rem 1.25rem calc(0.75rem + env(safe-area-inset-bottom));
+    margin: 0;
+    padding: 0.65rem 1.25rem calc(0.65rem + env(safe-area-inset-bottom));
     background: var(--canvas);
     border-top: 1px solid color-mix(in srgb, var(--ink), transparent 85%);
     box-shadow: 0 -12px 24px -18px rgba(61, 42, 31, 0.4);
   }
-  .buy-panel > .purchase-actions::before {
+  .buy-panel > .purchase-actions[data-pinned="true"]::before {
     content: attr(data-sticky-price);
     order: -1;
     font: 700 1.15rem/1 var(--display);
     font-variant-numeric: tabular-nums;
     color: var(--ink);
   }
+  /* Compact bar: the pinned state keeps only the primary action —
+     wishlist stays reachable at its normal, in-flow position above. */
+  .buy-panel > .purchase-actions[data-pinned="true"] > button:not(.coral) {
+    display: none;
+  }
 
   /* Give focus-driven scrolling (Tab through variant/quantity controls)
-     clearance from the now-sticky bottom bar so a focused control is
-     never left hidden underneath it. */
+     clearance from the pinned bottom bar so a focused control is never
+     left hidden underneath it. */
   .variant-selector button,
   .quantity-step,
   .quantity-stepper input {

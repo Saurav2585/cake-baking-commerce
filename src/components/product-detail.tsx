@@ -6,6 +6,7 @@ import { formatINR, resolveMedia } from "@/lib/domain/catalog";
 import type { CatalogProduct } from "@/lib/domain/types";
 import { useImageCrossfade } from "@/motion/use-image-crossfade";
 import { useStickyCtaEntrance } from "@/motion/use-sticky-cta-entrance";
+import { useStickyCtaVisibility } from "@/motion/use-sticky-cta-visibility";
 import { useWishlistFeedback } from "@/motion/use-wishlist-feedback";
 import { useCommerce } from "./commerce-provider";
 
@@ -16,15 +17,18 @@ type Fact = { status?: string; value?: string };
  * - `known` → plain text, no pill.
  * - `not_applicable` → muted solid pill.
  * - `information_not_provided` (the default/missing case) → a quiet
- *   designed empty state, refined again in R2B2F: non-italic small text,
- *   a quiet dot mark plus the existing left tick (CSS-only, see
- *   `.fact-not-provided` in globals.css), reading as a deliberate
- *   spec-sheet disclosure rather than an unfinished field. Deliberately
- *   NOT a pill, so it stays visually distinct from `not_applicable`'s
- *   solid pill. Never red/alarming, never a literal dash character in the
- *   markup, never fabricated. Copy stays the exact protected phrase
- *   ("Information not provided," D-017) — only the visual treatment has
- *   ever changed, not the wording.
+ *   designed empty state: non-italic small text, a quiet dot mark plus a
+ *   left tick (CSS-only, see `.fact-not-provided` in globals.css),
+ *   reading as a deliberate spec-sheet disclosure rather than an
+ *   unfinished field. Deliberately NOT a pill, so it stays visually
+ *   distinct from `not_applicable`'s solid pill. Never red/alarming,
+ *   never a literal dash character in the markup, never fabricated.
+ *   Copy is "Not supplied in the verified source record." (R2B2F-POLISH
+ *   fix 3/7, superseding D-017's original "Information not provided"
+ *   wording — see docs/Decision_Log.md D-033: the external review found
+ *   the old phrase still read as an unfinished/error state despite the
+ *   refined visual treatment; only the wording changed, the tri-state
+ *   semantics and truthfulness guarantee are unchanged).
  */
 function FactValue({ fact }: { fact: Fact | undefined }) {
   if (fact?.status === "known") {
@@ -39,7 +43,7 @@ function FactValue({ fact }: { fact: Fact | undefined }) {
   }
   return (
     <span className="fact-value fact-not-provided">
-      Information not provided
+      Not supplied in the verified source record.
     </span>
   );
 }
@@ -79,13 +83,31 @@ export function ProductDetail({ product }: { product: CatalogProduct }) {
   useImageCrossfade(primaryRegionRef, variant.id);
   const wishlistButtonRef = useRef<HTMLButtonElement>(null);
   const purchaseActionsRef = useRef<HTMLDivElement>(null);
+  const ctaSentinelRef = useRef<HTMLSpanElement>(null);
+  const [pinnedBarHeight, setPinnedBarHeight] = useState(0);
   const isWishlisted = wishlist.includes(product.id);
   // Small acknowledgment on a genuine save (never on remove, never on the
   // localStorage-hydration render) — see src/motion/use-wishlist-feedback.ts.
   useWishlistFeedback(wishlistButtonRef, isWishlisted);
-  // Subtle first-mount entrance for the mobile sticky CTA bar — see
+  // Only pins the mobile CTA bar once the shopper has actually scrolled
+  // past its natural position — see src/motion/use-sticky-cta-visibility.ts
+  // for why plain CSS `position: sticky` overlapped the quantity stepper.
+  const ctaPinned = useStickyCtaVisibility(ctaSentinelRef);
+  // Subtle entrance each time the bar pins — see
   // src/motion/use-sticky-cta-entrance.ts. No-op on desktop / reduced motion.
-  useStickyCtaEntrance(purchaseActionsRef);
+  useStickyCtaEntrance(purchaseActionsRef, ctaPinned);
+  // Reserves the bar's own height in the flow while it's pinned (fixed
+  // positioning removes it from flow) so pinning never shifts layout —
+  // measured continuously so it stays correct across viewport/font changes.
+  useEffect(() => {
+    const el = purchaseActionsRef.current;
+    if (!el || typeof ResizeObserver === "undefined") return;
+    const observer = new ResizeObserver(([entry]) =>
+      setPinnedBarHeight(entry.contentRect.height),
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
   useEffect(
     () =>
       emitAnalytics({
@@ -224,9 +246,18 @@ export function ProductDetail({ product }: { product: CatalogProduct }) {
               </button>
             </div>
           </div>
+          {/* Marks the CTA's natural in-flow position; useStickyCtaVisibility
+              watches this (not the CTA itself, which relocates) to decide
+              when the shopper has genuinely scrolled past it. */}
+          <span
+            className="cta-sentinel"
+            aria-hidden="true"
+            ref={ctaSentinelRef}
+          />
           <div
             className="purchase-actions"
             data-sticky-price={formatINR(variant.price_inr_minor)}
+            data-pinned={ctaPinned ? "true" : "false"}
             ref={purchaseActionsRef}
           >
             <button
@@ -247,6 +278,13 @@ export function ProductDetail({ product }: { product: CatalogProduct }) {
               {isWishlisted ? "Remove from wishlist" : "Save to wishlist"}
             </button>
           </div>
+          {ctaPinned && (
+            <div
+              className="purchase-actions-spacer"
+              style={{ height: pinnedBarHeight }}
+              aria-hidden="true"
+            />
+          )}
           <p className="simulation-note">
             No real stock, payment, delivery or order is represented.
           </p>

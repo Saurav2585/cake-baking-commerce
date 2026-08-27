@@ -58,7 +58,7 @@ export function HeroCollage({
             alt={secondaryA.media.alt}
             fill
             data-parallax-layer="z3"
-            sizes="(max-width: 640px) 0vw, 20vw"
+            sizes="(max-width: 640px) 32vw, 20vw"
           />
         </div>
       </div>
@@ -80,7 +80,7 @@ export function HeroCollage({
             alt={foreground.media.alt}
             fill
             data-parallax-layer="z4"
-            sizes="(max-width: 640px) 36vw, 12vw"
+            sizes="(max-width: 640px) 46vw, 12vw"
           />
         </div>
       </div>
